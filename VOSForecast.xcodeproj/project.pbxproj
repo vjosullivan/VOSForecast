@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
+		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
-		F1B1342A1C84CC9800CF48AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134291C84CC9800CF48AE /* ViewController.swift */; };
 		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
 		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
 		F1B134321C84CC9A00CF48AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */; };
 		F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */; };
+		F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */; };
+		F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */; };
+		F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */; };
+		F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */; };
+		F1FF4A261C84E9B700D22EFF /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A251C84E9B700D22EFF /* Forecast.swift */; };
+		F1FF4A271C84E9B700D22EFF /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A251C84E9B700D22EFF /* Forecast.swift */; };
+		F1FF4A291C84F2B100D22EFF /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A281C84F2B100D22EFF /* HourlyForecast.swift */; };
+		F1FF4A2A1C84F2B100D22EFF /* HourlyForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A281C84F2B100D22EFF /* HourlyForecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,9 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1B134291C84CC9800CF48AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1B134311C84CC9A00CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +45,10 @@
 		F1B134381C84CC9E00CF48AE /* VOSForecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOSForecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOSForecastTests.swift; sourceTree = "<group>"; };
 		F1B1343E1C84CC9F00CF48AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastReceiver.swift; sourceTree = "<group>"; };
+		F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBuilder.swift; sourceTree = "<group>"; };
+		F1FF4A251C84E9B700D22EFF /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		F1FF4A281C84F2B100D22EFF /* HourlyForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyForecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1005AEA1C84E1EB00250A3C /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				F1005AEB1C84E21700250A3C /* ForecastViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
 		F1B1341B1C84CC9600CF48AE = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +98,9 @@
 		F1B134261C84CC9700CF48AE /* VOSForecast */ = {
 			isa = PBXGroup;
 			children = (
+				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
+				F1B134471C84CE6D00CF48AE /* comms */,
 				F1B134271C84CC9700CF48AE /* AppDelegate.swift */,
-				F1B134291C84CC9800CF48AE /* ViewController.swift */,
 				F1B1342B1C84CC9800CF48AE /* Main.storyboard */,
 				F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */,
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
@@ -94,6 +116,17 @@
 				F1B1343E1C84CC9F00CF48AE /* Info.plist */,
 			);
 			path = VOSForecastTests;
+			sourceTree = "<group>";
+		};
+		F1B134471C84CE6D00CF48AE /* comms */ = {
+			isa = PBXGroup;
+			children = (
+				F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */,
+				F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */,
+				F1FF4A251C84E9B700D22EFF /* Forecast.swift */,
+				F1FF4A281C84F2B100D22EFF /* HourlyForecast.swift */,
+			);
+			path = comms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B1342A1C84CC9800CF48AE /* ViewController.swift in Sources */,
+				F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
+				F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */,
+				F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
+				F1FF4A291C84F2B100D22EFF /* HourlyForecast.swift in Sources */,
+				F1FF4A261C84E9B700D22EFF /* Forecast.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
+				F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
+				F1FF4A2A1C84F2B100D22EFF /* HourlyForecast.swift in Sources */,
+				F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */,
+				F1FF4A271C84E9B700D22EFF /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +430,7 @@
 				F1B134431C84CC9F00CF48AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F1B134441C84CC9F00CF48AE /* Build configuration list for PBXNativeTarget "VOSForecastTests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +439,7 @@
 				F1B134461C84CC9F00CF48AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
