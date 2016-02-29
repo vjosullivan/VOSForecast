@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
+		F1B1342A1C84CC9800CF48AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134291C84CC9800CF48AE /* ViewController.swift */; };
+		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
+		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
+		F1B134321C84CC9A00CF48AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */; };
+		F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1B134391C84CC9E00CF48AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1B1341C1C84CC9600CF48AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1B134231C84CC9600CF48AE;
+			remoteInfo = VOSForecast;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1B134291C84CC9800CF48AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1B134311C84CC9A00CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1B134331C84CC9A00CF48AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1B134381C84CC9E00CF48AE /* VOSForecastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VOSForecastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOSForecastTests.swift; sourceTree = "<group>"; };
+		F1B1343E1C84CC9F00CF48AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1B134211C84CC9600CF48AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B134351C84CC9E00CF48AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1B1341B1C84CC9600CF48AE = {
+			isa = PBXGroup;
+			children = (
+				F1B134261C84CC9700CF48AE /* VOSForecast */,
+				F1B1343B1C84CC9E00CF48AE /* VOSForecastTests */,
+				F1B134251C84CC9700CF48AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1B134251C84CC9700CF48AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1B134241C84CC9700CF48AE /* VOSForecast.app */,
+				F1B134381C84CC9E00CF48AE /* VOSForecastTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1B134261C84CC9700CF48AE /* VOSForecast */ = {
+			isa = PBXGroup;
+			children = (
+				F1B134271C84CC9700CF48AE /* AppDelegate.swift */,
+				F1B134291C84CC9800CF48AE /* ViewController.swift */,
+				F1B1342B1C84CC9800CF48AE /* Main.storyboard */,
+				F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */,
+				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
+				F1B134331C84CC9A00CF48AE /* Info.plist */,
+			);
+			path = VOSForecast;
+			sourceTree = "<group>";
+		};
+		F1B1343B1C84CC9E00CF48AE /* VOSForecastTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */,
+				F1B1343E1C84CC9F00CF48AE /* Info.plist */,
+			);
+			path = VOSForecastTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1B134231C84CC9600CF48AE /* VOSForecast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B134411C84CC9F00CF48AE /* Build configuration list for PBXNativeTarget "VOSForecast" */;
+			buildPhases = (
+				F1B134201C84CC9600CF48AE /* Sources */,
+				F1B134211C84CC9600CF48AE /* Frameworks */,
+				F1B134221C84CC9600CF48AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VOSForecast;
+			productName = VOSForecast;
+			productReference = F1B134241C84CC9700CF48AE /* VOSForecast.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1B134371C84CC9E00CF48AE /* VOSForecastTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B134441C84CC9F00CF48AE /* Build configuration list for PBXNativeTarget "VOSForecastTests" */;
+			buildPhases = (
+				F1B134341C84CC9E00CF48AE /* Sources */,
+				F1B134351C84CC9E00CF48AE /* Frameworks */,
+				F1B134361C84CC9E00CF48AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1B1343A1C84CC9E00CF48AE /* PBXTargetDependency */,
+			);
+			name = VOSForecastTests;
+			productName = VOSForecastTests;
+			productReference = F1B134381C84CC9E00CF48AE /* VOSForecastTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1B1341C1C84CC9600CF48AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Vincent O'Sullivan";
+				TargetAttributes = {
+					F1B134231C84CC9600CF48AE = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					F1B134371C84CC9E00CF48AE = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = F1B134231C84CC9600CF48AE;
+					};
+				};
+			};
+			buildConfigurationList = F1B1341F1C84CC9600CF48AE /* Build configuration list for PBXProject "VOSForecast" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1B1341B1C84CC9600CF48AE;
+			productRefGroup = F1B134251C84CC9700CF48AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1B134231C84CC9600CF48AE /* VOSForecast */,
+				F1B134371C84CC9E00CF48AE /* VOSForecastTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1B134221C84CC9600CF48AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B134321C84CC9A00CF48AE /* LaunchScreen.storyboard in Resources */,
+				F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */,
+				F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B134361C84CC9E00CF48AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1B134201C84CC9600CF48AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B1342A1C84CC9800CF48AE /* ViewController.swift in Sources */,
+				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B134341C84CC9E00CF48AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1B1343A1C84CC9E00CF48AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1B134231C84CC9600CF48AE /* VOSForecast */;
+			targetProxy = F1B134391C84CC9E00CF48AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F1B1342B1C84CC9800CF48AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1B1342C1C84CC9800CF48AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1B134311C84CC9A00CF48AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1B1343F1C84CC9F00CF48AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1B134401C84CC9F00CF48AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1B134421C84CC9F00CF48AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VOSForecast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F1B134431C84CC9F00CF48AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VOSForecast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F1B134451C84CC9F00CF48AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VOSForecastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOSForecast.app/VOSForecast";
+			};
+			name = Debug;
+		};
+		F1B134461C84CC9F00CF48AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VOSForecastTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecastTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VOSForecast.app/VOSForecast";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1B1341F1C84CC9600CF48AE /* Build configuration list for PBXProject "VOSForecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B1343F1C84CC9F00CF48AE /* Debug */,
+				F1B134401C84CC9F00CF48AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1B134411C84CC9F00CF48AE /* Build configuration list for PBXNativeTarget "VOSForecast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B134421C84CC9F00CF48AE /* Debug */,
+				F1B134431C84CC9F00CF48AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F1B134441C84CC9F00CF48AE /* Build configuration list for PBXNativeTarget "VOSForecastTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B134451C84CC9F00CF48AE /* Debug */,
+				F1B134461C84CC9F00CF48AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1B1341C1C84CC9600CF48AE /* Project object */;
+}
