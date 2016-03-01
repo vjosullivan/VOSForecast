@@ -8,4 +8,20 @@
 
 struct HourlyForecast {
     
+    let apparentTemperature: Double?
+    let cloudCover: Double?
+    let dewPoint: Double?
+    let humidity: Double?
+    let icon: String?
+    let ozone: Double?
+    let precipIntensity: Double?
+    let precipProbability: Double?
+    let precipType: String?
+    let pressure: Double?
+    let summary: String?
+    let temperature: Double?
+    let time: Int?
+    let visibility: Int?
+    let windBearing: Int?
+    let windSpeed: Double?
 }

@@ -22,30 +22,47 @@ class ForecastBuilder {
     
     private func parseJSONForecast(json: [String: AnyObject]) -> Forecast {
         print("\n\nJSON:\n\(json)\n\n")
+        var hourlyForecasts = [HourlyForecast]()
         if let hourly = json["hourly"] as? [String: AnyObject],
             let hourlyData = hourly["data"] as? [[String: AnyObject]] {
-                var hourlyForecasts = [HourlyForecast]()
                 for hour in hourlyData {
-                    apparentTemperature = "30.54";
-                    cloudCover = "0.3";
-                    dewPoint = "34.37";
-                    humidity = "0.8100000000000001";
-                    icon = "partly-cloudy-night";
-                    ozone = "359.4";
-                    precipIntensity = "0.0015";
-                    precipProbability = "0.03";
-                    precipType = rain;
-                    pressure = 1002;
-                    summary = "Partly Cloudy";
-                    temperature = "39.65";
-                    time = 1456952400;
-                    visibility = 10;
-                    windBearing = 292;
-                    windSpeed = "17.93";
-                    hourlyForecasts.append(HourlyForecast())
+                    // TODO: Absorb temporary variables.
+                    let apparentTemperature = hour["apparentTemperature"] as? Double
+                    let cloudCover = hour["cloudCover"] as? Double
+                    let dewPoint = hour["dewPoint"] as? Double
+                    let humidity = hour["humidity"] as? Double
+                    let icon = hour["icon"] as? String
+                    let ozone = hour["ozone"] as? Double
+                    let precipIntensity = hour["precipIntensity"] as? Double
+                    let precipProbability = hour["precipProbability"] as? Double
+                    let precipType = hour["precipType"] as? String
+                    let pressure = hour["pressure"] as? Double
+                    let summary = hour["summary"] as? String
+                    let temperature = hour["temperature"] as? Double
+                    let time = hour["time"] as? Int
+                    let visibility = hour["visibility"] as? Int
+                    let windBearing = hour["windBearing"] as? Int
+                    let windSpeed = hour["windSpeed"] as? Double
+                    hourlyForecasts.append(HourlyForecast(
+                        apparentTemperature: apparentTemperature,
+                        cloudCover: cloudCover,
+                        dewPoint: dewPoint,
+                        humidity: humidity,
+                        icon: icon,
+                        ozone: ozone,
+                        precipIntensity: precipIntensity,
+                        precipProbability: precipProbability,
+                        precipType: precipType,
+                        pressure: pressure,
+                        summary: summary,
+                        temperature: temperature,
+                        time: time,
+                        visibility: visibility,
+                        windBearing: windBearing,
+                        windSpeed: windSpeed))
                 }
                 print("X")
         }
-        return Forecast()
+        return Forecast(hourlyForecasts: hourlyForecasts)
     }
 }

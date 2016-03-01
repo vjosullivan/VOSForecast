@@ -7,5 +7,6 @@
 //
 
 struct Forecast {
-    
+
+    let hourlyForecasts: [HourlyForecast]?
 }
