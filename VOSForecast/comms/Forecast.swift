@@ -8,5 +8,15 @@
 
 struct Forecast {
 
+    let latitude: Double?
+    let longitude: Double?
+
+    let currentWeather: CurrentWeather?
+    let weeklyForecast: WeeklyForecast?
     let hourlyForecasts: [HourlyForecast]?
+    let minutelyForecasts: [MinutelyForecast]?
+
+    let flags: Flags?
+    let timezone: String?
+    let offset: Double?
 }

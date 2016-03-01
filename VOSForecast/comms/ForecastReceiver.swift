@@ -42,6 +42,6 @@ public class ForecastReceiver {
     }
     
     private func forecastURL(latitude latitude: Double, longitude: Double) -> NSURL {
-        return NSURL(string: "https://api.forecast.io/forecast/\(forecastApiKey)/\(latitude),\(longitude)")!
+        return NSURL(string: "https://api.forecast.io/forecast/\(forecastApiKey)/\(latitude),\(longitude)?units=uk2")!
     }
 }
