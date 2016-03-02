@@ -49,37 +49,39 @@ class ForecastBuilder {
     private func parseCurrentWeather(json: [String: AnyObject]) -> CurrentWeather? {
         var currentWeather: CurrentWeather?
         if let currently = json["currently"] as? [String: AnyObject] {
-            let precipIntensity = currently["precipIntensity"] as? Double
-            let icon = currently["icon"] as? String
             let time = currently["time"] as? Int
+            let icon = currently["icon"] as? String
+            let summary = currently["summary"] as? String
+
+            let temperature = currently["temperature"] as? Double
+            let apparentTemperature = currently["apparentTemperature"] as? Double
+            let dewPoint = currently["dewPoint"] as? Double
+
+            let precipIntensity = currently["precipIntensity"] as? Double
             let precipProbability = currently["precipProbability"] as? Double
             let windSpeed = currently["windSpeed"] as? Double
             let nearestStormBearing = currently["nearestStormBearing"] as? Double
-            let summary = currently["summary"] as? String
-            let apparentTemperature = currently["apparentTemperature"] as? Double
-            let dewPoint = currently["dewPoint"] as? Double
             let nearestStormDistance = currently["nearestStormDistance"] as? Double
             let cloudCover = currently["cloudCover"] as? Double
             let humidity = currently["humidity"] as? Double
             let windBearing = currently["windBearing"] as? Double
-            let temperature = currently["temperature"] as? Double
             let visibility = currently["visibility"] as? Double
             let pressure = currently["pressure"] as? Double
             let ozone = currently["ozone"] as? Double
-            currentWeather = CurrentWeather(precipIntensity: precipIntensity,
+            currentWeather = CurrentWeather(time: time,
                 icon: icon,
-                time: time,
+                summary: summary,
+                temperature: temperature,
+                apparentTemperature: apparentTemperature,
+                dewPoint: dewPoint,
+                precipIntensity: precipIntensity,
                 precipProbability: precipProbability,
                 windSpeed: windSpeed,
                 nearestStormBearing: nearestStormBearing,
-                summary: summary,
-                apparentTemperature: apparentTemperature,
-                dewPoint: dewPoint,
                 nearestStormDistance: nearestStormDistance,
                 cloudCover: cloudCover,
                 humidity: humidity,
                 windBearing: windBearing,
-                temperature: temperature,
                 visibility: visibility,
                 pressure: pressure,
                 ozone: ozone)
