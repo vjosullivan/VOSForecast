@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VOSForecast/comms/ForecastBuilder.swift"
-            timestampString = "478530728.316602"
+            timestampString = "478599752.184289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "parseJSONForecast(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VOSForecast/comms/ForecastBuilder.swift"
-            timestampString = "478532473.773535"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "parseCurrentWeather(_:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "buildForecast(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

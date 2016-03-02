@@ -6,7 +6,7 @@
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
 
-struct DailyForecast {
+struct OneDayForecast {
 
     let apparentTemperatureMax: Double?
     let apparentTemperatureMaxTime: Double?

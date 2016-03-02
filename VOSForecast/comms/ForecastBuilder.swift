@@ -24,12 +24,12 @@ class ForecastBuilder {
     
     private func parseJSONForecast(json: [String: AnyObject]) -> Forecast {
         print("\n\nJSON:\n\(json)\n\n")
-        let latitude          = json["latitude"] as? Double
-        let longitude         = json["longitude"] as? Double
-        let currentWeather    = parseCurrentWeather(json)
-        let weeklyForecasts   = parseWeeklyForecast(json)
-        let hourlyForecasts   = parseHourlyForecasts(json)
-        let minutelyForecasts = parseMinutelyForecasts(json)
+        let latitude         = json["latitude"] as? Double
+        let longitude        = json["longitude"] as? Double
+        let currentWeather   = parseCurrentWeather(json)
+        let sevenDayForecast = parseSevenDayForecast(json)
+        let oneHourForecasts = parseOneHourForecasts(json)
+        let sixtyMinuteForecast = parseSixtyMinuteForecast(json)
         let flags    = parseFlags(json)
         let timezone = json["timezone"] as? String
         let offset   = json["offset"] as? Double
@@ -37,9 +37,9 @@ class ForecastBuilder {
             latitude: latitude,
             longitude: longitude,
             currentWeather: currentWeather,
-            weeklyForecast: weeklyForecasts,
-            hourlyForecasts: hourlyForecasts,
-            minutelyForecasts: minutelyForecasts,
+            sevenDayForecast: sevenDayForecast,
+            oneHourForecasts: oneHourForecasts,
+            sixtyMinuteForecast: sixtyMinuteForecast,
             flags: flags,
             timezone:  timezone,
             offset: offset)
@@ -92,19 +92,19 @@ class ForecastBuilder {
         return flags ?? nil
     }
     
-    private func parseWeeklyForecast(json: [String: AnyObject]) -> WeeklyForecast? {
-        var weeklyForecast: WeeklyForecast?
+    private func parseSevenDayForecast(json: [String: AnyObject]) -> SevenDayForecast? {
+        var sevenDayForecast: SevenDayForecast?
         if let dailyData = json["daily"] as? [String: AnyObject] {
-            let weekData = parseDailyForecasts(dailyData)
+            let oneDayForecasts = parseOneDayForecasts(dailyData)
             let icon     = dailyData["icon"] as? String
             let summary  = dailyData["summary"] as? String
-            weeklyForecast = WeeklyForecast(icon: icon, summary: summary, dailyForecasts: weekData)
+            sevenDayForecast = SevenDayForecast(icon: icon, summary: summary, oneDayForecasts: oneDayForecasts)
         }
-        return weeklyForecast ?? nil
+        return sevenDayForecast ?? nil
     }
     
-    private func parseDailyForecasts(data: [String: AnyObject]) -> [DailyForecast]? {
-        var dailyForecast = [DailyForecast]()
+    private func parseOneDayForecasts(data: [String: AnyObject]) -> [OneDayForecast]? {
+        var oneDayForecasts = [OneDayForecast]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
                 let apparentTemperatureMax = day["apparentTemperatureMax"] as? Double
@@ -140,7 +140,7 @@ class ForecastBuilder {
                 
                 let windBearing = day["windBearing"] as? Double
                 let windSpeed = day["windSpeed"] as? Double
-                let dayForecast = DailyForecast(apparentTemperatureMax: apparentTemperatureMax,
+                let oneDayForecast = OneDayForecast(apparentTemperatureMax: apparentTemperatureMax,
                     apparentTemperatureMaxTime: apparentTemperatureMaxTime,
                     apparentTemperatureMin: apparentTemperatureMin,
                     apparentTemperatureMinTime: apparentTemperatureMinTime,
@@ -167,19 +167,32 @@ class ForecastBuilder {
                     visibility: visibility,
                     windBearing:  windBearing,
                     windSpeed: windSpeed)
-                dailyForecast.append(dayForecast)
+                oneDayForecasts.append(oneDayForecast)
             }
         }
-        return dailyForecast.count > 0 ? dailyForecast : nil
+        return oneDayForecasts.count > 0 ? oneDayForecasts : nil
     }
     
-    private func parseMinutelyForecasts(json: [String: AnyObject]) -> [MinutelyForecast]? {
-        let minutelyForecasts = [MinutelyForecast]()
-        return minutelyForecasts.count > 0 ? minutelyForecasts : nil
+    private func parseSixtyMinuteForecast(json: [String: AnyObject]) -> SixtyMinuteForecast? {
+        var sixtyMinuteForecast: SixtyMinuteForecast?
+        if let minutely = json["minutely"] as? [String: AnyObject] {
+            let oneMinuteForecasts = parseOneMinuteForecasts(minutely)
+            let icon     = minutely["icon"] as? String
+            let summary  = minutely["summary"] as? String
+            sixtyMinuteForecast = SixtyMinuteForecast(icon: icon, summary: summary, sixtyMinuteForecasts: oneMinuteForecasts)
+        }
+        print("Y")
+        return sixtyMinuteForecast ?? nil
     }
-    
-    private func parseHourlyForecasts(json: [String: AnyObject]) -> [HourlyForecast]? {
-        var hourlyForecasts = [HourlyForecast]()
+
+    private func parseOneMinuteForecasts(json: [String: AnyObject]) -> [OneMinuteForecast]? {
+        var oneMinuteForecasts = [OneMinuteForecast]()
+
+        return oneMinuteForecasts.count > 0 ? oneMinuteForecasts : nil
+    }
+
+    private func parseOneHourForecasts(json: [String: AnyObject]) -> [OneHourForecast]? {
+        var oneHourForecasts = [OneHourForecast]()
         if let hourly = json["hourly"] as? [String: AnyObject],
             let hourlyData = hourly["data"] as? [[String: AnyObject]] {
                 for hour in hourlyData {
@@ -200,7 +213,7 @@ class ForecastBuilder {
                     let visibility = hour["visibility"] as? Int
                     let windBearing = hour["windBearing"] as? Int
                     let windSpeed = hour["windSpeed"] as? Double
-                    hourlyForecasts.append(HourlyForecast(
+                    oneHourForecasts.append(OneHourForecast(
                         apparentTemperature: apparentTemperature,
                         cloudCover: cloudCover,
                         dewPoint: dewPoint,
@@ -219,6 +232,6 @@ class ForecastBuilder {
                         windSpeed: windSpeed))
                 }
         }
-        return hourlyForecasts.count > 0 ? hourlyForecasts : nil
+        return oneHourForecasts.count > 0 ? oneHourForecasts : nil
     }
 }
