@@ -22,8 +22,11 @@ extension Forecast {
     }
 
     private func halfDegree(temperature: Double?) -> String {
-        let t = temperature ?? 0.0
-        return String(round(t * 2) / 2.0)
+        var t = String(round((temperature ?? 0.0) * 2) / 2.0)
+        if t.characters.last! == "0" {
+            t = String(t.characters.dropLast(2))
+        }
+        return t
     }
 
     var temperatureUnitsDisplay: String {
