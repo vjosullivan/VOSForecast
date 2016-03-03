@@ -10,41 +10,29 @@ import Darwin
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        let tempRound = currentWeather?.temperature ?? 0.0
-
-        let temp = String(Int(round(tempRound)))
-        let unit: String
-        if flags?.units == "us" {
-            unit = "°F"
-        } else {
-            unit = "°C"
-        }
-        return temp + unit
+        return halfDegree(currentWeather?.temperature) + temperatureUnitsDisplay
     }
 
     var currentFeelsLikeDisplay: String {
-        let tempRound = currentWeather?.apparentTemperature ?? 0.0
-
-        let temp = String(Int(round(tempRound)))
-        let unit: String
-        if flags?.units == "us" {
-            unit = "°F"
-        } else {
-            unit = "°C"
-        }
-        return temp + unit
+        return halfDegree(currentWeather?.apparentTemperature) + temperatureUnitsDisplay
     }
 
     var currentDewPointDisplay: String {
-        let tempRound = currentWeather?.dewPoint ?? 0.0
+        return halfDegree(currentWeather?.dewPoint) + temperatureUnitsDisplay
+    }
 
-        let temp = String(Int(round(tempRound)))
+    private func halfDegree(temperature: Double?) -> String {
+        let t = temperature ?? 0.0
+        return String(round(t * 2) / 2.0)
+    }
+
+    var temperatureUnitsDisplay: String {
         let unit: String
         if flags?.units == "us" {
             unit = "°F"
         } else {
             unit = "°C"
         }
-        return temp + unit
+        return unit
     }
 }
