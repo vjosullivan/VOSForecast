@@ -27,7 +27,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="ViewTR">
                                 <rect key="frame" x="305" y="28" width="285" height="212.5"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-kn-hH4" userLabel="Day0">
                                 <rect key="frame" x="10" y="509" width="81" height="81"/>
@@ -212,6 +212,7 @@
                         <outlet property="currentFeelsLike" destination="CTe-cQ-RwI" id="06l-ic-5gp"/>
                         <outlet property="currentTemperature" destination="gFL-x9-rSX" id="loK-bF-NvX"/>
                         <outlet property="currentView" destination="SsS-7X-Lnc" id="hq4-0K-Yue"/>
+                        <outlet property="secondView" destination="2JY-TW-BR2" id="dqX-4e-idd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

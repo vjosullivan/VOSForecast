@@ -17,6 +17,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var currentFeelsLike: UILabel!
     @IBOutlet weak var currentDewPoint: UILabel!
 
+    @IBOutlet weak var secondView: UIView!
+
     // MARK: - UIViewController functions.
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,5 +62,9 @@ class ForecastViewController: UIViewController {
         currentView.layer.borderWidth = 3
         currentView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         currentView.layer.cornerRadius = 10
+
+        secondView.layer.borderWidth = 3
+        secondView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
+        secondView.layer.cornerRadius = 10
     }
 }
