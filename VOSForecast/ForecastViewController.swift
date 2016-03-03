@@ -10,18 +10,28 @@ import UIKit
 
 class ForecastViewController: UIViewController {
     
-}
+    // MARK: - Outlets
 
-// MARK: - UIViewController methods.
+    @IBOutlet weak var currentView: UIView!
+    @IBOutlet weak var currentTemperature: UILabel!
+    @IBOutlet weak var currentFeelsLike: UILabel!
+    @IBOutlet weak var currentDewPoint: UILabel!
 
-extension ForecastViewController {
-    
+    // MARK: - UIViewController functions.
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         updateForecast()
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Local functions
     
-    func updateForecast() {
+    private func updateForecast() {
         ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0) {(data, error) in
             if let data = data {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -38,12 +48,17 @@ extension ForecastViewController {
         }
     }
     
-    func updateView(forecast: Forecast) {
-        print("Updating forecast...\n\(forecast.currentWeather)")
+    private func updateView(forecast: Forecast) {
+
+        currentTemperature.text = "\(forecast.currentTemperatureDisplay)"
+        currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
+        currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    private func configureUI() {
+
+        currentView.layer.borderWidth = 3
+        currentView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
+        currentView.layer.cornerRadius = 10
     }
 }
