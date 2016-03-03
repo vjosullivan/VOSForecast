@@ -154,20 +154,20 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8a-3Y-8k7" userLabel="verticalLine">
-                                                <rect key="frame" x="141" y="58" width="2" height="80"/>
+                                                <rect key="frame" x="142" y="58" width="1" height="80"/>
                                                 <color key="backgroundColor" red="0.56470588235294117" green="0.83137254901960778" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="2" id="NSO-uJ-YER"/>
+                                                    <constraint firstAttribute="width" constant="1" id="NSO-uJ-YER"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zz3-8F-CVB" userLabel="horizontalLine">
-                                                <rect key="frame" x="8" y="97" width="269" height="2"/>
+                                                <rect key="frame" x="8" y="97" width="269" height="1"/>
                                                 <color key="backgroundColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="qSk-cF-zxn"/>
+                                                    <constraint firstAttribute="height" constant="1" id="qSk-cF-zxn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -178,7 +178,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="4N6-dg-xis"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Done"/>
                                                 <connections>
                                                     <action selector="flipPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbG-MT-598"/>
                                                 </connections>

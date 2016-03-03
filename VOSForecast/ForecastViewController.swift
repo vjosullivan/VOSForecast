@@ -9,14 +9,14 @@
 import UIKit
 
 class ForecastViewController: UIViewController {
-
+    
     // MARK: - Outlets
-
+    
     @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var clockFrontView: UIView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
-
+    
     @IBOutlet weak var currentView: UIView!
     @IBOutlet weak var currentFrontView: UIView!
     @IBOutlet weak var currentRearView: UIView!
@@ -35,14 +35,14 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var usUnits: UIButton!
     
     // MARK: - UIViewController functions.
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         let units = readSetting("units", defaultValue: "auto")
         updateForecast()
     }
-
+    
     func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
@@ -53,7 +53,7 @@ class ForecastViewController: UIViewController {
                     frontView.hidden = true
                 },
                 completion: nil)
-
+            
             UIView.transitionWithView(rearView,
                 duration: 1.0,
                 options: transitionOptions,
@@ -79,14 +79,14 @@ class ForecastViewController: UIViewController {
                 completion: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Local functions
-
+    
     private func updateForecast() {
         let units = readSetting("units", defaultValue: "auto")
         ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0, units: units) {(data, error) in
@@ -104,30 +104,55 @@ class ForecastViewController: UIViewController {
             }
         }
     }
-
+    
     private func updateView(forecast: Forecast) {
-
+        
         currentTemperature.text = "\(forecast.currentTemperatureDisplay)"
         currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
         currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
         currentSummary.text     = forecast.currentWeather?.summary
     }
-
+    
     private func configureUI() {
-
+        
         currentFrontView.layer.borderWidth = 3
         currentFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         currentFrontView.layer.cornerRadius = 10
         currentRearView.layer.borderWidth = 3
         currentRearView.layer.borderColor = UIColor(red: 1.0, green: 0.6, blue: 0.0, alpha: 1.0).CGColor
         currentRearView.layer.cornerRadius = 10
-
+        
         clockFrontView.layer.borderWidth = 3
         clockFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         clockFrontView.layer.cornerRadius = 10
         clockRearView.layer.borderWidth = 3
         clockRearView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         clockRearView.layer.cornerRadius = 10
+        
+        configureUnitButtons()
+    }
+    
+    private func configureUnitButtons() {
+        let black = UIColor.blackColor()
+        let green = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+        autoUnits.setTitleColor(black, forState: .Normal)
+        metricUnits.setTitleColor(black, forState: .Normal)
+        ukUnits.setTitleColor(black, forState: .Normal)
+        usUnits.setTitleColor(black, forState: .Normal)
+        let units = readSetting("units", defaultValue: "auto")
+        print("Units \(units).")
+        switch units {
+        case "auto":
+            autoUnits.setTitleColor(green, forState: .Normal)
+        case "ca":
+            metricUnits.setTitleColor(green, forState: .Normal)
+        case "uk2":
+            ukUnits.setTitleColor(green, forState: .Normal)
+        case "us":
+            usUnits.setTitleColor(green, forState: .Normal)
+        default:
+            break
+        }
     }
     
     @IBAction func flipPanel(sender: UIButton) {
@@ -142,29 +167,19 @@ class ForecastViewController: UIViewController {
     }
     
     @IBAction func switchUnits(sender: UIButton) {
-        print("X")
-        let black = UIColor.blackColor()
-        let green = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
-        autoUnits.setTitleColor(black, forState: .Normal)
-        metricUnits.setTitleColor(black, forState: .Normal)
-        ukUnits.setTitleColor(black, forState: .Normal)
-        usUnits.setTitleColor(black, forState: .Normal)
         switch sender {
         case autoUnits:
-            autoUnits.setTitleColor(green, forState: .Normal)
             writeSetting("units", value: "auto")
         case metricUnits:
-            metricUnits.setTitleColor(green, forState: .Normal)
             writeSetting("units", value: "ca")
         case ukUnits:
-            ukUnits.setTitleColor(green, forState: .Normal)
-            writeSetting("units", value: "uk")
+            writeSetting("units", value: "uk2")
         case usUnits:
-            usUnits.setTitleColor(green, forState: .Normal)
             writeSetting("units", value: "us")
         default:
             break
         }
+        configureUnitButtons()
         updateForecast()
     }
 }

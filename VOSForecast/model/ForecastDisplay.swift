@@ -10,24 +10,29 @@ import Darwin
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        return halfDegree(currentWeather?.temperature) + temperatureUnitsDisplay
+        return rounded(currentWeather?.temperature) + temperatureUnitsDisplay
     }
 
     var currentFeelsLikeDisplay: String {
-        return halfDegree(currentWeather?.apparentTemperature) + temperatureUnitsDisplay
+        return rounded(currentWeather?.apparentTemperature) + temperatureUnitsDisplay
     }
 
     var currentDewPointDisplay: String {
-        return halfDegree(currentWeather?.dewPoint) + temperatureUnitsDisplay
+        return rounded(currentWeather?.dewPoint) + temperatureUnitsDisplay
     }
 
     private func wholeDegree(temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
     }
-    private func halfDegree(temperature: Double?) -> String {
-        var t = String(Double(lround((temperature ?? 0.0) * 2)) / 2.0)
-        if t.characters.last! == "0" {
-            t = String(t.characters.dropLast(2))
+    private func rounded(temperature: Double?) -> String {
+        let t: String
+        if readSetting("units", defaultValue: "auto") == "us" {
+            // Round to nearest degree.
+            t = String(lround(temperature ?? 0.0))
+        } else {
+            // Round to nearest half degree.
+            let temp = String(Double(lround((temperature ?? 0.0) * 2)) / 2.0)
+            t = temp.characters.last! == "0" ? String(temp.characters.dropLast(2)) : temp
         }
         return t
     }
