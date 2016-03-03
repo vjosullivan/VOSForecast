@@ -39,7 +39,7 @@ extension ForecastViewController {
     }
     
     func updateView(forecast: Forecast) {
-        print("Updating forecast...")
+        print("Updating forecast...\n\(forecast.currentWeather)")
     }
     
     override func didReceiveMemoryWarning() {

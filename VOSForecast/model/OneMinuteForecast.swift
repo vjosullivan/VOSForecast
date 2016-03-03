@@ -7,5 +7,10 @@
 //
 
 struct OneMinuteForecast {
-    
+
+    let time: Int?
+    let precipType: String?
+    let precipIntensity: Double?
+    let precipProbability: Double?
+    let precipIntensityError: Double?
 }
