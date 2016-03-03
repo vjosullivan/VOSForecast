@@ -19,10 +19,10 @@ public class ForecastReceiver {
     
     ///  Fetches the weather data and passes it to the supplied handler.
     ///
-    public func fetchWeather(latitude latitude: Double, longitude: Double, handle: (data: NSData?, error: NSError?) -> Void) {
+    public func fetchWeather(latitude latitude: Double, longitude: Double, units: String, handle: (data: NSData?, error: NSError?) -> Void) {
         
         let session = NSURLSession.sharedSession()
-        let weatherURL = forecastURL(latitude: latitude, longitude: longitude)
+        let weatherURL = forecastURL(latitude: latitude, longitude: longitude, units: units)
         let loadDataTask = session.dataTaskWithURL(weatherURL) { (data, response, error) -> Void in
             if let error = error {
                 handle(data: nil, error: error)
@@ -41,7 +41,7 @@ public class ForecastReceiver {
         loadDataTask.resume()
     }
     
-    private func forecastURL(latitude latitude: Double, longitude: Double) -> NSURL {
-        return NSURL(string: "https://api.forecast.io/forecast/\(forecastApiKey)/\(latitude),\(longitude)?units=uk2")!
+    private func forecastURL(latitude latitude: Double, longitude: Double, units: String) -> NSURL {
+        return NSURL(string: "https://api.forecast.io/forecast/\(forecastApiKey)/\(latitude),\(longitude)?units=\(units)")!
     }
 }

@@ -9,21 +9,75 @@
 import UIKit
 
 class ForecastViewController: UIViewController {
-    
+
     // MARK: - Outlets
 
+    @IBOutlet weak var clockView: UIView!
+    @IBOutlet weak var clockFrontView: UIView!
+    @IBOutlet weak var clockRearView: UIView!
+    @IBOutlet weak var clockFlipButton: UIButton!
+
     @IBOutlet weak var currentView: UIView!
+    @IBOutlet weak var currentFrontView: UIView!
+    @IBOutlet weak var currentRearView: UIView!
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var currentFeelsLike: UILabel!
     @IBOutlet weak var currentDewPoint: UILabel!
-
-    @IBOutlet weak var secondView: UIView!
-
+    @IBOutlet weak var currentSummary: UILabel!
+    @IBOutlet weak var currentFrontFlipButton: UIButton!
+    @IBOutlet weak var currentRearFlipButton: UIButton!
+    
+    // MARK: Units
+    
+    @IBOutlet weak var autoUnits: UIButton!
+    @IBOutlet weak var metricUnits: UIButton!
+    @IBOutlet weak var ukUnits: UIButton!
+    @IBOutlet weak var usUnits: UIButton!
+    
     // MARK: - UIViewController functions.
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        let units = readSetting("units", defaultValue: "auto")
         updateForecast()
+    }
+
+    func flip(frontView: UIView, rearView: UIView) {
+        if rearView.hidden {
+            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
+            UIView.transitionWithView(frontView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    frontView.hidden = true
+                },
+                completion: nil)
+
+            UIView.transitionWithView(rearView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    rearView.hidden = false
+                },
+                completion: nil)
+        } else {
+            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
+            UIView.transitionWithView(rearView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    rearView.hidden = true
+                },
+                completion: nil)
+            UIView.transitionWithView(frontView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    frontView.hidden = false
+                },
+                completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +86,10 @@ class ForecastViewController: UIViewController {
     }
 
     // MARK: - Local functions
-    
+
     private func updateForecast() {
-        ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0) {(data, error) in
+        let units = readSetting("units", defaultValue: "auto")
+        ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0, units: units) {(data, error) in
             if let data = data {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let forecast = ForecastBuilder().buildForecast(data) {
@@ -49,22 +104,67 @@ class ForecastViewController: UIViewController {
             }
         }
     }
-    
+
     private func updateView(forecast: Forecast) {
 
         currentTemperature.text = "\(forecast.currentTemperatureDisplay)"
         currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
         currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
+        currentSummary.text     = forecast.currentWeather?.summary
     }
 
     private func configureUI() {
 
-        currentView.layer.borderWidth = 3
-        currentView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
-        currentView.layer.cornerRadius = 10
+        currentFrontView.layer.borderWidth = 3
+        currentFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
+        currentFrontView.layer.cornerRadius = 10
+        currentRearView.layer.borderWidth = 3
+        currentRearView.layer.borderColor = UIColor(red: 1.0, green: 0.6, blue: 0.0, alpha: 1.0).CGColor
+        currentRearView.layer.cornerRadius = 10
 
-        secondView.layer.borderWidth = 3
-        secondView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
-        secondView.layer.cornerRadius = 10
+        clockFrontView.layer.borderWidth = 3
+        clockFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
+        clockFrontView.layer.cornerRadius = 10
+        clockRearView.layer.borderWidth = 3
+        clockRearView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
+        clockRearView.layer.cornerRadius = 10
+    }
+    
+    @IBAction func flipPanel(sender: UIButton) {
+        switch sender {
+        case clockFlipButton:
+            flip(clockFrontView, rearView: clockRearView)
+        case currentFrontFlipButton, currentRearFlipButton:
+            flip(currentFrontView, rearView: currentRearView)
+        default:
+            break
+        }
+    }
+    
+    @IBAction func switchUnits(sender: UIButton) {
+        print("X")
+        let black = UIColor.blackColor()
+        let green = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+        autoUnits.setTitleColor(black, forState: .Normal)
+        metricUnits.setTitleColor(black, forState: .Normal)
+        ukUnits.setTitleColor(black, forState: .Normal)
+        usUnits.setTitleColor(black, forState: .Normal)
+        switch sender {
+        case autoUnits:
+            autoUnits.setTitleColor(green, forState: .Normal)
+            writeSetting("units", value: "auto")
+        case metricUnits:
+            metricUnits.setTitleColor(green, forState: .Normal)
+            writeSetting("units", value: "ca")
+        case ukUnits:
+            ukUnits.setTitleColor(green, forState: .Normal)
+            writeSetting("units", value: "uk")
+        case usUnits:
+            usUnits.setTitleColor(green, forState: .Normal)
+            writeSetting("units", value: "us")
+        default:
+            break
+        }
+        updateForecast()
     }
 }

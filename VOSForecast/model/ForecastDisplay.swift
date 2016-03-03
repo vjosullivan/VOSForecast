@@ -21,8 +21,11 @@ extension Forecast {
         return halfDegree(currentWeather?.dewPoint) + temperatureUnitsDisplay
     }
 
+    private func wholeDegree(temperature: Double?) -> String {
+        return String(lround(temperature ?? 0.0))
+    }
     private func halfDegree(temperature: Double?) -> String {
-        var t = String(round((temperature ?? 0.0) * 2) / 2.0)
+        var t = String(Double(lround((temperature ?? 0.0) * 2)) / 2.0)
         if t.characters.last! == "0" {
             t = String(t.characters.dropLast(2))
         }
