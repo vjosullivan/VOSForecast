@@ -25,10 +25,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockView">
-                                <rect key="frame" x="10" y="28" width="285" height="212.5"/>
+                                <rect key="frame" x="10" y="28" width="285" height="198"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-iq-4Hl" userLabel="frontView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grz-H5-DZ1">
                                                 <rect key="frame" x="-10" y="-28" width="24" height="43"/>
@@ -40,7 +40,7 @@
                                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bl-ya-Z93" userLabel="rearView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFQ-Ag-LJR">
                                                 <rect key="frame" x="8" y="8" width="283" height="21"/>
@@ -60,7 +60,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYG-05-5WB" userLabel="clockFlipButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                         <connections>
                                             <action selector="flipPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Go-rN-oFQ"/>
                                         </connections>
@@ -89,10 +89,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="currentView">
-                                <rect key="frame" x="305" y="28" width="285" height="212.5"/>
+                                <rect key="frame" x="305" y="28" width="285" height="198"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Nd-WkI" userLabel="currentRearView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA6-dl-sr5">
                                                 <rect key="frame" x="8" y="8" width="269" height="21"/>
@@ -179,7 +179,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-4v-eSR" userLabel="currentRearFlipButton">
-                                                <rect key="frame" x="0.0" y="142" width="285" height="70"/>
+                                                <rect key="frame" x="0.0" y="128" width="285" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="4N6-dg-xis"/>
                                                 </constraints>
@@ -229,7 +229,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-Qp-ZRn" userLabel="currentFrontView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtt-0w-MkQ" userLabel="current Weather">
                                                 <rect key="frame" x="8" y="8" width="269" height="21"/>
@@ -250,7 +250,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-cQ-RwI" userLabel="feelsLikeTemp">
-                                                <rect key="frame" x="8" y="146" width="269" height="34"/>
+                                                <rect key="frame" x="8" y="132" width="269" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="0zh-1c-3Va"/>
                                                 </constraints>
@@ -259,7 +259,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dew point: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-Vh-7LT" userLabel="dewPoint">
-                                                <rect key="frame" x="8" y="170" width="269" height="34"/>
+                                                <rect key="frame" x="8" y="156" width="269" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="SN5-ca-7z6"/>
                                                     <constraint firstAttribute="height" constant="34" id="yE7-Nr-4sK"/>
@@ -287,7 +287,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-wE-rUo" userLabel="currentFrontFlipButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="285" height="212.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="285" height="198"/>
                                                 <connections>
                                                     <action selector="flipPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BYC-eG-P9W"/>
                                                 </connections>
@@ -333,11 +333,11 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Le-TE-jzQ" userLabel="solarView">
-                                <rect key="frame" x="10" y="250" width="285" height="212.5"/>
+                                <rect key="frame" x="10" y="236" width="285" height="198"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWI-cm-kdF" userLabel="ViewBR">
-                                <rect key="frame" x="305" y="250" width="285" height="212.5"/>
+                                <rect key="frame" x="305" y="236" width="285" height="198"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-kn-hH4" userLabel="Day0">
@@ -390,10 +390,49 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yum-pz-pfz" userLabel="SevenDaySummary">
-                                <rect key="frame" x="10" y="473" width="580" height="34"/>
+                                <rect key="frame" x="10" y="444" width="580" height="63"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rs-hd-gKu" userLabel="oneHourSummary">
+                                        <rect key="frame" x="8" y="0.0" width="564" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="fze-EJ-w2b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29b-lY-RJz" userLabel="oneWeekSummary">
+                                        <rect key="frame" x="8" y="42" width="564" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="vAg-Ag-008"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-cM-RZz" userLabel="oneDaySummary">
+                                        <rect key="frame" x="8" y="21.5" width="564" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="dTy-9m-ka6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="40v-m2-dBY"/>
+                                    <constraint firstAttribute="trailing" secondItem="bi9-cM-RZz" secondAttribute="trailing" constant="8" id="0Xy-ax-NUC"/>
+                                    <constraint firstAttribute="height" constant="63" id="40v-m2-dBY"/>
+                                    <constraint firstItem="bi9-cM-RZz" firstAttribute="leading" secondItem="Yum-pz-pfz" secondAttribute="leading" constant="8" id="F9U-Lw-gjJ"/>
+                                    <constraint firstItem="29b-lY-RJz" firstAttribute="leading" secondItem="Yum-pz-pfz" secondAttribute="leading" constant="8" id="Iqn-jU-xbr"/>
+                                    <constraint firstAttribute="trailing" secondItem="5rs-hd-gKu" secondAttribute="trailing" constant="8" id="Uox-Mc-fwe"/>
+                                    <constraint firstItem="5rs-hd-gKu" firstAttribute="leading" secondItem="Yum-pz-pfz" secondAttribute="leading" constant="8" id="WsG-JV-dX1"/>
+                                    <constraint firstAttribute="bottom" secondItem="29b-lY-RJz" secondAttribute="bottom" id="h8G-iU-wFx"/>
+                                    <constraint firstItem="5rs-hd-gKu" firstAttribute="top" secondItem="Yum-pz-pfz" secondAttribute="top" id="hX3-dg-5Ok"/>
+                                    <constraint firstItem="bi9-cM-RZz" firstAttribute="centerX" secondItem="Yum-pz-pfz" secondAttribute="centerX" id="p4O-sa-uxP"/>
+                                    <constraint firstItem="bi9-cM-RZz" firstAttribute="centerY" secondItem="Yum-pz-pfz" secondAttribute="centerY" id="uIR-Oj-3Uo"/>
+                                    <constraint firstAttribute="trailing" secondItem="29b-lY-RJz" secondAttribute="trailing" constant="8" id="wl6-ms-kLM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -457,6 +496,9 @@
                         <outlet property="currentTemperature" destination="gFL-x9-rSX" id="loK-bF-NvX"/>
                         <outlet property="currentView" destination="2JY-TW-BR2" id="PLa-Ff-bs8"/>
                         <outlet property="metricUnits" destination="2cr-Vd-Bd5" id="1or-1I-BaP"/>
+                        <outlet property="oneDaySummary" destination="bi9-cM-RZz" id="UoQ-77-GeX"/>
+                        <outlet property="oneHourSummary" destination="5rs-hd-gKu" id="hQA-er-v36"/>
+                        <outlet property="oneWeekSummary" destination="29b-lY-RJz" id="hm4-d4-wLB"/>
                         <outlet property="ukUnits" destination="Abj-em-Z1d" id="dGA-d4-VK3"/>
                         <outlet property="usUnits" destination="n8H-bv-iwS" id="tVW-j7-CpX"/>
                         <outlet property="weatherIcon" destination="Kph-WZ-oBe" id="8eV-sQ-hew"/>

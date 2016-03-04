@@ -36,6 +36,12 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var ukUnits: UIButton!
     @IBOutlet weak var usUnits: UIButton!
 
+    // MARK: Summary
+
+    @IBOutlet weak var oneHourSummary: UILabel!
+    @IBOutlet weak var oneDaySummary: UILabel!
+    @IBOutlet weak var oneWeekSummary: UILabel!
+
     // MARK: - UIViewController functions.
 
     override func viewDidLoad() {
@@ -121,6 +127,10 @@ class ForecastViewController: UIViewController {
         } else {
             weatherIcon.textColor = UIColor.whiteColor()
         }
+
+        oneHourSummary.text = "Next hour: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
+        oneDaySummary.text  = "Next day:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
+        oneWeekSummary.text = "Next week: " + (forecast.sevenDayForecast?.summary ?? "Not available")
     }
 
     private func weatherIcon(iconName: String?) -> String {
