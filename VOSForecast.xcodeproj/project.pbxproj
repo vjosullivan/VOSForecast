@@ -11,6 +11,8 @@
 		3435AA811C89794800ABD789 /* weathericons-regular.glyphs in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */; };
 		3435AA821C89794800ABD789 /* weathericons-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7F1C89794800ABD789 /* weathericons-regular.otf */; };
 		3435AA831C89794800ABD789 /* weathericons-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7F1C89794800ABD789 /* weathericons-regular.otf */; };
+		3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435AA901C8993BB00ABD789 /* WeatherIcons.swift */; };
+		3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3435AA901C8993BB00ABD789 /* WeatherIcons.swift */; };
 		347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
 		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
@@ -56,6 +58,7 @@
 /* Begin PBXFileReference section */
 		3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "weathericons-regular.glyphs"; sourceTree = "<group>"; };
 		3435AA7F1C89794800ABD789 /* weathericons-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular.otf"; sourceTree = "<group>"; };
+		3435AA901C8993BB00ABD789 /* WeatherIcons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIcons.swift; sourceTree = "<group>"; };
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
 		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 				F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */,
 				F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */,
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
+				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -312,6 +316,7 @@
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
 				F181C5441C88DD08008F7189 /* UserDefaults.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
+				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +333,7 @@
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
+				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
 				F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */,

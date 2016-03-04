@@ -116,6 +116,11 @@ class ForecastViewController: UIViewController {
         currentSummary.text     = forecast.currentWeather?.summary
 
         weatherIcon.text = weatherIcon(forecast.currentWeather?.icon)
+        if weatherIcon.text == "\u{F00D}" {
+            weatherIcon.textColor = UIColor.yellowColor()
+        } else {
+            weatherIcon.textColor = UIColor.whiteColor()
+        }
     }
 
     private func weatherIcon(iconName: String?) -> String {
