@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3435AA801C89794800ABD789 /* weathericons-regular.glyphs in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */; };
+		3435AA811C89794800ABD789 /* weathericons-regular.glyphs in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */; };
+		3435AA821C89794800ABD789 /* weathericons-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7F1C89794800ABD789 /* weathericons-regular.otf */; };
+		3435AA831C89794800ABD789 /* weathericons-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7F1C89794800ABD789 /* weathericons-regular.otf */; };
 		347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
 		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
@@ -50,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "weathericons-regular.glyphs"; sourceTree = "<group>"; };
+		3435AA7F1C89794800ABD789 /* weathericons-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular.otf"; sourceTree = "<group>"; };
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
 		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
@@ -92,6 +98,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3435AA7D1C8978F600ABD789 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */,
+				3435AA7F1C89794800ABD789 /* weathericons-regular.otf */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		F1005AEA1C84E1EB00250A3C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,7 @@
 		F1B134261C84CC9700CF48AE /* VOSForecast */ = {
 			isa = PBXGroup;
 			children = (
+				3435AA7D1C8978F600ABD789 /* resources */,
 				F181C5421C88DCBC008F7189 /* Global Functions */,
 				F1472D211C87838300D03DC3 /* model */,
 				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
@@ -260,7 +276,9 @@
 			files = (
 				F1B134321C84CC9A00CF48AE /* LaunchScreen.storyboard in Resources */,
 				F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */,
+				3435AA821C89794800ABD789 /* weathericons-regular.otf in Resources */,
 				F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */,
+				3435AA801C89794800ABD789 /* weathericons-regular.glyphs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +286,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3435AA831C89794800ABD789 /* weathericons-regular.otf in Resources */,
+				3435AA811C89794800ABD789 /* weathericons-regular.glyphs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -445,7 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
