@@ -10,7 +10,11 @@ import UIKit
 
 class CurrentWeatherView: UIView {
 
+    // MARK: - Outlets
+
     @IBOutlet weak var currentTemperature: UILabel!
+
+    // MARK: - IUView functions
 
     override func drawRect(rect: CGRect) {
         let ctx = UIGraphicsGetCurrentContext()
