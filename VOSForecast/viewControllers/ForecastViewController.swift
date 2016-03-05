@@ -175,7 +175,10 @@ class ForecastViewController: UIViewController {
                     if let forecast = ForecastBuilder().buildForecast(data) {
                         self.updateView(forecast)
                     } else {
-                        print("CLONK!")
+                        let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
+                        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                        alertController.addAction(okAction)
+                        self.presentViewController(alertController, animated: true, completion: nil)
                     }
                 }
             }
@@ -235,11 +238,17 @@ class ForecastViewController: UIViewController {
             case "tornado":
                 icon = "\u{F056}"
             default:
-                print("Defaulting for i: \(iconName)")
+                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(okAction)
+                presentViewController(alertController, animated: true, completion: nil)
                 icon = "\u{F075}"
             }
         } else {
-            print("No icon.")
+            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            presentViewController(alertController, animated: true, completion: nil)
             icon = "\u{F095}"
         }
         return icon
