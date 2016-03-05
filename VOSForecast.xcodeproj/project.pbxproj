@@ -166,7 +166,7 @@
 			path = viewControllers;
 			sourceTree = "<group>";
 		};
-		F1472D211C87838300D03DC3 /* model */ = {
+		F1472D211C87838300D03DC3 /* forecastModel */ = {
 			isa = PBXGroup;
 			children = (
 				F1472D221C87840E00D03DC3 /* Forecast.swift */,
@@ -180,7 +180,7 @@
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
 				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 			);
-			path = model;
+			path = forecastModel;
 			sourceTree = "<group>";
 		};
 		F1B1341B1C84CC9600CF48AE = {
@@ -211,7 +211,7 @@
 				F1BF0A161C8A243F0030710A /* clockModel */,
 				3476752D1C89C771000A4C6F /* extensions */,
 				3435AA7D1C8978F600ABD789 /* resources */,
-				F1472D211C87838300D03DC3 /* model */,
+				F1472D211C87838300D03DC3 /* forecastModel */,
 				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
 				F1B134471C84CE6D00CF48AE /* comms */,
 				F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */,
