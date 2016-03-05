@@ -27,10 +27,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockView">
                                 <rect key="frame" x="10" y="28" width="285" height="207"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="40C-9F-Hb3" userLabel="ViewTop" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
-                                        <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-iq-4Hl" userLabel="frontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                         <subviews>
@@ -42,9 +38,6 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Bl-ya-Z93" userLabel="rearView">
                                         <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
@@ -80,15 +73,11 @@
                                     <constraint firstItem="7Bl-ya-Z93" firstAttribute="leading" secondItem="SsS-7X-Lnc" secondAttribute="leading" id="45o-FQ-8qC"/>
                                     <constraint firstAttribute="trailing" secondItem="oYG-05-5WB" secondAttribute="trailing" id="Msc-ov-nbA"/>
                                     <constraint firstItem="oYG-05-5WB" firstAttribute="leading" secondItem="SsS-7X-Lnc" secondAttribute="leading" id="P1j-kB-TgM"/>
-                                    <constraint firstItem="40C-9F-Hb3" firstAttribute="top" secondItem="SsS-7X-Lnc" secondAttribute="top" id="QOy-bJ-CiY"/>
-                                    <constraint firstAttribute="trailing" secondItem="40C-9F-Hb3" secondAttribute="trailing" id="Te2-Xg-wXn"/>
                                     <constraint firstAttribute="bottom" secondItem="oYG-05-5WB" secondAttribute="bottom" id="YTp-dZ-0ee"/>
                                     <constraint firstItem="7Bl-ya-Z93" firstAttribute="top" secondItem="SsS-7X-Lnc" secondAttribute="top" id="bhN-aF-bg0"/>
                                     <constraint firstItem="oYG-05-5WB" firstAttribute="top" secondItem="SsS-7X-Lnc" secondAttribute="top" id="e1e-IJ-skf"/>
-                                    <constraint firstAttribute="bottom" secondItem="40C-9F-Hb3" secondAttribute="bottom" id="jUs-eh-N0r"/>
                                     <constraint firstAttribute="bottom" secondItem="7Bl-ya-Z93" secondAttribute="bottom" id="olz-yP-py3"/>
                                     <constraint firstAttribute="bottom" secondItem="Jvx-iq-4Hl" secondAttribute="bottom" id="pad-KH-Ncm"/>
-                                    <constraint firstItem="40C-9F-Hb3" firstAttribute="leading" secondItem="SsS-7X-Lnc" secondAttribute="leading" id="pl1-NM-Jfz"/>
                                     <constraint firstAttribute="width" secondItem="SsS-7X-Lnc" secondAttribute="height" multiplier="1:1" id="s73-18-kpK"/>
                                     <constraint firstItem="Jvx-iq-4Hl" firstAttribute="top" secondItem="SsS-7X-Lnc" secondAttribute="top" id="tC3-sy-JH1"/>
                                     <constraint firstItem="Jvx-iq-4Hl" firstAttribute="leading" secondItem="SsS-7X-Lnc" secondAttribute="leading" id="ziS-Eh-ezZ"/>

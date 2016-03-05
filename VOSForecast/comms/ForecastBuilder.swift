@@ -22,7 +22,6 @@ class ForecastBuilder {
     }
     
     private func parseJSONForecast(json: [String: AnyObject]) -> Forecast {
-        //print("\n\nJSON:\n\(json)\n\n")
         let latitude         = json["latitude"] as? Double
         let longitude        = json["longitude"] as? Double
         let currentWeather   = parseCurrentWeather(json)

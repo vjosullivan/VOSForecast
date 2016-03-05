@@ -60,8 +60,6 @@
 		F1BF0A321C8A24660030710A /* TickFifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1F1C8A24660030710A /* TickFifteen.swift */; };
 		F1BF0A331C8A24660030710A /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A201C8A24660030710A /* Hub.swift */; };
 		F1BF0A341C8A24660030710A /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A201C8A24660030710A /* Hub.swift */; };
-		F1BF0A391C8A24B10030710A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A361C8A24B10030710A /* MainViewController.swift */; };
-		F1BF0A3A1C8A24B10030710A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A361C8A24B10030710A /* MainViewController.swift */; };
 		F1BF0A3B1C8A24B10030710A /* VOSClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A371C8A24B10030710A /* VOSClockView.swift */; };
 		F1BF0A3C1C8A24B10030710A /* VOSClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A371C8A24B10030710A /* VOSClockView.swift */; };
 		F1BF0A3D1C8A24B10030710A /* VOSClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */; };
@@ -117,7 +115,6 @@
 		F1BF0A1E1C8A24660030710A /* TickFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickFive.swift; sourceTree = "<group>"; };
 		F1BF0A1F1C8A24660030710A /* TickFifteen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickFifteen.swift; sourceTree = "<group>"; };
 		F1BF0A201C8A24660030710A /* Hub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
-		F1BF0A361C8A24B10030710A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1BF0A371C8A24B10030710A /* VOSClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOSClockView.swift; sourceTree = "<group>"; };
 		F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOSClockDelegate.swift; sourceTree = "<group>"; };
 		F1BF0A4C1C8AF97D0030710A /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -269,7 +266,6 @@
 		F1BF0A351C8A24890030710A /* clockView */ = {
 			isa = PBXGroup;
 			children = (
-				F1BF0A361C8A24B10030710A /* MainViewController.swift */,
 				F1BF0A371C8A24B10030710A /* VOSClockView.swift */,
 				F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */,
 			);
@@ -407,7 +403,6 @@
 				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */,
 				F1BF0A4D1C8AF97D0030710A /* UserDefaults.swift in Sources */,
-				F1BF0A391C8A24B10030710A /* MainViewController.swift in Sources */,
 				F1BF0A311C8A24660030710A /* TickFifteen.swift in Sources */,
 				3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */,
 			);
@@ -432,7 +427,6 @@
 				F1BF0A341C8A24660030710A /* Hub.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
 				F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */,
-				F1BF0A3A1C8A24B10030710A /* MainViewController.swift in Sources */,
 				F1BF0A221C8A24660030710A /* ClockHand.swift in Sources */,
 				F1BF0A281C8A24660030710A /* HourHand.swift in Sources */,
 				F1BF0A301C8A24660030710A /* TickFive.swift in Sources */,

@@ -27,7 +27,7 @@ class Hub: UIView {
     }
 
     override func drawRect(rect: CGRect) {
-        print("N")
+
         let clockRadius = min(rect.width, rect.height) / 2.0
         let centre = CGPoint(x: rect.midX, y: rect.midY)
         let circlePath = UIBezierPath(arcCenter: centre, radius: hubRadius * clockRadius, startAngle: 0.0, endAngle: 6.3, clockwise: true)

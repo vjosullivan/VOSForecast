@@ -50,7 +50,6 @@ class ClockHand: UIView {
         let clockRadius = min(rect.midX, rect.midY)
         let xOffset = rect.midX - clockRadius
         let yOffset = rect.midY - clockRadius
-        print(clockRadius, xOffset, yOffset, rect.minX, rect.minY)
         // point that is the top of the hand (closes to the edge of the clock)
         let top = CGPointMake(xOffset + clockRadius, yOffset + clockRadius - length * clockRadius);
 

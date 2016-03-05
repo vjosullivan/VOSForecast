@@ -205,7 +205,6 @@ class ForecastViewController: UIViewController {
     }
 
     private func weatherIcon(iconName: String?) -> String {
-        print("Icon: \(iconName)")
         let icon: String
         if let iconName = iconName {
             switch iconName {
@@ -236,9 +235,11 @@ class ForecastViewController: UIViewController {
             case "tornado":
                 icon = "\u{F056}"
             default:
+                print("Defaulting for i: \(iconName)")
                 icon = "\u{F075}"
             }
         } else {
+            print("No icon.")
             icon = "\u{F095}"
         }
         return icon
