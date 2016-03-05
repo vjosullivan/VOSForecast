@@ -71,8 +71,11 @@ class VOSClockView: UIView {
     override func layoutSubviews() {
         if shouldUpdateSubviews {
 
-            let diameter = min(frame.width, frame.height)
-            let clockFrame = CGRect(x: CGFloat(0.0), y: CGFloat(0.0), width: diameter, height: diameter)
+            let clockDiameter = min(frame.width, frame.height) * 0.75
+            let clockRadius   = clockDiameter / 2.0
+            let x = frame.midX - clockRadius
+            let y = frame.midY - clockRadius
+            let clockFrame = CGRect(x: x, y: y, width: clockDiameter, height: clockDiameter)
             hourHand = HourHand(frame: clockFrame)
             addSubview(hourHand!)
 

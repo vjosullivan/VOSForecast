@@ -10,12 +10,11 @@ import UIKit
 
 class CurrentWeatherView: UIView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    @IBOutlet weak var currentTemperature: UILabel!
 
+    override func drawRect(rect: CGRect) {
+        let ctx = UIGraphicsGetCurrentContext()
+
+        print("Drawn current weather rect.")
+    }
 }

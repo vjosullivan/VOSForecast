@@ -30,6 +30,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var currentView: UIView!
     @IBOutlet weak var currentFrontView: UIView!
     @IBOutlet weak var currentRearView: UIView!
+
+    // TODO: Move these fields to the view.
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var currentFeelsLike: UILabel!
     @IBOutlet weak var currentDewPoint: UILabel!

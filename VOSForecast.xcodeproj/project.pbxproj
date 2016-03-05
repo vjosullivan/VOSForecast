@@ -17,6 +17,12 @@
 		347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
 		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
+		F1059F771C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */; };
+		F1059F781C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */; };
+		F1059F7A1C8B3C180025EF69 /* VOSClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F791C8B3C180025EF69 /* VOSClockViewController.swift */; };
+		F1059F7B1C8B3C180025EF69 /* VOSClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F791C8B3C180025EF69 /* VOSClockViewController.swift */; };
+		F1059F7D1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */; };
+		F1059F7E1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */; };
 		F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* OneDayForecast.swift */; };
@@ -87,6 +93,9 @@
 		3476752E1C89C79E000A4C6F /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
 		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
+		F1059F791C8B3C180025EF69 /* VOSClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOSClockViewController.swift; sourceTree = "<group>"; };
+		F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* OneDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayForecast.swift; sourceTree = "<group>"; };
 		F1472D241C87840E00D03DC3 /* OneHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHourForecast.swift; sourceTree = "<group>"; };
@@ -166,6 +175,15 @@
 			path = viewControllers;
 			sourceTree = "<group>";
 		};
+		F1059F751C8B36320025EF69 /* currentWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */,
+				F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */,
+			);
+			path = currentWeatherView;
+			sourceTree = "<group>";
+		};
 		F1472D211C87838300D03DC3 /* forecastModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +227,7 @@
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
 				F1BF0A351C8A24890030710A /* clockView */,
 				F1BF0A161C8A243F0030710A /* clockModel */,
+				F1059F751C8B36320025EF69 /* currentWeatherView */,
 				3476752D1C89C771000A4C6F /* extensions */,
 				3435AA7D1C8978F600ABD789 /* resources */,
 				F1472D211C87838300D03DC3 /* forecastModel */,
@@ -260,6 +279,7 @@
 			children = (
 				F1BF0A371C8A24B10030710A /* VOSClockView.swift */,
 				F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */,
+				F1059F791C8B3C180025EF69 /* VOSClockViewController.swift */,
 			);
 			path = clockView;
 			sourceTree = "<group>";
@@ -372,10 +392,13 @@
 				F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
 				F1472D361C8784E200D03DC3 /* CurrentWeather.swift in Sources */,
 				F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
+				F1059F7D1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */,
+				F1059F771C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */,
 				F1BF0A331C8A24660030710A /* Hub.swift in Sources */,
 				F1472D381C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */,
+				F1059F7A1C8B3C180025EF69 /* VOSClockViewController.swift in Sources */,
 				F1BF0A2F1C8A24660030710A /* TickFive.swift in Sources */,
 				F1BF0A2D1C8A24660030710A /* TickOne.swift in Sources */,
 				F1BF0A271C8A24660030710A /* HourHand.swift in Sources */,
@@ -406,6 +429,7 @@
 			files = (
 				F1BF0A2C1C8A24660030710A /* TickZero.swift in Sources */,
 				F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
+				F1059F7B1C8B3C180025EF69 /* VOSClockViewController.swift in Sources */,
 				F1472D371C8784E200D03DC3 /* CurrentWeather.swift in Sources */,
 				F1BF0A321C8A24660030710A /* TickFifteen.swift in Sources */,
 				F1BF0A241C8A24660030710A /* SecondHand.swift in Sources */,
@@ -416,12 +440,14 @@
 				F1BF0A3E1C8A24B10030710A /* VOSClockDelegate.swift in Sources */,
 				F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
+				F1059F781C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */,
 				F1BF0A341C8A24660030710A /* Hub.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
 				F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */,
 				F1BF0A221C8A24660030710A /* ClockHand.swift in Sources */,
 				F1BF0A281C8A24660030710A /* HourHand.swift in Sources */,
 				F1BF0A301C8A24660030710A /* TickFive.swift in Sources */,
+				F1059F7E1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */,
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
 				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
