@@ -5,7 +5,7 @@
 //  Created by Vincent O'Sullivan on 03/03/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
-import Darwin
+import Foundation
 
 extension Forecast {
 
@@ -26,7 +26,7 @@ extension Forecast {
     }
     private func rounded(temperature: Double?) -> String {
         let t: String
-        if readSetting("units", defaultValue: "auto") == "us" {
+        if NSUserDefaults.read(key: "units", defaultValue: "auto") == "us" {
             // Round to nearest degree.
             t = String(lround(temperature ?? 0.0))
         } else {

@@ -168,7 +168,7 @@ class ForecastViewController: UIViewController {
     // MARK: - Local functions
 
     private func updateForecast() {
-        let units = readSetting("units", defaultValue: "auto")
+        let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
         ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0, units: units) {(data, error) in
             if let data = data {
                 dispatch_async(dispatch_get_main_queue()) {
@@ -270,7 +270,7 @@ class ForecastViewController: UIViewController {
         metricUnits.setTitleColor(black, forState: .Normal)
         ukUnits.setTitleColor(black, forState: .Normal)
         usUnits.setTitleColor(black, forState: .Normal)
-        let units = readSetting("units", defaultValue: "auto")
+        let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
         switch units {
         case "auto":
             autoUnits.setTitleColor(green, forState: .Normal)
@@ -301,13 +301,13 @@ class ForecastViewController: UIViewController {
     @IBAction func switchUnits(sender: UIButton) {
         switch sender {
         case autoUnits:
-            writeSetting("units", value: "auto")
+            NSUserDefaults.write(key: "units", value: "auto")
         case metricUnits:
-            writeSetting("units", value: "ca")
+            NSUserDefaults.write(key: "units", value: "ca")
         case ukUnits:
-            writeSetting("units", value: "uk2")
+            NSUserDefaults.write(key: "units", value: "uk2")
         case usUnits:
-            writeSetting("units", value: "us")
+            NSUserDefaults.write(key: "units", value: "us")
         default:
             break
         }

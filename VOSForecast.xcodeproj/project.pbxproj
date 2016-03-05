@@ -33,8 +33,6 @@
 		F1472D371C8784E200D03DC3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* CurrentWeather.swift */; };
 		F1472D381C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1472D391C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
-		F181C5441C88DD08008F7189 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181C5431C88DD08008F7189 /* UserDefaults.swift */; };
-		F181C5451C88DD08008F7189 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F181C5431C88DD08008F7189 /* UserDefaults.swift */; };
 		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
 		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
 		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
@@ -68,6 +66,8 @@
 		F1BF0A3C1C8A24B10030710A /* VOSClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A371C8A24B10030710A /* VOSClockView.swift */; };
 		F1BF0A3D1C8A24B10030710A /* VOSClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */; };
 		F1BF0A3E1C8A24B10030710A /* VOSClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */; };
+		F1BF0A4D1C8AF97D0030710A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaults.swift */; };
+		F1BF0A4E1C8AF97D0030710A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaults.swift */; };
 		F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */; };
 		F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -97,7 +97,6 @@
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D341C8784E200D03DC3 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		F1472D351C8784E200D03DC3 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
-		F181C5431C88DD08008F7189 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		F1BF0A361C8A24B10030710A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1BF0A371C8A24B10030710A /* VOSClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOSClockView.swift; sourceTree = "<group>"; };
 		F1BF0A381C8A24B10030710A /* VOSClockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VOSClockDelegate.swift; sourceTree = "<group>"; };
+		F1BF0A4C1C8AF97D0030710A /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		F1FF4A221C84E84D00D22EFF /* ForecastBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +154,7 @@
 		3476752D1C89C771000A4C6F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F1BF0A4C1C8AF97D0030710A /* UserDefaults.swift */,
 				3476752E1C89C79E000A4C6F /* CALayerExtension.swift */,
 			);
 			path = extensions;
@@ -187,7 +188,6 @@
 		F181C5421C88DCBC008F7189 /* Global Functions */ = {
 			isa = PBXGroup;
 			children = (
-				F181C5431C88DD08008F7189 /* UserDefaults.swift */,
 			);
 			name = "Global Functions";
 			path = globalFunctions;
@@ -403,10 +403,10 @@
 				347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */,
 				F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
-				F181C5441C88DD08008F7189 /* UserDefaults.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
 				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */,
+				F1BF0A4D1C8AF97D0030710A /* UserDefaults.swift in Sources */,
 				F1BF0A391C8A24B10030710A /* MainViewController.swift in Sources */,
 				F1BF0A311C8A24660030710A /* TickFifteen.swift in Sources */,
 				3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */,
@@ -425,10 +425,10 @@
 				F1BF0A261C8A24660030710A /* MinuteHand.swift in Sources */,
 				F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F1472D391C8784E200D03DC3 /* Flags.swift in Sources */,
-				F181C5451C88DD08008F7189 /* UserDefaults.swift in Sources */,
 				F1BF0A2A1C8A24660030710A /* TickMark.swift in Sources */,
 				F1BF0A3E1C8A24B10030710A /* VOSClockDelegate.swift in Sources */,
 				F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
+				F1BF0A4E1C8AF97D0030710A /* UserDefaults.swift in Sources */,
 				F1BF0A341C8A24660030710A /* Hub.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
 				F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */,
