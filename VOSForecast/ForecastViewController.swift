@@ -10,6 +10,16 @@ import UIKit
 
 class ForecastViewController: UIViewController {
 
+    // MARK: - Clock properties
+    
+    @IBOutlet weak var mainClock: VOSClockView!
+    
+    var timeText: String = ""
+    
+    internal var hours:   Int = 0
+    internal var minutes: Int = 0
+    internal var seconds: Int = 0
+    
     // MARK: - Outlets
 
     @IBOutlet weak var clockView: UIView!
@@ -38,10 +48,14 @@ class ForecastViewController: UIViewController {
 
     // MARK: Summary
 
+    @IBOutlet weak var oneHourView: UIView!
+    @IBOutlet weak var oneDayView: UIView!
+    @IBOutlet weak var oneWeekView: UIView!
     @IBOutlet weak var oneHourSummary: UILabel!
     @IBOutlet weak var oneDaySummary: UILabel!
     @IBOutlet weak var oneWeekSummary: UILabel!
-
+    @IBOutlet weak var summaryFlipButton: UIButton!
+    
     // MARK: - UIViewController functions.
 
     override func viewDidLoad() {
@@ -50,7 +64,10 @@ class ForecastViewController: UIViewController {
         // TODO: WeatherIcons-Regular
         configureUI()
         updateForecast()
-    }
+    
+        // Configure main clock.
+        mainClock.delegate = self
+}
 
     func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
@@ -88,7 +105,61 @@ class ForecastViewController: UIViewController {
                 completion: nil)
         }
     }
+    
+    func flop(frontView: UIView, middleView: UIView, rearView: UIView) {
+        if !frontView.hidden {
+            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
+            UIView.transitionWithView(frontView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    frontView.hidden = true
+                },
+                completion: nil)
 
+            UIView.transitionWithView(middleView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    middleView.hidden = false
+                },
+                completion: nil)
+        } else if !middleView.hidden {
+            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
+            UIView.transitionWithView(middleView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    middleView.hidden = true
+                },
+                completion: nil)
+
+            UIView.transitionWithView(rearView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    rearView.hidden = false
+                },
+                completion: nil)
+        } else {
+            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
+            UIView.transitionWithView(rearView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    rearView.hidden = true
+                },
+                completion: nil)
+            UIView.transitionWithView(frontView,
+                duration: 1.0,
+                options: transitionOptions,
+                animations: {
+                    frontView.hidden = false
+                },
+                completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -128,9 +199,9 @@ class ForecastViewController: UIViewController {
             weatherIcon.textColor = UIColor.whiteColor()
         }
 
-        oneHourSummary.text = "Next hour: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
-        oneDaySummary.text  = "Next day:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
-        oneWeekSummary.text = "Next week: " + (forecast.sevenDayForecast?.summary ?? "Not available")
+        oneHourSummary.text = "1 hour summary: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
+        oneDaySummary.text  = "24 hour summary:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
+        oneWeekSummary.text = "1 week summary: " + (forecast.sevenDayForecast?.summary ?? "Not available")
     }
 
     private func weatherIcon(iconName: String?) -> String {
@@ -155,7 +226,7 @@ class ForecastViewController: UIViewController {
             case "cloudy":
                 icon = "\u{F002}"
             case "partly-cloudy-day":
-                icon = "\u{F07D}"
+                icon = "\u{F002}"
             case "partly-cloudy-night":
                 icon = "\u{F081}"
             case "hail":
@@ -175,17 +246,17 @@ class ForecastViewController: UIViewController {
 
     private func configureUI() {
 
-        currentFrontView.layer.borderWidth = 3
+        currentFrontView.layer.borderWidth = 1
         currentFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         currentFrontView.layer.cornerRadius = 10
-        currentRearView.layer.borderWidth = 3
+        currentRearView.layer.borderWidth = 1
         currentRearView.layer.borderColor = UIColor(red: 1.0, green: 0.6, blue: 0.0, alpha: 1.0).CGColor
         currentRearView.layer.cornerRadius = 10
 
-        clockFrontView.layer.borderWidth = 3
+        clockFrontView.layer.borderWidth = 1
         clockFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         clockFrontView.layer.cornerRadius = 10
-        clockRearView.layer.borderWidth = 3
+        clockRearView.layer.borderWidth = 1
         clockRearView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         clockRearView.layer.cornerRadius = 10
 
@@ -220,6 +291,8 @@ class ForecastViewController: UIViewController {
             flip(clockFrontView, rearView: clockRearView)
         case currentFrontFlipButton, currentRearFlipButton:
             flip(currentFrontView, rearView: currentRearView)
+        case summaryFlipButton:
+            flop(oneWeekView, middleView: oneDayView, rearView: oneHourView)
         default:
             break
         }
@@ -240,5 +313,15 @@ class ForecastViewController: UIViewController {
         }
         configureUnitButtons()
         updateForecast()
+    }
+}
+
+// MARK: - Extensions
+// MARK: - VOSClockDelegate extension
+
+extension ForecastViewController: VOSClockDelegate {
+    
+    func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
+        timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
 }
