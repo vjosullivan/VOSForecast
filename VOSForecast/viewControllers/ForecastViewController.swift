@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController {
+class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     // MARK: - Clock properties
     
@@ -32,21 +32,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var currentRearView: UIView!
 
     // TODO: Move these fields to the view.
-    @IBOutlet weak var currentTemperature: UILabel!
-    @IBOutlet weak var currentFeelsLike: UILabel!
-    @IBOutlet weak var currentDewPoint: UILabel!
-    @IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentFrontFlipButton: UIButton!
     @IBOutlet weak var currentRearFlipButton: UIButton!
-
-    @IBOutlet weak var weatherIcon: UILabel!
-
-    // MARK: Units
-
-    @IBOutlet weak var autoUnits: UIButton!
-    @IBOutlet weak var metricUnits: UIButton!
-    @IBOutlet weak var ukUnits: UIButton!
-    @IBOutlet weak var usUnits: UIButton!
 
     // MARK: Summary
 
@@ -177,9 +164,12 @@ class ForecastViewController: UIViewController {
 
     // MARK: - Local functions
 
-    private func updateForecast() {
+    func updateForecast() {
         let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
-        ForecastReceiver().fetchWeather(latitude: 51.3, longitude: -1.0, units: units) {(data, error) in
+        let latitude  = 51.3
+        let longitude = -1.0
+        print("Fetching forecast at \(latitude), \(longitude) in \(units).")
+        ForecastReceiver().fetchWeather(latitude: latitude, longitude: longitude, units: units) {(data, error) in
             if let data = data {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let forecast = ForecastBuilder().buildForecast(data) {
@@ -201,68 +191,9 @@ class ForecastViewController: UIViewController {
 
     private func updateView(forecast: Forecast) {
 
-        currentTemperature.text = "\(forecast.currentTemperatureDisplay)"
-        currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
-        currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
-        currentSummary.text     = forecast.currentWeather?.summary
-
-        weatherIcon.text = weatherIcon(forecast.currentWeather?.icon)
-        if weatherIcon.text == "\u{F00D}" {
-            weatherIcon.textColor = UIColor.yellowColor()
-        } else {
-            weatherIcon.textColor = UIColor.whiteColor()
-        }
-
         oneHourSummary.text = "1 hour summary: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
         oneDaySummary.text  = "24 hour summary:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
         oneWeekSummary.text = "1 week summary: " + (forecast.sevenDayForecast?.summary ?? "Not available")
-    }
-
-    private func weatherIcon(iconName: String?) -> String {
-        let icon: String
-        if let iconName = iconName {
-            switch iconName {
-            case "clear-day":
-                icon = "\u{F00D}"
-            case "clear-night":
-                icon = "\u{F02E}"
-            case "rain":
-                icon = "\u{F008}"
-            case "snow":
-                icon = "\u{F00A}"
-            case "sleet":
-                icon = "\u{F0B2}"
-            case "wind":
-                icon = "\u{F085}"
-            case "fog":
-                icon = "\u{F003}"
-            case "cloudy":
-                icon = "\u{F002}"
-            case "partly-cloudy-day":
-                icon = "\u{F002}"
-            case "partly-cloudy-night":
-                icon = "\u{F081}"
-            case "hail":
-                icon = "\u{F004}"
-            case "thunderstorm":
-                icon = "\u{F010}"
-            case "tornado":
-                icon = "\u{F056}"
-            default:
-                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alertController.addAction(okAction)
-                presentViewController(alertController, animated: true, completion: nil)
-                icon = "\u{F075}"
-            }
-        } else {
-            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(okAction)
-            presentViewController(alertController, animated: true, completion: nil)
-            icon = "\u{F095}"
-        }
-        return icon
     }
 
     private func configureUI() {
@@ -280,30 +211,6 @@ class ForecastViewController: UIViewController {
         clockRearView.layer.borderWidth = 1
         clockRearView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
         clockRearView.layer.cornerRadius = 10
-
-        configureUnitButtons()
-    }
-
-    private func configureUnitButtons() {
-        let black = UIColor.blackColor()
-        let green = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
-        autoUnits.setTitleColor(black, forState: .Normal)
-        metricUnits.setTitleColor(black, forState: .Normal)
-        ukUnits.setTitleColor(black, forState: .Normal)
-        usUnits.setTitleColor(black, forState: .Normal)
-        let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
-        switch units {
-        case "auto":
-            autoUnits.setTitleColor(green, forState: .Normal)
-        case "ca":
-            metricUnits.setTitleColor(green, forState: .Normal)
-        case "uk2":
-            ukUnits.setTitleColor(green, forState: .Normal)
-        case "us":
-            usUnits.setTitleColor(green, forState: .Normal)
-        default:
-            break
-        }
     }
 
     @IBAction func flipPanel(sender: UIButton) {
@@ -319,22 +226,6 @@ class ForecastViewController: UIViewController {
         }
     }
 
-    @IBAction func switchUnits(sender: UIButton) {
-        switch sender {
-        case autoUnits:
-            NSUserDefaults.write(key: "units", value: "auto")
-        case metricUnits:
-            NSUserDefaults.write(key: "units", value: "ca")
-        case ukUnits:
-            NSUserDefaults.write(key: "units", value: "uk2")
-        case usUnits:
-            NSUserDefaults.write(key: "units", value: "us")
-        default:
-            break
-        }
-        configureUnitButtons()
-        updateForecast()
-    }
 }
 
 // MARK: - Extensions
