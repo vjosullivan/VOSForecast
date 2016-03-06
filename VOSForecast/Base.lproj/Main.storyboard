@@ -554,7 +554,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather View Controller">
                                 <rect key="frame" x="305" y="245" width="285" height="208"/>
                                 <connections>
-                                    <segue destination="fht-fT-KZ2" kind="embed" id="Xfe-OO-fBl"/>
+                                    <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -637,7 +637,7 @@
         <!--Current Weather View Controller-->
         <scene sceneID="67a-3g-as2">
             <objects>
-                <viewController id="fht-fT-KZ2" customClass="CurrentWeatherViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currentWeatherVC" id="fht-fT-KZ2" customClass="CurrentWeatherViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3zy-ek-SJT"/>
                         <viewControllerLayoutGuide type="bottom" id="K1z-AX-fSF"/>
@@ -751,7 +751,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="yW4-Ar-cB5" firstAttribute="top" secondItem="buy-hm-jeo" secondAttribute="top" id="0Tm-cl-vWV"/>
                                     <constraint firstItem="Pvc-J9-5UC" firstAttribute="bottom" secondItem="buy-hm-jeo" secondAttribute="bottom" id="3Ce-Ri-amt"/>
@@ -795,6 +795,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="1" green="0.53333333333333333" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlW-Bg-Vx0" userLabel="currentWeatherFrontView">
@@ -809,7 +815,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="temperature">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="currentTemperature">
                                         <rect key="frame" x="8" y="37" width="269" height="83"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="83" id="8GV-49-ZMF"/>
@@ -818,7 +824,7 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-Ag-Jk2" userLabel="feelsLikeTemp">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-Ag-Jk2" userLabel="currentFeelsLike">
                                         <rect key="frame" x="8" y="142" width="269" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="xtY-wr-eGv"/>
@@ -827,7 +833,7 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dew point: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-di-Un4" userLabel="dewPoint">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dew point: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-di-Un4" userLabel="currentDewPoint">
                                         <rect key="frame" x="8" y="166" width="269" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="dam-xS-MSS"/>
@@ -836,7 +842,7 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yt1-yD-JVi" userLabel="Summary">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yt1-yD-JVi" userLabel="currentSummary">
                                         <rect key="frame" x="8" y="120" width="269" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="l6y-z1-Hkk"/>
@@ -861,7 +867,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ERz-o2-rn9" secondAttribute="trailing" id="6eD-XA-lcd"/>
                                     <constraint firstItem="yt1-yD-JVi" firstAttribute="top" secondItem="T2s-M0-wC5" secondAttribute="bottom" id="8nd-ZD-Efs"/>
@@ -890,6 +896,12 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -904,12 +916,11 @@
                             <constraint firstItem="mlW-Bg-Vx0" firstAttribute="leading" secondItem="UF8-kz-Z63" secondAttribute="leading" id="nkp-qc-ZDd"/>
                         </constraints>
                     </view>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="currentDewPoint" destination="ndi-di-Un4" id="i0v-X3-A9g"/>
+                        <outlet property="currentFeelsLike" destination="K7S-Ag-Jk2" id="8fS-Jc-JGZ"/>
+                        <outlet property="currentSummary" destination="yt1-yD-JVi" id="YAb-Pd-TJh"/>
+                        <outlet property="currentTemperature" destination="T2s-M0-wC5" id="Mu6-vg-Kx8"/>
                         <outlet property="frontFlipButton" destination="hqy-Vk-c8U" id="zpV-ak-vvA"/>
                         <outlet property="frontView" destination="mlW-Bg-Vx0" id="7c6-vo-BQF"/>
                         <outlet property="rearFlipButton" destination="Zve-ta-adr" id="GUn-OD-xse"/>
@@ -918,7 +929,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOW-Sn-nGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1003.5" y="143"/>
+            <point key="canvasLocation" x="936.5" y="195"/>
         </scene>
     </scenes>
 </document>

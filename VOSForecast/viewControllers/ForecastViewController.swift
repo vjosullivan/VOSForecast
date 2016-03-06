@@ -57,6 +57,8 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var oneDaySummary: UILabel!
     @IBOutlet weak var oneWeekSummary: UILabel!
     @IBOutlet weak var summaryFlipButton: UIButton!
+
+    var currentWeatherVC: CurrentWeatherViewController?
     
     // MARK: - UIViewController functions.
 
@@ -70,6 +72,12 @@ class ForecastViewController: UIViewController {
         // Configure main clock.
         mainClock.delegate = self
 }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "currentWeatherSegue" {
+            currentWeatherVC = segue.destinationViewController as? CurrentWeatherViewController
+        }
+    }
 
     func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
@@ -176,6 +184,7 @@ class ForecastViewController: UIViewController {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let forecast = ForecastBuilder().buildForecast(data) {
                         self.updateView(forecast)
+                        self.currentWeatherVC!.updateView(forecast)
                     } else {
                         let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
                         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

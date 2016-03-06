@@ -225,6 +225,7 @@
 				F1B134271C84CC9700CF48AE /* AppDelegate.swift */,
 				F1B1342B1C84CC9800CF48AE /* Main.storyboard */,
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
+				F1B134331C84CC9A00CF48AE /* Info.plist */,
 				F1BF0A351C8A24890030710A /* clockView */,
 				F1BF0A161C8A243F0030710A /* clockModel */,
 				F1059F751C8B36320025EF69 /* currentWeatherView */,
@@ -234,7 +235,6 @@
 				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
 				F1B134471C84CE6D00CF48AE /* comms */,
 				F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */,
-				F1B134331C84CC9A00CF48AE /* Info.plist */,
 			);
 			path = VOSForecast;
 			sourceTree = "<group>";

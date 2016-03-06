@@ -18,6 +18,11 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var frontView: CurrentWeatherView!
     @IBOutlet weak var rearView: UIView!
 
+    @IBOutlet weak var currentTemperature: UILabel!
+    @IBOutlet weak var currentFeelsLike: UILabel!
+    @IBOutlet weak var currentDewPoint: UILabel!
+    @IBOutlet weak var currentSummary: UILabel!
+
     // MARK: - UIViewController functions
 
     override func viewDidLoad() {
@@ -43,6 +48,17 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     // MARK: - Functions
+
+    func updateView(forecast: Forecast) {
+
+        dispatch_async(dispatch_get_main_queue()) {
+        print(self.currentTemperature!.text)
+        self.currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
+        self.currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
+        self.currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
+        self.currentSummary.text     = forecast.currentWeather?.summary
+        }
+    }
 
     private func flipViews(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
