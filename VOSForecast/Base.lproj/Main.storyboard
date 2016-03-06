@@ -595,7 +595,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="currentTemperature">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="currentTemperature">
                                         <rect key="frame" x="8" y="37" width="269" height="83"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="83" id="8GV-49-ZMF"/>
@@ -604,7 +604,7 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-Ag-Jk2" userLabel="currentFeelsLike">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K7S-Ag-Jk2" userLabel="currentFeelsLike">
                                         <rect key="frame" x="8" y="141" width="269" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="xtY-wr-eGv"/>
@@ -613,7 +613,7 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dew point: -123°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-di-Un4" userLabel="currentDewPoint">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-di-Un4" userLabel="currentDewPoint">
                                         <rect key="frame" x="8" y="165" width="269" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="dam-xS-MSS"/>
@@ -631,7 +631,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="weatherIcon">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="weatherIcon">
                                         <rect key="frame" x="0.0" y="141" width="285" height="84"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="84" id="Xgp-Vc-UYa"/>

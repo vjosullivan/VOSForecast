@@ -48,7 +48,6 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
         super.viewDidLoad()
 
         configureUI()
-        updateForecast()
     
         // Configure main clock.
         mainClock.delegate = self

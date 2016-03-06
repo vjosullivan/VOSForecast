@@ -37,6 +37,7 @@ class CurrentWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUnitButtons()
     }
 
     override func didReceiveMemoryWarning() {
@@ -173,6 +174,7 @@ class CurrentWeatherViewController: UIViewController {
 
     override func didMoveToParentViewController(parent: UIViewController?) {
         parentVC = parent as? CurrentWeatherVCDelegate
+        parentVC?.updateForecast()
     }
 }
 
