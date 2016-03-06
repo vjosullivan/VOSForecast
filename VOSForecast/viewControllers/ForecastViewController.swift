@@ -22,20 +22,18 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
     
     // MARK: - Outlets
 
+    // MARK: Clock panel
+
     @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var clockFrontView: UIView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
 
-    @IBOutlet weak var currentView: UIView!
-    @IBOutlet weak var currentFrontView: UIView!
-    @IBOutlet weak var currentRearView: UIView!
+    // MARK: Current weather panel
 
-    // TODO: Move these fields to the view.
-    @IBOutlet weak var currentFrontFlipButton: UIButton!
-    @IBOutlet weak var currentRearFlipButton: UIButton!
+    var currentWeatherVC: CurrentWeatherViewController?
 
-    // MARK: Summary
+    // MARK: Summary panel
 
     @IBOutlet weak var oneHourView: UIView!
     @IBOutlet weak var oneDayView: UIView!
@@ -45,14 +43,11 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
     @IBOutlet weak var oneWeekSummary: UILabel!
     @IBOutlet weak var summaryFlipButton: UIButton!
 
-    var currentWeatherVC: CurrentWeatherViewController?
-    
     // MARK: - UIViewController functions.
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // TODO: WeatherIcons-Regular
         configureUI()
         updateForecast()
     
@@ -69,91 +64,28 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
     func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    frontView.hidden = true
-                },
-                completion: nil)
-
-            UIView.transitionWithView(rearView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    rearView.hidden = false
-                },
-                completion: nil)
+            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)
+            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = false }, completion: nil)
         } else {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    rearView.hidden = true
-                },
-                completion: nil)
-            UIView.transitionWithView(frontView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    frontView.hidden = false
-                },
-                completion: nil)
+            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
+            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
         }
     }
     
     func flop(frontView: UIView, middleView: UIView, rearView: UIView) {
         if !frontView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    frontView.hidden = true
-                },
-                completion: nil)
-
-            UIView.transitionWithView(middleView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    middleView.hidden = false
-                },
-                completion: nil)
+            UIView.transitionWithView(frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.hidden  = true  }, completion: nil)
+            UIView.transitionWithView(middleView, duration: 1.0, options: transitionOptions, animations: { middleView.hidden = false }, completion: nil)
         } else if !middleView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(middleView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    middleView.hidden = true
-                },
-                completion: nil)
-
-            UIView.transitionWithView(rearView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    rearView.hidden = false
-                },
-                completion: nil)
+            UIView.transitionWithView(middleView, duration: 1.0, options: transitionOptions, animations: { middleView.hidden = true  }, completion: nil)
+            UIView.transitionWithView(rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.hidden   = false }, completion: nil)
         } else {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    rearView.hidden = true
-                },
-                completion: nil)
-            UIView.transitionWithView(frontView,
-                duration: 1.0,
-                options: transitionOptions,
-                animations: {
-                    frontView.hidden = false
-                },
-                completion: nil)
+            UIView.transitionWithView(rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.hidden   = true  }, completion: nil)
+            UIView.transitionWithView(frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.hidden  = false }, completion: nil)
         }
     }
     
@@ -198,27 +130,12 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     private func configureUI() {
 
-        currentFrontView.layer.borderWidth = 1
-        currentFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
-        currentFrontView.layer.cornerRadius = 10
-        currentRearView.layer.borderWidth = 1
-        currentRearView.layer.borderColor = UIColor(red: 1.0, green: 0.6, blue: 0.0, alpha: 1.0).CGColor
-        currentRearView.layer.cornerRadius = 10
-
-        clockFrontView.layer.borderWidth = 1
-        clockFrontView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
-        clockFrontView.layer.cornerRadius = 10
-        clockRearView.layer.borderWidth = 1
-        clockRearView.layer.borderColor = UIColor(white: 0.5, alpha: 1.0).CGColor
-        clockRearView.layer.cornerRadius = 10
     }
 
     @IBAction func flipPanel(sender: UIButton) {
         switch sender {
         case clockFlipButton:
             flip(clockFrontView, rearView: clockRearView)
-        case currentFrontFlipButton, currentRearFlipButton:
-            flip(currentFrontView, rearView: currentRearView)
         case summaryFlipButton:
             flop(oneWeekView, middleView: oneDayView, rearView: oneHourView)
         default:
@@ -235,5 +152,6 @@ extension ForecastViewController: VOSClockDelegate {
     
     func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
         timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        print(timeText)
     }
 }

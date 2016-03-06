@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockPanel">
                                 <rect key="frame" x="10" y="28" width="285" height="207"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-iq-4Hl" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
@@ -80,109 +80,33 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="currentView">
-                                <rect key="frame" x="305" y="28" width="285" height="207"/>
-                                <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ScC-Nd-WkI" userLabel="currentRearView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMd-ap-kAe">
-                                                <rect key="frame" x="253" y="10" width="22" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="22" id="UsY-iM-Kjd"/>
-                                                    <constraint firstAttribute="width" constant="22" id="tqY-Cf-cWo"/>
-                                                </constraints>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA6-dl-sr5">
-                                                <rect key="frame" x="8" y="8" width="269" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="QSH-FD-Dcx"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Units" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIo-Vn-j5R" userLabel="unitsLabel">
-                                                <rect key="frame" x="8" y="29" width="269" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA0-Hq-33h" userLabel="temperatureUnits">
-                                                <rect key="frame" x="8" y="58" width="269" height="80"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="pyc-bH-mE7"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="75"/>
-                                                <color key="textColor" red="0.56470588235294117" green="0.83137254901960778" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-4v-eSR" userLabel="currentRearFlipButton">
-                                                <rect key="frame" x="0.0" y="137" width="285" height="70"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="70" id="4N6-dg-xis"/>
-                                                </constraints>
-                                                <state key="normal" title="Done"/>
-                                                <connections>
-                                                    <action selector="flipPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nbG-MT-598"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="LIo-Vn-j5R" firstAttribute="top" secondItem="CA6-dl-sr5" secondAttribute="bottom" id="24H-Oc-32v"/>
-                                            <constraint firstItem="CA6-dl-sr5" firstAttribute="leading" secondItem="ScC-Nd-WkI" secondAttribute="leading" constant="8" id="58E-rW-fpH"/>
-                                            <constraint firstAttribute="trailing" secondItem="LIo-Vn-j5R" secondAttribute="trailing" constant="8" id="8vN-mX-QW8"/>
-                                            <constraint firstAttribute="bottom" secondItem="dyR-4v-eSR" secondAttribute="bottom" id="Dt3-sb-7Wt"/>
-                                            <constraint firstItem="LIo-Vn-j5R" firstAttribute="leading" secondItem="ScC-Nd-WkI" secondAttribute="leading" constant="8" id="JFs-C4-lig"/>
-                                            <constraint firstItem="CA6-dl-sr5" firstAttribute="top" secondItem="ScC-Nd-WkI" secondAttribute="top" constant="8" id="Mca-vJ-3ms"/>
-                                            <constraint firstAttribute="trailing" secondItem="oMd-ap-kAe" secondAttribute="trailing" constant="10" id="Oja-tC-Pm6"/>
-                                            <constraint firstItem="dyR-4v-eSR" firstAttribute="leading" secondItem="ScC-Nd-WkI" secondAttribute="leading" id="R0r-B3-R4R"/>
-                                            <constraint firstAttribute="trailing" secondItem="dyR-4v-eSR" secondAttribute="trailing" id="SPu-O6-ppv"/>
-                                            <constraint firstItem="hA0-Hq-33h" firstAttribute="leading" secondItem="ScC-Nd-WkI" secondAttribute="leading" constant="8" id="WOO-m6-bJJ"/>
-                                            <constraint firstItem="hA0-Hq-33h" firstAttribute="top" secondItem="CA6-dl-sr5" secondAttribute="bottom" constant="29" id="cu7-RN-atZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="hA0-Hq-33h" secondAttribute="trailing" constant="8" id="ozA-kc-b8g"/>
-                                            <constraint firstItem="oMd-ap-kAe" firstAttribute="top" secondItem="ScC-Nd-WkI" secondAttribute="top" constant="10" id="pkb-rv-cH8"/>
-                                            <constraint firstAttribute="trailing" secondItem="CA6-dl-sr5" secondAttribute="trailing" constant="8" id="rF3-g2-i3C"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOG-Qp-ZRn" userLabel="currentWeatherFrontView" customClass="CurrentWeatherView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOa-wE-rUo" userLabel="currentFrontFlipButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
-                                                <connections>
-                                                    <action selector="flipPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BYC-eG-P9W"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="lOa-wE-rUo" firstAttribute="leading" secondItem="BOG-Qp-ZRn" secondAttribute="leading" id="2bu-L8-4Xv"/>
-                                            <constraint firstItem="lOa-wE-rUo" firstAttribute="top" secondItem="BOG-Qp-ZRn" secondAttribute="top" id="54y-Kf-hIy"/>
-                                            <constraint firstAttribute="trailing" secondItem="lOa-wE-rUo" secondAttribute="trailing" id="5eW-T6-M2G"/>
-                                            <constraint firstAttribute="bottom" secondItem="lOa-wE-rUo" secondAttribute="bottom" id="FR7-wR-NDJ"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="BOG-Qp-ZRn" secondAttribute="trailing" id="Ild-M4-4gv"/>
-                                    <constraint firstItem="BOG-Qp-ZRn" firstAttribute="top" secondItem="2JY-TW-BR2" secondAttribute="top" id="P5o-eE-0g9"/>
-                                    <constraint firstAttribute="bottom" secondItem="ScC-Nd-WkI" secondAttribute="bottom" id="XVV-Ah-zby"/>
-                                    <constraint firstItem="ScC-Nd-WkI" firstAttribute="leading" secondItem="2JY-TW-BR2" secondAttribute="leading" id="XYA-qh-Dpy"/>
-                                    <constraint firstAttribute="bottom" secondItem="BOG-Qp-ZRn" secondAttribute="bottom" id="dSY-Y0-7RS"/>
-                                    <constraint firstItem="ScC-Nd-WkI" firstAttribute="top" secondItem="2JY-TW-BR2" secondAttribute="top" id="uEe-LZ-8G9"/>
-                                    <constraint firstItem="BOG-Qp-ZRn" firstAttribute="leading" secondItem="2JY-TW-BR2" secondAttribute="leading" id="xdH-fu-WrN"/>
-                                    <constraint firstAttribute="trailing" secondItem="ScC-Nd-WkI" secondAttribute="trailing" id="z9b-Rs-gpM"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Le-TE-jzQ" userLabel="solarView">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather View Controller">
+                                <rect key="frame" x="305" y="245" width="285" height="208"/>
+                                <connections>
+                                    <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Le-TE-jzQ" userLabel="solarPanel">
                                 <rect key="frame" x="10" y="245" width="285" height="208"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="unusedPanel">
+                                <rect key="frame" x="305" y="28" width="285" height="207"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -394,12 +318,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather View Controller">
-                                <rect key="frame" x="305" y="245" width="285" height="208"/>
-                                <connections>
-                                    <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -449,11 +367,6 @@
                         <outlet property="clockFlipButton" destination="oYG-05-5WB" id="xFo-jC-JkG"/>
                         <outlet property="clockFrontView" destination="Jvx-iq-4Hl" id="2kj-Tt-nGb"/>
                         <outlet property="clockRearView" destination="7Bl-ya-Z93" id="0VS-K9-0hl"/>
-                        <outlet property="currentFrontFlipButton" destination="lOa-wE-rUo" id="cOS-sc-PHj"/>
-                        <outlet property="currentFrontView" destination="BOG-Qp-ZRn" id="f7j-WZ-joL"/>
-                        <outlet property="currentRearFlipButton" destination="dyR-4v-eSR" id="mFq-7K-mI5"/>
-                        <outlet property="currentRearView" destination="ScC-Nd-WkI" id="FjV-Wj-iZb"/>
-                        <outlet property="currentView" destination="2JY-TW-BR2" id="PLa-Ff-bs8"/>
                         <outlet property="mainClock" destination="Jvx-iq-4Hl" id="0AK-ow-nH2"/>
                         <outlet property="oneDaySummary" destination="bi9-cM-RZz" id="UoQ-77-GeX"/>
                         <outlet property="oneDayView" destination="dQK-2x-SkZ" id="rf2-i0-8Zg"/>
