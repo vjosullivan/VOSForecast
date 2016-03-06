@@ -24,7 +24,6 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     // MARK: Clock panel
 
-    @IBOutlet weak var clockView: UIView!
     @IBOutlet weak var clockFrontView: UIView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
@@ -130,6 +129,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     private func configureUI() {
 
+        // Most panels should be able to configure themselves.
     }
 
     @IBAction func flipPanel(sender: UIButton) {

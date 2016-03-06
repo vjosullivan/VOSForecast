@@ -89,19 +89,6 @@ class VOSClockView: UIView {
             addSubview(hub)
             
             startClock()
-            //            if (self.setTimeViaTouch == YES) {
-            //                UIView *panView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-            //                panView.backgroundColor = [UIColor clearColor];
-            //                [self.viewForBaselineLayout addSubview:panView];
-            //
-            //                UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
-            //                panGesture.delegate = self;
-            //                [panGesture setMaximumNumberOfTouches:1];
-            //                [panView addGestureRecognizer:panGesture];
-            //            }
-
-            //delegate?.currentTime(hours: hours, minutes: minutes, seconds: seconds)
-            //delegate?.clockDidFinishLoading(self)
             shouldUpdateSubviews = false
         }
     }
