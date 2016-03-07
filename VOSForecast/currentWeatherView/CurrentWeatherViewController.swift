@@ -31,7 +31,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var ukUnits: UIButton!
     @IBOutlet weak var usUnits: UIButton!
 
-    var parentVC: CurrentWeatherVCDelegate?
+    var parentVC: CurrentWeatherDelegate?
 
     // MARK: - UIViewController functions
 
@@ -173,12 +173,7 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? CurrentWeatherVCDelegate
+        parentVC = parent as? CurrentWeatherDelegate
         parentVC?.updateForecast()
     }
-}
-
-protocol CurrentWeatherVCDelegate {
-
-    func updateForecast()
 }

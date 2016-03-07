@@ -8,11 +8,9 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
+class ForecastViewController: UIViewController, CurrentWeatherDelegate {
 
     // MARK: - Clock properties
-
-    @IBOutlet weak var mainClock: VOSClockView!
 
     var timeText: String = ""
 
@@ -20,15 +18,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
     internal var minutes: Int = 0
     internal var seconds: Int = 0
 
-    // MARK: - Outlets
-
-    // MARK: Clock panel
-
-    @IBOutlet weak var clockFrontView: UIView!
-    @IBOutlet weak var clockRearView: UIView!
-    @IBOutlet weak var clockFlipButton: UIButton!
-
-    // MARK: Current weather panel
+    // MARK: Panels
 
     var currentWeatherVC: CurrentWeatherViewController?
     var clockVC: VOSClockViewController?
@@ -49,9 +39,6 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
         super.viewDidLoad()
 
         configureUI()
-
-        // Configure main clock.
-        mainClock.delegate = self
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -61,18 +48,6 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
             clockVC = segue.destinationViewController as? VOSClockViewController
         }
 
-    }
-
-    func flip(frontView: UIView, rearView: UIView) {
-        if rearView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = false }, completion: nil)
-        } else {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
-        }
     }
 
     func flop(frontView: UIView, middleView: UIView, rearView: UIView) {
@@ -137,8 +112,6 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     @IBAction func flipPanel(sender: UIButton) {
         switch sender {
-        case clockFlipButton:
-            flip(clockFrontView, rearView: clockRearView)
         case summaryFlipButton:
             flop(oneWeekView, middleView: oneDayView, rearView: oneHourView)
         default:
