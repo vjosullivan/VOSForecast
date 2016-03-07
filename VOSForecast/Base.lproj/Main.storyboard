@@ -650,7 +650,7 @@
         <!--Clock View Controller-->
         <scene sceneID="Jp5-RD-NMd">
             <objects>
-                <viewController id="mAM-hm-0rg" customClass="VOSClockViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mAM-hm-0rg" customClass="ClockViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ipu-UG-dAI"/>
                         <viewControllerLayoutGuide type="bottom" id="MUj-es-ABf"/>
@@ -690,7 +690,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.5" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>

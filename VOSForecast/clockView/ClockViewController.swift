@@ -1,5 +1,5 @@
 //
-//  VOSClockViewController.swift
+//  ClockViewController.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 05/03/2016.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class VOSClockViewController: UIViewController {
+class ClockViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var clockFrontView: VOSClockView!
+    @IBOutlet weak var clockFrontView: ClockView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
 
-    var parentVC: VOSClockDelegate?
+    var parentVC: ClockDelegate?
 
     // MARK: - UIViewController functions
 
@@ -67,6 +67,6 @@ class VOSClockViewController: UIViewController {
     }
 
     override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? VOSClockDelegate
+        parentVC = parent as? ClockDelegate
     }
 }

@@ -1,12 +1,12 @@
 //
-//  VOSClockDelegate.swift
-//  VOSClock
+//  ClockDelegate.swift
+//  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 20/02/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
 
-protocol VOSClockDelegate {
+protocol ClockDelegate {
 
     var hours:   Int { get set } // = 10
     var minutes: Int { get set } // = 10

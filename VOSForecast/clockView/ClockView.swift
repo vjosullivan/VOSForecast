@@ -1,6 +1,6 @@
 //
-//  VOSClockView.swift
-//  VOSClock
+//  ClockView.swift
+//  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 20/02/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VOSClockView: UIView {
+class ClockView: UIView {
 
     // MARK: - Propeties
 
@@ -40,7 +40,7 @@ class VOSClockView: UIView {
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
 
-    var delegate: VOSClockDelegate?
+    var delegate: ClockDelegate?
 
     // MARK: - Functions
 
@@ -70,7 +70,7 @@ class VOSClockView: UIView {
             let y = frame.midY - clockRadius
             let clockFrame = CGRect(x: x, y: y, width: clockDiameter, height: clockDiameter)
 
-            // Remove
+            // If refreshing the view, remove the old clock hands.
             if let _ = hourHand, let viewWithTag = viewWithTag(101) {
                 viewWithTag.removeFromSuperview()
             }

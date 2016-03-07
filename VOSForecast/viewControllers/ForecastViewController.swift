@@ -21,7 +21,7 @@ class ForecastViewController: UIViewController, CurrentWeatherDelegate {
     // MARK: Panels
 
     var currentWeatherVC: CurrentWeatherViewController?
-    var clockVC: VOSClockViewController?
+    var clockVC: ClockViewController?
 
     // MARK: Summary panel
 
@@ -45,7 +45,7 @@ class ForecastViewController: UIViewController, CurrentWeatherDelegate {
         if segue.identifier == "currentWeatherSegue" {
             currentWeatherVC = segue.destinationViewController as? CurrentWeatherViewController
         } else if segue.identifier == "clockSegue" {
-            clockVC = segue.destinationViewController as? VOSClockViewController
+            clockVC = segue.destinationViewController as? ClockViewController
         }
 
     }
@@ -122,9 +122,9 @@ class ForecastViewController: UIViewController, CurrentWeatherDelegate {
 }
 
 // MARK: - Extensions
-// MARK: - VOSClockDelegate extension
+// MARK: - ClockDelegate extension
 
-extension ForecastViewController: VOSClockDelegate {
+extension ForecastViewController: ClockDelegate {
 
     func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
         timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
