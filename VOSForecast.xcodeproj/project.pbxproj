@@ -229,11 +229,11 @@
 				F1BF0A351C8A24890030710A /* clockView */,
 				F1BF0A161C8A243F0030710A /* clockModel */,
 				F1059F751C8B36320025EF69 /* currentWeatherView */,
-				3476752D1C89C771000A4C6F /* extensions */,
-				3435AA7D1C8978F600ABD789 /* resources */,
 				F1472D211C87838300D03DC3 /* forecastModel */,
 				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
 				F1B134471C84CE6D00CF48AE /* comms */,
+				3476752D1C89C771000A4C6F /* extensions */,
+				3435AA7D1C8978F600ABD789 /* resources */,
 				F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */,
 			);
 			path = VOSForecast;
@@ -578,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -589,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -11,15 +11,15 @@ import UIKit
 class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 
     // MARK: - Clock properties
-    
+
     @IBOutlet weak var mainClock: VOSClockView!
-    
+
     var timeText: String = ""
-    
+
     internal var hours:   Int = 0
     internal var minutes: Int = 0
     internal var seconds: Int = 0
-    
+
     // MARK: - Outlets
 
     // MARK: Clock panel
@@ -31,6 +31,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
     // MARK: Current weather panel
 
     var currentWeatherVC: CurrentWeatherViewController?
+    var clockVC: VOSClockViewController?
 
     // MARK: Summary panel
 
@@ -48,15 +49,18 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
         super.viewDidLoad()
 
         configureUI()
-    
+
         // Configure main clock.
         mainClock.delegate = self
-}
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "currentWeatherSegue" {
             currentWeatherVC = segue.destinationViewController as? CurrentWeatherViewController
+        } else if segue.identifier == "clockSegue" {
+            clockVC = segue.destinationViewController as? VOSClockViewController
         }
+
     }
 
     func flip(frontView: UIView, rearView: UIView) {
@@ -70,7 +74,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
             UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
         }
     }
-    
+
     func flop(frontView: UIView, middleView: UIView, rearView: UIView) {
         if !frontView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
@@ -86,7 +90,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
             UIView.transitionWithView(frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.hidden  = false }, completion: nil)
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,7 +152,7 @@ class ForecastViewController: UIViewController, CurrentWeatherVCDelegate {
 // MARK: - VOSClockDelegate extension
 
 extension ForecastViewController: VOSClockDelegate {
-    
+
     func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
         timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         print(timeText)
