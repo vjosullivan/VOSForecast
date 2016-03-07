@@ -12,7 +12,7 @@ class VOSClockViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var clockFrontView: UIView!
+    @IBOutlet weak var clockFrontView: VOSClockView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
 
@@ -29,6 +29,16 @@ class VOSClockViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+            print("Landscape: size = \(size.width)x\(size.height)")
+        } else {
+            print("Portrait: size = \(size.width)x\(size.height)")
+        }
+        clockFrontView.shouldUpdateSubviews = true
+        clockFrontView.setNeedsDisplay()
     }
 
     // MARK: - Actions

@@ -21,6 +21,7 @@ class SecondHand: ClockHand {
         length        = 0.9
         offsetLength  = 0.125
         shadowEnabled = false
+        tag           = 103
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -651,25 +651,14 @@
         <scene sceneID="Jp5-RD-NMd">
             <objects>
                 <viewController id="mAM-hm-0rg" customClass="VOSClockViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ipu-UG-dAI"/>
+                        <viewControllerLayoutGuide type="bottom" id="MUj-es-ABf"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dt2-eV-1sk">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.5" width="285" height="207.5"/>
-                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7L-c3-F9Y" userLabel="clockRearView">
                                 <rect key="frame" x="0.0" y="0.5" width="285" height="207.5"/>
                                 <subviews>
@@ -689,6 +678,21 @@
                                     <constraint firstAttribute="trailing" secondItem="BOl-NW-jS6" secondAttribute="trailing" constant="-6" id="9Hn-kh-7tH"/>
                                     <constraint firstItem="BOl-NW-jS6" firstAttribute="top" secondItem="Q7L-c3-F9Y" secondAttribute="top" constant="8" id="gPA-tz-r37"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
+                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.5" width="285" height="207.5"/>
+                                <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -727,7 +731,7 @@
                     </view>
                     <connections>
                         <outlet property="clockFlipButton" destination="Y9J-xZ-XB3" id="aO9-rs-d4s"/>
-                        <outlet property="clockFrontView" destination="wg4-2g-CQu" id="aet-fC-cV3"/>
+                        <outlet property="clockFrontView" destination="wg4-2g-CQu" id="POL-Xn-Cql"/>
                         <outlet property="clockRearView" destination="Q7L-c3-F9Y" id="IZR-xM-hEw"/>
                     </connections>
                 </viewController>

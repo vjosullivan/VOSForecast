@@ -21,6 +21,7 @@ class HourHand: ClockHand {
         length        = 0.5
         offsetLength  = 0.08
         shadowEnabled = false
+        tag           = 101
     }
     
     required init?(coder aDecoder: NSCoder) {

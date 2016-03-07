@@ -23,9 +23,9 @@ class VOSClockView: UIView {
     var digitFont: UIFont    = UIFont(name: "HelveticaNeue-Thin", size: 17)!
     var digitColor: UIColor  = UIColor.whiteColor()
     var digitOuterRadius: CGFloat = 0.9
-    
+
     var showHub: Bool = true
-    
+
     var showTicks: Bool = true
 
     var hours: Int = 9
@@ -64,24 +64,34 @@ class VOSClockView: UIView {
 
     override func layoutSubviews() {
         if shouldUpdateSubviews {
-
             let clockDiameter = min(frame.width, frame.height) * 0.75
             let clockRadius   = clockDiameter / 2.0
             let x = frame.midX - clockRadius
             let y = frame.midY - clockRadius
             let clockFrame = CGRect(x: x, y: y, width: clockDiameter, height: clockDiameter)
+
+            // Remove
+            if let _ = hourHand, let viewWithTag = viewWithTag(101) {
+                viewWithTag.removeFromSuperview()
+            }
             hourHand = HourHand(frame: clockFrame)
             addSubview(hourHand!)
 
+            if let _ = minuteHand, let viewWithTag = viewWithTag(102) {
+                viewWithTag.removeFromSuperview()
+            }
             minuteHand = MinuteHand(frame: clockFrame)
             addSubview(minuteHand!)
 
+            if let _ = secondHand, let viewWithTag = viewWithTag(103) {
+                viewWithTag.removeFromSuperview()
+            }
             secondHand = SecondHand(frame: clockFrame)
             addSubview(secondHand!)
 
             let hub = Hub(frame: clockFrame)
             addSubview(hub)
-            
+
             startClock()
             shouldUpdateSubviews = false
         }
@@ -118,7 +128,7 @@ class VOSClockView: UIView {
         CGContextSetLineWidth(ctx, borderWidth);
         CGContextStrokePath(ctx);
     }
-    
+
     ///  Returns a square `CGRect`, centered on the given `CGRect`.
     ///
     private func clockRect(rect: CGRect) -> CGRect {
@@ -130,7 +140,7 @@ class VOSClockView: UIView {
             clockDiameter - borderWidth,
             clockDiameter - borderWidth)
     }
-    
+
     private func drawTicks(ctx: CGContextRef, rect: CGRect) {
         let degToRads = M_PI / 180.0
         for index in 0..<60 {
