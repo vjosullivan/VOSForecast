@@ -24,8 +24,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather Container">
+                                <rect key="frame" x="305" y="28" width="285" height="207.5"/>
+                                <connections>
+                                    <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Container">
+                                <rect key="frame" x="10" y="28.5" width="285" height="207.5"/>
+                                <connections>
+                                    <segue destination="mAM-hm-0rg" kind="embed" identifier="clockSegue" id="ML6-ri-ZC1"/>
+                                </connections>
+                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockPanel">
-                                <rect key="frame" x="10" y="245" width="285" height="207.5"/>
+                                <rect key="frame" x="10" y="245.5" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SsS-7X-Lnc" secondAttribute="height" multiplier="1:1" id="s73-18-kpK"/>
@@ -47,12 +59,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather Container">
-                                <rect key="frame" x="305" y="28" width="285" height="207.5"/>
-                                <connections>
-                                    <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
-                                </connections>
-                            </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-kn-hH4" userLabel="Day0">
                                 <rect key="frame" x="10" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,12 +282,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Controller">
-                                <rect key="frame" x="10" y="28" width="285" height="207.5"/>
-                                <connections>
-                                    <segue destination="mAM-hm-0rg" kind="embed" identifier="clockSegue" id="ML6-ri-ZC1"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -655,7 +655,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="VOSClockView" customModule="VOSForecast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.5" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
@@ -709,6 +709,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y9J-xZ-XB3" firstAttribute="top" secondItem="Dt2-eV-1sk" secondAttribute="top" id="1CY-Ct-wF2"/>
                             <constraint firstItem="Q7L-c3-F9Y" firstAttribute="top" secondItem="Dt2-eV-1sk" secondAttribute="top" id="53g-ma-8L1"/>
