@@ -2,7 +2,7 @@
 A (forecast.io based) weather station application with additional solar and astronomical information.
 ## Tasks
 ### Clock
-- Orient numbers to circle
+- Orient numbers to circle **done**
 
 ### Weather
 - Add wind information
