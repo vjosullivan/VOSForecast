@@ -16,6 +16,8 @@
 		345BCB131C8D89B1005F5FB7 /* CurrentWeatherDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345BCB121C8D89B1005F5FB7 /* CurrentWeatherDelegate.swift */; };
 		3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3476752E1C89C79E000A4C6F /* CALayerExtension.swift */; };
 		347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
+		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
+		34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
 		F1059F771C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */; };
@@ -94,6 +96,7 @@
 		345BCB121C8D89B1005F5FB7 /* CurrentWeatherDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherDelegate.swift; sourceTree = "<group>"; };
 		3476752E1C89C79E000A4C6F /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
+		34B35A941C9166F9006F6CBA /* CircleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleWriter.swift; sourceTree = "<group>"; };
 		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
 		F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		F1059F791C8B3C180025EF69 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +171,14 @@
 			path = extensions;
 			sourceTree = "<group>";
 		};
+		34B35A901C9166C8006F6CBA /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				34B35A941C9166F9006F6CBA /* CircleWriter.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
 		F1005AEA1C84E1EB00250A3C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +236,7 @@
 		F1B134261C84CC9700CF48AE /* VOSForecast */ = {
 			isa = PBXGroup;
 			children = (
+				34B35A901C9166C8006F6CBA /* utilities */,
 				F1B134271C84CC9700CF48AE /* AppDelegate.swift */,
 				F1B1342B1C84CC9800CF48AE /* Main.storyboard */,
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
@@ -423,6 +435,7 @@
 				F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */,
 				F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				F1BF0A311C8A24660030710A /* TickFifteen.swift in Sources */,
+				34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */,
 				3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,6 +472,7 @@
 				F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */,
 				F1BF0A3C1C8A24B10030710A /* ClockView.swift in Sources */,
+				34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */,
 				F1472D2B1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
