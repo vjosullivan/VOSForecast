@@ -25,7 +25,6 @@ class ClockView: UIView {
     var digitOuterRadius: CGFloat = 0.9
 
     var showHub: Bool = true
-
     var showTicks: Bool = true
 
     var hours: Int = 9
@@ -58,8 +57,16 @@ class ClockView: UIView {
 
         drawClockFace(ctx!, rect: rect)
         drawClockBorder(ctx!, rect: rect)
-        if showDigits { drawDigits(rect) }
-        if showTicks  { drawTicks(ctx!, rect: rect) }
+        let showNumerals = Numerals(rawValue: NSUserDefaults.readInt(key: "numerals", defaultValue: Numerals.Arabic.rawValue))!
+        switch showNumerals {
+        case .None:
+            break
+        case .Roman:
+            drawRomanNumerals(ctx!, rect: rect)
+        case .Arabic:
+            drawArabicNumerals(rect)
+        }
+        drawTicks(ctx!, rect: rect)
     }
 
     override func layoutSubviews() {
@@ -143,23 +150,40 @@ class ClockView: UIView {
 
     private func drawTicks(ctx: CGContextRef, rect: CGRect) {
         let degToRads = M_PI / 180.0
-        for index in 0..<60 {
-            let tick: TickMark
-            if index == 0 {
-                tick = TickZero()
-            } else if index % 15 == 0 {
-                tick = TickFifteen()
-            } else if index % 5 == 0 {
-                tick = TickFive()
-            } else {
-                tick = TickOne()
+        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
+        if showTickMarks != TickMarks.None {
+            for index in 0..<60 {
+                var tick: TickMark?
+                if index == 0 && showTickMarks.rawValue >= TickMarks.TwelveOClock.rawValue {
+                    tick = TickZero()
+                } else if index % 15 == 0 && showTickMarks.rawValue >= TickMarks.Quarters.rawValue {
+                    tick = TickFifteen()
+                } else if index % 5 == 0 && showTickMarks.rawValue >= TickMarks.Hours.rawValue {
+                    tick = TickFive()
+                } else if showTickMarks.rawValue >= TickMarks.Minutes.rawValue {
+                    tick = TickOne()
+                }
+                let tickAngleRadians  = CGFloat((Double(6 * index) - 90.0) * degToRads)
+                if let tick = tick {
+                    tick.draw(ctx, angle: tickAngleRadians, rect: rect)
+                }
             }
-            let tickAngleRadians  = CGFloat((Double(6 * index) - 90.0) * degToRads)
-            tick.draw(ctx, angle: tickAngleRadians, rect: rect)
         }
     }
 
-    private func drawDigits(rect: CGRect) {
+    private func drawRomanNumerals(context: CGContextRef, rect: CGRect) {
+        // Save the context
+        CGContextSaveGState(context)
+        CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
+        CGContextScaleCTM (context, 1, -1)
+        let radius = 0.8 * min(rect.width, rect.height) / 2.0
+        let writer = Circlewriter(context: context, radius: radius)
+        writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)
+        // Restore the context
+        CGContextRestoreGState(context)
+    }
+
+    private func drawArabicNumerals(rect: CGRect) {
         let center = CGPointMake(rect.width / 2.0, rect.height / 2.0)
         let clockRadius = min(rect.width, rect.height) / 2.0
         let markingDistanceFromCenter = clockRadius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
@@ -213,4 +237,20 @@ class ClockView: UIView {
         let degrees = Double(seconds * 6) + 6
         return degrees
     }
+}
+
+// MARK: - Associated enums
+
+enum Numerals: Int {
+    case None   = 0
+    case Roman  = 1
+    case Arabic = 2
+}
+
+enum TickMarks: Int {
+    case None         = 0
+    case TwelveOClock = 1
+    case Quarters     = 2
+    case Hours        = 3
+    case Minutes      = 4
 }

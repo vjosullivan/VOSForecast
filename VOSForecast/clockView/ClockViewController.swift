@@ -18,12 +18,21 @@ class ClockViewController: UIViewController {
 
     var parentVC: ClockDelegate?
 
+    // MARK: - Settings outlets
+
+    @IBOutlet weak var numeralsSetting: UISegmentedControl!
+    @IBOutlet weak var ticksSetting: UISegmentedControl!
+
+    // MARK: - Settings
+
     // MARK: - UIViewController functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "numerals", defaultValue: Numerals.Arabic.rawValue)
+        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +56,21 @@ class ClockViewController: UIViewController {
         switch sender {
         case clockFlipButton:
             flip(clockFrontView, rearView: clockRearView)
+        default:
+            break
+        }
+    }
+
+    @IBAction func actionChangeSettings(sender: UISegmentedControl) {
+        switch sender {
+        case numeralsSetting:
+            NSUserDefaults.writeInt(key: "numerals", value: numeralsSetting.selectedSegmentIndex)
+            clockFrontView.shouldUpdateSubviews = true
+            clockFrontView.setNeedsDisplay()
+        case ticksSetting:
+            NSUserDefaults.writeInt(key: "tickmarks", value: ticksSetting.selectedSegmentIndex)
+            clockFrontView.shouldUpdateSubviews = true
+            clockFrontView.setNeedsDisplay()
         default:
             break
         }

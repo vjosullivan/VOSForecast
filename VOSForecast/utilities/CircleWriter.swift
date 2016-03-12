@@ -10,43 +10,9 @@ import UIKit
 
 class Circlewriter {
 
-    // MARK: - Associated enums
-
-    ///  Describes the angular position of the final word in a list of words drawn on a circle.
-    ///
-    ///  - OnTop:        Centred on the twelve o'clock position.
-    ///  - BeforeTop:    Left of the twelve o'clock position.
-    ///  - OnBottom:     Centred on the six o'clock position.
-    ///  - BeforeBottom: Right of the six o'clock position.
-    ///
-    internal enum LastWord {
-        /// Centres the final word at 12 o'clock.
-        case OnTop
-        /// Centres the final word left of 12 o'clock.
-        case BeforeTop
-        /// Centres the final word at 6 o'clock.
-        case OnBottom
-        /// Centres the final word right of 6 o'clock.
-        case BeforeBottom
-    }
-
-    ///  The way in which words are written around their circle.
-    ///
-    ///  - **Auto**:     Words are written "upright" with respect to viewer.
-    ///  - **Upright**:  All words are written "upright" with respect to the surface of their circle.
-    ///  - **Inverted**: All words are written "upside down" with respect to the surface of their circle.
-    ///
-    enum TextOrientation {
-        /// Words are written "upright" with respect to viewer.<br/>i.e. Words centred on or above the equator of the circle are written "upright" and words below the equator are "inverted".
-        case Auto
-        /// All words are written "upright" with respect to the surface of the circle.
-        case Upright
-        /// All words are written "upside down" with respect to the surface of the circle.
-        case Inverted
-    }
-
     // MARK: - Properties
 
+    /// M_PI as a CGFloat
     let π = CGFloat(M_PI)
 
     let context: CGContextRef
@@ -192,3 +158,43 @@ class Circlewriter {
         CGContextRestoreGState(context)
     }
 }
+
+// MARK: - Associated enums
+// MARK: LastWord
+
+///  Describes the angular position of the final word in a list of words drawn on a circle.
+///
+///  - OnTop:        Centred on the twelve o'clock position.
+///  - BeforeTop:    Left of the twelve o'clock position.
+///  - OnBottom:     Centred on the six o'clock position.
+///  - BeforeBottom: Right of the six o'clock position.
+///
+enum LastWord {
+    /// Centres the final word at 12 o'clock.
+    case OnTop
+    /// Centres the final word left of 12 o'clock.
+    case BeforeTop
+    /// Centres the final word at 6 o'clock.
+    case OnBottom
+    /// Centres the final word right of 6 o'clock.
+    case BeforeBottom
+}
+
+// MARK: TextOrientation
+
+///  The way in which words are written around their circle.
+///
+///  - **Auto**:     Words are written "upright" with respect to viewer.
+///  - **Upright**:  All words are written "upright" with respect to the surface of their circle.
+///  - **Inverted**: All words are written "upside down" with respect to the surface of their circle.
+///
+enum TextOrientation {
+    /// Words are written "upright" with respect to viewer.<br/>i.e. Words centred on or above the equator of the circle are written "upright" and words below the equator are "inverted".
+    case Auto
+    /// All words are written "upright" with respect to the surface of the circle.
+    case Upright
+    /// All words are written "upside down" with respect to the surface of the circle.
+    case Inverted
+}
+
+

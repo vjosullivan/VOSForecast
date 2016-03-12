@@ -12,12 +12,23 @@ extension NSUserDefaults {
     
     class func write(key key: String, value: String) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setValue(value, forKey: key)
+        userDefaults.setValue(value, forKey: "vos.forecast." + key)
         userDefaults.synchronize()
     }
-    
+
+    class func writeInt(key key: String, value: Int) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.setValue(value, forKey: "vos.forecast." + key)
+        userDefaults.synchronize()
+    }
+
     class func read(key key: String, defaultValue: String) -> String {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        return userDefaults.valueForKey(key) as? String ?? defaultValue
+        return userDefaults.valueForKey("vos.forecast." + key) as? String ?? defaultValue
+    }
+
+    class func readInt(key key: String, defaultValue: Int) -> Int {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        return userDefaults.valueForKey("vos.forecast." + key) as? Int ?? defaultValue
     }
 }
