@@ -178,7 +178,17 @@ class ClockView: UIView {
         CGContextScaleCTM (context, 1, -1)
         let radius = 0.8 * min(rect.width, rect.height) / 2.0
         let writer = Circlewriter(context: context, radius: radius)
-        writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)
+        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
+        switch showTickMarks {
+        case .Minutes, .Hours:
+            writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)
+        case .Quarters:
+            writer.write(["III", "VI", "IX", "XII"], lastWord: .OnTop)
+        case .TwelveOClock:
+            writer.write(["XII"], lastWord: .OnTop)
+        case .None:
+            break
+        }
         // Restore the context
         CGContextRestoreGState(context)
     }
@@ -189,6 +199,7 @@ class ClockView: UIView {
         let markingDistanceFromCenter = clockRadius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
         let offset = 4.0
         let hourAngle = 30 * M_PI / 180.0
+        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
         for hourIndex in 0..<12 {
             let hourNumber: NSString = "\((hourIndex + 1 < 10 ? " " : ""))\(hourIndex + 1)"
             let labelX = center.x + (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(cos(hourAngle * (Double(hourIndex) + offset) + M_PI))
@@ -198,7 +209,13 @@ class ClockView: UIView {
                 labelY - digitFont.lineHeight / 2.0,
                 digitFont.lineHeight,
                 digitFont.lineHeight)
-            hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            if (hourIndex + 1) % 12 == 0 && showTickMarks == TickMarks.TwelveOClock {
+                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            } else if (hourIndex + 1) % 3 == 0 && showTickMarks == TickMarks.Quarters {
+                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            } else if showTickMarks == TickMarks.Hours || showTickMarks == TickMarks.Minutes {
+                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            }
         }
     }
 
