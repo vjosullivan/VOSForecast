@@ -18,7 +18,7 @@ class MinuteHand: ClockHand {
         backgroundColor = UIColor.clearColor()
         alpha         = 1.0
         width         = 3.0
-        length        = 0.75
+        length        = 0.7
         offsetLength  = 0.1
         shadowEnabled = false
         tag           = 102

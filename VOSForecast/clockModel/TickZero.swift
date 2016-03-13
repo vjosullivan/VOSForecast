@@ -14,10 +14,10 @@ class TickZero: TickMark {
     
     init() {
         super.init(
-            color: UIColor.yellowColor(),
+            color: UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0),
             alpha: 1.0,
-            innerRadius: 0.85,
-            outerRadius: 0.96,
-            width: 4.0)
+            innerRadius: 0.90,
+            outerRadius: 0.99,
+            width: 3.0)
     }
 }

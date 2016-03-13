@@ -16,8 +16,8 @@ class TickFifteen: TickMark {
         super.init(
             color: UIColor.whiteColor(),
             alpha: 1.0,
-            innerRadius: 0.87,
-            outerRadius: 0.96,
-            width: 3.0)
+            innerRadius: 0.9,
+            outerRadius: 0.99,
+            width: 2.0)
     }
 }

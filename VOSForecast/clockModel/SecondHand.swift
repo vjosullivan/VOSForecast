@@ -13,12 +13,12 @@ class SecondHand: ClockHand {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        color           = UIColor(red: 0.75, green: 0.25, blue: 0.25, alpha: 1.0)
-        borderColor     = UIColor(red: 0.75, green: 0.25, blue: 0.25, alpha: 0.25)
+        color           = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+        borderColor     = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 0.25)
         backgroundColor = UIColor.clearColor()
         alpha         = 1.0
         width         = 1.5
-        length        = 0.9
+        length        = 0.95
         offsetLength  = 0.125
         shadowEnabled = false
         tag           = 103

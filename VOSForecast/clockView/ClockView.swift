@@ -12,18 +12,6 @@ class ClockView: UIView {
 
     // MARK: - Propeties
 
-    var borderColor: UIColor = UIColor.whiteColor()
-    var borderAlpha: CGFloat = 1.0
-    var borderWidth: CGFloat = 3.0
-
-    var faceBackgroundColor: UIColor = UIColor(red: 0.0, green: 25.0 / 255.0, blue: 102.0 / 255.0, alpha: 0.8)
-    var faceBackgroundAlpha: CGFloat = 1.0
-
-    var showDigits: Bool   = true
-    var digitFont: UIFont    = UIFont(name: "HelveticaNeue-Thin", size: 17)!
-    var digitColor: UIColor  = UIColor.whiteColor()
-    var digitOuterRadius: CGFloat = 0.9
-
     var showHub: Bool = true
     var showTicks: Bool = true
 
@@ -53,25 +41,15 @@ class ClockView: UIView {
 
     override func drawRect(rect: CGRect) {
 
-        let ctx = UIGraphicsGetCurrentContext()
-
-        drawClockFace(ctx!, rect: rect)
-        drawClockBorder(ctx!, rect: rect)
-        let showNumerals = Numerals(rawValue: NSUserDefaults.readInt(key: "numerals", defaultValue: Numerals.Arabic.rawValue))!
-        switch showNumerals {
-        case .None:
-            break
-        case .Roman:
-            drawRomanNumerals(ctx!, rect: rect)
-        case .Arabic:
-            drawArabicNumerals(rect)
-        }
-        drawTicks(ctx!, rect: rect)
+        let context = UIGraphicsGetCurrentContext()!
+        ClockFace(context: context, rect: rect).draw()
     }
 
     override func layoutSubviews() {
+        print("A")
         if shouldUpdateSubviews {
-            let clockDiameter = min(frame.width, frame.height) * 0.75
+            print("B")
+            let clockDiameter = min(frame.width, frame.height)
             let clockRadius   = clockDiameter / 2.0
             let x = frame.midX - clockRadius
             let y = frame.midY - clockRadius
@@ -81,6 +59,7 @@ class ClockView: UIView {
             if let _ = hourHand, let viewWithTag = viewWithTag(101) {
                 viewWithTag.removeFromSuperview()
             }
+            print("F", frame, clockFrame)
             hourHand = HourHand(frame: clockFrame)
             addSubview(hourHand!)
 
@@ -121,104 +100,6 @@ class ClockView: UIView {
         }
     }
 
-    private func drawClockFace(ctx: CGContextRef, rect: CGRect) {
-        CGContextAddEllipseInRect(ctx, clockRect(rect));
-        CGContextSetFillColorWithColor(ctx, faceBackgroundColor.CGColor);
-        CGContextSetAlpha(ctx, faceBackgroundAlpha);
-        CGContextFillPath(ctx);
-    }
-
-    private func drawClockBorder(ctx: CGContextRef, rect: CGRect) {
-        CGContextAddEllipseInRect(ctx, clockRect(rect));
-        CGContextSetStrokeColorWithColor(ctx, borderColor.CGColor);
-        CGContextSetAlpha(ctx, borderAlpha);
-        CGContextSetLineWidth(ctx, borderWidth);
-        CGContextStrokePath(ctx);
-    }
-
-    ///  Returns a square `CGRect`, centered on the given `CGRect`.
-    ///
-    private func clockRect(rect: CGRect) -> CGRect {
-        let clockDiameter = min(rect.width, rect.height)
-        let clockRadius   = clockDiameter / 2.0
-        return CGRectMake(
-            rect.origin.x + (rect.width  / 2.0) - clockRadius + borderWidth / 2.0,
-            rect.origin.y + (rect.height / 2.0) - clockRadius + borderWidth / 2.0,
-            clockDiameter - borderWidth,
-            clockDiameter - borderWidth)
-    }
-
-    private func drawTicks(ctx: CGContextRef, rect: CGRect) {
-        let degToRads = M_PI / 180.0
-        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
-        if showTickMarks != TickMarks.None {
-            for index in 0..<60 {
-                var tick: TickMark?
-                if index == 0 && showTickMarks.rawValue >= TickMarks.TwelveOClock.rawValue {
-                    tick = TickZero()
-                } else if index % 15 == 0 && showTickMarks.rawValue >= TickMarks.Quarters.rawValue {
-                    tick = TickFifteen()
-                } else if index % 5 == 0 && showTickMarks.rawValue >= TickMarks.Hours.rawValue {
-                    tick = TickFive()
-                } else if showTickMarks.rawValue >= TickMarks.Minutes.rawValue {
-                    tick = TickOne()
-                }
-                let tickAngleRadians  = CGFloat((Double(6 * index) - 90.0) * degToRads)
-                if let tick = tick {
-                    tick.draw(ctx, angle: tickAngleRadians, rect: rect)
-                }
-            }
-        }
-    }
-
-    private func drawRomanNumerals(context: CGContextRef, rect: CGRect) {
-        // Save the context
-        CGContextSaveGState(context)
-        CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
-        CGContextScaleCTM (context, 1, -1)
-        let radius = 0.8 * min(rect.width, rect.height) / 2.0
-        let writer = Circlewriter(context: context, radius: radius)
-        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
-        switch showTickMarks {
-        case .Minutes, .Hours:
-            writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)
-        case .Quarters:
-            writer.write(["III", "VI", "IX", "XII"], lastWord: .OnTop)
-        case .TwelveOClock:
-            writer.write(["XII"], lastWord: .OnTop)
-        case .None:
-            break
-        }
-        // Restore the context
-        CGContextRestoreGState(context)
-    }
-
-    private func drawArabicNumerals(rect: CGRect) {
-        let center = CGPointMake(rect.width / 2.0, rect.height / 2.0)
-        let clockRadius = min(rect.width, rect.height) / 2.0
-        let markingDistanceFromCenter = clockRadius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
-        let offset = 4.0
-        let hourAngle = 30 * M_PI / 180.0
-        let showTickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
-        for hourIndex in 0..<12 {
-            let hourNumber: NSString = "\((hourIndex + 1 < 10 ? " " : ""))\(hourIndex + 1)"
-            let labelX = center.x + (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(cos(hourAngle * (Double(hourIndex) + offset) + M_PI))
-            let labelY = center.y - (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(sin(hourAngle * (Double(hourIndex) + offset)))
-            let box = CGRectMake(
-                labelX - digitFont.lineHeight / 2.0,
-                labelY - digitFont.lineHeight / 2.0,
-                digitFont.lineHeight,
-                digitFont.lineHeight)
-            if (hourIndex + 1) % 12 == 0 && showTickMarks == TickMarks.TwelveOClock {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            } else if (hourIndex + 1) % 3 == 0 && showTickMarks == TickMarks.Quarters {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            } else if showTickMarks == TickMarks.Hours || showTickMarks == TickMarks.Minutes {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            }
-        }
-    }
-
     func updateClock() {
         getCurrentTime()
 
@@ -232,10 +113,6 @@ class ClockView: UIView {
         hours   = components.hour
         minutes = components.minute
         seconds = components.second
-    }
-
-    private func radians(degrees degrees: Double) -> CGFloat {
-        return CGFloat(degrees * M_PI / 180.0)
     }
 
     private func degreesFrom(hours hours: Int, minutes: Int, seconds: Int) -> Double {
@@ -254,20 +131,4 @@ class ClockView: UIView {
         let degrees = Double(seconds * 6) + 6
         return degrees
     }
-}
-
-// MARK: - Associated enums
-
-enum Numerals: Int {
-    case None   = 0
-    case Roman  = 1
-    case Arabic = 2
-}
-
-enum TickMarks: Int {
-    case None         = 0
-    case TwelveOClock = 1
-    case Quarters     = 2
-    case Hours        = 3
-    case Minutes      = 4
 }

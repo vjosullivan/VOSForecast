@@ -16,8 +16,8 @@ class TickOne: TickMark {
         super.init(
             color: UIColor.whiteColor(),
             alpha: 1.0,
-            innerRadius: 0.90,
-            outerRadius: 0.95,
+            innerRadius: 0.95,
+            outerRadius: 0.99,
             width: 1.0)
     }
 }
