@@ -48,6 +48,10 @@
 		F1472D371C8784E200D03DC3 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* CurrentWeather.swift */; };
 		F1472D381C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1472D391C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
+		F1785B291C95BE8A00013423 /* WindHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B281C95BE8A00013423 /* WindHand.swift */; };
+		F1785B2A1C95BE8A00013423 /* WindHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B281C95BE8A00013423 /* WindHand.swift */; };
+		F1785B2C1C95D9CE00013423 /* CompassHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B2B1C95D9CE00013423 /* CompassHand.swift */; };
+		F1785B2D1C95D9CE00013423 /* CompassHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B2B1C95D9CE00013423 /* CompassHand.swift */; };
 		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
 		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
 		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
@@ -118,6 +122,8 @@
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D341C8784E200D03DC3 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		F1472D351C8784E200D03DC3 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		F1785B281C95BE8A00013423 /* WindHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindHand.swift; sourceTree = "<group>"; };
+		F1785B2B1C95D9CE00013423 /* CompassHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassHand.swift; sourceTree = "<group>"; };
 		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -296,6 +302,8 @@
 				F1BF0A1E1C8A24660030710A /* TickFive.swift */,
 				F1BF0A1F1C8A24660030710A /* TickFifteen.swift */,
 				F1BF0A201C8A24660030710A /* Hub.swift */,
+				F1785B281C95BE8A00013423 /* WindHand.swift */,
+				F1785B2B1C95D9CE00013423 /* CompassHand.swift */,
 			);
 			path = clockModel;
 			sourceTree = "<group>";
@@ -419,6 +427,7 @@
 				F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
 				F1472D361C8784E200D03DC3 /* CurrentWeather.swift in Sources */,
 				F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
+				F1785B2C1C95D9CE00013423 /* CompassHand.swift in Sources */,
 				F1059F7D1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */,
 				F1059F771C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */,
 				345BCB131C8D89B1005F5FB7 /* CurrentWeatherDelegate.swift in Sources */,
@@ -444,6 +453,7 @@
 				F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
+				F1785B291C95BE8A00013423 /* WindHand.swift in Sources */,
 				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */,
 				F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
@@ -466,6 +476,7 @@
 				F1472D371C8784E200D03DC3 /* CurrentWeather.swift in Sources */,
 				F1BF0A321C8A24660030710A /* TickFifteen.swift in Sources */,
 				F1BF0A241C8A24660030710A /* SecondHand.swift in Sources */,
+				F1785B2D1C95D9CE00013423 /* CompassHand.swift in Sources */,
 				F1BF0A261C8A24660030710A /* MinuteHand.swift in Sources */,
 				F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F1472D391C8784E200D03DC3 /* Flags.swift in Sources */,
@@ -475,6 +486,7 @@
 				F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				F1059F781C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */,
 				F1BF0A341C8A24660030710A /* Hub.swift in Sources */,
+				F1785B2A1C95BE8A00013423 /* WindHand.swift in Sources */,
 				F114F12D1C95539D00405C4B /* ClockFace.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
 				F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */,

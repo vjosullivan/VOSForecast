@@ -24,6 +24,7 @@ class CurrentWeatherViewController: UIViewController {
   //@IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
     @IBOutlet weak var currentWind: UILabel!
+    @IBOutlet weak var currentWindView: CurrentWindView!
 
     // MARK: Units
 
@@ -67,7 +68,8 @@ class CurrentWeatherViewController: UIViewController {
       //currentSummary.text     = forecast.currentWeather?.summary
         let speed: Double     = forecast.currentWeather!.windSpeed!
         let direction: Double = forecast.currentWeather!.windBearing!
-        currentWind.text = "\(speed) from \(direction)°"
+        currentWind.text = "\(speed)"
+        currentWindView.windDirection = direction
 
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
         if currentIcon.text == "\u{F00D}" {

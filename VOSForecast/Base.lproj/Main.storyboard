@@ -534,26 +534,38 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="currentTemperature">
                                         <rect key="frame" x="0.0" y="118" width="143" height="89"/>
-                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="75"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Kh-XQT" userLabel="currentWind" customClass="CurrentWindView" customModule="VOSForecast" customModuleProvider="target">
                                         <rect key="frame" x="143" y="118" width="142" height="89"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
-                                                <rect key="frame" x="0.0" y="34" width="142" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
+                                                <rect key="frame" x="0.0" y="17" width="142" height="56"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="g5y-Tl-Rel"/>
+                                                    <constraint firstAttribute="height" constant="56" id="g5y-Tl-Rel"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
+                                                <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-x1-F3j" userLabel="windUnits">
+                                                <rect key="frame" x="78" y="63" width="64" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="hve-A8-KYa"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                 <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.48540434966216217" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="3CV-fv-vNS"/>
                                             <constraint firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="GTX-Ka-gY4"/>
+                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="width" secondItem="hSW-md-KLS" secondAttribute="width" multiplier="0.45" id="GdK-Qy-myp"/>
+                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="top" secondItem="hSW-md-KLS" secondAttribute="bottom" constant="-10" id="KfY-s9-EWC"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="leading" secondItem="Xdy-Kh-XQT" secondAttribute="leading" id="cSh-H2-wDw"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="centerY" secondItem="Xdy-Kh-XQT" secondAttribute="centerY" id="pTh-pV-zRy"/>
                                         </constraints>
@@ -616,6 +628,7 @@
                         <outlet property="currentIcon" destination="ERz-o2-rn9" id="Bw2-Y0-UqB"/>
                         <outlet property="currentTemperature" destination="T2s-M0-wC5" id="Mu6-vg-Kx8"/>
                         <outlet property="currentWind" destination="hSW-md-KLS" id="gow-8R-gmu"/>
+                        <outlet property="currentWindView" destination="Xdy-Kh-XQT" id="aTl-Kt-NYz"/>
                         <outlet property="frontFlipButton" destination="hqy-Vk-c8U" id="zpV-ak-vvA"/>
                         <outlet property="frontView" destination="mlW-Bg-Vx0" id="7c6-vo-BQF"/>
                         <outlet property="metricUnits" destination="bwc-5J-ukI" id="XLe-Ts-7Lj"/>
@@ -693,7 +706,24 @@
                                             <action selector="actionChangeSettings:" destination="mAM-hm-0rg" eventType="valueChanged" id="S3O-1K-57F"/>
                                         </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tick marks (every ... minutes)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMQ-Ee-Llr" userLabel="ticks">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="s72-ac-JfM" userLabel="ticksControl">
+                                        <rect key="frame" x="8" y="110" width="269" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="L56-2w-bfs"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="None"/>
+                                            <segment title="One"/>
+                                            <segment title="Four"/>
+                                            <segment title="Twelve"/>
+                                            <segment title="Sixty"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="actionChangeSettings:" destination="mAM-hm-0rg" eventType="valueChanged" id="ZIM-cu-HYy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tick marks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMQ-Ee-Llr" userLabel="ticks">
                                         <rect key="frame" x="8" y="90" width="269" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="wrw-S4-2X2"/>
@@ -702,23 +732,6 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="s72-ac-JfM" userLabel="ticksControl">
-                                        <rect key="frame" x="8" y="110" width="269" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="L56-2w-bfs"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="None"/>
-                                            <segment title="Single"/>
-                                            <segment title="Quarters"/>
-                                            <segment title="Hours"/>
-                                            <segment title="Minutes"/>
-                                        </segments>
-                                        <color key="tintColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="actionChangeSettings:" destination="mAM-hm-0rg" eventType="valueChanged" id="ZIM-cu-HYy"/>
-                                        </connections>
-                                    </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
