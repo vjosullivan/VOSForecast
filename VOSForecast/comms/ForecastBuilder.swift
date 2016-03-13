@@ -47,6 +47,7 @@ class ForecastBuilder {
     private func parseCurrentWeather(json: [String: AnyObject]) -> CurrentWeather? {
         var currentWeather: CurrentWeather?
         if let currently = json["currently"] as? [String: AnyObject] {
+            print(currently)
             let time = currently["time"] as? Int
             let icon = currently["icon"] as? String
             let summary = currently["summary"] as? String

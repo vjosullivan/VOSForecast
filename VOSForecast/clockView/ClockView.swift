@@ -46,9 +46,7 @@ class ClockView: UIView {
     }
 
     override func layoutSubviews() {
-        print("A")
         if shouldUpdateSubviews {
-            print("B")
             let clockDiameter = min(frame.width, frame.height)
             let clockRadius   = clockDiameter / 2.0
             let x = frame.midX - clockRadius
@@ -59,7 +57,6 @@ class ClockView: UIView {
             if let _ = hourHand, let viewWithTag = viewWithTag(101) {
                 viewWithTag.removeFromSuperview()
             }
-            print("F", frame, clockFrame)
             hourHand = HourHand(frame: clockFrame)
             addSubview(hourHand!)
 

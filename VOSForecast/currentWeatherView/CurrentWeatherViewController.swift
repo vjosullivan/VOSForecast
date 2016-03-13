@@ -19,10 +19,11 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var rearView: UIView!
 
     @IBOutlet weak var currentTemperature: UILabel!
-    @IBOutlet weak var currentFeelsLike: UILabel!
-    @IBOutlet weak var currentDewPoint: UILabel!
-    @IBOutlet weak var currentSummary: UILabel!
+  //@IBOutlet weak var currentFeelsLike: UILabel!
+  //@IBOutlet weak var currentDewPoint: UILabel!
+  //@IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
+    @IBOutlet weak var currentWind: UILabel!
 
     // MARK: Units
 
@@ -61,9 +62,12 @@ class CurrentWeatherViewController: UIViewController {
     func updateView(forecast: Forecast) {
 
         currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
-        currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
-        currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
-        currentSummary.text     = forecast.currentWeather?.summary
+      //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
+      //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
+      //currentSummary.text     = forecast.currentWeather?.summary
+        let speed: Double     = forecast.currentWeather!.windSpeed!
+        let direction: Double = forecast.currentWeather!.windBearing!
+        currentWind.text = "\(speed) from \(direction)°"
 
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
         if currentIcon.text == "\u{F00D}" {

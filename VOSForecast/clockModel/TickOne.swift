@@ -17,7 +17,7 @@ class TickOne: TickMark {
             color: UIColor.whiteColor(),
             alpha: 1.0,
             innerRadius: 0.95,
-            outerRadius: 0.99,
+            outerRadius: 0.97,
             width: 1.0)
     }
 }

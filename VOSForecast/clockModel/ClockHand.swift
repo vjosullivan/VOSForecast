@@ -38,7 +38,7 @@ class ClockHand: UIView {
             self.transform = CGAffineTransformMakeRotation(radians)
         }
 
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: animations, completion: nil)
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: animations, completion: nil)
     }
     
     override func drawRect(rect: CGRect) {
@@ -52,8 +52,6 @@ class ClockHand: UIView {
         let yOffset = rect.midY - clockRadius
         // point that is the top of the hand (closest to the edge of the clock)
         let top = CGPointMake(xOffset + clockRadius, yOffset + clockRadius - length * clockRadius);
-        print(rect)
-        print(clockRadius, top)
         // point at the bottom of the hand, a total distance offsetLength away from
         // the center of rotation.
         let bottom = CGPointMake(xOffset + clockRadius, yOffset + clockRadius + offsetLength * clockRadius);
