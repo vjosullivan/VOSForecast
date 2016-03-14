@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E61b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -25,19 +25,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather Container">
-                                <rect key="frame" x="305" y="28" width="285" height="207"/>
+                                <rect key="frame" x="305" y="28" width="285" height="207.5"/>
                                 <connections>
                                     <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Container">
-                                <rect key="frame" x="10" y="28" width="285" height="207"/>
+                                <rect key="frame" x="10" y="28" width="285" height="207.5"/>
                                 <connections>
                                     <segue destination="mAM-hm-0rg" kind="embed" identifier="clockSegue" id="ML6-ri-ZC1"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="clockPanel">
-                                <rect key="frame" x="10" y="245" width="285" height="208"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SsS-7X-Lnc" userLabel="Solar Container">
+                                <rect key="frame" x="10" y="245" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SsS-7X-Lnc" secondAttribute="height" multiplier="1:1" id="s73-18-kpK"/>
@@ -72,7 +72,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-0h-xXA" userLabel="Day1">
-                                <rect key="frame" x="93" y="509" width="81" height="81"/>
+                                <rect key="frame" x="93" y="509" width="81.5" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GbA-0h-xXA" secondAttribute="height" multiplier="1:1" id="FHn-E1-cjN"/>
@@ -84,7 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
-                                <rect key="frame" x="259" y="509" width="82" height="81"/>
+                                <rect key="frame" x="259.5" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7zJ-qX-tJr" secondAttribute="height" multiplier="1:1" id="yIL-Ak-0QJ"/>
@@ -96,7 +96,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7K-5s-Nfd" userLabel="Day4">
-                                <rect key="frame" x="343" y="509" width="81" height="81"/>
+                                <rect key="frame" x="342" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="k7K-5s-Nfd" secondAttribute="height" multiplier="1:1" id="nZh-px-LoR"/>
@@ -108,7 +108,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrw-qm-sQF" userLabel="Day5">
-                                <rect key="frame" x="426" y="509" width="81" height="81"/>
+                                <rect key="frame" x="425" y="509" width="81.5" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rrw-qm-sQF" secondAttribute="height" multiplier="1:1" id="sQJ-a6-5Qa"/>
@@ -267,8 +267,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="unusedPanel">
-                                <rect key="frame" x="305" y="245" width="285" height="208"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2JY-TW-BR2" userLabel="Other Container">
+                                <rect key="frame" x="305" y="245" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -350,11 +350,11 @@
                         <viewControllerLayoutGuide type="bottom" id="K1z-AX-fSF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UF8-kz-Z63">
-                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                        <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgJ-Mg-eJS" userLabel="currentRearView">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BW-TM-Z6v">
                                         <rect key="frame" x="253" y="10" width="22" height="22"/>
@@ -515,7 +515,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mlW-Bg-Vx0" userLabel="currentWeatherFrontView">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrP-5h-WUn" userLabel="title">
                                         <rect key="frame" x="8" y="8" width="269" height="21"/>
@@ -527,31 +527,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="currentWeather">
-                                        <rect key="frame" x="0.0" y="29" width="285" height="89"/>
+                                        <rect key="frame" x="0.0" y="29" width="285" height="89.5"/>
                                         <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="64"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="currentTemperature">
-                                        <rect key="frame" x="0.0" y="118" width="143" height="89"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
+                                        <rect key="frame" x="0.0" y="118" width="142.5" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
+                                        <rect key="frame" x="56" y="170" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Kh-XQT" userLabel="currentWind" customClass="CurrentWindView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="143" y="118" width="142" height="89"/>
+                                        <rect key="frame" x="142" y="118" width="142.5" height="89"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
-                                                <rect key="frame" x="0.0" y="17" width="142" height="56"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
+                                                <rect key="frame" x="0.0" y="17" width="142.5" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="g5y-Tl-Rel"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                 <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-x1-F3j" userLabel="windUnits">
-                                                <rect key="frame" x="78" y="63" width="64" height="21"/>
+                                                <rect key="frame" x="71" y="63" width="71" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="hve-A8-KYa"/>
                                                 </constraints>
@@ -564,14 +570,14 @@
                                         <constraints>
                                             <constraint firstItem="rQE-x1-F3j" firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="3CV-fv-vNS"/>
                                             <constraint firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="GTX-Ka-gY4"/>
-                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="width" secondItem="hSW-md-KLS" secondAttribute="width" multiplier="0.45" id="GdK-Qy-myp"/>
+                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="width" secondItem="hSW-md-KLS" secondAttribute="width" multiplier="0.5" id="GdK-Qy-myp"/>
                                             <constraint firstItem="rQE-x1-F3j" firstAttribute="top" secondItem="hSW-md-KLS" secondAttribute="bottom" constant="-10" id="KfY-s9-EWC"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="leading" secondItem="Xdy-Kh-XQT" secondAttribute="leading" id="cSh-H2-wDw"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="centerY" secondItem="Xdy-Kh-XQT" secondAttribute="centerY" id="pTh-pV-zRy"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-Vk-c8U" userLabel="currentFrontFlipButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                                         <connections>
                                             <action selector="flipPanel:" destination="fht-fT-KZ2" eventType="touchUpInside" id="h7T-e7-POs"/>
                                         </connections>
@@ -651,11 +657,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MUj-es-ABf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dt2-eV-1sk">
-                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                        <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -670,7 +676,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7L-c3-F9Y" userLabel="clockRearView">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clock Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOl-NW-jS6">
                                         <rect key="frame" x="0.0" y="8" width="285" height="21"/>
@@ -763,7 +769,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9J-xZ-XB3" userLabel="clockFlipButton">
-                                <rect key="frame" x="0.0" y="150" width="285" height="57"/>
+                                <rect key="frame" x="0.0" y="150" width="285" height="57.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="actionFlipPanel:" destination="mAM-hm-0rg" eventType="touchUpInside" id="YjY-kI-Mch"/>

@@ -15,8 +15,9 @@ class WindHand: CompassHand {
         self.direction = direction
         super.init(frame: frame)
 
-        color           = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 0.33)
-        borderColor     = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
+      //color           = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 0.33)
+        color           = UIColor(red: 1.0, green: 1.0, blue: 0.5, alpha: 0.1)
+        borderColor     = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 0.75)
         backgroundColor = UIColor.clearColor()
         alpha         = 1.0
         width         = 20.0

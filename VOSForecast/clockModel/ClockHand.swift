@@ -32,7 +32,7 @@ class ClockHand: UIView {
             self.transform = CGAffineTransformMakeRotation(radians)
         }
 
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: animations, completion: nil)
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: animations, completion: nil)
     }
     
     override func drawRect(rect: CGRect) {

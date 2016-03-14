@@ -66,7 +66,7 @@ class CurrentWeatherViewController: UIViewController {
       //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
       //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
       //currentSummary.text     = forecast.currentWeather?.summary
-        let speed: Double     = forecast.currentWeather!.windSpeed!
+        let speed: Int     = Int(round(forecast.currentWeather!.windSpeed!))
         let direction: Double = forecast.currentWeather!.windBearing!
         currentWind.text = "\(speed)"
         currentWindView.windDirection = direction

@@ -15,7 +15,11 @@ class CurrentWindView: UIView {
     var showHub: Bool = true
     var showTicks: Bool = true
 
-    var windDirection: Double = 0.0
+    var windDirection: Double = 0.0 {
+        didSet {
+            updateCompass()
+        }
+    }
     var windHand: WindHand?
 
     var shouldUpdateSubviews: Bool = true
@@ -40,7 +44,6 @@ class CurrentWindView: UIView {
     }
 
     override func layoutSubviews() {
-        print("Wahey!")
         if shouldUpdateSubviews {
             let compassDiameter = min(frame.width, frame.height)
             let clockFrame = CGRect(x: 0, y: 0, width: compassDiameter, height: compassDiameter)
@@ -64,16 +67,8 @@ class CurrentWindView: UIView {
     }
 
     func updateCompass() {
-//        getCurrentTime()
-        print("Windy Tick, direction \(windDirection)")
-
         windHand!.rotateHand(degrees: windDirection + 180.0)
     }
-
-//    private func getCurrentTime() {
-//        let components = calendar.components([.Hour, .Minute, .Second], fromDate: NSDate())
-//        windDirection = components.second
-//    }
 
     private func degreesFrom(seconds seconds: Int) -> Double {
         // (The + 6 below is "delay" the hand by one second
