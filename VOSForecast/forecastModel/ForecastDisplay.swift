@@ -10,7 +10,7 @@ import Foundation
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        return rounded(currentWeather?.temperature) + temperatureUnitsDisplay
+        return rounded(currentWeather?.temperature) // + temperatureUnitsDisplay
     }
 
     var currentFeelsLikeDisplay: String {

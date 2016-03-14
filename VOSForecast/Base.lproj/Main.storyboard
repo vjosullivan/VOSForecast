@@ -538,16 +538,16 @@
                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
-                                        <rect key="frame" x="56" y="170" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
+                                        <rect key="frame" x="71.5" y="183" width="71" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Kh-XQT" userLabel="currentWind" customClass="CurrentWindView" customModule="VOSForecast" customModuleProvider="target">
                                         <rect key="frame" x="142" y="118" width="142.5" height="89"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windText">
                                                 <rect key="frame" x="0.0" y="17" width="142.5" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="56" id="g5y-Tl-Rel"/>
@@ -557,7 +557,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mph" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-x1-F3j" userLabel="windUnits">
-                                                <rect key="frame" x="71" y="63" width="71" height="21"/>
+                                                <rect key="frame" x="71" y="65" width="71" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="hve-A8-KYa"/>
                                                 </constraints>
@@ -571,7 +571,7 @@
                                             <constraint firstItem="rQE-x1-F3j" firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="3CV-fv-vNS"/>
                                             <constraint firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="GTX-Ka-gY4"/>
                                             <constraint firstItem="rQE-x1-F3j" firstAttribute="width" secondItem="hSW-md-KLS" secondAttribute="width" multiplier="0.5" id="GdK-Qy-myp"/>
-                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="top" secondItem="hSW-md-KLS" secondAttribute="bottom" constant="-10" id="KfY-s9-EWC"/>
+                                            <constraint firstItem="rQE-x1-F3j" firstAttribute="top" secondItem="hSW-md-KLS" secondAttribute="bottom" constant="-8" id="KfY-s9-EWC"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="leading" secondItem="Xdy-Kh-XQT" secondAttribute="leading" id="cSh-H2-wDw"/>
                                             <constraint firstItem="hSW-md-KLS" firstAttribute="centerY" secondItem="Xdy-Kh-XQT" secondAttribute="centerY" id="pTh-pV-zRy"/>
                                         </constraints>
@@ -589,6 +589,7 @@
                                     <constraint firstAttribute="bottom" secondItem="T2s-M0-wC5" secondAttribute="bottom" id="7kI-89-5mx"/>
                                     <constraint firstItem="Xdy-Kh-XQT" firstAttribute="height" secondItem="T2s-M0-wC5" secondAttribute="height" id="BdV-nx-zbJ"/>
                                     <constraint firstItem="T2s-M0-wC5" firstAttribute="top" secondItem="ERz-o2-rn9" secondAttribute="bottom" id="HCl-nX-eFA"/>
+                                    <constraint firstItem="rQE-x1-F3j" firstAttribute="width" secondItem="PJ6-eK-cPi" secondAttribute="width" id="JaF-K0-OyI"/>
                                     <constraint firstAttribute="bottom" secondItem="hqy-Vk-c8U" secondAttribute="bottom" id="Kvz-rf-FJT"/>
                                     <constraint firstItem="hqy-Vk-c8U" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" id="NaS-cm-qBM"/>
                                     <constraint firstAttribute="bottom" secondItem="Xdy-Kh-XQT" secondAttribute="bottom" id="QPj-VR-fqQ"/>
@@ -597,9 +598,12 @@
                                     <constraint firstAttribute="trailing" secondItem="hqy-Vk-c8U" secondAttribute="trailing" id="Tj0-Ef-dKp"/>
                                     <constraint firstItem="hqy-Vk-c8U" firstAttribute="top" secondItem="mlW-Bg-Vx0" secondAttribute="top" id="WgQ-as-0Ni"/>
                                     <constraint firstItem="Xdy-Kh-XQT" firstAttribute="width" secondItem="T2s-M0-wC5" secondAttribute="width" id="Yn4-we-Dcn"/>
+                                    <constraint firstItem="rQE-x1-F3j" firstAttribute="height" secondItem="PJ6-eK-cPi" secondAttribute="height" id="ba4-mJ-53v"/>
                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" id="bwY-0a-uT9"/>
                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="top" secondItem="wrP-5h-WUn" secondAttribute="bottom" id="ema-J0-62W"/>
                                     <constraint firstItem="wrP-5h-WUn" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" constant="8" id="hTk-p7-Y4u"/>
+                                    <constraint firstItem="PJ6-eK-cPi" firstAttribute="trailing" secondItem="T2s-M0-wC5" secondAttribute="trailing" id="lqw-cQ-itr"/>
+                                    <constraint firstItem="rQE-x1-F3j" firstAttribute="top" secondItem="PJ6-eK-cPi" secondAttribute="top" id="nuM-0E-NcK"/>
                                     <constraint firstItem="Xdy-Kh-XQT" firstAttribute="leading" secondItem="T2s-M0-wC5" secondAttribute="trailing" id="s9V-cM-Cxe"/>
                                     <constraint firstItem="wrP-5h-WUn" firstAttribute="top" secondItem="mlW-Bg-Vx0" secondAttribute="top" constant="8" id="u1Z-mP-JWY"/>
                                     <constraint firstItem="T2s-M0-wC5" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" id="vm7-m1-mbV"/>
@@ -640,6 +644,7 @@
                         <outlet property="metricUnits" destination="bwc-5J-ukI" id="XLe-Ts-7Lj"/>
                         <outlet property="rearFlipButton" destination="Zve-ta-adr" id="GUn-OD-xse"/>
                         <outlet property="rearView" destination="fgJ-Mg-eJS" id="Jq8-t7-Mvp"/>
+                        <outlet property="temperatureUnits" destination="PJ6-eK-cPi" id="qLE-Ns-ZGb"/>
                         <outlet property="ukUnits" destination="kXS-1a-gcv" id="tmu-cD-Dkc"/>
                         <outlet property="usUnits" destination="Pvc-J9-5UC" id="IwK-Ub-MTj"/>
                     </connections>

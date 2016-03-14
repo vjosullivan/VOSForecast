@@ -19,6 +19,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var rearView: UIView!
 
     @IBOutlet weak var currentTemperature: UILabel!
+    @IBOutlet weak var temperatureUnits: UILabel!
   //@IBOutlet weak var currentFeelsLike: UILabel!
   //@IBOutlet weak var currentDewPoint: UILabel!
   //@IBOutlet weak var currentSummary: UILabel!
@@ -63,6 +64,7 @@ class CurrentWeatherViewController: UIViewController {
     func updateView(forecast: Forecast) {
 
         currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
+        temperatureUnits!.text   = "\(forecast.temperatureUnitsDisplay)"
       //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
       //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
       //currentSummary.text     = forecast.currentWeather?.summary
