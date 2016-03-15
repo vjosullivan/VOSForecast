@@ -34,7 +34,6 @@ class OtherView: UIView {
 
     override func layoutSubviews() {
         if shouldUpdateSubviews {
-
             // Any permanent visual features can go here.
             shouldUpdateSubviews = false
         }

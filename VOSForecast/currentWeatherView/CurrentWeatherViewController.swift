@@ -18,24 +18,31 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var frontView: UIView!
     @IBOutlet weak var rearView: UIView!
 
-    // Weather
+    // Weather view
+
+    @IBOutlet weak var weatherView: CurrentWeatherView!
     @IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
 
-    // Temperature
+    // Temperature view
 
+    @IBOutlet weak var temperatureView: TemperatureView!
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var temperatureUnits: UILabel!
   //@IBOutlet weak var currentFeelsLike: UILabel!
   //@IBOutlet weak var currentDewPoint: UILabel!
 
-    // Wind
+    // Wind view
 
     @IBOutlet weak var windView: WindView!
     @IBOutlet weak var windSpeed: UILabel!
     @IBOutlet weak var windSpeedUnits: UILabel!
     @IBOutlet weak var beaufort: UILabel!
     @IBOutlet weak var windDescription: UISegmentedControl!
+
+    // Other view
+
+    @IBOutlet weak var otherView: OtherView!
 
     // MARK: Units
 
@@ -56,6 +63,22 @@ class CurrentWeatherViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+            print("Landscape: size = \(size.width)x\(size.height)")
+        } else {
+            print("Portrait: size = \(size.width)x\(size.height)")
+        }
+        weatherView.shouldUpdateSubviews = true
+        weatherView.setNeedsDisplay()
+        windView.shouldUpdateSubviews = true
+        windView.setNeedsDisplay()
+        temperatureView.shouldUpdateSubviews = true
+        temperatureView.setNeedsDisplay()
+        otherView.shouldUpdateSubviews = true
+        otherView.setNeedsDisplay()
     }
 
     // MARK: - Actions
