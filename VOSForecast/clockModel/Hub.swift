@@ -20,6 +20,7 @@ class Hub: UIView {
         hubAlpha  = 1.0
         super.init(frame: frame)
         backgroundColor = UIColor.clearColor()
+        tag = 104   
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -14,6 +14,7 @@ class ClockView: UIView {
 
     var showHub: Bool = true
     var showTicks: Bool = true
+    var hub: Hub?
 
     var hours: Int = 9
     var hourHand: HourHand?
@@ -71,8 +72,11 @@ class ClockView: UIView {
             secondHand = SecondHand(frame: clockFrame)
             addSubview(secondHand!)
 
-            let hub = Hub(frame: clockFrame)
-            addSubview(hub)
+            if let _ = hub, let viewWithTag = viewWithTag(104) {
+                viewWithTag.removeFromSuperview()
+            }
+            hub = Hub(frame: clockFrame)
+            addSubview(hub!)
 
             startClock()
             shouldUpdateSubviews = false
