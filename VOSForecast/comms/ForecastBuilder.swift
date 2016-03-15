@@ -40,7 +40,8 @@ class ForecastBuilder {
             sixtyMinuteForecast: sixtyMinuteForecast,
             flags: flags,
             timezone:  timezone,
-            offset: offset)
+            offset: offset,
+            units: Units(units: flags?.units ?? ""))
         return forecast
     }
     

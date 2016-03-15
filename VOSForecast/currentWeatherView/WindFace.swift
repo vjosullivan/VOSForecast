@@ -29,7 +29,7 @@ class WindFace: UIView {
     init(context: CGContextRef, rect: CGRect) {
         self.context   = context
         self.rect      = rect
-        self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: "WindTicks", defaultValue: WindTicks.ThirtyTwo.rawValue))!
+        self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: "WindTicks", defaultValue: WindTicks.SixtyFour.rawValue))!
         self.letters   = WindLetters(rawValue: NSUserDefaults.readInt(key: "WindLetters", defaultValue: WindLetters.Eight.rawValue))!
         super.init(frame: rect)
     }
@@ -79,15 +79,15 @@ class WindFace: UIView {
                 var tick: TickMark?
                 if index == 0 && windTicks.rawValue >= WindTicks.One.rawValue {
                     tick = TickZero()
-                } else if index % 4 == 0 && windTicks.rawValue >= WindTicks.Four.rawValue {
+                } else if index % 16 == 0 && windTicks.rawValue >= WindTicks.Four.rawValue {
                     tick = TickFifteen()
                 } else if index % 8 == 0 && windTicks.rawValue >= WindTicks.Eight.rawValue {
                     tick = TickFive()
-                } else if index % 16 == 0 && windTicks.rawValue >= WindTicks.Sixteen.rawValue {
+                } else if index % 4 == 0 && windTicks.rawValue >= WindTicks.Sixteen.rawValue {
+                    tick = TickEight()
+                } else if index % 2 == 0 && windTicks.rawValue >= WindTicks.ThirtyTwo.rawValue {
                     tick = TickOne()
-                } else if index % 32 == 0 && windTicks.rawValue >= WindTicks.ThirtyTwo.rawValue {
-                    tick = TickOne()
-                } else if index % 64 == 0 && windTicks.rawValue >= WindTicks.SixtyFour.rawValue {
+                } else if windTicks.rawValue >= WindTicks.SixtyFour.rawValue {
                     tick = TickOne()
                 }
                 let tickAngleRadians  = CGFloat(5.625 * (Double(index) + 48) * degToRads)

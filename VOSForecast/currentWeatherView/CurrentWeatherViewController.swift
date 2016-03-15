@@ -18,14 +18,24 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var frontView: CurrentWeatherView!
     @IBOutlet weak var rearView: UIView!
 
+    // Weather
+    //@IBOutlet weak var currentSummary: UILabel!
+    @IBOutlet weak var currentIcon: UILabel!
+
+    // Temperature
+
     @IBOutlet weak var currentTemperature: UILabel!
     @IBOutlet weak var temperatureUnits: UILabel!
   //@IBOutlet weak var currentFeelsLike: UILabel!
   //@IBOutlet weak var currentDewPoint: UILabel!
-  //@IBOutlet weak var currentSummary: UILabel!
-    @IBOutlet weak var currentIcon: UILabel!
-    @IBOutlet weak var currentWind: UILabel!
-    @IBOutlet weak var currentWindView: CurrentWindView!
+
+    // Wind
+
+    @IBOutlet weak var windView: WindView!
+    @IBOutlet weak var windSpeed: UILabel!
+    @IBOutlet weak var windSpeedUnits: UILabel!
+    @IBOutlet weak var beaufort: UILabel!
+    @IBOutlet weak var windDescription: UISegmentedControl!
 
     // MARK: Units
 
@@ -59,20 +69,39 @@ class CurrentWeatherViewController: UIViewController {
         }
     }
 
+    @IBAction func actionSaveSetting(sender: UISegmentedControl) {
+        if sender == windDescription {
+            NSUserDefaults.write(key: "windDescription", value: ["words", "numbers"][sender.selectedSegmentIndex])
+        }
+        parentVC!.updateForecast()
+    }
+
+
     // MARK: - Functions
 
     func updateView(forecast: Forecast) {
 
         currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
-        temperatureUnits!.text   = "\(forecast.temperatureUnitsDisplay)"
+        temperatureUnits!.text   = "\(forecast.units.temperature)"
       //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
       //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
       //currentSummary.text     = forecast.currentWeather?.summary
-        let speed: Int     = Int(round(forecast.currentWeather!.windSpeed!))
         let direction: Double = forecast.currentWeather!.windBearing!
-        currentWind.text = "\(speed)"
-        currentWindView.windDirection = direction
+        if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {
+            windDescription.selectedSegmentIndex = 0
+            windSpeed.text = ""
+            beaufort.text  = BeaufortScale(speed: forecast.currentWeather!.windSpeed!, units: forecast.units.windSpeed).description
+            windSpeedUnits.text = "from \(Compass(direction: direction).principleWind)"
+        } else {
+            windDescription.selectedSegmentIndex = 1
+            let speed: Int = Int(round(forecast.currentWeather!.windSpeed!))
+            windSpeed.text = "\(speed)"
+            beaufort.text  = ""
+            windSpeedUnits.text = forecast.units.windSpeed
+        }
+        windView.windDirection = direction
 
+        print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
         if currentIcon.text == "\u{F00D}" {
             currentIcon.textColor = UIColor.yellowColor()

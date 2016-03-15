@@ -1,5 +1,5 @@
 //
-//  CurrentWindView.swift
+//  WindView.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 13/03/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWindView: UIView {
+class WindView: UIView {
 
     // MARK: - Propeties
 

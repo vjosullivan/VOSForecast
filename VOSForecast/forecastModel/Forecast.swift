@@ -19,4 +19,6 @@ struct Forecast {
     let flags: Flags?
     let timezone: String?
     let offset: Double?
+
+    let units: Units
 }

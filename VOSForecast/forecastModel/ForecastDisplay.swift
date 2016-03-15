@@ -14,16 +14,17 @@ extension Forecast {
     }
 
     var currentFeelsLikeDisplay: String {
-        return rounded(currentWeather?.apparentTemperature) + temperatureUnitsDisplay
+        return rounded(currentWeather?.apparentTemperature) + self.units.temperature
     }
 
     var currentDewPointDisplay: String {
-        return rounded(currentWeather?.dewPoint) + temperatureUnitsDisplay
+        return rounded(currentWeather?.dewPoint) + self.units.temperature
     }
 
     private func wholeDegree(temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
     }
+    
     private func rounded(temperature: Double?) -> String {
         let t: String
         if NSUserDefaults.read(key: "units", defaultValue: "auto") == "us" {
@@ -35,15 +36,5 @@ extension Forecast {
             t = temp.characters.last! == "0" ? String(temp.characters.dropLast(2)) : temp
         }
         return t
-    }
-
-    var temperatureUnitsDisplay: String {
-        let unit: String
-        if flags?.units == "us" {
-            unit = "°F"
-        } else {
-            unit = "°C"
-        }
-        return unit
     }
 }
