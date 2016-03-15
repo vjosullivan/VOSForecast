@@ -48,9 +48,8 @@ class ClockView: UIView {
     override func layoutSubviews() {
         if shouldUpdateSubviews {
             let clockDiameter = min(frame.width, frame.height)
-            let clockRadius   = clockDiameter / 2.0
-            let x = frame.midX - clockRadius
-            let y = frame.midY - clockRadius
+            let x: CGFloat = 0.0 - min(frame.height - frame.width, 0) / 2.0 //frame.midX - clockRadius
+            let y: CGFloat = 0.0 - min(frame.width - frame.height, 0) / 2.0 //frame.midY - clockRadius
             let clockFrame = CGRect(x: x, y: y, width: clockDiameter, height: clockDiameter)
 
             // If refreshing the view, remove the old clock hands.

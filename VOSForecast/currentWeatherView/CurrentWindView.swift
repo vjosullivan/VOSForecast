@@ -46,7 +46,9 @@ class WindView: UIView {
     override func layoutSubviews() {
         if shouldUpdateSubviews {
             let compassDiameter = min(frame.width, frame.height)
-            let clockFrame = CGRect(x: 0, y: 0, width: compassDiameter, height: compassDiameter)
+            let x: CGFloat = 0.0 - min(frame.height - frame.width, 0) / 2.0 //frame.midX - clockRadius
+            let y: CGFloat = 0.0 - min(frame.width - frame.height, 0) / 2.0 //frame.midY - clockRadius
+            let clockFrame = CGRect(x: x, y: y, width: compassDiameter, height: compassDiameter)
 
             // If refreshing the view, remove the old wind hands.
             if let _ = windHand, let viewWithTag = viewWithTag(111) {

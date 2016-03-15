@@ -24,14 +24,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather Container">
-                                <rect key="frame" x="305" y="28" width="285" height="208"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-f9-Rka" userLabel="Current Weather Container">
+                                <rect key="frame" x="305" y="28" width="285" height="207"/>
                                 <connections>
                                     <segue destination="fht-fT-KZ2" kind="embed" identifier="currentWeatherSegue" id="Xfe-OO-fBl"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Container">
-                                <rect key="frame" x="10" y="28" width="285" height="208"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Container">
+                                <rect key="frame" x="10" y="28" width="285" height="207"/>
                                 <connections>
                                     <segue destination="mAM-hm-0rg" kind="embed" identifier="clockSegue" id="ML6-ri-ZC1"/>
                                 </connections>
@@ -71,8 +71,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-0h-xXA" userLabel="Day1">
-                                <rect key="frame" x="93" y="509" width="82" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-0h-xXA" userLabel="Day1">
+                                <rect key="frame" x="93" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GbA-0h-xXA" secondAttribute="height" multiplier="1:1" id="FHn-E1-cjN"/>
@@ -83,8 +83,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
-                                <rect key="frame" x="260" y="509" width="81" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
+                                <rect key="frame" x="259" y="509" width="82" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7zJ-qX-tJr" secondAttribute="height" multiplier="1:1" id="yIL-Ak-0QJ"/>
@@ -95,8 +95,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k7K-5s-Nfd" userLabel="Day4">
-                                <rect key="frame" x="342" y="509" width="81" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7K-5s-Nfd" userLabel="Day4">
+                                <rect key="frame" x="343" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="k7K-5s-Nfd" secondAttribute="height" multiplier="1:1" id="nZh-px-LoR"/>
@@ -107,8 +107,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rrw-qm-sQF" userLabel="Day5">
-                                <rect key="frame" x="425" y="509" width="82" height="81"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrw-qm-sQF" userLabel="Day5">
+                                <rect key="frame" x="426" y="509" width="81" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Rrw-qm-sQF" secondAttribute="height" multiplier="1:1" id="sQJ-a6-5Qa"/>
@@ -722,7 +722,7 @@
                         <outlet property="windDescription" destination="EF5-GO-xHD" id="Fwa-zP-N7R"/>
                         <outlet property="windSpeed" destination="hSW-md-KLS" id="1v8-WP-lPb"/>
                         <outlet property="windSpeedUnits" destination="rQE-x1-F3j" id="eP1-ll-D8m"/>
-                        <outlet property="windView" destination="Xdy-Kh-XQT" id="aTl-Kt-NYz"/>
+                        <outlet property="windView" destination="Xdy-Kh-XQT" id="i9g-nc-vbJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOW-Sn-nGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -738,27 +738,27 @@
                         <viewControllerLayoutGuide type="bottom" id="MUj-es-ABf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Dt2-eV-1sk">
-                        <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
+                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPP-2z-6CT">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                 <subviews>
-                                    <view opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-77" width="285" height="285"/>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="265" height="187"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" id="K6g-zo-gws"/>
-                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" id="XIQ-qU-2Pj"/>
-                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" id="r3C-f2-0z3"/>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" id="wwX-v6-Mxl"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" constant="10" id="K6g-zo-gws"/>
+                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" constant="10" id="XIQ-qU-2Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" constant="10" id="r3C-f2-0z3"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" constant="10" id="wwX-v6-Mxl"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7L-c3-F9Y" userLabel="clockRearView">
-                                <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
+                                <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clock Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOl-NW-jS6">
                                         <rect key="frame" x="0.0" y="8" width="285" height="21"/>
@@ -851,7 +851,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9J-xZ-XB3" userLabel="clockFlipButton">
-                                <rect key="frame" x="0.0" y="150" width="285" height="58"/>
+                                <rect key="frame" x="0.0" y="150" width="285" height="57"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="actionFlipPanel:" destination="mAM-hm-0rg" eventType="touchUpInside" id="YjY-kI-Mch"/>
