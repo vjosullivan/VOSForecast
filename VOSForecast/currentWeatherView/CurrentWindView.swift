@@ -71,11 +71,4 @@ class WindView: UIView {
     func updateCompass() {
         windHand!.rotateHand(degrees: windDirection + 180.0)
     }
-
-    private func degreesFrom(seconds seconds: Int) -> Double {
-        // (The + 6 below is "delay" the hand by one second
-        //  so that it arrives at the exact time rather than departs.)
-        let degrees = Double(seconds * 6) + 6
-        return degrees
-    }
 }

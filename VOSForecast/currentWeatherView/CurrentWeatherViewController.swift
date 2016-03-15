@@ -15,11 +15,11 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var frontFlipButton: UIButton!
     @IBOutlet weak var rearFlipButton: UIButton!
 
-    @IBOutlet weak var frontView: CurrentWeatherView!
+    @IBOutlet weak var frontView: UIView!
     @IBOutlet weak var rearView: UIView!
 
     // Weather
-    //@IBOutlet weak var currentSummary: UILabel!
+    @IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
 
     // Temperature
@@ -85,7 +85,7 @@ class CurrentWeatherViewController: UIViewController {
         temperatureUnits!.text   = "\(forecast.units.temperature)"
       //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
       //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
-      //currentSummary.text     = forecast.currentWeather?.summary
+        currentSummary.text     = forecast.currentWeather?.summary
         let direction: Double = forecast.currentWeather!.windBearing!
         if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0

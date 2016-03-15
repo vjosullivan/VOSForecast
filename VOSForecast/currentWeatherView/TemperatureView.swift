@@ -1,14 +1,14 @@
 //
-//  CurrentWeatherView.swift
+//  TemperatureView.swift
 //  VOSForecast
 //
-//  Created by Vincent O'Sullivan on 05/03/2016.
+//  Created by Vincent O'Sullivan on 15/03/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
 
 import UIKit
 
-class CurrentWeatherView: UIView {
+class TemperatureView: UIView {
 
     // MARK: - Propeties
 
@@ -29,7 +29,7 @@ class CurrentWeatherView: UIView {
     override func drawRect(rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
-        WeatherFace(context: context, rect: rect).draw()
+        TemperatureFace(context: context, rect: rect).draw()
     }
 
     override func layoutSubviews() {
@@ -39,5 +39,5 @@ class CurrentWeatherView: UIView {
             shouldUpdateSubviews = false
         }
     }
-    
+
 }

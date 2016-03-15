@@ -19,7 +19,7 @@ class SecondHand: ClockHand {
         alpha         = 1.0
         width         = 1.5
         length        = 0.95
-        offsetLength  = 0.125
+        offsetLength  = 0.25
         shadowEnabled = false
         tag           = 103
     }

@@ -15,7 +15,7 @@ class Hub: UIView {
     let hubRadius: CGFloat
 
     override init(frame: CGRect) {
-        hubRadius = 0.005
+        hubRadius = 0.02
         hubColor  = UIColor.whiteColor()
         hubAlpha  = 1.0
         super.init(frame: frame)
