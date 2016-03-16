@@ -12,6 +12,9 @@ class ClockViewController: UIViewController {
 
     // MARK: - Outlets
 
+
+    @IBOutlet weak var clockFrontPanel: UIView!
+
     @IBOutlet weak var clockFrontView: ClockView!
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
@@ -55,7 +58,7 @@ class ClockViewController: UIViewController {
     @IBAction func actionFlipPanel(sender: UIButton) {
         switch sender {
         case clockFlipButton:
-            flip(clockFrontView, rearView: clockRearView)
+            flip(clockFrontPanel, rearView: clockRearView)
         default:
             break
         }
