@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E64a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -83,7 +83,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
                                 <rect key="frame" x="259" y="509" width="82" height="81"/>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -547,7 +547,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="243"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrP-5h-WUn" userLabel="title">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="21"/>
+                                        <rect key="frame" x="0.0" y="4" width="285" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="XZL-ud-YB7"/>
                                         </constraints>
@@ -556,10 +556,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUl-lG-rXd" userLabel="instrumentPanel">
-                                        <rect key="frame" x="9" y="21" width="268" height="214"/>
+                                        <rect key="frame" x="9" y="25" width="268" height="210"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-Bn-P5A" userLabel="weatherView" customClass="CurrentWeatherView" customModule="VOSForecast" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="130" height="103"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZz-dr-CHw" userLabel="spacer">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="10"/>
@@ -568,14 +568,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="icon">
-                                                        <rect key="frame" x="0.0" y="10" width="130" height="57"/>
+                                                        <rect key="frame" x="0.0" y="10" width="130" height="55.5"/>
                                                         <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="64"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhy-E7-t2U" userLabel="summary">
-                                                        <rect key="frame" x="24" y="52" width="82" height="51"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <rect key="frame" x="24" y="45" width="82" height="55.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -589,7 +589,7 @@
                                                     <constraint firstItem="zhy-E7-t2U" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" constant="24" id="Nbp-vJ-bmR"/>
                                                     <constraint firstItem="lZz-dr-CHw" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" id="bb6-Wu-TKp"/>
                                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" id="e1z-UY-uIn"/>
-                                                    <constraint firstItem="zhy-E7-t2U" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" id="fuY-Iw-N3g"/>
+                                                    <constraint firstItem="zhy-E7-t2U" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.55" id="fuY-Iw-N3g"/>
                                                     <constraint firstItem="lZz-dr-CHw" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.1" id="mC5-nO-lVZ"/>
                                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.55" id="uB5-VY-JrF"/>
                                                     <constraint firstAttribute="trailing" secondItem="zhy-E7-t2U" secondAttribute="trailing" constant="24" id="uL9-oG-m0Q"/>
@@ -597,14 +597,30 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-cv-eeA" userLabel="otherView" customClass="OtherView" customModule="VOSForecast" customModuleProvider="target">
-                                                <rect key="frame" x="138" y="0.0" width="130" height="103"/>
+                                                <rect key="frame" x="138" y="0.0" width="130" height="101"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rain?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU9-93-mQo" userLabel="rain">
+                                                        <rect key="frame" x="0.0" y="40" width="130" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="7Q3-Yv-9fV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="XU9-93-mQo" secondAttribute="trailing" id="em5-T1-V4y"/>
+                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="centerY" secondItem="kJ7-cv-eeA" secondAttribute="centerY" id="rkY-YX-ldd"/>
+                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="leading" secondItem="kJ7-cv-eeA" secondAttribute="leading" id="wbj-46-koz"/>
+                                                </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-XK-iE8" userLabel="temperatureView" customClass="TemperatureView" customModule="VOSForecast" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="111" width="130" height="103"/>
+                                                <rect key="frame" x="0.0" y="109" width="130" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="T2s-M0-wC5" userLabel="temperature">
-                                                        <rect key="frame" x="0.0" y="24" width="130" height="56"/>
+                                                        <rect key="frame" x="0.0" y="23" width="130" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="SBr-WL-Hhd"/>
@@ -614,7 +630,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
-                                                        <rect key="frame" x="68" y="72" width="62" height="21"/>
+                                                        <rect key="frame" x="68" y="71" width="62" height="21"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="upL-p7-SGj"/>
@@ -635,10 +651,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xdy-Kh-XQT" userLabel="windView" customClass="WindView" customModule="VOSForecast" customModuleProvider="target">
-                                                <rect key="frame" x="138" y="111" width="130" height="103"/>
+                                                <rect key="frame" x="138" y="109" width="130" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-md-KLS" userLabel="windSpeed">
-                                                        <rect key="frame" x="30" y="24" width="70" height="56"/>
+                                                        <rect key="frame" x="30" y="23" width="70" height="56"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="g5y-Tl-Rel"/>
@@ -648,13 +664,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="2eY-mh-9k9" userLabel="beaufort">
-                                                        <rect key="frame" x="30" y="24" width="70" height="56"/>
+                                                        <rect key="frame" x="30" y="23" width="70" height="56"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rQE-x1-F3j" userLabel="windUnits">
-                                                        <rect key="frame" x="66" y="72" width="34" height="21"/>
+                                                        <rect key="frame" x="66" y="71" width="34" height="21"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="hve-A8-KYa"/>
@@ -678,6 +694,12 @@
                                                     <constraint firstItem="2eY-mh-9k9" firstAttribute="trailing" secondItem="hSW-md-KLS" secondAttribute="trailing" id="wFt-CA-y1w"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-Vk-c8U" userLabel="currentFrontFlipButton">
+                                                <rect key="frame" x="-9" y="-14" width="285" height="243"/>
+                                                <connections>
+                                                    <action selector="flipPanel:" destination="fht-fT-KZ2" eventType="touchUpInside" id="h7T-e7-POs"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Xdy-Kh-XQT" firstAttribute="leading" secondItem="8Yy-XK-iE8" secondAttribute="trailing" constant="8" id="0K5-sw-M6E"/>
@@ -698,22 +720,12 @@
                                             <constraint firstItem="Xdy-Kh-XQT" firstAttribute="top" secondItem="kJ7-cv-eeA" secondAttribute="bottom" constant="8" id="sgi-cR-42O"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqy-Vk-c8U" userLabel="currentFrontFlipButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="243"/>
-                                        <connections>
-                                            <action selector="flipPanel:" destination="fht-fT-KZ2" eventType="touchUpInside" id="h7T-e7-POs"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="hqy-Vk-c8U" secondAttribute="bottom" id="Kvz-rf-FJT"/>
                                     <constraint firstItem="wrP-5h-WUn" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" id="N6e-Jx-2VI"/>
-                                    <constraint firstItem="hqy-Vk-c8U" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" id="NaS-cm-qBM"/>
                                     <constraint firstItem="dUl-lG-rXd" firstAttribute="leading" secondItem="mlW-Bg-Vx0" secondAttribute="leading" constant="9" id="QB4-gX-dPX"/>
-                                    <constraint firstItem="wrP-5h-WUn" firstAttribute="top" secondItem="mlW-Bg-Vx0" secondAttribute="top" id="Teu-er-F3V"/>
-                                    <constraint firstAttribute="trailing" secondItem="hqy-Vk-c8U" secondAttribute="trailing" id="Tj0-Ef-dKp"/>
-                                    <constraint firstItem="hqy-Vk-c8U" firstAttribute="top" secondItem="mlW-Bg-Vx0" secondAttribute="top" id="WgQ-as-0Ni"/>
+                                    <constraint firstItem="wrP-5h-WUn" firstAttribute="top" secondItem="mlW-Bg-Vx0" secondAttribute="top" constant="4" id="Teu-er-F3V"/>
                                     <constraint firstAttribute="trailing" secondItem="wrP-5h-WUn" secondAttribute="trailing" id="YFe-Qn-lEM"/>
                                     <constraint firstAttribute="trailing" secondItem="dUl-lG-rXd" secondAttribute="trailing" constant="8" id="mCd-ND-JPP"/>
                                     <constraint firstAttribute="bottom" secondItem="dUl-lG-rXd" secondAttribute="bottom" constant="8" id="ob6-nl-VYQ"/>
