@@ -40,9 +40,10 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var beaufort: UILabel!
     @IBOutlet weak var windDescription: UISegmentedControl!
 
-    // Other view
+    // Rain view
 
-    @IBOutlet weak var otherView: OtherView!
+    @IBOutlet weak var rainView: OtherView!
+    @IBOutlet weak var rainDescription: UILabel!
 
     // MARK: Units
 
@@ -77,8 +78,8 @@ class CurrentWeatherViewController: UIViewController {
         windView.setNeedsDisplay()
         temperatureView.shouldUpdateSubviews = true
         temperatureView.setNeedsDisplay()
-        otherView.shouldUpdateSubviews = true
-        otherView.setNeedsDisplay()
+        rainView.shouldUpdateSubviews = true
+        rainView.setNeedsDisplay()
     }
 
     // MARK: - Actions
@@ -123,6 +124,8 @@ class CurrentWeatherViewController: UIViewController {
             windSpeedUnits.text = forecast.units.windSpeed
         }
         windView.windDirection = direction
+
+        rainDescription.text = "\(forecast.currentWeather?.precipIntensity ?? 0.0)" // \(forecast.currentWeather?.prec
 
         print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
