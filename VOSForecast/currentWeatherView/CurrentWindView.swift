@@ -12,7 +12,7 @@ class WindView: UIView {
 
     // MARK: - Propeties
 
-    var showHub: Bool = true
+    //var showHub: Bool = true
     var showTicks: Bool = true
 
     var windDirection: Double = 0.0 {
@@ -58,8 +58,8 @@ class WindView: UIView {
             addSubview(windHand!)
             sendSubviewToBack(windHand!)
 
-            let hub = Hub(frame: clockFrame)
-            addSubview(hub)
+            //let hub = Hub(frame: clockFrame)
+            //addSubview(hub)
 
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateCompass()
