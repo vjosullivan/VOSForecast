@@ -123,10 +123,16 @@ class ForecastBuilder {
         var oneDayForecasts = [OneDayForecast]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
+                print("Day JSON: \(day)")
                 let apparentTemperatureMax = day["apparentTemperatureMax"] as? Double
-                let apparentTemperatureMaxTime = day["apparentTemperatureMaxTime"] as? Double
+                let apparentTemperatureMaxTime: NSDate?
+                if let time = day["apparentTemperatureMaxTime"] as? Double {
+                    apparentTemperatureMaxTime = NSDate(timeIntervalSince1970: time)
+                } else {
+                    apparentTemperatureMaxTime = nil
+                }
                 let apparentTemperatureMin = day["apparentTemperatureMin"] as? Double
-                let apparentTemperatureMinTime = day["apparentTemperatureMinTime"] as? Double
+                let apparentTemperatureMinTime = NSDate(timeIntervalSince1970: day["apparentTemperatureMinTime"] as! Double)
                 
                 let cloudCover = day["cloudCover"] as? Double
                 let dewPoint = day["dewPoint"] as? Double
@@ -137,21 +143,21 @@ class ForecastBuilder {
                 
                 let precipIntensity = day["precipIntensity"] as? Double
                 let precipIntensityMax = day["precipIntensityMax"] as? Double
-                let precipIntensityMaxTime = day["precipIntensityMaxTime"] as? Double
+                let precipIntensityMaxTime = NSDate(timeIntervalSince1970: day["precipIntensityMaxTime"] as? Double ?? 0.0)
                 let precipProbability = day["precipProbability"] as? Double
                 let precipType = day["precipType"] as? String
                 
                 let pressure = day["pressure"] as? Double
                 let summary = day["summary"] as? String
-                let sunriseTime = day["sunriseTime"] as? Double
-                let sunsetTime = day["sunsetTime"] as? Double
+                let sunriseTime = NSDate(timeIntervalSince1970: day["sunriseTime"] as! Double)
+                let sunsetTime = NSDate(timeIntervalSince1970: day["sunsetTime"] as! Double)
                 
                 let temperatureMax = day["temperatureMax"] as? Double
-                let temperatureMaxTime = day["temperatureMaxTime"] as? Double
+                let temperatureMaxTime = NSDate(timeIntervalSince1970: day["temperatureMaxTime"] as! Double)
                 let temperatureMin = day["temperatureMin"] as? Double
-                let temperatureMinTime = day["temperatureMinTime"] as? Double
+                let temperatureMinTime = NSDate(timeIntervalSince1970: day["temperatureMinTime"] as! Double)
                 
-                let time = day["time"] as? Double
+                let time = NSDate(timeIntervalSince1970: day["time"] as! Double)
                 let visibility = day["visibility"] as? Double
                 
                 let windBearing = day["windBearing"] as? Double
@@ -184,6 +190,7 @@ class ForecastBuilder {
                     windBearing:  windBearing,
                     windSpeed: windSpeed)
                 oneDayForecasts.append(oneDayForecast)
+                print("ODF \(oneDayForecast)")
             }
         }
         return oneDayForecasts.count > 0 ? oneDayForecasts : nil
