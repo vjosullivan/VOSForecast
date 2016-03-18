@@ -49,10 +49,14 @@ extension OneDayForecast: CustomStringConvertible {
     var description: String {
         let precipPercent: String
         if let prob = precipProbability {
-            precipPercent = String(prob * 100.0)
+            precipPercent = String(Int(prob * 100.0))
         } else {
             precipPercent = "?"
         }
-        return "Day: \(time?.asYYYYMMDD() ?? "?")\nPrecipitation: \(precipType ?? "?") \(String(precipPercent) ?? "?")%"
+        let sun  = "\(time?.asYYYYMMDD() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
+        let tMin = "Low of:  \(String(temperatureMin!) ?? "?") at \(temperatureMinTime?.asHHMM() ?? "?")"
+        let tMax = "High of: \(String(temperatureMax!) ?? "?") at \(temperatureMaxTime?.asHHMM() ?? "?")"
+        let rain = "Precip:  \(precipType ?? "?") \(String(precipPercent) ?? "?")% in=\(String(precipIntensity!) ?? "?") inmx=\(String(precipIntensityMax!) ?? "?") at \(precipIntensityMaxTime?.asHHMM() ?? "?")"
+        return "Day: \(sun)\n\(tMin)\n\(tMax)\n\(rain)\n"
     }
 }

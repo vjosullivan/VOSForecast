@@ -15,4 +15,10 @@ extension NSDate {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.stringFromDate(self)
     }
+
+    func asHHMM() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.stringFromDate(self)
+    }
 }
