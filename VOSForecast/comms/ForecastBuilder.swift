@@ -26,6 +26,12 @@ class ForecastBuilder {
         let longitude        = json["longitude"] as? Double
         let currentWeather   = parseCurrentWeather(json)
         let sevenDayForecast = parseSevenDayForecast(json)
+        var todaysForecast: OneDayForecast? = nil
+        for day in (sevenDayForecast?.oneDayForecasts)! {
+            if day.time == NSDate.startOfToday() {
+                todaysForecast = day
+            }
+        }
         let oneHourForecasts = parseOneHourForecasts(json)
         let sixtyMinuteForecast = parseSixtyMinuteForecast(json)
         let flags    = parseFlags(json)
@@ -35,6 +41,7 @@ class ForecastBuilder {
             latitude: latitude,
             longitude: longitude,
             currentWeather: currentWeather,
+            oneDayForecast: todaysForecast,
             sevenDayForecast: sevenDayForecast,
             oneHourForecasts: oneHourForecasts,
             sixtyMinuteForecast: sixtyMinuteForecast,

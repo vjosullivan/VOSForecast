@@ -28,8 +28,12 @@ class CurrentWeatherViewController: UIViewController {
 
     @IBOutlet weak var temperatureView: TemperatureView!
     @IBOutlet weak var currentTemperature: UILabel!
+    @IBOutlet weak var currentFeelsLike: UILabel!
+    @IBOutlet weak var nextLow: UILabel!
+    @IBOutlet weak var nextLowLabel: UILabel!
+    @IBOutlet weak var nextHigh: UILabel!
+    @IBOutlet weak var nextHighLabel: UILabel!
     @IBOutlet weak var temperatureUnits: UILabel!
-  //@IBOutlet weak var currentFeelsLike: UILabel!
   //@IBOutlet weak var currentDewPoint: UILabel!
 
     // Wind view
@@ -106,9 +110,21 @@ class CurrentWeatherViewController: UIViewController {
     func updateView(forecast: Forecast) {
 
         currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
-        temperatureUnits!.text   = "\(forecast.units.temperature)"
-      //currentFeelsLike.text   = "Feels like:  \(forecast.currentFeelsLikeDisplay)"
-      //currentDewPoint.text    = "Dew point:  \(forecast.currentDewPointDisplay)"
+        currentFeelsLike.text   = "\(forecast.currentFeelsLikeDisplay)"
+        nextLow.text       = "\(forecast.lowTodayDisplay)"
+        if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm() {
+            nextLowLabel.text  = "Low \(lowTime)"
+        } else {
+            nextLowLabel.text = "Low"
+        }
+        nextHigh.text      = "\(forecast.highTodayDisplay)"
+        if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm() {
+            nextHighLabel.text  = "High \(highTime)"
+        } else {
+            nextHighLabel.text = "High"
+        }
+        temperatureUnits!.text = "\(forecast.units.temperature)"
+
         currentSummary.text     = forecast.currentWeather?.summary
         let direction: Double = forecast.currentWeather!.windBearing!
         if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {

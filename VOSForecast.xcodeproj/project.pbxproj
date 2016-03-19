@@ -29,10 +29,11 @@
 		F1059F7E1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */; };
 		F114F12C1C95539D00405C4B /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F12B1C95539D00405C4B /* ClockFace.swift */; };
 		F114F12D1C95539D00405C4B /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F12B1C95539D00405C4B /* ClockFace.swift */; };
-		F114F1321C95A82E00405C4B /* CurrentWindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* CurrentWindView.swift */; };
-		F114F1331C95A82E00405C4B /* CurrentWindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* CurrentWindView.swift */; };
+		F114F1321C95A82E00405C4B /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* WindView.swift */; };
+		F114F1331C95A82E00405C4B /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* WindView.swift */; };
 		F114F1351C95A92000405C4B /* WindFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1341C95A92000405C4B /* WindFace.swift */; };
 		F114F1361C95A92000405C4B /* WindFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1341C95A92000405C4B /* WindFace.swift */; };
+		F13079281C9DA49B00B51539 /* InstrumentFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13079271C9DA49B00B51539 /* InstrumentFace.swift */; };
 		F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* OneDayForecast.swift */; };
@@ -132,8 +133,9 @@
 		F1059F791C8B3C180025EF69 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		F114F12B1C95539D00405C4B /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
-		F114F1311C95A82E00405C4B /* CurrentWindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWindView.swift; sourceTree = "<group>"; };
+		F114F1311C95A82E00405C4B /* WindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		F114F1341C95A92000405C4B /* WindFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindFace.swift; sourceTree = "<group>"; };
+		F13079271C9DA49B00B51539 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* OneDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayForecast.swift; sourceTree = "<group>"; };
 		F1472D241C87840E00D03DC3 /* OneHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHourForecast.swift; sourceTree = "<group>"; };
@@ -241,13 +243,14 @@
 				F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */,
 				F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */,
 				345BCB121C8D89B1005F5FB7 /* CurrentWeatherDelegate.swift */,
-				F114F1311C95A82E00405C4B /* CurrentWindView.swift */,
+				F114F1311C95A82E00405C4B /* WindView.swift */,
 				F114F1341C95A92000405C4B /* WindFace.swift */,
 				F1D62DED1C98764F00F34EBF /* TemperatureView.swift */,
 				F1D62DF01C98776100F34EBF /* TemperatureFace.swift */,
 				F1D62DF31C9878EE00F34EBF /* WeatherFace.swift */,
 				F1D62DF61C98795800F34EBF /* OtherView.swift */,
 				F1D62DF91C98798900F34EBF /* OtherFace.swift */,
+				F13079271C9DA49B00B51539 /* InstrumentFace.swift */,
 			);
 			path = currentWeatherView;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				F1BF0A3B1C8A24B10030710A /* ClockView.swift in Sources */,
 				F1D62DFA1C98798900F34EBF /* OtherFace.swift in Sources */,
 				F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
+				F13079281C9DA49B00B51539 /* InstrumentFace.swift in Sources */,
 				F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */,
 				F114F12C1C95539D00405C4B /* ClockFace.swift in Sources */,
 				F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
@@ -510,7 +514,7 @@
 				3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */,
 				F114F1351C95A92000405C4B /* WindFace.swift in Sources */,
 				F1D62DE21C9803D100F34EBF /* TickEight.swift in Sources */,
-				F114F1321C95A82E00405C4B /* CurrentWindView.swift in Sources */,
+				F114F1321C95A82E00405C4B /* WindView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F114F1331C95A82E00405C4B /* CurrentWindView.swift in Sources */,
+				F114F1331C95A82E00405C4B /* WindView.swift in Sources */,
 				F1BF0A2C1C8A24660030710A /* TickZero.swift in Sources */,
 				F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
 				F1059F7B1C8B3C180025EF69 /* ClockViewController.swift in Sources */,
@@ -684,7 +688,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -695,7 +699,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

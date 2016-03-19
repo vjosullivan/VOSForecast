@@ -8,68 +8,27 @@
 
 import UIKit
 
-class WindFace: UIView {
+class WindFace: InstrumentFace {
 
-    let windTicks: WindTicks
-    let letters: WindLetters
-    let context: CGContextRef
-    let rect: CGRect
+    private let windTicks: WindTicks
+    private let letters: WindLetters
 
-    var borderColor: UIColor = UIColor(red: 153.0 / 255.0, green: 153.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
-    var borderAlpha: CGFloat = 1.0
-    var borderWidth: CGFloat = 1.0
+    private let digitFont  = UIFont(name: "HelveticaNeue", size: 66)!
+    private let digitColor = UIColor.whiteColor()
+    private let digitRadius: CGFloat = 0.75
 
-    var faceBackgroundColor = UIColor(red: 85.0 / 255.0, green: 85.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
-    var faceBackgroundAlpha: CGFloat = 1.0
+    override init(context: CGContextRef, rect: CGRect) {
 
-    var digitFont: UIFont    = UIFont(name: "HelveticaNeue", size: 20)!
-    var digitColor: UIColor  = UIColor.whiteColor()
-    var digitOuterRadius: CGFloat = 0.99
-
-    init(context: CGContextRef, rect: CGRect) {
-        self.context   = context
-        self.rect      = rect
         self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: "WindTicks", defaultValue: WindTicks.SixtyFour.rawValue))!
         self.letters   = WindLetters(rawValue: NSUserDefaults.readInt(key: "WindLetters", defaultValue: WindLetters.Eight.rawValue))!
-        super.init(frame: rect)
+
+        super.init(context: context, rect: rect)
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func draw() {
-        drawClockFace()
-        drawClockBorder()
+    override func draw() {
+        super.draw()
         drawWindLetters()
         drawTicks()
-    }
-
-    private func drawClockFace() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetFillColorWithColor(context, faceBackgroundColor.CGColor);
-        CGContextSetAlpha(context, faceBackgroundAlpha);
-        CGContextFillPath(context);
-    }
-
-    private func drawClockBorder() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-        CGContextSetAlpha(context, borderAlpha);
-        CGContextSetLineWidth(context, borderWidth);
-        CGContextStrokePath(context);
-    }
-
-    ///  Returns a square `CGRect`, centered on the given `CGRect`.
-    ///
-    private func squareRect(rect: CGRect) -> CGRect {
-        let clockDiameter = min(rect.width, rect.height)
-        let clockRadius   = clockDiameter / 2.0
-        return CGRectMake(
-            rect.origin.x + (rect.width  / 2.0) - clockRadius + borderWidth / 2.0,
-            rect.origin.y + (rect.height / 2.0) - clockRadius + borderWidth / 2.0,
-            clockDiameter - borderWidth,
-            clockDiameter - borderWidth)
     }
 
     private func drawTicks() {
@@ -92,7 +51,7 @@ class WindFace: UIView {
                 }
                 let tickAngleRadians  = CGFloat(5.625 * (Double(index) + 48) * degToRads)
                 if let tick = tick {
-                    tick.draw(context, angle: tickAngleRadians, rect: rect)
+                    tick.draw(super.context, angle: tickAngleRadians, rect: super.rect)
                 }
             }
         }
@@ -103,8 +62,9 @@ class WindFace: UIView {
         CGContextSaveGState(context)
         CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
         CGContextScaleCTM (context, 1, -1)
-        let radius = 0.8 * min(rect.width, rect.height) / 2.0
-        let writer = Circlewriter(context: context, radius: radius, textOrientation: .Upright)
+        let font = UIFont.systemFontOfSize(10)
+        let radius = digitRadius * min(rect.width, rect.height) / 2.0
+        let writer = Circlewriter(context: context, radius: radius, font: font, textOrientation: .Upright)
         switch letters {
         case .Sixteen, .ThirtyTwo:
             writer.write(["NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"], lastWord: .OnTop)

@@ -22,7 +22,7 @@ class ClockFace {
     var faceBackgroundColor = UIColor(red: 85.0 / 255.0, green: 85.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
     var faceBackgroundAlpha: CGFloat = 1.0
 
-    var digitFont: UIFont    = UIFont(name: "HelveticaNeue", size: 20)!
+    var digitFont: UIFont    = UIFont.systemFontOfSize(16)
     var digitColor: UIColor  = UIColor.whiteColor()
     var digitOuterRadius: CGFloat = 0.99
 
@@ -101,8 +101,8 @@ class ClockFace {
         CGContextSaveGState(context)
         CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
         CGContextScaleCTM (context, 1, -1)
-        let radius = 0.8 * min(rect.width, rect.height) / 2.0
-        let writer = Circlewriter(context: context, radius: radius)
+        let radius = 0.775 * min(rect.width, rect.height) / 2.0
+        let writer = Circlewriter(context: context, radius: radius, font: digitFont)
         switch tickMarks {
         case .Minutes, .Hours:
             writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)

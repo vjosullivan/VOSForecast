@@ -21,4 +21,19 @@ extension NSDate {
         formatter.dateFormat = "HH:mm"
         return formatter.stringFromDate(self)
     }
+
+    func asHpm() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "ha"
+        return formatter.stringFromDate(self).lowercaseString
+    }
+
+    ///  Returns the exact date for the start of today.
+    ///
+    class func startOfToday() -> NSDate {
+        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        cal.timeZone = NSTimeZone(name: "UTC")!
+        let components = cal.components([.Day , .Month, .Year ], fromDate: NSDate())
+        return cal.dateFromComponents(components)!
+    }
 }

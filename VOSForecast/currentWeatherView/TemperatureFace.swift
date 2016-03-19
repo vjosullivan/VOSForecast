@@ -8,52 +8,40 @@
 
 import UIKit
 
-class TemperatureFace {
+class TemperatureFace: InstrumentFace {
 
-    let context: CGContextRef
-    let rect: CGRect
-
-    var borderColor: UIColor = UIColor(red: 153.0 / 255.0, green: 153.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
-    var borderAlpha: CGFloat = 1.0
-    var borderWidth: CGFloat = 1.0
-
-    var faceBackgroundColor = UIColor(red: 85.0 / 255.0, green: 85.0 / 255.0, blue: 85.0 / 255.0, alpha: 1.0)
-    var faceBackgroundAlpha: CGFloat = 1.0
-
-    init(context: CGContextRef, rect: CGRect) {
-        self.context   = context
-        self.rect      = rect
+    override init(context: CGContextRef, rect: CGRect) {
+        super.init(context: context, rect: rect)
     }
 
-    func draw() {
-        drawTemperatureFace()
-        drawTemperatureBorder()
+    override func draw() {
+        super.draw()
+        drawQuarterLines()
     }
 
-    private func drawTemperatureFace() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetFillColorWithColor(context, faceBackgroundColor.CGColor);
-        CGContextSetAlpha(context, faceBackgroundAlpha);
-        CGContextFillPath(context);
+    private func drawQuarterLines() {
+        let gap = square.size.width * 0.1
+        let minX = square.minX + gap
+        let midX1 = square.midX - gap
+        let midX2 = square.midX + gap
+        let maxX = square.maxX - gap
+        let minY = square.minY + gap
+        let midY1 = square.midY - gap
+        let midY2 = square.midY + gap
+        let maxY = square.maxY - gap
+        CGContextMoveToPoint(context, square.midX, midY1)
+        CGContextAddLineToPoint(context, square.midX, minY)
+        CGContextMoveToPoint(context, midX2, square.midY)
+        CGContextAddLineToPoint(context, maxX, square.midY)
+        CGContextMoveToPoint(context, square.midX, midY2)
+        CGContextAddLineToPoint(context, square.midX, maxY)
+        CGContextMoveToPoint(context, midX1, square.midY)
+        CGContextAddLineToPoint(context, minX, square.midY)
+
+        CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
+        CGContextSetAlpha(context, borderAlpha)
+        CGContextSetLineWidth(context, borderWidth)
+        CGContextStrokePath(context)
     }
 
-    private func drawTemperatureBorder() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-        CGContextSetAlpha(context, borderAlpha);
-        CGContextSetLineWidth(context, borderWidth);
-        CGContextStrokePath(context);
-    }
-
-    ///  Returns a square `CGRect`, centered on the given `CGRect`.
-    ///
-    private func squareRect(rect: CGRect) -> CGRect {
-        let dialDiameter = min(rect.width, rect.height)
-        let dialRadius   = dialDiameter / 2.0
-        return CGRectMake(
-            rect.origin.x + (rect.width  / 2.0) - dialRadius + borderWidth / 2.0,
-            rect.origin.y + (rect.height / 2.0) - dialRadius + borderWidth / 2.0,
-            dialDiameter - borderWidth,
-            dialDiameter - borderWidth)
-    }
 }

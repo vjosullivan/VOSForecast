@@ -10,31 +10,26 @@ import Foundation
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        return rounded(currentWeather?.temperature) // + temperatureUnitsDisplay
+        return wholeDegree(currentWeather?.temperature)
     }
 
     var currentFeelsLikeDisplay: String {
-        return rounded(currentWeather?.apparentTemperature) + self.units.temperature
+        return wholeDegree(currentWeather?.apparentTemperature)
     }
 
     var currentDewPointDisplay: String {
-        return rounded(currentWeather?.dewPoint) + self.units.temperature
+        return wholeDegree(currentWeather?.dewPoint)
+    }
+
+    var highTodayDisplay: String {
+        return wholeDegree(oneDayForecast?.temperatureMax)
+    }
+
+    var lowTodayDisplay: String {
+        return wholeDegree(oneDayForecast?.temperatureMin)
     }
 
     private func wholeDegree(temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
-    }
-    
-    private func rounded(temperature: Double?) -> String {
-        let t: String
-        if NSUserDefaults.read(key: "units", defaultValue: "auto") == "us" {
-            // Round to nearest degree.
-            t = String(lround(temperature ?? 0.0))
-        } else {
-            // Round to nearest half degree.
-            let temp = String(Double(lround((temperature ?? 0.0) * 2)) / 2.0)
-            t = temp.characters.last! == "0" ? String(temp.characters.dropLast(2)) : temp
-        }
-        return t
     }
 }
