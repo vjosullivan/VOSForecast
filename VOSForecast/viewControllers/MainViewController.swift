@@ -1,5 +1,5 @@
 //
-//  ForecastViewController.swift
+//  MainViewController.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 29/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController, CurrentWeatherDelegate {
+class MainViewController: UIViewController, CurrentWeatherDelegate {
 
     // MARK: - Clock properties
 
@@ -124,7 +124,7 @@ class ForecastViewController: UIViewController, CurrentWeatherDelegate {
 // MARK: - Extensions
 // MARK: - ClockDelegate extension
 
-extension ForecastViewController: ClockDelegate {
+extension MainViewController: ClockDelegate {
 
     func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
         timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)

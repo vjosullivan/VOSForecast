@@ -19,8 +19,8 @@
 		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3CC71C9B7168007A433E /* NSDateExtension.swift */; };
-		F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
-		F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* ForecastViewController.swift */; };
+		F1005AEC1C84E21700250A3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* MainViewController.swift */; };
+		F1005AED1C84E21700250A3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* MainViewController.swift */; };
 		F1059F771C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */; };
 		F1059F781C8B369A0025EF69 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */; };
 		F1059F7A1C8B3C180025EF69 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F791C8B3C180025EF69 /* ClockViewController.swift */; };
@@ -127,7 +127,7 @@
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
 		34B35A941C9166F9006F6CBA /* CircleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleWriter.swift; sourceTree = "<group>"; };
 		34FF3CC71C9B7168007A433E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
-		F1005AEB1C84E21700250A3C /* ForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		F1005AEB1C84E21700250A3C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1059F761C8B369A0025EF69 /* CurrentWeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherView.swift; sourceTree = "<group>"; };
 		F1059F791C8B3C180025EF69 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		F1059F7C1C8B3EF60025EF69 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		F1005AEA1C84E1EB00250A3C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				F1005AEB1C84E21700250A3C /* ForecastViewController.swift */,
+				F1005AEB1C84E21700250A3C /* MainViewController.swift */,
 			);
 			name = viewcontrollers;
 			path = viewControllers;
@@ -476,7 +476,7 @@
 				F1472D381C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */,
-				F1005AEC1C84E21700250A3C /* ForecastViewController.swift in Sources */,
+				F1005AEC1C84E21700250A3C /* MainViewController.swift in Sources */,
 				F1D62DF41C9878EE00F34EBF /* WeatherFace.swift in Sources */,
 				F1059F7A1C8B3C180025EF69 /* ClockViewController.swift in Sources */,
 				F1BF0A2F1C8A24660030710A /* TickFive.swift in Sources */,
@@ -558,7 +558,7 @@
 				F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
 				F1D62DE31C9803D100F34EBF /* TickEight.swift in Sources */,
 				F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
-				F1005AED1C84E21700250A3C /* ForecastViewController.swift in Sources */,
+				F1005AED1C84E21700250A3C /* MainViewController.swift in Sources */,
 				F1BF0A3C1C8A24B10030710A /* ClockView.swift in Sources */,
 				34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */,
 				F1472D2B1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
