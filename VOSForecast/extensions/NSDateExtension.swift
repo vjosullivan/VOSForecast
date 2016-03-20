@@ -22,10 +22,18 @@ extension NSDate {
         return formatter.stringFromDate(self)
     }
 
-    func asHpm() -> String {
+    func asHpm(showMidday showMidday: Bool = false) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "ha"
-        return formatter.stringFromDate(self).lowercaseString
+        let time = formatter.stringFromDate(self).lowercaseString
+        if showMidday {
+            if time == "12pm" {
+                return "midday"
+            } else if time == "12am" {
+                return "midnight"
+            }
+        }
+        return time
     }
 
     ///  Returns the exact date for the start of today.

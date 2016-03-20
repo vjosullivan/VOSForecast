@@ -113,13 +113,13 @@ class CurrentWeatherViewController: UIViewController {
         currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
         currentFeelsLike.text   = "\(forecast.currentFeelsLikeDisplay)"
         nextLow.text       = "\(forecast.lowTodayDisplay)"
-        if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm() {
+        if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm(showMidday: true) {
             nextLowLabel.text  = "Low \(lowTime)"
         } else {
             nextLowLabel.text = "Low"
         }
         nextHigh.text      = "\(forecast.highTodayDisplay)"
-        if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm() {
+        if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm(showMidday: true) {
             nextHighLabel.text  = "High \(highTime)"
         } else {
             nextHighLabel.text = "High"
@@ -142,7 +142,9 @@ class CurrentWeatherViewController: UIViewController {
         }
         windView.windDirection = direction
 
-        rainDescription.text = "\(Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? ""))" // \(forecast.currentWeather?.prec
+        let intensity  = Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
+        let likelyhood = forecast.rainLikelyhoodDisplay
+        rainDescription.text = "\(intensity)\n(\(likelyhood) chance)" // \(forecast.currentWeather?.prec
         cloudDescription.text = "Cloud cover: \(forecast.cloudCoverDisplay)"
         print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)

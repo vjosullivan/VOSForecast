@@ -10,34 +10,42 @@ import Foundation
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        return wholeDegree(currentWeather?.temperature)
+        return roundToWholeNumber(currentWeather?.temperature)
     }
 
     var currentFeelsLikeDisplay: String {
-        return wholeDegree(currentWeather?.apparentTemperature)
+        return roundToWholeNumber(currentWeather?.apparentTemperature)
     }
 
     var currentDewPointDisplay: String {
-        return wholeDegree(currentWeather?.dewPoint)
+        return roundToWholeNumber(currentWeather?.dewPoint)
     }
 
     var highTodayDisplay: String {
-        return wholeDegree(oneDayForecast?.temperatureMax)
+        return roundToWholeNumber(oneDayForecast?.temperatureMax)
     }
 
     var lowTodayDisplay: String {
-        return wholeDegree(oneDayForecast?.temperatureMin)
+        return roundToWholeNumber(oneDayForecast?.temperatureMin)
     }
 
     var cloudCoverDisplay: String {
         if let cover = currentWeather?.cloudCover {
-            return wholeDegree(cover * 100.0) + "%"
+            return roundToWholeNumber(cover * 100.0) + "%"
         } else {
             return "unknown"
         }
     }
 
-    private func wholeDegree(temperature: Double?) -> String {
+    var rainLikelyhoodDisplay: String {
+        if let likelyhood = currentWeather?.precipProbability {
+            return roundToWholeNumber(likelyhood * 100.0) + "%"
+        } else {
+            return "unknown"
+        }
+    }
+
+    private func roundToWholeNumber(temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
     }
 }
