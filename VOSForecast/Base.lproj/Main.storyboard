@@ -46,6 +46,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-KI-DTv" userLabel="Astrolabe Container">
+                                <rect key="frame" x="10" y="245" width="285" height="208"/>
+                                <connections>
+                                    <segue destination="NOY-vg-Y9q" kind="embed" id="rS3-a1-Uwm"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sp-63-U9T" userLabel="Clock Container">
                                 <rect key="frame" x="10" y="28" width="285" height="207"/>
                                 <connections>
@@ -260,12 +266,6 @@
                                     <constraint firstItem="6nJ-0E-3rR" firstAttribute="leading" secondItem="Yum-pz-pfz" secondAttribute="leading" id="t4D-ZN-rg8"/>
                                 </constraints>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-KI-DTv" userLabel="Astrolabe Container">
-                                <rect key="frame" x="10" y="245" width="285" height="208"/>
-                                <connections>
-                                    <segue destination="NOY-vg-Y9q" kind="embed" id="rS3-a1-Uwm"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -952,7 +952,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.53333333333333333" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1035,6 +1035,10 @@
         <scene sceneID="YlA-JG-mFC">
             <objects>
                 <viewController id="NOY-vg-Y9q" customClass="AstrolabeViewController" customModule="VOSForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9NN-tw-CBc"/>
+                        <viewControllerLayoutGuide type="bottom" id="inU-xi-HWZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4as-11-64P">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1129,7 +1133,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
-                                        <color key="value" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="1" green="0.53333333333333333" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -1137,16 +1141,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-Yc-JuS" userLabel="astrolabeFrontView" customClass="AstrolabeView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <rect key="frame" x="10" y="10" width="265" height="188"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" id="Dgo-JV-23U"/>
-                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" id="Qsp-vv-fR9"/>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" id="Uak-CW-eIf"/>
-                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" id="i7m-S7-Sat"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" constant="10" id="Dgo-JV-23U"/>
+                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" constant="10" id="Qsp-vv-fR9"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" constant="10" id="Uak-CW-eIf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" constant="10" id="i7m-S7-Sat"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
