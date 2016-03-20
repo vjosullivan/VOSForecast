@@ -29,6 +29,14 @@ extension Forecast {
         return wholeDegree(oneDayForecast?.temperatureMin)
     }
 
+    var cloudCoverDisplay: String {
+        if let cover = currentWeather?.cloudCover {
+            return wholeDegree(cover * 100.0) + "%"
+        } else {
+            return "unknown"
+        }
+    }
+
     private func wholeDegree(temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
     }

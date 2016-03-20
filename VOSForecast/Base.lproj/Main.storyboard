@@ -590,10 +590,13 @@
                                                 <rect key="frame" x="138" y="0.0" width="130" height="101"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU9-93-mQo" userLabel="rain">
-                                                        <rect key="frame" x="0.0" y="40" width="130" height="21"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="21" id="7Q3-Yv-9fV"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="16" y="0.0" width="98" height="51"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8O8-du-lX9" userLabel="clouds">
+                                                        <rect key="frame" x="24" y="51" width="82" height="42"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -601,9 +604,14 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="XU9-93-mQo" secondAttribute="trailing" id="em5-T1-V4y"/>
-                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="centerY" secondItem="kJ7-cv-eeA" secondAttribute="centerY" id="rkY-YX-ldd"/>
-                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="leading" secondItem="kJ7-cv-eeA" secondAttribute="leading" id="wbj-46-koz"/>
+                                                    <constraint firstItem="8O8-du-lX9" firstAttribute="leading" secondItem="kJ7-cv-eeA" secondAttribute="leading" constant="24" id="AwV-yY-BBd"/>
+                                                    <constraint firstAttribute="bottom" secondItem="8O8-du-lX9" secondAttribute="bottom" constant="8" id="UkJ-nm-eQv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8O8-du-lX9" secondAttribute="trailing" constant="24" id="d33-Zs-GeP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="XU9-93-mQo" secondAttribute="trailing" constant="16" id="em5-T1-V4y"/>
+                                                    <constraint firstItem="8O8-du-lX9" firstAttribute="height" secondItem="kJ7-cv-eeA" secondAttribute="height" multiplier="0.5" constant="-8" id="lBW-Aq-32t"/>
+                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="height" secondItem="kJ7-cv-eeA" secondAttribute="height" multiplier="0.5" id="qkJ-zv-MRx"/>
+                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="top" secondItem="kJ7-cv-eeA" secondAttribute="top" id="s8Q-l2-l88"/>
+                                                    <constraint firstItem="XU9-93-mQo" firstAttribute="leading" secondItem="kJ7-cv-eeA" secondAttribute="leading" constant="16" id="wbj-46-koz"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yy-XK-iE8" userLabel="temperatureView" customClass="TemperatureView" customModule="VOSForecast" customModuleProvider="target">
@@ -828,6 +836,7 @@
                     <connections>
                         <outlet property="autoUnits" destination="yW4-Ar-cB5" id="q1n-UW-1JB"/>
                         <outlet property="beaufort" destination="2eY-mh-9k9" id="8lS-i9-FKH"/>
+                        <outlet property="cloudDescription" destination="8O8-du-lX9" id="nmu-vg-Ac0"/>
                         <outlet property="currentFeelsLike" destination="rZs-NI-cwd" id="sAq-8Z-otA"/>
                         <outlet property="currentIcon" destination="ERz-o2-rn9" id="Bw2-Y0-UqB"/>
                         <outlet property="currentSummary" destination="zhy-E7-t2U" id="bkd-Kq-DsV"/>

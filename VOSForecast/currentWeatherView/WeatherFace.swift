@@ -31,5 +31,4 @@ class WeatherFace: InstrumentFace {
         CGContextSetLineWidth(context, borderWidth)
         CGContextStrokePath(context)
     }
-    
 }

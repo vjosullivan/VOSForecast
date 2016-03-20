@@ -48,6 +48,7 @@ class CurrentWeatherViewController: UIViewController {
 
     @IBOutlet weak var rainView: OtherView!
     @IBOutlet weak var rainDescription: UILabel!
+    @IBOutlet weak var cloudDescription: UILabel!
 
     // MARK: Units
 
@@ -141,8 +142,8 @@ class CurrentWeatherViewController: UIViewController {
         }
         windView.windDirection = direction
 
-        rainDescription.text = "\(forecast.currentWeather?.precipIntensity ?? 0.0)" // \(forecast.currentWeather?.prec
-
+        rainDescription.text = "\(Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? ""))" // \(forecast.currentWeather?.prec
+        cloudDescription.text = "Cloud cover: \(forecast.cloudCoverDisplay)"
         print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
         currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
         if currentIcon.text == "\u{F00D}" {
