@@ -26,7 +26,7 @@ class ClockHand: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func rotateHand(degrees degrees: Double) {
+    func rotateHandTo(degrees degrees: Double) {
         let animations = {() in
             let radians = CGFloat(degrees * M_PI / 180.0)
             self.transform = CGAffineTransformMakeRotation(radians)

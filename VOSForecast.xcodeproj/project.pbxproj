@@ -97,6 +97,10 @@
 		F1C436911C9F4EE7009947A8 /* AstrolabeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */; };
 		F1C436931C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */; };
 		F1C436941C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */; };
+		F1C436961C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */; };
+		F1C436971C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */; };
+		F1C436991C9F60E0009947A8 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */; };
+		F1C4369A1C9F60E0009947A8 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */; };
 		F1D62DE21C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
 		F1D62DE31C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
 		F1D62DE51C98092800F34EBF /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE41C98092800F34EBF /* Units.swift */; };
@@ -184,6 +188,8 @@
 		F1C4368C1C9F4B18009947A8 /* AstrolabeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeView.swift; sourceTree = "<group>"; };
 		F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeDelegate.swift; sourceTree = "<group>"; };
 		F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeFace.swift; sourceTree = "<group>"; };
+		F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHourHand.swift; sourceTree = "<group>"; };
+		F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHand.swift; sourceTree = "<group>"; };
 		F1D62DE11C9803D100F34EBF /* TickEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickEight.swift; sourceTree = "<group>"; };
 		F1D62DE41C98092800F34EBF /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		F1D62DE71C982BBA00F34EBF /* BeaufortScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaufortScale.swift; sourceTree = "<group>"; };
@@ -363,6 +369,8 @@
 				F1BF0A201C8A24660030710A /* Hub.swift */,
 				F1785B281C95BE8A00013423 /* WindHand.swift */,
 				F1785B2B1C95D9CE00013423 /* CompassHand.swift */,
+				F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */,
+				F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */,
 			);
 			path = clockModel;
 			sourceTree = "<group>";
@@ -516,6 +524,7 @@
 				F1BF0A2D1C8A24660030710A /* TickOne.swift in Sources */,
 				F1D62DEE1C98764F00F34EBF /* TemperatureView.swift in Sources */,
 				F1BF0A271C8A24660030710A /* HourHand.swift in Sources */,
+				F1C436991C9F60E0009947A8 /* AstrolabeHand.swift in Sources */,
 				F1D62DE81C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
 				F1BF0A231C8A24660030710A /* SecondHand.swift in Sources */,
 				F1BF0A211C8A24660030710A /* ClockHand.swift in Sources */,
@@ -535,6 +544,7 @@
 				F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
 				F1C4368D1C9F4B18009947A8 /* AstrolabeView.swift in Sources */,
+				F1C436961C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
 				F1785B291C95BE8A00013423 /* WindHand.swift in Sources */,
 				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
@@ -555,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C4369A1C9F60E0009947A8 /* AstrolabeHand.swift in Sources */,
 				F114F1331C95A82E00405C4B /* WindView.swift in Sources */,
 				F1BF0A2C1C8A24660030710A /* TickZero.swift in Sources */,
 				F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
@@ -591,6 +602,7 @@
 				F1059F7E1C8B3EF60025EF69 /* WeatherViewController.swift in Sources */,
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1D62DF81C98795800F34EBF /* RainView.swift in Sources */,
+				F1C436971C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */,
 				F1C4368E1C9F4B18009947A8 /* AstrolabeView.swift in Sources */,
 				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
 				F1D62DE91C982BBA00F34EBF /* BeaufortScale.swift in Sources */,

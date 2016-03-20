@@ -16,14 +16,12 @@ class AstrolabeView: UIView {
     var showTicks: Bool = true
     var hub: Hub?
 
-    var hours: Int = 9
-    var hourHand: HourHand?
+    var hours: Int = 0
+    var hourHand: AstrolabeHourHand?
 
     var minutes: Int = 15
-    var minuteHand: MinuteHand?
 
     var seconds: Int = 0
-    var secondHand: SecondHand?
 
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
@@ -57,20 +55,8 @@ class AstrolabeView: UIView {
             if let _ = hourHand, let viewWithTag = viewWithTag(101) {
                 viewWithTag.removeFromSuperview()
             }
-            hourHand = HourHand(frame: astrolabeFrame)
+            hourHand = AstrolabeHourHand(frame: astrolabeFrame)
             addSubview(hourHand!)
-
-            if let _ = minuteHand, let viewWithTag = viewWithTag(102) {
-                viewWithTag.removeFromSuperview()
-            }
-            minuteHand = MinuteHand(frame: astrolabeFrame)
-            addSubview(minuteHand!)
-
-            if let _ = secondHand, let viewWithTag = viewWithTag(103) {
-                viewWithTag.removeFromSuperview()
-            }
-            secondHand = SecondHand(frame: astrolabeFrame)
-            addSubview(secondHand!)
 
             if let _ = hub, let viewWithTag = viewWithTag(104) {
                 viewWithTag.removeFromSuperview()
@@ -103,9 +89,7 @@ class AstrolabeView: UIView {
     func updateAstrolabe() {
         getCurrentTime()
 
-        minuteHand!.rotateHand(degrees: degreesFrom(minutes: minutes, seconds: seconds))
-        hourHand!.rotateHand(degrees: degreesFrom(hours: hours, minutes: minutes, seconds: seconds))
-        secondHand!.rotateHand(degrees: degreesFrom(seconds: seconds))
+        hourHand!.rotateHandTo(degrees: degreesFrom(hours: hours, minutes: minutes, seconds: seconds))
     }
 
     private func getCurrentTime() {
@@ -116,7 +100,7 @@ class AstrolabeView: UIView {
     }
 
     private func degreesFrom(hours hours: Int, minutes: Int, seconds: Int) -> Double {
-        let degrees = Double(hours) * 30.0 + Double(minutes) / 2.0 + Double(seconds) / 120.0
+        let degrees = Double(hours) * 15.0 + Double(minutes) / 2.0 + Double(seconds) / 120.0 + 180.0
         return degrees
     }
 

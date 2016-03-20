@@ -34,8 +34,8 @@ class AstrolabeFace {
     }
 
     func draw() {
-        drawClockFace()
-        drawClockBorder()
+        drawAstrolabeFace()
+        drawAstrolabeBorder()
         switch numerals {
         case .None:
             break
@@ -47,14 +47,14 @@ class AstrolabeFace {
         drawTicks()
     }
 
-    private func drawClockFace() {
+    private func drawAstrolabeFace() {
         CGContextAddEllipseInRect(context, squareRect(rect));
         CGContextSetFillColorWithColor(context, faceBackgroundColor.CGColor);
         CGContextSetAlpha(context, faceBackgroundAlpha);
         CGContextFillPath(context);
     }
 
-    private func drawClockBorder() {
+    private func drawAstrolabeBorder() {
         CGContextAddEllipseInRect(context, squareRect(rect));
         CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
         CGContextSetAlpha(context, borderAlpha);
@@ -65,31 +65,31 @@ class AstrolabeFace {
     ///  Returns a square `CGRect`, centered on the given `CGRect`.
     ///
     private func squareRect(rect: CGRect) -> CGRect {
-        let clockDiameter = min(rect.width, rect.height)
-        let clockRadius   = clockDiameter / 2.0
+        let diameter = min(rect.width, rect.height)
+        let radius   = diameter / 2.0
         return CGRectMake(
-            rect.origin.x + (rect.width  / 2.0) - clockRadius + borderWidth / 2.0,
-            rect.origin.y + (rect.height / 2.0) - clockRadius + borderWidth / 2.0,
-            clockDiameter - borderWidth,
-            clockDiameter - borderWidth)
+            rect.origin.x + (rect.width  / 2.0) - radius + borderWidth / 2.0,
+            rect.origin.y + (rect.height / 2.0) - radius + borderWidth / 2.0,
+            diameter - borderWidth,
+            diameter - borderWidth)
     }
 
     private func drawTicks() {
         let degToRads = M_PI / 180.0
         if tickMarks != AstrolabeTickMarks.None {
-            for index in 0..<60 {
+            for index in 0..<24 {
                 var tick: TickMark?
-                if index % 24 == 0 && tickMarks.rawValue >= AstrolabeTickMarks.TwentyFourths.rawValue {
+                if index % 6 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Quarters.rawValue {
                     tick = TickFive()
-                } else if index % 12 == 0 && tickMarks.rawValue >= AstrolabeTickMarks.Twelfths.rawValue {
+                } else if index % 3 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Eights.rawValue {
                     tick = TickFive()
-                } else if index % 8 == 0 && tickMarks.rawValue >= AstrolabeTickMarks.Eights.rawValue {
+                } else if index % 2 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Twelfths.rawValue {
                     tick = TickFive()
-                } else if index % 4 == 0 && tickMarks.rawValue >= AstrolabeTickMarks.Quarters.rawValue {
+                } else if tickMarks.rawValue == AstrolabeTickMarks.TwentyFourths.rawValue {
                     tick = TickFifteen()
                 }
                 if let tick = tick {
-                    let tickAngleRadians = CGFloat((Double(6 * index) - 90.0) * degToRads)
+                    let tickAngleRadians = CGFloat((Double(15 * index) - 90.0) * degToRads)
                     tick.draw(context, angle: tickAngleRadians, rect: rect)
                 }
             }
@@ -123,24 +123,24 @@ class AstrolabeFace {
 
     private func drawArabicNumerals() {
         let center = CGPointMake(rect.width / 2.0, rect.height / 2.0)
-        let clockRadius = min(rect.width, rect.height) / 2.0
-        let markingDistanceFromCenter = clockRadius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
+        let radius = min(rect.width, rect.height) / 2.0
+        let markingDistanceFromCenter = radius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
         let offset = 4.0
-        let hourAngle = 30 * M_PI / 180.0
-        for hourIndex in 0..<12 {
+        let hourAngle = 15 * M_PI / 180.0
+        for hourIndex in 0..<24 {
             let hourNumber: NSString = "\((hourIndex + 1 < 10 ? " " : ""))\(hourIndex + 1)"
-            let labelX = center.x + (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(cos(hourAngle * (Double(hourIndex) + offset) + M_PI))
-            let labelY = center.y - (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(sin(hourAngle * (Double(hourIndex) + offset)))
+            let labelX = center.x - (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(cos(hourAngle * (Double(hourIndex) + offset) - 3 * M_PI / 4))
+            let labelY = center.y - (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(sin(hourAngle * (Double(hourIndex) + offset) - 3 * M_PI / 4))
             let box = CGRectMake(
                 labelX - digitFont.lineHeight / 2.0,
                 labelY - digitFont.lineHeight / 2.0,
-                digitFont.lineHeight,
+                digitFont.lineHeight * 1.05,
                 digitFont.lineHeight)
-            if (hourIndex + 1) % 12 == 0 && tickMarks == AstrolabeTickMarks.Quarters {
+            if (hourIndex + 1) % 6 == 0 && tickMarks == AstrolabeTickMarks.Quarters {
                 hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
             } else if (hourIndex + 1) % 3 == 0 && tickMarks == AstrolabeTickMarks.Eights {
                 hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            } else if tickMarks == AstrolabeTickMarks.Twelfths {
+            } else if (hourIndex + 1) % 2 == 0 && tickMarks == AstrolabeTickMarks.Twelfths {
                 hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
             } else if tickMarks == AstrolabeTickMarks.TwentyFourths {
                 hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])

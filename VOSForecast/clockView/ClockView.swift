@@ -103,9 +103,9 @@ class ClockView: UIView {
     func updateClock() {
         getCurrentTime()
 
-        minuteHand!.rotateHand(degrees: degreesFrom(minutes: minutes, seconds: seconds))
-        hourHand!.rotateHand(degrees: degreesFrom(hours: hours, minutes: minutes, seconds: seconds))
-        secondHand!.rotateHand(degrees: degreesFrom(seconds: seconds))
+        minuteHand!.rotateHandTo(degrees: degreesFrom(minutes: minutes, seconds: seconds))
+        hourHand!.rotateHandTo(degrees: degreesFrom(hours: hours, minutes: minutes, seconds: seconds))
+        secondHand!.rotateHandTo(degrees: degreesFrom(seconds: seconds))
     }
 
     private func getCurrentTime() {
