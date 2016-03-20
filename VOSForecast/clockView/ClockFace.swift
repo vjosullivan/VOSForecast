@@ -88,8 +88,8 @@ class ClockFace {
                 } else if tickMarks.rawValue >= TickMarks.Minutes.rawValue {
                     tick = TickOne()
                 }
-                let tickAngleRadians  = CGFloat((Double(6 * index) - 90.0) * degToRads)
                 if let tick = tick {
+                    let tickAngleRadians = CGFloat((Double(6 * index) - 90.0) * degToRads)
                     tick.draw(context, angle: tickAngleRadians, rect: rect)
                 }
             }

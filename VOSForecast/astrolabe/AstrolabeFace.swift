@@ -88,8 +88,8 @@ class AstrolabeFace {
                 } else if index % 4 == 0 && tickMarks.rawValue >= AstrolabeTickMarks.Quarters.rawValue {
                     tick = TickFifteen()
                 }
-                let tickAngleRadians  = CGFloat((Double(6 * index) - 90.0) * degToRads)
                 if let tick = tick {
+                    let tickAngleRadians = CGFloat((Double(6 * index) - 90.0) * degToRads)
                     tick.draw(context, angle: tickAngleRadians, rect: rect)
                 }
             }
