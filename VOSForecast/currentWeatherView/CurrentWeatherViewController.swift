@@ -125,7 +125,7 @@ class CurrentWeatherViewController: UIViewController {
         }
         temperatureUnits!.text = "\(forecast.units.temperature)"
 
-        currentSummary.text     = forecast.currentWeather?.summary
+        currentSummary.text     = forecast.currentWeather!.summary!
         let direction: Double = forecast.currentWeather!.windBearing!
         if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0

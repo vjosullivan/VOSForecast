@@ -561,37 +561,27 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-Bn-P5A" userLabel="weatherView" customClass="CurrentWeatherView" customModule="VOSForecast" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="101"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZz-dr-CHw" userLabel="spacer">
-                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="10"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="icon">
-                                                        <rect key="frame" x="0.0" y="10" width="130" height="56"/>
+                                                        <rect key="frame" x="0.0" y="10" width="130" height="51"/>
                                                         <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="64"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhy-E7-t2U" userLabel="summary">
-                                                        <rect key="frame" x="24" y="45" width="82" height="56"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhy-E7-t2U" userLabel="summary">
+                                                        <rect key="frame" x="24" y="51" width="82" height="42"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="lZz-dr-CHw" secondAttribute="trailing" id="3US-b4-jNs"/>
-                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="top" secondItem="lZz-dr-CHw" secondAttribute="bottom" id="48T-A8-Uzl"/>
-                                                    <constraint firstAttribute="bottom" secondItem="zhy-E7-t2U" secondAttribute="bottom" id="4lY-iu-PtI"/>
-                                                    <constraint firstItem="lZz-dr-CHw" firstAttribute="top" secondItem="UgP-Bn-P5A" secondAttribute="top" multiplier="0.1" id="Dpm-OT-IvA"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zhy-E7-t2U" secondAttribute="bottom" constant="8" id="4lY-iu-PtI"/>
                                                     <constraint firstItem="zhy-E7-t2U" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" constant="24" id="Nbp-vJ-bmR"/>
-                                                    <constraint firstItem="lZz-dr-CHw" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" id="bb6-Wu-TKp"/>
                                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" id="e1z-UY-uIn"/>
-                                                    <constraint firstItem="zhy-E7-t2U" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.55" id="fuY-Iw-N3g"/>
-                                                    <constraint firstItem="lZz-dr-CHw" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.1" id="mC5-nO-lVZ"/>
-                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.55" id="uB5-VY-JrF"/>
+                                                    <constraint firstItem="zhy-E7-t2U" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" constant="-8" id="fuY-Iw-N3g"/>
+                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="top" secondItem="UgP-Bn-P5A" secondAttribute="top" constant="10" id="sia-rc-FSp"/>
+                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" id="uB5-VY-JrF"/>
                                                     <constraint firstAttribute="trailing" secondItem="zhy-E7-t2U" secondAttribute="trailing" constant="24" id="uL9-oG-m0Q"/>
                                                     <constraint firstAttribute="trailing" secondItem="ERz-o2-rn9" secondAttribute="trailing" id="yXi-JD-PeG"/>
                                                 </constraints>
@@ -681,7 +671,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
-                                                        <rect key="frame" x="52" y="40" width="26" height="21"/>
+                                                        <rect key="frame" x="46" y="35" width="39" height="31"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                         <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -691,11 +681,11 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="T2s-M0-wC5" firstAttribute="height" secondItem="8Yy-XK-iE8" secondAttribute="height" multiplier="0.5" id="3mO-JX-AJq"/>
-                                                    <constraint firstItem="PJ6-eK-cPi" firstAttribute="width" secondItem="8Yy-XK-iE8" secondAttribute="width" multiplier="0.2" id="8hg-16-S0w"/>
+                                                    <constraint firstItem="PJ6-eK-cPi" firstAttribute="width" secondItem="8Yy-XK-iE8" secondAttribute="width" multiplier="0.3" id="8hg-16-S0w"/>
                                                     <constraint firstItem="vpM-9V-GQD" firstAttribute="width" secondItem="8Yy-XK-iE8" secondAttribute="width" multiplier="0.5" constant="-20" id="EKH-hq-QoZ"/>
                                                     <constraint firstItem="xmx-9u-KPA" firstAttribute="leading" secondItem="T2s-M0-wC5" secondAttribute="leading" id="ExE-0G-zdW"/>
                                                     <constraint firstItem="rZs-NI-cwd" firstAttribute="leading" secondItem="8Yy-XK-iE8" secondAttribute="leading" constant="10" id="GHp-kJ-X1K"/>
-                                                    <constraint firstItem="PJ6-eK-cPi" firstAttribute="height" secondItem="8Yy-XK-iE8" secondAttribute="height" multiplier="0.2" id="GjK-2T-bPm"/>
+                                                    <constraint firstItem="PJ6-eK-cPi" firstAttribute="height" secondItem="8Yy-XK-iE8" secondAttribute="height" multiplier="0.3" id="GjK-2T-bPm"/>
                                                     <constraint firstItem="xmx-9u-KPA" firstAttribute="trailing" secondItem="T2s-M0-wC5" secondAttribute="trailing" id="InN-QE-XoI"/>
                                                     <constraint firstAttribute="trailing" secondItem="JJF-lb-Af9" secondAttribute="trailing" constant="10" id="NiQ-0C-pYf"/>
                                                     <constraint firstItem="rZs-NI-cwd" firstAttribute="height" secondItem="8Yy-XK-iE8" secondAttribute="height" multiplier="0.5" constant="1" id="Oo8-cc-2CB"/>

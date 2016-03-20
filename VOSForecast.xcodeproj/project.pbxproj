@@ -87,6 +87,8 @@
 		F1BF0A3E1C8A24B10030710A /* ClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* ClockDelegate.swift */; };
 		F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */; };
 		F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */; };
+		F1C436861C9EA851009947A8 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436851C9EA851009947A8 /* Rain.swift */; };
+		F1C436871C9EA851009947A8 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436851C9EA851009947A8 /* Rain.swift */; };
 		F1D62DE21C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
 		F1D62DE31C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
 		F1D62DE51C98092800F34EBF /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE41C98092800F34EBF /* Units.swift */; };
@@ -169,6 +171,7 @@
 		F1BF0A371C8A24B10030710A /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		F1BF0A381C8A24B10030710A /* ClockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockDelegate.swift; sourceTree = "<group>"; };
 		F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		F1C436851C9EA851009947A8 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		F1D62DE11C9803D100F34EBF /* TickEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickEight.swift; sourceTree = "<group>"; };
 		F1D62DE41C98092800F34EBF /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		F1D62DE71C982BBA00F34EBF /* BeaufortScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaufortScale.swift; sourceTree = "<group>"; };
@@ -269,6 +272,7 @@
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
 				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 				F1D62DE41C98092800F34EBF /* Units.swift */,
+				F1C436851C9EA851009947A8 /* Rain.swift */,
 			);
 			path = forecastModel;
 			sourceTree = "<group>";
@@ -479,6 +483,7 @@
 				F1472D381C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */,
+				F1C436861C9EA851009947A8 /* Rain.swift in Sources */,
 				F1005AEC1C84E21700250A3C /* MainViewController.swift in Sources */,
 				F1D62DF41C9878EE00F34EBF /* WeatherFace.swift in Sources */,
 				F1059F7A1C8B3C180025EF69 /* ClockViewController.swift in Sources */,
@@ -555,6 +560,7 @@
 				F1059F7E1C8B3EF60025EF69 /* CurrentWeatherViewController.swift in Sources */,
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1D62DF81C98795800F34EBF /* OtherView.swift in Sources */,
+				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
 				F1D62DE91C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
 				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
