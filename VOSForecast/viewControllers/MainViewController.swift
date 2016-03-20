@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, CurrentWeatherDelegate {
+class MainViewController: UIViewController, WeatherDelegate {
 
     // MARK: - Clock properties
 
@@ -20,7 +20,7 @@ class MainViewController: UIViewController, CurrentWeatherDelegate {
 
     // MARK: Panels
 
-    var currentWeatherVC: CurrentWeatherViewController?
+    var weatherVC: WeatherViewController?
     var clockVC: ClockViewController?
 
     // MARK: Summary panel
@@ -42,8 +42,8 @@ class MainViewController: UIViewController, CurrentWeatherDelegate {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "currentWeatherSegue" {
-            currentWeatherVC = segue.destinationViewController as? CurrentWeatherViewController
+        if segue.identifier == "weatherSegue" {
+            weatherVC = segue.destinationViewController as? WeatherViewController
         } else if segue.identifier == "clockSegue" {
             clockVC = segue.destinationViewController as? ClockViewController
         }
@@ -83,7 +83,7 @@ class MainViewController: UIViewController, CurrentWeatherDelegate {
                 dispatch_async(dispatch_get_main_queue()) {
                     if let forecast = ForecastBuilder().buildForecast(data) {
                         self.updateView(forecast)
-                        self.currentWeatherVC!.updateView(forecast)
+                        self.weatherVC!.updateView(forecast)
                     } else {
                         let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
                         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

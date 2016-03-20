@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherViewController.swift
+//  WeatherViewController.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 05/03/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentWeatherViewController: UIViewController {
+class WeatherViewController: UIViewController {
 
     // MARK: - Outlets
 
@@ -20,7 +20,7 @@ class CurrentWeatherViewController: UIViewController {
 
     // Weather view
 
-    @IBOutlet weak var weatherView: CurrentWeatherView!
+    @IBOutlet weak var weatherView: WeatherView!
     @IBOutlet weak var currentSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
 
@@ -46,7 +46,7 @@ class CurrentWeatherViewController: UIViewController {
 
     // Rain view
 
-    @IBOutlet weak var rainView: OtherView!
+    @IBOutlet weak var rainView: RainView!
     @IBOutlet weak var rainDescription: UILabel!
     @IBOutlet weak var cloudDescription: UILabel!
 
@@ -57,7 +57,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var ukUnits: UIButton!
     @IBOutlet weak var usUnits: UIButton!
 
-    var parentVC: CurrentWeatherDelegate?
+    var parentVC: WeatherDelegate?
 
     // MARK: - UIViewController functions
 
@@ -126,28 +126,28 @@ class CurrentWeatherViewController: UIViewController {
         }
         temperatureUnits!.text = "\(forecast.units.temperature)"
 
-        currentSummary.text     = forecast.currentWeather!.summary!
-        let direction: Double = forecast.currentWeather!.windBearing!
+        currentSummary.text     = forecast.weather!.summary!
+        let direction: Double = forecast.weather!.windBearing!
         if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
             windSpeed.text = ""
-            beaufort.text  = BeaufortScale(speed: forecast.currentWeather!.windSpeed!, units: forecast.units.windSpeed).description
+            beaufort.text  = BeaufortScale(speed: forecast.weather!.windSpeed!, units: forecast.units.windSpeed).description
             windSpeedUnits.text = "from \(Compass(direction: direction).principleWind)"
         } else {
             windDescription.selectedSegmentIndex = 1
-            let speed: Int = Int(round(forecast.currentWeather!.windSpeed!))
+            let speed: Int = Int(round(forecast.weather!.windSpeed!))
             windSpeed.text = "\(speed)"
             beaufort.text  = ""
             windSpeedUnits.text = forecast.units.windSpeed
         }
         windView.windDirection = direction
 
-        let intensity  = Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
+        let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         let likelyhood = forecast.rainLikelyhoodDisplay
-        rainDescription.text = "\(intensity)\n(\(likelyhood) chance)" // \(forecast.currentWeather?.prec
+        rainDescription.text = "\(intensity)\n(\(likelyhood) chance)" // \(forecast.weather?.prec
         cloudDescription.text = "Cloud cover: \(forecast.cloudCoverDisplay)"
         print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
-        currentIcon.text = weatherIcon(forecast.currentWeather?.icon)
+        currentIcon.text = weatherIcon(forecast.weather?.icon)
         if currentIcon.text == "\u{F00D}" {
             currentIcon.textColor = UIColor.yellowColor()
         } else {
@@ -255,7 +255,7 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? CurrentWeatherDelegate
+        parentVC = parent as? WeatherDelegate
         parentVC?.updateForecast()
     }
 }

@@ -10,15 +10,15 @@ import Foundation
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        return roundToWholeNumber(currentWeather?.temperature)
+        return roundToWholeNumber(weather?.temperature)
     }
 
     var currentFeelsLikeDisplay: String {
-        return roundToWholeNumber(currentWeather?.apparentTemperature)
+        return roundToWholeNumber(weather?.apparentTemperature)
     }
 
     var currentDewPointDisplay: String {
-        return roundToWholeNumber(currentWeather?.dewPoint)
+        return roundToWholeNumber(weather?.dewPoint)
     }
 
     var highTodayDisplay: String {
@@ -30,7 +30,7 @@ extension Forecast {
     }
 
     var cloudCoverDisplay: String {
-        if let cover = currentWeather?.cloudCover {
+        if let cover = weather?.cloudCover {
             return roundToWholeNumber(cover * 100.0) + "%"
         } else {
             return "unknown"
@@ -38,7 +38,7 @@ extension Forecast {
     }
 
     var rainLikelyhoodDisplay: String {
-        if let likelyhood = currentWeather?.precipProbability {
+        if let likelyhood = weather?.precipProbability {
             return roundToWholeNumber(likelyhood * 100.0) + "%"
         } else {
             return "unknown"

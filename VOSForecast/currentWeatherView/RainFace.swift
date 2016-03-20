@@ -1,5 +1,5 @@
 //
-//  OtherFace.swift
+//  RainFace.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 15/03/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OtherFace: InstrumentFace {
+class RainFace: InstrumentFace {
 
     override init(context: CGContextRef, rect: CGRect) {
         super.init(context: context, rect: rect)

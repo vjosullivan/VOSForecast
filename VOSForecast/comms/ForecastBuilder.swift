@@ -24,7 +24,7 @@ class ForecastBuilder {
     private func parseJSONForecast(json: [String: AnyObject]) -> Forecast {
         let latitude         = json["latitude"] as? Double
         let longitude        = json["longitude"] as? Double
-        let currentWeather   = parseCurrentWeather(json)
+        let weather          = parseWeather(json)
         let sevenDayForecast = parseSevenDayForecast(json)
         var todaysForecast: OneDayForecast? = nil
         for day in (sevenDayForecast?.oneDayForecasts)! {
@@ -40,7 +40,7 @@ class ForecastBuilder {
         let forecast = Forecast(
             latitude: latitude,
             longitude: longitude,
-            currentWeather: currentWeather,
+            weather: weather,
             oneDayForecast: todaysForecast,
             sevenDayForecast: sevenDayForecast,
             oneHourForecasts: oneHourForecasts,
@@ -52,8 +52,8 @@ class ForecastBuilder {
         return forecast
     }
     
-    private func parseCurrentWeather(json: [String: AnyObject]) -> CurrentWeather? {
-        var currentWeather: CurrentWeather?
+    private func parseWeather(json: [String: AnyObject]) -> Weather? {
+        var weather: Weather?
         if let currently = json["currently"] as? [String: AnyObject] {
             print(currently)
             let time = currently["time"] as? Int
@@ -75,7 +75,7 @@ class ForecastBuilder {
             let visibility = currently["visibility"] as? Double
             let pressure = currently["pressure"] as? Double
             let ozone = currently["ozone"] as? Double
-            currentWeather = CurrentWeather(time: time,
+            weather = Weather(time: time,
                 icon: icon,
                 summary: summary,
                 temperature: temperature,
@@ -93,7 +93,7 @@ class ForecastBuilder {
                 pressure: pressure,
                 ozone: ozone)
         }
-        return currentWeather ?? nil
+        return weather ?? nil
     }
     
     private func parseFlags(json: [String: AnyObject]) -> Flags? {

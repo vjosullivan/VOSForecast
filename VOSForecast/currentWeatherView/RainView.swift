@@ -1,14 +1,14 @@
 //
-//  CurrentWeatherView.swift
+//  RainView.swift
 //  VOSForecast
 //
-//  Created by Vincent O'Sullivan on 05/03/2016.
+//  Created by Vincent O'Sullivan on 15/03/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
 
 import UIKit
 
-class CurrentWeatherView: UIView {
+class RainView: UIView {
 
     // MARK: - Propeties
 
@@ -29,15 +29,13 @@ class CurrentWeatherView: UIView {
     override func drawRect(rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
-        WeatherFace(context: context, rect: rect).draw()
+        RainFace(context: context, rect: rect).draw()
     }
 
     override func layoutSubviews() {
         if shouldUpdateSubviews {
-
             // Any permanent visual features can go here.
             shouldUpdateSubviews = false
         }
     }
-    
 }
