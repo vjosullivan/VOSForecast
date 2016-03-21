@@ -100,19 +100,7 @@ class AstrolabeView: UIView {
     }
 
     private func degreesFrom(hours hours: Int, minutes: Int, seconds: Int) -> Double {
-        let degrees = Double(hours) * 15.0 + Double(minutes) / 2.0 + Double(seconds) / 120.0 + 180.0
-        return degrees
-    }
-
-    private func degreesFrom(minutes minutes: Int, seconds: Int) -> Double {
-        let degrees = Double(minutes) * 6.0 + Double(seconds) / 10.0
-        return degrees
-    }
-
-    private func degreesFrom(seconds seconds: Int) -> Double {
-        // (The + 6 below is "delay" the hand by one second
-        //  so that it arrives at the exact time rather than departs.)
-        let degrees = Double(seconds * 6) + 6
+        let degrees = Double(hours) * 15.0 + Double(minutes) / 4.0 + Double(seconds) / 240.0 + 180.0
         return degrees
     }
 }
