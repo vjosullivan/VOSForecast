@@ -545,10 +545,16 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-Bn-P5A" userLabel="weatherView" customClass="WeatherView" customModule="VOSForecast" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="101"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="icon">
-                                                        <rect key="frame" x="0.0" y="10" width="130" height="51"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ERz-o2-rn9" userLabel="iconRear">
+                                                        <rect key="frame" x="0.0" y="10" width="130" height="30.5"/>
                                                         <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="64"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2t-mg-C10" userLabel="iconFront">
+                                                        <rect key="frame" x="0.0" y="10" width="130" height="30.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhy-E7-t2U" userLabel="summary">
@@ -560,12 +566,16 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="s2t-mg-C10" firstAttribute="bottom" secondItem="ERz-o2-rn9" secondAttribute="bottom" id="2YY-9q-DMh"/>
                                                     <constraint firstAttribute="bottom" secondItem="zhy-E7-t2U" secondAttribute="bottom" constant="8" id="4lY-iu-PtI"/>
                                                     <constraint firstItem="zhy-E7-t2U" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" constant="24" id="Nbp-vJ-bmR"/>
                                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="leading" secondItem="UgP-Bn-P5A" secondAttribute="leading" id="e1z-UY-uIn"/>
                                                     <constraint firstItem="zhy-E7-t2U" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" constant="-8" id="fuY-Iw-N3g"/>
+                                                    <constraint firstItem="s2t-mg-C10" firstAttribute="top" secondItem="ERz-o2-rn9" secondAttribute="top" id="ldc-OP-Hgv"/>
+                                                    <constraint firstItem="s2t-mg-C10" firstAttribute="leading" secondItem="ERz-o2-rn9" secondAttribute="leading" id="pd4-ND-S3n"/>
+                                                    <constraint firstItem="s2t-mg-C10" firstAttribute="trailing" secondItem="ERz-o2-rn9" secondAttribute="trailing" id="sGb-cK-DHX"/>
                                                     <constraint firstItem="ERz-o2-rn9" firstAttribute="top" secondItem="UgP-Bn-P5A" secondAttribute="top" constant="10" id="sia-rc-FSp"/>
-                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" id="uB5-VY-JrF"/>
+                                                    <constraint firstItem="ERz-o2-rn9" firstAttribute="height" secondItem="UgP-Bn-P5A" secondAttribute="height" multiplier="0.5" constant="-20" id="uB5-VY-JrF"/>
                                                     <constraint firstAttribute="trailing" secondItem="zhy-E7-t2U" secondAttribute="trailing" constant="24" id="uL9-oG-m0Q"/>
                                                     <constraint firstAttribute="trailing" secondItem="ERz-o2-rn9" secondAttribute="trailing" id="yXi-JD-PeG"/>
                                                 </constraints>
