@@ -8,10 +8,15 @@
 
 import UIKit
 
+struct AstrolabeKeys {
+    static let tickmarks   = "astrolabe.tickmarks"
+    static let numeralType = "astrolabe.numeraltype"
+}
+
 class AstrolabeFace {
 
     let tickMarks: AstrolabeTickMarks
-    let numerals: Numerals
+    let numeralType: NumeralType
     let context: CGContextRef
     let rect: CGRect
 
@@ -27,16 +32,16 @@ class AstrolabeFace {
     var digitOuterRadius: CGFloat = 0.99
 
     init(context: CGContextRef, rect: CGRect) {
-        self.context   = context
-        self.rect      = rect
-        self.tickMarks = AstrolabeTickMarks(rawValue: NSUserDefaults.readInt(key: "astrolabe.tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
-        self.numerals  = Numerals(rawValue: NSUserDefaults.readInt(key: "astrolabe.numerals", defaultValue: Numerals.Arabic.rawValue))!
+        self.context     = context
+        self.rect        = rect
+        self.tickMarks   = AstrolabeTickMarks(rawValue: NSUserDefaults.readInt(key: AstrolabeKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue))!
+        self.numeralType = NumeralType(rawValue: NSUserDefaults.readInt(key: AstrolabeKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue))!
     }
 
     func draw() {
         drawAstrolabeFace()
         drawAstrolabeBorder()
-        switch numerals {
+        switch numeralType {
         case .None:
             break
         case .Roman:

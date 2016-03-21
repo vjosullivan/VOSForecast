@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct WeatherKeys {
+    static let units    = "weather.units"
+    static let windType = "weather.windtype"
+}
+
+
 class WeatherViewController: UIViewController {
 
     // MARK: - Outlets
@@ -100,7 +106,7 @@ class WeatherViewController: UIViewController {
 
     @IBAction func actionSaveSetting(sender: UISegmentedControl) {
         if sender == windDescription {
-            NSUserDefaults.write(key: "windDescription", value: ["words", "numbers"][sender.selectedSegmentIndex])
+            NSUserDefaults.write(key: WeatherKeys.windType, value: ["words", "numbers"][sender.selectedSegmentIndex])
         }
         parentVC!.updateForecast()
     }
@@ -128,7 +134,7 @@ class WeatherViewController: UIViewController {
 
         currentSummary.text     = forecast.weather!.summary!
         let direction: Double = forecast.weather!.windBearing!
-        if NSUserDefaults.read(key: "windDescription", defaultValue: "numbers") == "words" {
+        if NSUserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
             windSpeed.text = ""
             beaufort.text  = BeaufortScale(speed: forecast.weather!.windSpeed!, units: forecast.units.windSpeed).description
@@ -218,13 +224,13 @@ class WeatherViewController: UIViewController {
     @IBAction func switchUnits(sender: UIButton) {
         switch sender {
         case autoUnits:
-            NSUserDefaults.write(key: "units", value: "auto")
+            NSUserDefaults.write(key: WeatherKeys.units, value: "auto")
         case metricUnits:
-            NSUserDefaults.write(key: "units", value: "ca")
+            NSUserDefaults.write(key: WeatherKeys.units, value: "ca")
         case ukUnits:
-            NSUserDefaults.write(key: "units", value: "uk2")
+            NSUserDefaults.write(key: WeatherKeys.units, value: "uk2")
         case usUnits:
-            NSUserDefaults.write(key: "units", value: "us")
+            NSUserDefaults.write(key: WeatherKeys.units, value: "us")
         default:
             break
         }
@@ -239,7 +245,7 @@ class WeatherViewController: UIViewController {
         metricUnits.setTitleColor(black, forState: .Normal)
         ukUnits.setTitleColor(black, forState: .Normal)
         usUnits.setTitleColor(black, forState: .Normal)
-        let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
+        let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
         switch units {
         case "auto":
             autoUnits.setTitleColor(green, forState: .Normal)

@@ -8,10 +8,15 @@
 
 import UIKit
 
+struct ClockKeys {
+    static let tickmarks   = "clock.tickmarks"
+    static let numeralType = "clock.numeraltype"
+}
+
 class ClockFace {
 
     let tickMarks: TickMarks
-    let numerals: Numerals
+    let numeralType: NumeralType
     let context: CGContextRef
     let rect: CGRect
 
@@ -27,16 +32,16 @@ class ClockFace {
     var digitOuterRadius: CGFloat = 0.99
 
     init(context: CGContextRef, rect: CGRect) {
-        self.context   = context
-        self.rect      = rect
-        self.tickMarks = TickMarks(rawValue: NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue))!
-        self.numerals  = Numerals(rawValue: NSUserDefaults.readInt(key: "numerals", defaultValue: Numerals.Arabic.rawValue))!
+        self.context     = context
+        self.rect        = rect
+        self.tickMarks   = TickMarks(rawValue: NSUserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue))!
+        self.numeralType = NumeralType(rawValue: NSUserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue))!
     }
 
     func draw() {
         drawClockFace()
         drawClockBorder()
-        switch numerals {
+        switch numeralType {
         case .None:
             break
         case .Roman:
@@ -145,7 +150,7 @@ class ClockFace {
 
 // MARK: - Associated enums
 
-enum Numerals: Int {
+enum NumeralType: Int {
     case None   = 0
     case Roman  = 1
     case Arabic = 2

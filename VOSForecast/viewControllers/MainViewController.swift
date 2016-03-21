@@ -74,7 +74,7 @@ class MainViewController: UIViewController, WeatherDelegate {
     // MARK: - Local functions
 
     func updateForecast() {
-        let units = NSUserDefaults.read(key: "units", defaultValue: "auto")
+        let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
         let latitude  = 51.3
         let longitude = -1.0
         print("Fetching forecast at \(latitude), \(longitude) in \(units).")

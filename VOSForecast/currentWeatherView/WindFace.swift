@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct WindVaneKeys {
+    static let tickCount = "windvane.tickcount"
+    static let labelCount = "windvane.labelcount"
+}
+
 class WindFace: InstrumentFace {
 
     private let windTicks: WindTicks
@@ -19,8 +24,8 @@ class WindFace: InstrumentFace {
 
     override init(context: CGContextRef, rect: CGRect) {
 
-        self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: "WindTicks", defaultValue: WindTicks.SixtyFour.rawValue))!
-        self.letters   = WindLetters(rawValue: NSUserDefaults.readInt(key: "WindLetters", defaultValue: WindLetters.Eight.rawValue))!
+        self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: WindVaneKeys.tickCount, defaultValue: WindTicks.SixtyFour.rawValue))!
+        self.letters   = WindLetters(rawValue: NSUserDefaults.readInt(key: WindVaneKeys.labelCount, defaultValue: WindLetters.Eight.rawValue))!
 
         super.init(context: context, rect: rect)
     }

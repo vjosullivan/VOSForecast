@@ -34,8 +34,8 @@ class AstrolabeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "astrolabe.numerals", defaultValue: Numerals.Arabic.rawValue)
-        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "astrolabe.tickmarks", defaultValue: TickMarks.Minutes.rawValue)
+        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: AstrolabeKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue)
+        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: AstrolabeKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,11 +67,11 @@ class AstrolabeViewController: UIViewController {
     @IBAction func actionChangeSettings(sender: UISegmentedControl) {
         switch sender {
         case numeralsSetting:
-            NSUserDefaults.writeInt(key: "astrolabe.numerals", value: numeralsSetting.selectedSegmentIndex)
+            NSUserDefaults.writeInt(key: AstrolabeKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
             astrolabeFrontView.shouldUpdateSubviews = true
             astrolabeFrontView.setNeedsDisplay()
         case ticksSetting:
-            NSUserDefaults.writeInt(key: "astrolabe.tickmarks", value: ticksSetting.selectedSegmentIndex)
+            NSUserDefaults.writeInt(key: AstrolabeKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
             astrolabeFrontView.shouldUpdateSubviews = true
             astrolabeFrontView.setNeedsDisplay()
         default:

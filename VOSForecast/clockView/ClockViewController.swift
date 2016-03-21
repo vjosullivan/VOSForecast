@@ -34,8 +34,8 @@ class ClockViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "numerals", defaultValue: Numerals.Arabic.rawValue)
-        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: "tickmarks", defaultValue: TickMarks.Minutes.rawValue)
+        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue)
+        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,11 +67,11 @@ class ClockViewController: UIViewController {
     @IBAction func actionChangeSettings(sender: UISegmentedControl) {
         switch sender {
         case numeralsSetting:
-            NSUserDefaults.writeInt(key: "numerals", value: numeralsSetting.selectedSegmentIndex)
+            NSUserDefaults.writeInt(key: ClockKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
             clockFrontView.setNeedsDisplay()
         case ticksSetting:
-            NSUserDefaults.writeInt(key: "tickmarks", value: ticksSetting.selectedSegmentIndex)
+            NSUserDefaults.writeInt(key: ClockKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
             clockFrontView.setNeedsDisplay()
         default:
