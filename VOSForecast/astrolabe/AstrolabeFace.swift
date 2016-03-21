@@ -19,7 +19,7 @@ class AstrolabeFace {
     var borderAlpha: CGFloat = 1.0
     var borderWidth: CGFloat = 1.0
 
-    var faceBackgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.0)
+    var faceBackgroundColor = AppColour.faceColour
     var faceBackgroundAlpha: CGFloat = 1.0
 
     var digitFont: UIFont    = UIFont.systemFontOfSize(16)
@@ -107,13 +107,13 @@ class AstrolabeFace {
         case .TwentyFourths:
             writer.write([
                 "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII",
-                "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XI", "XX", "XXI", "XXII", "XXIII", "XXIV"], lastWord: .OnTop)
+                "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX", "XXI", "XXII", "XXIII", "XXIV"], lastWord: .OnBottom)
         case .Twelfths:
-            writer.write(["II", "IV", "VI", "VIII", "X", "XII", "XIV", "XVI", "XVIII", "XX", "XXII", "XXIV"], lastWord: .OnTop)
+            writer.write(["II", "IV", "VI", "VIII", "X", "XII", "XIV", "XVI", "XVIII", "XX", "XXII", "XXIV"], lastWord: .OnBottom)
         case .Eights:
-            writer.write(["III", "VI", "IX", "XII", "XV", "XVIII", "XXI", "XIV"], lastWord: .OnTop)
+            writer.write(["III", "VI", "IX", "XII", "XV", "XVIII", "XXI", "XIV"], lastWord: .OnBottom)
         case .Quarters:
-            writer.write(["VI", "XII", "XVIII", "XIV"], lastWord: .OnTop)
+            writer.write(["VI", "XII", "XVIII", "XIV"], lastWord: .OnBottom)
         case .None:
             break
         }

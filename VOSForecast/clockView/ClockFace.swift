@@ -19,7 +19,7 @@ class ClockFace {
     var borderAlpha: CGFloat = 1.0
     var borderWidth: CGFloat = 1.0
 
-    var faceBackgroundColor = UIColor(red: 0.25, green: 0.25, blue: 0.25, alpha: 1.0)
+    var faceBackgroundColor = AppColour.faceColour
     var faceBackgroundAlpha: CGFloat = 1.0
 
     var digitFont: UIFont    = UIFont.systemFontOfSize(16)
