@@ -14,8 +14,6 @@ class RainView: UIView {
 
     var shouldUpdateSubviews: Bool = true
 
-    var delegate: ClockDelegate?
-
     // MARK: - Functions
 
     override init(frame: CGRect) {

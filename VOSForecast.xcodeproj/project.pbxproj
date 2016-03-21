@@ -21,25 +21,58 @@
 		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3CC71C9B7168007A433E /* NSDateExtension.swift */; };
-		F1005AEC1C84E21700250A3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* MainViewController.swift */; };
-		F1005AED1C84E21700250A3C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1005AEB1C84E21700250A3C /* MainViewController.swift */; };
 		F1059F771C8B369A0025EF69 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* WeatherView.swift */; };
 		F1059F781C8B369A0025EF69 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F761C8B369A0025EF69 /* WeatherView.swift */; };
-		F1059F7A1C8B3C180025EF69 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F791C8B3C180025EF69 /* ClockViewController.swift */; };
-		F1059F7B1C8B3C180025EF69 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F791C8B3C180025EF69 /* ClockViewController.swift */; };
 		F1059F7D1C8B3EF60025EF69 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F7C1C8B3EF60025EF69 /* WeatherViewController.swift */; };
 		F1059F7E1C8B3EF60025EF69 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1059F7C1C8B3EF60025EF69 /* WeatherViewController.swift */; };
-		F114F12C1C95539D00405C4B /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F12B1C95539D00405C4B /* ClockFace.swift */; };
-		F114F12D1C95539D00405C4B /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F12B1C95539D00405C4B /* ClockFace.swift */; };
 		F114F1321C95A82E00405C4B /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* WindView.swift */; };
 		F114F1331C95A82E00405C4B /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1311C95A82E00405C4B /* WindView.swift */; };
 		F114F1351C95A92000405C4B /* WindFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1341C95A92000405C4B /* WindFace.swift */; };
 		F114F1361C95A92000405C4B /* WindFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F114F1341C95A92000405C4B /* WindFace.swift */; };
-		F13079281C9DA49B00B51539 /* InstrumentFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13079271C9DA49B00B51539 /* InstrumentFace.swift */; };
 		F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24C51CA08612006B3B23 /* Numerals.swift */; };
 		F13C24C71CA08612006B3B23 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24C51CA08612006B3B23 /* Numerals.swift */; };
-		F13C24CB1CA088B1006B3B23 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24CA1CA088B1006B3B23 /* Sun.swift */; };
-		F13C24CC1CA088B1006B3B23 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24CA1CA088B1006B3B23 /* Sun.swift */; };
+		F13C24CE1CA09FB2006B3B23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */; };
+		F13C24CF1CA09FB2006B3B23 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */; };
+		F13C24D11CA0A31B006B3B23 /* AstrolabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D01CA0A31B006B3B23 /* AstrolabeView.swift */; };
+		F13C24D21CA0A31B006B3B23 /* AstrolabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D01CA0A31B006B3B23 /* AstrolabeView.swift */; };
+		F13C24D41CA0A336006B3B23 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D31CA0A336006B3B23 /* Sun.swift */; };
+		F13C24D51CA0A336006B3B23 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D31CA0A336006B3B23 /* Sun.swift */; };
+		F13C24D91CA0A3EB006B3B23 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D71CA0A3EB006B3B23 /* AstrolabeHand.swift */; };
+		F13C24DA1CA0A3EB006B3B23 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D71CA0A3EB006B3B23 /* AstrolabeHand.swift */; };
+		F13C24DB1CA0A3EB006B3B23 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D81CA0A3EB006B3B23 /* AstrolabeHourHand.swift */; };
+		F13C24DC1CA0A3EB006B3B23 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24D81CA0A3EB006B3B23 /* AstrolabeHourHand.swift */; };
+		F13C24DE1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24DD1CA0A408006B3B23 /* AstrolabeFace.swift */; };
+		F13C24DF1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24DD1CA0A408006B3B23 /* AstrolabeFace.swift */; };
+		F13C24E51CA0A51B006B3B23 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24E41CA0A51B006B3B23 /* Hand.swift */; };
+		F13C24E61CA0A51B006B3B23 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24E41CA0A51B006B3B23 /* Hand.swift */; };
+		F13C24E81CA0A605006B3B23 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24E71CA0A605006B3B23 /* ClockViewController.swift */; };
+		F13C24E91CA0A605006B3B23 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24E71CA0A605006B3B23 /* ClockViewController.swift */; };
+		F13C24EB1CA0A66F006B3B23 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24EA1CA0A66F006B3B23 /* ClockFace.swift */; };
+		F13C24EC1CA0A66F006B3B23 /* ClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24EA1CA0A66F006B3B23 /* ClockFace.swift */; };
+		F13C24EE1CA0A677006B3B23 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24ED1CA0A677006B3B23 /* ClockView.swift */; };
+		F13C24EF1CA0A677006B3B23 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24ED1CA0A677006B3B23 /* ClockView.swift */; };
+		F13C24F31CA0A6D7006B3B23 /* HourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F01CA0A6D7006B3B23 /* HourHand.swift */; };
+		F13C24F41CA0A6D7006B3B23 /* HourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F01CA0A6D7006B3B23 /* HourHand.swift */; };
+		F13C24F51CA0A6D7006B3B23 /* MinuteHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F11CA0A6D7006B3B23 /* MinuteHand.swift */; };
+		F13C24F61CA0A6D7006B3B23 /* MinuteHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F11CA0A6D7006B3B23 /* MinuteHand.swift */; };
+		F13C24F71CA0A6D7006B3B23 /* SecondHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F21CA0A6D7006B3B23 /* SecondHand.swift */; };
+		F13C24F81CA0A6D7006B3B23 /* SecondHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24F21CA0A6D7006B3B23 /* SecondHand.swift */; };
+		F13C25111CA0AB64006B3B23 /* LargeTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250C1CA0AB64006B3B23 /* LargeTick.swift */; };
+		F13C25121CA0AB64006B3B23 /* LargeTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250C1CA0AB64006B3B23 /* LargeTick.swift */; };
+		F13C25131CA0AB64006B3B23 /* MediumTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250D1CA0AB64006B3B23 /* MediumTick.swift */; };
+		F13C25141CA0AB64006B3B23 /* MediumTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250D1CA0AB64006B3B23 /* MediumTick.swift */; };
+		F13C25151CA0AB64006B3B23 /* SmallTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250E1CA0AB64006B3B23 /* SmallTick.swift */; };
+		F13C25161CA0AB64006B3B23 /* SmallTick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250E1CA0AB64006B3B23 /* SmallTick.swift */; };
+		F13C25171CA0AB64006B3B23 /* Tick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250F1CA0AB64006B3B23 /* Tick.swift */; };
+		F13C25181CA0AB64006B3B23 /* Tick.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C250F1CA0AB64006B3B23 /* Tick.swift */; };
+		F13C25191CA0AB64006B3B23 /* TickZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25101CA0AB64006B3B23 /* TickZero.swift */; };
+		F13C251A1CA0AB64006B3B23 /* TickZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25101CA0AB64006B3B23 /* TickZero.swift */; };
+		F13C251C1CA0ABA9006B3B23 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C251B1CA0ABA9006B3B23 /* Hub.swift */; };
+		F13C251D1CA0ABA9006B3B23 /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C251B1CA0ABA9006B3B23 /* Hub.swift */; };
+		F13C25221CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25211CA0AD88006B3B23 /* WindDirectionHand.swift */; };
+		F13C25231CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25211CA0AD88006B3B23 /* WindDirectionHand.swift */; };
+		F13C25251CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */; };
+		F13C25261CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */; };
 		F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* OneDayForecast.swift */; };
@@ -56,10 +89,6 @@
 		F1472D371C8784E200D03DC3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* Weather.swift */; };
 		F1472D381C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1472D391C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
-		F1785B291C95BE8A00013423 /* WindHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B281C95BE8A00013423 /* WindHand.swift */; };
-		F1785B2A1C95BE8A00013423 /* WindHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B281C95BE8A00013423 /* WindHand.swift */; };
-		F1785B2C1C95D9CE00013423 /* CompassHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B2B1C95D9CE00013423 /* CompassHand.swift */; };
-		F1785B2D1C95D9CE00013423 /* CompassHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1785B2B1C95D9CE00013423 /* CompassHand.swift */; };
 		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
 		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
 		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
@@ -67,48 +96,12 @@
 		F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */; };
 		F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */; };
 		F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */; };
-		F1BF0A211C8A24660030710A /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A171C8A24660030710A /* ClockHand.swift */; };
-		F1BF0A221C8A24660030710A /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A171C8A24660030710A /* ClockHand.swift */; };
-		F1BF0A231C8A24660030710A /* SecondHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A181C8A24660030710A /* SecondHand.swift */; };
-		F1BF0A241C8A24660030710A /* SecondHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A181C8A24660030710A /* SecondHand.swift */; };
-		F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A191C8A24660030710A /* MinuteHand.swift */; };
-		F1BF0A261C8A24660030710A /* MinuteHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A191C8A24660030710A /* MinuteHand.swift */; };
-		F1BF0A271C8A24660030710A /* HourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1A1C8A24660030710A /* HourHand.swift */; };
-		F1BF0A281C8A24660030710A /* HourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1A1C8A24660030710A /* HourHand.swift */; };
-		F1BF0A291C8A24660030710A /* TickMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1B1C8A24660030710A /* TickMark.swift */; };
-		F1BF0A2A1C8A24660030710A /* TickMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1B1C8A24660030710A /* TickMark.swift */; };
-		F1BF0A2B1C8A24660030710A /* TickZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1C1C8A24660030710A /* TickZero.swift */; };
-		F1BF0A2C1C8A24660030710A /* TickZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1C1C8A24660030710A /* TickZero.swift */; };
-		F1BF0A2D1C8A24660030710A /* TickOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1D1C8A24660030710A /* TickOne.swift */; };
-		F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1D1C8A24660030710A /* TickOne.swift */; };
-		F1BF0A2F1C8A24660030710A /* TickFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1E1C8A24660030710A /* TickFive.swift */; };
-		F1BF0A301C8A24660030710A /* TickFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1E1C8A24660030710A /* TickFive.swift */; };
-		F1BF0A311C8A24660030710A /* TickFifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1F1C8A24660030710A /* TickFifteen.swift */; };
-		F1BF0A321C8A24660030710A /* TickFifteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A1F1C8A24660030710A /* TickFifteen.swift */; };
-		F1BF0A331C8A24660030710A /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A201C8A24660030710A /* Hub.swift */; };
-		F1BF0A341C8A24660030710A /* Hub.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A201C8A24660030710A /* Hub.swift */; };
-		F1BF0A3B1C8A24B10030710A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A371C8A24B10030710A /* ClockView.swift */; };
-		F1BF0A3C1C8A24B10030710A /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A371C8A24B10030710A /* ClockView.swift */; };
-		F1BF0A3D1C8A24B10030710A /* ClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* ClockDelegate.swift */; };
-		F1BF0A3E1C8A24B10030710A /* ClockDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A381C8A24B10030710A /* ClockDelegate.swift */; };
 		F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */; };
 		F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */; };
 		F1C436861C9EA851009947A8 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436851C9EA851009947A8 /* Rain.swift */; };
 		F1C436871C9EA851009947A8 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436851C9EA851009947A8 /* Rain.swift */; };
 		F1C4368A1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436891C9F47BE009947A8 /* AstrolabeViewController.swift */; };
 		F1C4368B1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436891C9F47BE009947A8 /* AstrolabeViewController.swift */; };
-		F1C4368D1C9F4B18009947A8 /* AstrolabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4368C1C9F4B18009947A8 /* AstrolabeView.swift */; };
-		F1C4368E1C9F4B18009947A8 /* AstrolabeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4368C1C9F4B18009947A8 /* AstrolabeView.swift */; };
-		F1C436901C9F4EE7009947A8 /* AstrolabeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */; };
-		F1C436911C9F4EE7009947A8 /* AstrolabeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */; };
-		F1C436931C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */; };
-		F1C436941C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */; };
-		F1C436961C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */; };
-		F1C436971C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */; };
-		F1C436991C9F60E0009947A8 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */; };
-		F1C4369A1C9F60E0009947A8 /* AstrolabeHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */; };
-		F1D62DE21C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
-		F1D62DE31C9803D100F34EBF /* TickEight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE11C9803D100F34EBF /* TickEight.swift */; };
 		F1D62DE51C98092800F34EBF /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE41C98092800F34EBF /* Units.swift */; };
 		F1D62DE61C98092800F34EBF /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE41C98092800F34EBF /* Units.swift */; };
 		F1D62DE81C982BBA00F34EBF /* BeaufortScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D62DE71C982BBA00F34EBF /* BeaufortScale.swift */; };
@@ -149,16 +142,32 @@
 		34AEAB621C9FFD8300834E75 /* AppColour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColour.swift; sourceTree = "<group>"; };
 		34B35A941C9166F9006F6CBA /* CircleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleWriter.swift; sourceTree = "<group>"; };
 		34FF3CC71C9B7168007A433E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
-		F1005AEB1C84E21700250A3C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F1059F761C8B369A0025EF69 /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
-		F1059F791C8B3C180025EF69 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 		F1059F7C1C8B3EF60025EF69 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
-		F114F12B1C95539D00405C4B /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
 		F114F1311C95A82E00405C4B /* WindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		F114F1341C95A92000405C4B /* WindFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindFace.swift; sourceTree = "<group>"; };
-		F13079271C9DA49B00B51539 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F13C24C51CA08612006B3B23 /* Numerals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numerals.swift; sourceTree = "<group>"; };
-		F13C24CA1CA088B1006B3B23 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F13C24D01CA0A31B006B3B23 /* AstrolabeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeView.swift; sourceTree = "<group>"; };
+		F13C24D31CA0A336006B3B23 /* Sun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		F13C24D71CA0A3EB006B3B23 /* AstrolabeHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHand.swift; sourceTree = "<group>"; };
+		F13C24D81CA0A3EB006B3B23 /* AstrolabeHourHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHourHand.swift; sourceTree = "<group>"; };
+		F13C24DD1CA0A408006B3B23 /* AstrolabeFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeFace.swift; sourceTree = "<group>"; };
+		F13C24E41CA0A51B006B3B23 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		F13C24E71CA0A605006B3B23 /* ClockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		F13C24EA1CA0A66F006B3B23 /* ClockFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockFace.swift; sourceTree = "<group>"; };
+		F13C24ED1CA0A677006B3B23 /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		F13C24F01CA0A6D7006B3B23 /* HourHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourHand.swift; sourceTree = "<group>"; };
+		F13C24F11CA0A6D7006B3B23 /* MinuteHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinuteHand.swift; sourceTree = "<group>"; };
+		F13C24F21CA0A6D7006B3B23 /* SecondHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondHand.swift; sourceTree = "<group>"; };
+		F13C250C1CA0AB64006B3B23 /* LargeTick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeTick.swift; sourceTree = "<group>"; };
+		F13C250D1CA0AB64006B3B23 /* MediumTick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumTick.swift; sourceTree = "<group>"; };
+		F13C250E1CA0AB64006B3B23 /* SmallTick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallTick.swift; sourceTree = "<group>"; };
+		F13C250F1CA0AB64006B3B23 /* Tick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tick.swift; sourceTree = "<group>"; };
+		F13C25101CA0AB64006B3B23 /* TickZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickZero.swift; sourceTree = "<group>"; };
+		F13C251B1CA0ABA9006B3B23 /* Hub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
+		F13C25211CA0AD88006B3B23 /* WindDirectionHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirectionHand.swift; sourceTree = "<group>"; };
+		F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* OneDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayForecast.swift; sourceTree = "<group>"; };
 		F1472D241C87840E00D03DC3 /* OneHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHourForecast.swift; sourceTree = "<group>"; };
@@ -167,8 +176,6 @@
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D341C8784E200D03DC3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F1472D351C8784E200D03DC3 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
-		F1785B281C95BE8A00013423 /* WindHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindHand.swift; sourceTree = "<group>"; };
-		F1785B2B1C95D9CE00013423 /* CompassHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassHand.swift; sourceTree = "<group>"; };
 		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,27 +186,9 @@
 		F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VOSForecastTests.swift; sourceTree = "<group>"; };
 		F1B1343E1C84CC9F00CF48AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1B134481C84CEFD00CF48AE /* ForecastReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastReceiver.swift; sourceTree = "<group>"; };
-		F1BF0A171C8A24660030710A /* ClockHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
-		F1BF0A181C8A24660030710A /* SecondHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondHand.swift; sourceTree = "<group>"; };
-		F1BF0A191C8A24660030710A /* MinuteHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinuteHand.swift; sourceTree = "<group>"; };
-		F1BF0A1A1C8A24660030710A /* HourHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourHand.swift; sourceTree = "<group>"; };
-		F1BF0A1B1C8A24660030710A /* TickMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickMark.swift; sourceTree = "<group>"; };
-		F1BF0A1C1C8A24660030710A /* TickZero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickZero.swift; sourceTree = "<group>"; };
-		F1BF0A1D1C8A24660030710A /* TickOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickOne.swift; sourceTree = "<group>"; };
-		F1BF0A1E1C8A24660030710A /* TickFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickFive.swift; sourceTree = "<group>"; };
-		F1BF0A1F1C8A24660030710A /* TickFifteen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickFifteen.swift; sourceTree = "<group>"; };
-		F1BF0A201C8A24660030710A /* Hub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hub.swift; sourceTree = "<group>"; };
-		F1BF0A371C8A24B10030710A /* ClockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
-		F1BF0A381C8A24B10030710A /* ClockDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClockDelegate.swift; sourceTree = "<group>"; };
 		F1BF0A4C1C8AF97D0030710A /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		F1C436851C9EA851009947A8 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		F1C436891C9F47BE009947A8 /* AstrolabeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeViewController.swift; sourceTree = "<group>"; };
-		F1C4368C1C9F4B18009947A8 /* AstrolabeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeView.swift; sourceTree = "<group>"; };
-		F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeDelegate.swift; sourceTree = "<group>"; };
-		F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeFace.swift; sourceTree = "<group>"; };
-		F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHourHand.swift; sourceTree = "<group>"; };
-		F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeHand.swift; sourceTree = "<group>"; };
-		F1D62DE11C9803D100F34EBF /* TickEight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickEight.swift; sourceTree = "<group>"; };
 		F1D62DE41C98092800F34EBF /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		F1D62DE71C982BBA00F34EBF /* BeaufortScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaufortScale.swift; sourceTree = "<group>"; };
 		F1D62DEA1C98367A00F34EBF /* Compass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Compass.swift; sourceTree = "<group>"; };
@@ -263,7 +252,6 @@
 		F1005AEA1C84E1EB00250A3C /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
-				F1005AEB1C84E21700250A3C /* MainViewController.swift */,
 			);
 			name = viewcontrollers;
 			path = viewControllers;
@@ -282,7 +270,6 @@
 				F1D62DF31C9878EE00F34EBF /* WeatherFace.swift */,
 				F1D62DF61C98795800F34EBF /* RainView.swift */,
 				F1D62DF91C98798900F34EBF /* RainFace.swift */,
-				F13079271C9DA49B00B51539 /* InstrumentFace.swift */,
 			);
 			path = currentWeatherView;
 			sourceTree = "<group>";
@@ -290,15 +277,104 @@
 		F13C24C81CA0887D006B3B23 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				F13C24D31CA0A336006B3B23 /* Sun.swift */,
+				F13C24DD1CA0A408006B3B23 /* AstrolabeFace.swift */,
+				F13C24D71CA0A3EB006B3B23 /* AstrolabeHand.swift */,
+				F13C24D81CA0A3EB006B3B23 /* AstrolabeHourHand.swift */,
 			);
-			name = model;
+			path = model;
 			sourceTree = "<group>";
 		};
 		F13C24C91CA08889006B3B23 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F13C24D01CA0A31B006B3B23 /* AstrolabeView.swift */,
 			);
-			name = view;
+			path = view;
+			sourceTree = "<group>";
+		};
+		F13C24D61CA0A39E006B3B23 /* instrument */ = {
+			isa = PBXGroup;
+			children = (
+				F13C250B1CA0AB26006B3B23 /* model */,
+				F13C24E31CA0A49F006B3B23 /* view */,
+			);
+			path = instrument;
+			sourceTree = "<group>";
+		};
+		F13C24E01CA0A425006B3B23 /* clock */ = {
+			isa = PBXGroup;
+			children = (
+				F13C24E71CA0A605006B3B23 /* ClockViewController.swift */,
+				F13C24E21CA0A45C006B3B23 /* model */,
+				F13C24E11CA0A448006B3B23 /* view */,
+			);
+			path = clock;
+			sourceTree = "<group>";
+		};
+		F13C24E11CA0A448006B3B23 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F13C24ED1CA0A677006B3B23 /* ClockView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F13C24E21CA0A45C006B3B23 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F13C24EA1CA0A66F006B3B23 /* ClockFace.swift */,
+				F13C24F01CA0A6D7006B3B23 /* HourHand.swift */,
+				F13C24F11CA0A6D7006B3B23 /* MinuteHand.swift */,
+				F13C24F21CA0A6D7006B3B23 /* SecondHand.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F13C24E31CA0A49F006B3B23 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F13C251B1CA0ABA9006B3B23 /* Hub.swift */,
+				F13C24E41CA0A51B006B3B23 /* Hand.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F13C250B1CA0AB26006B3B23 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */,
+				F13C250C1CA0AB64006B3B23 /* LargeTick.swift */,
+				F13C250D1CA0AB64006B3B23 /* MediumTick.swift */,
+				F13C250E1CA0AB64006B3B23 /* SmallTick.swift */,
+				F13C250F1CA0AB64006B3B23 /* Tick.swift */,
+				F13C25101CA0AB64006B3B23 /* TickZero.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F13C251E1CA0ABC3006B3B23 /* windCompass */ = {
+			isa = PBXGroup;
+			children = (
+				F13C25201CA0AC02006B3B23 /* view */,
+				F13C251F1CA0ABE5006B3B23 /* model */,
+			);
+			path = windCompass;
+			sourceTree = "<group>";
+		};
+		F13C251F1CA0ABE5006B3B23 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		F13C25201CA0AC02006B3B23 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F13C25211CA0AD88006B3B23 /* WindDirectionHand.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		F1472D211C87838300D03DC3 /* forecastModel */ = {
@@ -345,9 +421,11 @@
 				F1B1342B1C84CC9800CF48AE /* Main.storyboard */,
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
 				F1B134331C84CC9A00CF48AE /* Info.plist */,
+				F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */,
+				F13C24D61CA0A39E006B3B23 /* instrument */,
 				F1C436881C9F478E009947A8 /* astrolabe */,
-				F1BF0A351C8A24890030710A /* clockView */,
-				F1BF0A161C8A243F0030710A /* clockModel */,
+				F13C24E01CA0A425006B3B23 /* clock */,
+				F13C251E1CA0ABC3006B3B23 /* windCompass */,
 				F1059F751C8B36320025EF69 /* currentWeatherView */,
 				F1472D211C87838300D03DC3 /* forecastModel */,
 				F1005AEA1C84E1EB00250A3C /* viewcontrollers */,
@@ -378,49 +456,12 @@
 			path = comms;
 			sourceTree = "<group>";
 		};
-		F1BF0A161C8A243F0030710A /* clockModel */ = {
-			isa = PBXGroup;
-			children = (
-				F1BF0A171C8A24660030710A /* ClockHand.swift */,
-				F1BF0A181C8A24660030710A /* SecondHand.swift */,
-				F1BF0A191C8A24660030710A /* MinuteHand.swift */,
-				F1BF0A1A1C8A24660030710A /* HourHand.swift */,
-				F1BF0A1B1C8A24660030710A /* TickMark.swift */,
-				F1BF0A1C1C8A24660030710A /* TickZero.swift */,
-				F1BF0A1D1C8A24660030710A /* TickOne.swift */,
-				F1BF0A1E1C8A24660030710A /* TickFive.swift */,
-				F1D62DE11C9803D100F34EBF /* TickEight.swift */,
-				F1BF0A1F1C8A24660030710A /* TickFifteen.swift */,
-				F1BF0A201C8A24660030710A /* Hub.swift */,
-				F1785B281C95BE8A00013423 /* WindHand.swift */,
-				F1785B2B1C95D9CE00013423 /* CompassHand.swift */,
-				F1C436951C9F5FFF009947A8 /* AstrolabeHourHand.swift */,
-				F1C436981C9F60E0009947A8 /* AstrolabeHand.swift */,
-			);
-			path = clockModel;
-			sourceTree = "<group>";
-		};
-		F1BF0A351C8A24890030710A /* clockView */ = {
-			isa = PBXGroup;
-			children = (
-				F1BF0A371C8A24B10030710A /* ClockView.swift */,
-				F1BF0A381C8A24B10030710A /* ClockDelegate.swift */,
-				F1059F791C8B3C180025EF69 /* ClockViewController.swift */,
-				F114F12B1C95539D00405C4B /* ClockFace.swift */,
-			);
-			path = clockView;
-			sourceTree = "<group>";
-		};
 		F1C436881C9F478E009947A8 /* astrolabe */ = {
 			isa = PBXGroup;
 			children = (
+				F1C436891C9F47BE009947A8 /* AstrolabeViewController.swift */,
 				F13C24C91CA08889006B3B23 /* view */,
 				F13C24C81CA0887D006B3B23 /* model */,
-				F1C436891C9F47BE009947A8 /* AstrolabeViewController.swift */,
-				F1C4368C1C9F4B18009947A8 /* AstrolabeView.swift */,
-				F1C4368F1C9F4EE7009947A8 /* AstrolabeDelegate.swift */,
-				F1C436921C9F4F6B009947A8 /* AstrolabeFace.swift */,
-				F13C24CA1CA088B1006B3B23 /* Sun.swift */,
 			);
 			path = astrolabe;
 			sourceTree = "<group>";
@@ -530,65 +571,61 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13C24D41CA0A336006B3B23 /* Sun.swift in Sources */,
+				F13C24EE1CA0A677006B3B23 /* ClockView.swift in Sources */,
 				F1B134491C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
 				F1D62DF11C98776100F34EBF /* TemperatureFace.swift in Sources */,
-				F1C436931C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */,
-				F13C24CB1CA088B1006B3B23 /* Sun.swift in Sources */,
 				F1472D361C8784E200D03DC3 /* Weather.swift in Sources */,
+				F13C251C1CA0ABA9006B3B23 /* Hub.swift in Sources */,
 				F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */,
-				F1785B2C1C95D9CE00013423 /* CompassHand.swift in Sources */,
 				F1059F7D1C8B3EF60025EF69 /* WeatherViewController.swift in Sources */,
 				F1059F771C8B369A0025EF69 /* WeatherView.swift in Sources */,
+				F13C25191CA0AB64006B3B23 /* TickZero.swift in Sources */,
 				F1D62DF71C98795800F34EBF /* RainView.swift in Sources */,
 				345BCB131C8D89B1005F5FB7 /* WeatherDelegate.swift in Sources */,
-				F1BF0A331C8A24660030710A /* Hub.swift in Sources */,
+				F13C25171CA0AB64006B3B23 /* Tick.swift in Sources */,
 				F1472D381C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */,
+				F13C24DE1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
+				F13C24DB1CA0A3EB006B3B23 /* AstrolabeHourHand.swift in Sources */,
 				F1C436861C9EA851009947A8 /* Rain.swift in Sources */,
-				F1005AEC1C84E21700250A3C /* MainViewController.swift in Sources */,
 				F1D62DF41C9878EE00F34EBF /* WeatherFace.swift in Sources */,
-				F1059F7A1C8B3C180025EF69 /* ClockViewController.swift in Sources */,
-				F1BF0A2F1C8A24660030710A /* TickFive.swift in Sources */,
-				F1BF0A2D1C8A24660030710A /* TickOne.swift in Sources */,
 				F1D62DEE1C98764F00F34EBF /* TemperatureView.swift in Sources */,
-				F1BF0A271C8A24660030710A /* HourHand.swift in Sources */,
-				F1C436991C9F60E0009947A8 /* AstrolabeHand.swift in Sources */,
+				F13C24EB1CA0A66F006B3B23 /* ClockFace.swift in Sources */,
 				F1D62DE81C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
-				F1BF0A231C8A24660030710A /* SecondHand.swift in Sources */,
-				F1BF0A211C8A24660030710A /* ClockHand.swift in Sources */,
-				F1BF0A3D1C8A24B10030710A /* ClockDelegate.swift in Sources */,
-				F1BF0A3B1C8A24B10030710A /* ClockView.swift in Sources */,
+				F13C25221CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */,
+				F13C24E51CA0A51B006B3B23 /* Hand.swift in Sources */,
 				F1D62DFA1C98798900F34EBF /* RainFace.swift in Sources */,
+				F13C25111CA0AB64006B3B23 /* LargeTick.swift in Sources */,
 				F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
+				F13C25151CA0AB64006B3B23 /* SmallTick.swift in Sources */,
 				F1C4368A1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */,
-				F1C436901C9F4EE7009947A8 /* AstrolabeDelegate.swift in Sources */,
-				F13079281C9DA49B00B51539 /* InstrumentFace.swift in Sources */,
 				F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */,
-				F114F12C1C95539D00405C4B /* ClockFace.swift in Sources */,
 				F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
-				F1BF0A2B1C8A24660030710A /* TickZero.swift in Sources */,
-				F1BF0A291C8A24660030710A /* TickMark.swift in Sources */,
+				F13C24CE1CA09FB2006B3B23 /* MainViewController.swift in Sources */,
+				F13C25131CA0AB64006B3B23 /* MediumTick.swift in Sources */,
 				347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */,
 				F1FF4A231C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
-				F1C4368D1C9F4B18009947A8 /* AstrolabeView.swift in Sources */,
-				F1C436961C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
-				F1785B291C95BE8A00013423 /* WindHand.swift in Sources */,
+				F13C24F51CA0A6D7006B3B23 /* MinuteHand.swift in Sources */,
+				F13C24F71CA0A6D7006B3B23 /* SecondHand.swift in Sources */,
 				3435AA911C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1D62DEB1C98367A00F34EBF /* Compass.swift in Sources */,
-				F1BF0A251C8A24660030710A /* MinuteHand.swift in Sources */,
 				34AEAB631C9FFD8300834E75 /* AppColour.swift in Sources */,
 				F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				F1D62DE51C98092800F34EBF /* Units.swift in Sources */,
-				F1BF0A311C8A24660030710A /* TickFifteen.swift in Sources */,
+				F13C24D11CA0A31B006B3B23 /* AstrolabeView.swift in Sources */,
+				F13C24E81CA0A605006B3B23 /* ClockViewController.swift in Sources */,
 				34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */,
 				3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */,
+				F13C24D91CA0A3EB006B3B23 /* AstrolabeHand.swift in Sources */,
 				F114F1351C95A92000405C4B /* WindFace.swift in Sources */,
-				F1D62DE21C9803D100F34EBF /* TickEight.swift in Sources */,
+				F13C24F31CA0A6D7006B3B23 /* HourHand.swift in Sources */,
 				F114F1321C95A82E00405C4B /* WindView.swift in Sources */,
+				F13C25251CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,59 +633,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C4369A1C9F60E0009947A8 /* AstrolabeHand.swift in Sources */,
 				F114F1331C95A82E00405C4B /* WindView.swift in Sources */,
-				F1BF0A2C1C8A24660030710A /* TickZero.swift in Sources */,
+				F13C24DC1CA0A3EB006B3B23 /* AstrolabeHourHand.swift in Sources */,
 				F1B1344A1C84CEFD00CF48AE /* ForecastReceiver.swift in Sources */,
-				F1059F7B1C8B3C180025EF69 /* ClockViewController.swift in Sources */,
+				F13C251D1CA0ABA9006B3B23 /* Hub.swift in Sources */,
+				F13C25141CA0AB64006B3B23 /* MediumTick.swift in Sources */,
 				F1472D371C8784E200D03DC3 /* Weather.swift in Sources */,
-				F1BF0A321C8A24660030710A /* TickFifteen.swift in Sources */,
-				F1BF0A241C8A24660030710A /* SecondHand.swift in Sources */,
-				F13C24CC1CA088B1006B3B23 /* Sun.swift in Sources */,
+				F13C24F41CA0A6D7006B3B23 /* HourHand.swift in Sources */,
+				F13C24F81CA0A6D7006B3B23 /* SecondHand.swift in Sources */,
 				F1D62DFB1C98798900F34EBF /* RainFace.swift in Sources */,
-				F1785B2D1C95D9CE00013423 /* CompassHand.swift in Sources */,
-				F1BF0A261C8A24660030710A /* MinuteHand.swift in Sources */,
+				F13C24E61CA0A51B006B3B23 /* Hand.swift in Sources */,
+				F13C24D51CA0A336006B3B23 /* Sun.swift in Sources */,
+				F13C25181CA0AB64006B3B23 /* Tick.swift in Sources */,
+				F13C25261CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */,
+				F13C24DA1CA0A3EB006B3B23 /* AstrolabeHand.swift in Sources */,
+				F13C24E91CA0A605006B3B23 /* ClockViewController.swift in Sources */,
 				F1D62DF51C9878EE00F34EBF /* WeatherFace.swift in Sources */,
 				F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F1472D391C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1D62DEC1C98367A00F34EBF /* Compass.swift in Sources */,
-				F1BF0A2A1C8A24660030710A /* TickMark.swift in Sources */,
-				F1C436941C9F4F6B009947A8 /* AstrolabeFace.swift in Sources */,
-				F1BF0A3E1C8A24B10030710A /* ClockDelegate.swift in Sources */,
 				F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
+				F13C25121CA0AB64006B3B23 /* LargeTick.swift in Sources */,
 				F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				F1059F781C8B369A0025EF69 /* WeatherView.swift in Sources */,
-				F1BF0A341C8A24660030710A /* Hub.swift in Sources */,
-				F1785B2A1C95BE8A00013423 /* WindHand.swift in Sources */,
-				F114F12D1C95539D00405C4B /* ClockFace.swift in Sources */,
+				F13C24D21CA0A31B006B3B23 /* AstrolabeView.swift in Sources */,
 				F1D62DE61C98092800F34EBF /* Units.swift in Sources */,
 				F1B1343D1C84CC9F00CF48AE /* VOSForecastTests.swift in Sources */,
-				F1BF0A2E1C8A24660030710A /* TickOne.swift in Sources */,
-				F1BF0A221C8A24660030710A /* ClockHand.swift in Sources */,
-				F1C436911C9F4EE7009947A8 /* AstrolabeDelegate.swift in Sources */,
-				F1BF0A281C8A24660030710A /* HourHand.swift in Sources */,
 				F1D62DEF1C98764F00F34EBF /* TemperatureView.swift in Sources */,
-				F1BF0A301C8A24660030710A /* TickFive.swift in Sources */,
 				F1C4368B1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */,
+				F13C24CF1CA09FB2006B3B23 /* MainViewController.swift in Sources */,
 				F114F1361C95A92000405C4B /* WindFace.swift in Sources */,
+				F13C24EF1CA0A677006B3B23 /* ClockView.swift in Sources */,
 				F1059F7E1C8B3EF60025EF69 /* WeatherViewController.swift in Sources */,
+				F13C24EC1CA0A66F006B3B23 /* ClockFace.swift in Sources */,
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1D62DF81C98795800F34EBF /* RainView.swift in Sources */,
-				F1C436971C9F5FFF009947A8 /* AstrolabeHourHand.swift in Sources */,
-				F1C4368E1C9F4B18009947A8 /* AstrolabeView.swift in Sources */,
 				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
+				F13C24DF1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
 				F1D62DE91C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
+				F13C251A1CA0AB64006B3B23 /* TickZero.swift in Sources */,
 				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F1D62DF21C98776100F34EBF /* TemperatureFace.swift in Sources */,
+				F13C25231CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */,
 				F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
-				F1D62DE31C9803D100F34EBF /* TickEight.swift in Sources */,
 				F1FF4A241C84E84D00D22EFF /* ForecastBuilder.swift in Sources */,
 				34AEAB641C9FFD8300834E75 /* AppColour.swift in Sources */,
-				F1005AED1C84E21700250A3C /* MainViewController.swift in Sources */,
-				F1BF0A3C1C8A24B10030710A /* ClockView.swift in Sources */,
+				F13C24F61CA0A6D7006B3B23 /* MinuteHand.swift in Sources */,
 				F13C24C71CA08612006B3B23 /* Numerals.swift in Sources */,
 				34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */,
+				F13C25161CA0AB64006B3B23 /* SmallTick.swift in Sources */,
 				F1472D2B1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

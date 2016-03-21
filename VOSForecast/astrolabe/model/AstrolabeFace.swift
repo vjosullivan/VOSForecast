@@ -83,15 +83,15 @@ class AstrolabeFace {
         let degToRads = M_PI / 180.0
         if tickMarks != AstrolabeTickMarks.None {
             for index in 0..<24 {
-                var tick: TickMark?
+                var tick: Tick?
                 if index % 6 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Quarters.rawValue {
-                    tick = TickFive()
+                    tick = MediumTick()
                 } else if index % 3 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Eights.rawValue {
-                    tick = TickFive()
+                    tick = MediumTick()
                 } else if index % 2 == 0 && tickMarks.rawValue == AstrolabeTickMarks.Twelfths.rawValue {
-                    tick = TickFive()
+                    tick = MediumTick()
                 } else if tickMarks.rawValue == AstrolabeTickMarks.TwentyFourths.rawValue {
-                    tick = TickFifteen()
+                    tick = LargeTick()
                 }
                 if let tick = tick {
                     let tickAngleRadians = CGFloat((Double(15 * index) - 90.0) * degToRads)

@@ -19,8 +19,6 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var clockRearView: UIView!
     @IBOutlet weak var clockFlipButton: UIButton!
 
-    var parentVC: ClockDelegate?
-
     // MARK: - Settings outlets
 
     @IBOutlet weak var numeralsSetting: UISegmentedControl!
@@ -91,9 +89,5 @@ class ClockViewController: UIViewController {
             UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
             UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
         }
-    }
-
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? ClockDelegate
     }
 }

@@ -26,8 +26,6 @@ class AstrolabeView: UIView {
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
 
-    var delegate: AstrolabeDelegate?
-
     // MARK: - Functions
 
     override init(frame: CGRect) {

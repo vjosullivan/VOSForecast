@@ -19,8 +19,6 @@ class AstrolabeViewController: UIViewController {
     @IBOutlet weak var astrolabeFrontView: AstrolabeView!
     @IBOutlet weak var astrolabeFlipButton: UIButton!
 
-    var parentVC: AstrolabeDelegate?
-
     // MARK: - Settings outlets
 
     @IBOutlet weak var numeralsSetting: UISegmentedControl!
@@ -91,9 +89,5 @@ class AstrolabeViewController: UIViewController {
             UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
             UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
         }
-    }
-
-    override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? AstrolabeDelegate
     }
 }

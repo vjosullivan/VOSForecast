@@ -20,12 +20,10 @@ class WindView: UIView {
             updateCompass()
         }
     }
-    var windHand: WindHand?
+    var windHand: WindDirectionHand?
 
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
-
-    var delegate: ClockDelegate?
 
     // MARK: - Functions
 
@@ -54,7 +52,7 @@ class WindView: UIView {
             if let _ = windHand, let viewWithTag = viewWithTag(111) {
                 viewWithTag.removeFromSuperview()
             }
-            windHand = WindHand(frame: clockFrame, direction: 67.0)
+            windHand = WindDirectionHand(frame: clockFrame, direction: 67.0)
             addSubview(windHand!)
             sendSubviewToBack(windHand!)
 

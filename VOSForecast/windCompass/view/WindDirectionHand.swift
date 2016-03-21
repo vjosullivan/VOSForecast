@@ -1,5 +1,5 @@
 //
-//  WindHand.swift
+//  WindDirectionHand.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 13/03/2016.
@@ -7,7 +7,14 @@
 //
 import UIKit
 
-class WindHand: CompassHand {
+class WindDirectionHand: UIView {
+
+    internal var color: UIColor = UIColor.whiteColor()
+    internal var borderColor: UIColor = UIColor.whiteColor()
+    internal var width: CGFloat = 0.0
+    internal var length: CGFloat = 0.0
+    internal var offsetLength: CGFloat = 0.0
+    internal var shadowEnabled: Bool = false
 
     let direction: CGFloat
 
@@ -29,6 +36,15 @@ class WindHand: CompassHand {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func rotateHand(degrees degrees: Double) {
+        let animations = {() in
+            let radians = CGFloat(degrees * M_PI / 180.0)
+            self.transform = CGAffineTransformMakeRotation(radians)
+        }
+
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: animations, completion: nil)
     }
 
     override func drawRect(rect: CGRect) {

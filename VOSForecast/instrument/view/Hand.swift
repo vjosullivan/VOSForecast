@@ -1,5 +1,5 @@
 //
-//  ClockHand.swift
+//  Hand.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 20/02/2016.
@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class ClockHand: UIView {
+class Hand: UIView {
     
     internal var color: UIColor = UIColor.whiteColor()
     internal var borderColor: UIColor = UIColor.whiteColor()

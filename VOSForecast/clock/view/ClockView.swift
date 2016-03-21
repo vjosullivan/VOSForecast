@@ -28,8 +28,6 @@ class ClockView: UIView {
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
 
-    var delegate: ClockDelegate?
-
     // MARK: - Functions
 
     override init(frame: CGRect) {

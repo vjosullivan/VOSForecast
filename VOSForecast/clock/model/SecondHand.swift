@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondHand: ClockHand {
+class SecondHand: Hand {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

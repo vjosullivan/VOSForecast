@@ -10,7 +10,7 @@ import UIKit
 
 /// Represents the "12 o'clock" tick mark on a clock face.
 ///
-class TickZero: TickMark {
+class TickZero: Tick {
     
     init() {
         super.init(

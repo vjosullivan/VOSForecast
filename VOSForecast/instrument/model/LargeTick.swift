@@ -1,5 +1,5 @@
 //
-//  TickFifteen.swift
+//  LargeTick.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 25/02/2016.
@@ -10,7 +10,7 @@ import UIKit
 
 /// Represents the quarter hour tick marks on a clock face.
 ///
-class TickFifteen: TickMark {
+class LargeTick: Tick {
     
     init() {
         super.init(

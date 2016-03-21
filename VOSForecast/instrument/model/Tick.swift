@@ -1,5 +1,5 @@
 //
-//  TickMark.swift
+//  Tick.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 25/02/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TickMark {
+class Tick {
     
     // MARK: - Properties
     

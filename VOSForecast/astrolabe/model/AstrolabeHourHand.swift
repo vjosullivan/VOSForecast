@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AstrolabeHourHand: ClockHand {
+class AstrolabeHourHand: Hand {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -120,14 +120,3 @@ class MainViewController: UIViewController, WeatherDelegate {
     }
 
 }
-
-// MARK: - Extensions
-// MARK: - ClockDelegate extension
-
-extension MainViewController: ClockDelegate {
-
-    func currentTime(hours hours: Int, minutes: Int, seconds: Int) {
-        timeText = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        print(timeText)
-    }
-}

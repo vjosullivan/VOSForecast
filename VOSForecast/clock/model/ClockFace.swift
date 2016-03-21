@@ -83,15 +83,15 @@ class ClockFace {
         let degToRads = M_PI / 180.0
         if tickMarks != TickMarks.None {
             for index in 0..<60 {
-                var tick: TickMark?
+                var tick: Tick?
                 if index == 0 && tickMarks.rawValue >= TickMarks.TwelveOClock.rawValue {
                     tick = TickZero()
                 } else if index % 15 == 0 && tickMarks.rawValue >= TickMarks.Quarters.rawValue {
-                    tick = TickFifteen()
+                    tick = LargeTick()
                 } else if index % 5 == 0 && tickMarks.rawValue >= TickMarks.Hours.rawValue {
-                    tick = TickFive()
+                    tick = MediumTick()
                 } else if tickMarks.rawValue >= TickMarks.Minutes.rawValue {
-                    tick = TickOne()
+                    tick = SmallTick()
                 }
                 if let tick = tick {
                     let tickAngleRadians = CGFloat((Double(6 * index) - 90.0) * degToRads)

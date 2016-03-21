@@ -40,19 +40,19 @@ class WindFace: InstrumentFace {
         let degToRads = M_PI / 180.0
         if windTicks != WindTicks.None {
             for index in 0..<64 {
-                var tick: TickMark?
+                var tick: Tick?
                 if index == 0 && windTicks.rawValue >= WindTicks.One.rawValue {
                     tick = TickZero()
                 } else if index % 16 == 0 && windTicks.rawValue >= WindTicks.Four.rawValue {
-                    tick = TickFifteen()
+                    tick = LargeTick()
                 } else if index % 8 == 0 && windTicks.rawValue >= WindTicks.Eight.rawValue {
-                    tick = TickFive()
+                    tick = MediumTick()
                 } else if index % 4 == 0 && windTicks.rawValue >= WindTicks.Sixteen.rawValue {
-                    tick = TickEight()
+                    tick = MediumTick()
                 } else if index % 2 == 0 && windTicks.rawValue >= WindTicks.ThirtyTwo.rawValue {
-                    tick = TickOne()
+                    tick = SmallTick()
                 } else if windTicks.rawValue >= WindTicks.SixtyFour.rawValue {
-                    tick = TickOne()
+                    tick = SmallTick()
                 }
                 let tickAngleRadians  = CGFloat(5.625 * (Double(index) + 48) * degToRads)
                 if let tick = tick {
