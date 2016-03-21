@@ -620,7 +620,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="rZs-NI-cwd" userLabel="feelsLike">
                                                         <rect key="frame" x="10" y="50" width="45" height="51"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
-                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.70304581929999999" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiP-99-1M4" userLabel="feelsLikeLabel">
@@ -635,7 +635,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="JJF-lb-Af9" userLabel="high">
                                                         <rect key="frame" x="75" y="0.0" width="45" height="51"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
-                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.70304581929999999" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdg-OO-ESD" userLabel="highLabel">
@@ -650,7 +650,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="vpM-9V-GQD" userLabel="low">
                                                         <rect key="frame" x="75" y="51" width="45" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
-                                                        <color key="textColor" red="0.56470588235294117" green="0.83137254901960778" blue="0.51764705882352935" alpha="0.7030458192567568" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBc-av-prv" userLabel="lowLabel">
@@ -665,8 +665,8 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJ6-eK-cPi" userLabel="temperatureUnits">
                                                         <rect key="frame" x="46" y="35" width="39" height="31"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                        <color key="textColor" red="0.56383634869999999" green="0.83072060029999995" blue="0.51796361020000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                                                        <color key="textColor" red="0.56470588239999997" green="0.83137254900000002" blue="0.51764705879999995" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
