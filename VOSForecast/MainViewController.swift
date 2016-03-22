@@ -78,10 +78,10 @@ class MainViewController: UIViewController, WeatherDelegate {
         let latitude  = 51.3
         let longitude = -1.0
         print("Fetching forecast at \(latitude), \(longitude) in \(units).")
-        ForecastReceiver().fetchWeather(latitude: latitude, longitude: longitude, units: units) {(data, error) in
+        ForecastIOManager().fetchWeather(latitude: latitude, longitude: longitude, units: units) {(data, error) in
             if let data = data {
                 dispatch_async(dispatch_get_main_queue()) {
-                    if let forecast = ForecastBuilder().buildForecast(data) {
+                    if let forecast = ForecastIOBuilder().buildForecast(data) {
                         self.updateView(forecast)
                         self.weatherVC!.updateView(forecast)
                     } else {

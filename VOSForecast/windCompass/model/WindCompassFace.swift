@@ -13,7 +13,7 @@ struct WindVaneKeys {
     static let labelCount = "windvane.labelcount"
 }
 
-class WindFace: InstrumentFace {
+class WindCompassFace: InstrumentFace {
 
     private let windTicks: WindTicks
     private let letters: WindLetters

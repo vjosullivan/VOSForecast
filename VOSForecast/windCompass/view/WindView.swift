@@ -38,7 +38,7 @@ class WindView: UIView {
     override func drawRect(rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
-        WindFace(context: context, rect: rect).draw()
+        WindCompassFace(context: context, rect: rect).draw()
     }
 
     override func layoutSubviews() {

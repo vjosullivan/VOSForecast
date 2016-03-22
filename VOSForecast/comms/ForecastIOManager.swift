@@ -9,7 +9,7 @@
 import Foundation
 
 ///  Handles communication with the weather API.
-public class ForecastReceiver {
+public class ForecastIOManager {
     
     // MARK: - Properties
     

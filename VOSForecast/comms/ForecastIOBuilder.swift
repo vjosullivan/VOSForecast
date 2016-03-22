@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForecastBuilder {
+class ForecastIOBuilder {
     
     internal func buildForecast(data: NSData) -> Forecast? {
         do {
