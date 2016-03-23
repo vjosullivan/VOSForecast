@@ -92,7 +92,7 @@ class ClockView: UIView {
         dispatch_after(dispatchTime, dispatch_get_main_queue()) {
             NSTimer.scheduledTimerWithTimeInterval(1.0,
                 target: self,
-                selector:"updateClock",
+                selector: #selector(ClockView.updateClock),
                 userInfo: nil,
                 repeats: true)
         }

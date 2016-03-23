@@ -102,7 +102,6 @@ class Circlewriter {
         switch textOrientation {
         case .Auto:
             direction = (angle > 0.01 && angle <= π + 0.01) || angle <= -π ? -1 : 1
-            //print("\(str): angle=\(angle), dir=\(direction)")
         case .Upright:
             direction = -1
         case .Inverted:

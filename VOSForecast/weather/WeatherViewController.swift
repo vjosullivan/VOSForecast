@@ -78,11 +78,6 @@ class WeatherViewController: UIViewController {
     }
 
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
-            print("Landscape: size = \(size.width)x\(size.height)")
-        } else {
-            print("Portrait: size = \(size.width)x\(size.height)")
-        }
         weatherView.shouldUpdateSubviews = true
         weatherView.setNeedsDisplay()
         windView.shouldUpdateSubviews = true

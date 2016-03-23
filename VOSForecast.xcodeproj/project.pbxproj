@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3404D7581CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404D7571CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift */; };
+		3404D75B1CA283FF0020BBCB /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
 		340E0D501CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */; };
 		340E0D511CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */; };
 		340E0D521CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */; };
 		340E0D531CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */; };
+		34320F321CA2C61D00AAA8B7 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3476752E1C89C79E000A4C6F /* CALayerExtension.swift */; };
+		34320F331CA2C62000AAA8B7 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3CC71C9B7168007A433E /* NSDateExtension.swift */; };
+		34320F341CA2C64800AAA8B7 /* WindCompassFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A852DA1CA137D6005D370E /* WindCompassFace.swift */; };
 		3435AA801C89794800ABD789 /* weathericons-regular.glyphs in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */; };
 		3435AA811C89794800ABD789 /* weathericons-regular.glyphs in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */; };
 		3435AA821C89794800ABD789 /* weathericons-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3435AA7F1C89794800ABD789 /* weathericons-regular.otf */; };
@@ -133,6 +138,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3404D7571CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeViewControllerTests.swift; sourceTree = "<group>"; };
 		340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastIOBuilder.swift; sourceTree = "<group>"; };
 		340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastIOManager.swift; sourceTree = "<group>"; };
 		3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "weathericons-regular.glyphs"; sourceTree = "<group>"; };
@@ -218,6 +224,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3404D7561CA27E800020BBCB /* astrolabe */ = {
+			isa = PBXGroup;
+			children = (
+				3404D7571CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift */,
+			);
+			path = astrolabe;
+			sourceTree = "<group>";
+		};
 		340E0D4C1CA1409200ED6CE9 /* weatherData */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +527,7 @@
 		F1B1343B1C84CC9E00CF48AE /* VOSForecastTests */ = {
 			isa = PBXGroup;
 			children = (
+				3404D7561CA27E800020BBCB /* astrolabe */,
 				F1B1343C1C84CC9E00CF48AE /* VOSForecastTests.swift */,
 				F1B1343E1C84CC9F00CF48AE /* Info.plist */,
 			);
@@ -706,12 +721,15 @@
 				F13C24F81CA0A6D7006B3B23 /* SecondHand.swift in Sources */,
 				F13C24E61CA0A51B006B3B23 /* Hand.swift in Sources */,
 				F13C24D51CA0A336006B3B23 /* Sun.swift in Sources */,
+				34320F321CA2C61D00AAA8B7 /* CALayerExtension.swift in Sources */,
 				F13C25181CA0AB64006B3B23 /* Tick.swift in Sources */,
 				F13C25261CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */,
 				F13C24DA1CA0A3EB006B3B23 /* AstrolabeHand.swift in Sources */,
 				340E0D531CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */,
 				F13C24E91CA0A605006B3B23 /* ClockViewController.swift in Sources */,
+				3404D75B1CA283FF0020BBCB /* ForecastDisplay.swift in Sources */,
 				F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
+				3404D7581CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift in Sources */,
 				F1472D391C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1D62DEC1C98367A00F34EBF /* Compass.swift in Sources */,
 				34A852EF1CA138F2005D370E /* TemperatureFace.swift in Sources */,
@@ -732,10 +750,12 @@
 				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
 				F13C24DF1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
+				34320F341CA2C64800AAA8B7 /* WindCompassFace.swift in Sources */,
 				340E0D511CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */,
 				F1D62DE91C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
 				F13C251A1CA0AB64006B3B23 /* TickZero.swift in Sources */,
+				34320F331CA2C62000AAA8B7 /* NSDateExtension.swift in Sources */,
 				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F13C25231CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */,
 				F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,

@@ -42,11 +42,6 @@ class AstrolabeViewController: UIViewController {
     }
 
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
-            print("Landscape: size = \(size.width)x\(size.height)")
-        } else {
-            print("Portrait: size = \(size.width)x\(size.height)")
-        }
         astrolabeFrontView.shouldUpdateSubviews = true
         astrolabeFrontView.setNeedsDisplay()
     }
@@ -79,7 +74,7 @@ class AstrolabeViewController: UIViewController {
 
     // MARK: - Local functions
 
-    func flip(frontView: UIView, rearView: UIView) {
+    private func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {
             let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
             UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)

@@ -55,7 +55,7 @@ class ForecastIOBuilder {
     private func parseWeather(json: [String: AnyObject]) -> Weather? {
         var weather: Weather?
         if let currently = json["currently"] as? [String: AnyObject] {
-            print(currently)
+            //print(currently)
             let time = currently["time"] as? Int
             let icon = currently["icon"] as? String
             let summary = currently["summary"] as? String
@@ -130,7 +130,7 @@ class ForecastIOBuilder {
         var oneDayForecasts = [OneDayForecast]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
-                print("Day JSON: \(day)")
+                //print("Day JSON: \(day)")
                 let apparentTemperatureMax = day["apparentTemperatureMax"] as? Double
                 let apparentTemperatureMaxTime: NSDate?
                 if let time = day["apparentTemperatureMaxTime"] as? Double {
@@ -197,7 +197,7 @@ class ForecastIOBuilder {
                     windBearing:  windBearing,
                     windSpeed: windSpeed)
                 oneDayForecasts.append(oneDayForecast)
-                print("ODF \(oneDayForecast)")
+                //print("ODF \(oneDayForecast)")
             }
         }
         return oneDayForecasts.count > 0 ? oneDayForecasts : nil

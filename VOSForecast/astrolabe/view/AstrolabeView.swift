@@ -78,7 +78,7 @@ class AstrolabeView: UIView {
         dispatch_after(dispatchTime, dispatch_get_main_queue()) {
             NSTimer.scheduledTimerWithTimeInterval(1.0,
                 target: self,
-                selector:"updateAstrolabe",
+                selector:#selector(AstrolabeView.updateAstrolabe),
                 userInfo: nil,
                 repeats: true)
         }
