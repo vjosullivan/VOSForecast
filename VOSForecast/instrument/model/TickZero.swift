@@ -12,9 +12,13 @@ import UIKit
 ///
 class TickZero: Tick {
     
-    init() {
+    convenience init() {
+        self.init(colour: UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0))
+    }
+
+    init(colour: UIColor) {
         super.init(
-            color: UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0),
+            color: colour,
             alpha: 1.0,
             innerRadius: 0.90,
             outerRadius: 0.99,

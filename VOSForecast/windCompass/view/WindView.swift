@@ -20,6 +20,8 @@ class WindView: UIView {
             updateCompass()
         }
     }
+    var textColor: UIColor = UIColor.whiteColor()
+
     var windHand: WindDirectionHand?
 
     var shouldUpdateSubviews: Bool = true

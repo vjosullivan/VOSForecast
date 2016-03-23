@@ -28,6 +28,8 @@ class ClockView: UIView {
     var shouldUpdateSubviews: Bool = true
     let calendar   = NSCalendar.currentCalendar()
 
+    var highlightColor = UIColor.whiteColor()
+
     // MARK: - Functions
 
     override init(frame: CGRect) {
@@ -41,7 +43,7 @@ class ClockView: UIView {
     override func drawRect(rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
-        ClockFace(context: context, rect: rect).draw()
+        ClockFace(context: context, rect: rect, highlightColor: highlightColor).draw()
     }
 
     override func layoutSubviews() {

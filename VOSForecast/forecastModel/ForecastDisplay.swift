@@ -5,7 +5,7 @@
 //  Created by Vincent O'Sullivan on 03/03/2016.
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
-import Foundation
+import UIKit
 
 extension Forecast {
 
@@ -35,6 +35,13 @@ extension Forecast {
         } else {
             return "unknown"
         }
+    }
+
+    var highlightColor: UIColor {
+        if let t = weather!.temperature {
+            return ColourWheel.colourFor(t, unit: flags!.units ?? "si")
+        }
+        return UIColor.whiteColor()
     }
 
     var rainLikelyhoodDisplay: String {

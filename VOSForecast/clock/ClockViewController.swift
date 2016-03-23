@@ -26,6 +26,8 @@ class ClockViewController: UIViewController {
 
     // MARK: - Settings
 
+    var highlightColor = UIColor.whiteColor()
+
     // MARK: - UIViewController functions
 
     override func viewDidLoad() {
@@ -62,10 +64,12 @@ class ClockViewController: UIViewController {
         case numeralsSetting:
             NSUserDefaults.writeInt(key: ClockKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
+            clockFrontView.highlightColor = highlightColor
             clockFrontView.setNeedsDisplay()
         case ticksSetting:
             NSUserDefaults.writeInt(key: ClockKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
+            clockFrontView.highlightColor = highlightColor
             clockFrontView.setNeedsDisplay()
         default:
             break

@@ -40,7 +40,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var nextHigh: UILabel!
     @IBOutlet weak var nextHighLabel: UILabel!
     @IBOutlet weak var temperatureUnits: UILabel!
-  //@IBOutlet weak var currentDewPoint: UILabel!
+    //@IBOutlet weak var currentDewPoint: UILabel!
 
     // Wind view
 
@@ -111,15 +111,34 @@ class WeatherViewController: UIViewController {
 
     func updateView(forecast: Forecast) {
 
-        currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
-        currentFeelsLike.text   = "\(forecast.currentFeelsLikeDisplay)"
-        nextLow.text       = "\(forecast.lowTodayDisplay)"
+        guard let units = forecast.flags?.units else {
+            return
+        }
+        let temperatureColor: UIColor
+        if let temperature = forecast.weather?.temperature {
+            temperatureColor = ColourWheel.colourFor(temperature, unit: units)
+            currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
+            currentTemperature.textColor = temperatureColor
+        } else {
+            temperatureColor = UIColor.whiteColor()
+        }
+        if let temperature = forecast.weather?.apparentTemperature {
+            currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
+            currentFeelsLike.textColor = ColourWheel.colourFor(temperature, unit: units)
+        }
+        if let temperature = forecast.oneDayForecast?.temperatureMin {
+            nextLow.text      = "\(forecast.lowTodayDisplay)"
+            nextLow.textColor = ColourWheel.colourFor(temperature, unit: units)
+        }
         if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm(showMidday: true) {
             nextLowLabel.text  = "Low \(lowTime)"
         } else {
             nextLowLabel.text = "Low"
         }
-        nextHigh.text      = "\(forecast.highTodayDisplay)"
+        if let temperature = forecast.oneDayForecast?.temperatureMax {
+            nextHigh.text      = "\(forecast.highTodayDisplay)"
+            nextHigh.textColor = ColourWheel.colourFor(temperature, unit: units)
+        }
         if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm(showMidday: true) {
             nextHighLabel.text  = "High \(highTime)"
         } else {
@@ -141,7 +160,11 @@ class WeatherViewController: UIViewController {
             beaufort.text  = ""
             windSpeedUnits.text = forecast.units.windSpeed
         }
+        beaufort.textColor       = temperatureColor
+        windSpeedUnits.textColor = temperatureColor
+        windSpeed.textColor      = temperatureColor
         windView.windDirection = direction
+
 
         let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         let likelyhood = forecast.rainLikelyhoodDisplay

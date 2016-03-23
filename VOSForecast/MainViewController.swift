@@ -103,6 +103,8 @@ class MainViewController: UIViewController, WeatherDelegate {
         oneHourSummary.text = "1 hour summary: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
         oneDaySummary.text  = "24 hour summary:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
         oneWeekSummary.text = "1 week summary: " + (forecast.sevenDayForecast?.summary ?? "Not available")
+
+        clockVC!.highlightColor = forecast.highlightColor
     }
 
     private func configureUI() {
