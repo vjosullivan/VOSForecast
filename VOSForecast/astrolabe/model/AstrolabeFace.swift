@@ -24,7 +24,7 @@ class AstrolabeFace {
     var borderAlpha: CGFloat = 1.0
     var borderWidth: CGFloat = 1.0
 
-    var faceBackgroundColor = AppColour.faceColour
+    var faceBackgroundColor = AppColor.faceColor
     var faceBackgroundAlpha: CGFloat = 1.0
 
     var digitFont: UIFont    = UIFont.systemFontOfSize(16)

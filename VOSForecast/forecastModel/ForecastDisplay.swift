@@ -39,7 +39,7 @@ extension Forecast {
 
     var highlightColor: UIColor {
         if let t = weather!.temperature {
-            return ColourWheel.colourFor(t, unit: flags!.units ?? "si")
+            return ColorWheel.colorFor(t, unit: flags!.units ?? "si")
         }
         return UIColor.whiteColor()
     }

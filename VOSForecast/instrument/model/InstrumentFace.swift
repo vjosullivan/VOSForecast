@@ -18,7 +18,7 @@ class InstrumentFace {
     internal let borderAlpha: CGFloat = 1.0
     internal let borderWidth: CGFloat = 1.0
 
-    internal let faceBackgroundColor = AppColour.faceColour
+    internal let faceBackgroundColor = AppColor.faceColor
     internal let faceBackgroundAlpha: CGFloat = 1.0
 
     init(context: CGContextRef, rect: CGRect) {

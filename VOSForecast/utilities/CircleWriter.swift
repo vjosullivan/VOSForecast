@@ -17,17 +17,17 @@ class Circlewriter {
 
     let context: CGContextRef
     let radius: CGFloat
-    let colour: UIColor
+    let color: UIColor
     let font:   UIFont
     let textOrientation: TextOrientation
 
     // MARK: - Functions
 
-    init(context: CGContextRef, radius: CGFloat, font: UIFont = UIFont.systemFontOfSize(16), colour: UIColor = UIColor.whiteColor(), textOrientation: TextOrientation = .Auto) {
+    init(context: CGContextRef, radius: CGFloat, font: UIFont = UIFont.systemFontOfSize(16), color: UIColor = UIColor.whiteColor(), textOrientation: TextOrientation = .Auto) {
 
         self.context = context
         self.radius  = radius
-        self.colour  = colour
+        self.color  = color
         self.font    = font
         self.textOrientation = textOrientation
     }
@@ -138,7 +138,7 @@ class Circlewriter {
     func centreText(text: String, angle theta: CGFloat, slantAngle: CGFloat) {
 
         // Set the text attributes
-        let attributes = [NSForegroundColorAttributeName: colour, NSFontAttributeName: font]
+        let attributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: font]
         // Save the context
         CGContextSaveGState(context)
         // Undo the inversion of the Y-axis (or the text goes backwards!)

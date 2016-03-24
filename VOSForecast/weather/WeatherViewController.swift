@@ -116,7 +116,7 @@ class WeatherViewController: UIViewController {
         }
         let temperatureColor: UIColor
         if let temperature = forecast.weather?.temperature {
-            temperatureColor = ColourWheel.colourFor(temperature, unit: units)
+            temperatureColor = ColorWheel.colorFor(temperature, unit: units)
             currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
             currentTemperature.textColor = temperatureColor
         } else {
@@ -124,11 +124,11 @@ class WeatherViewController: UIViewController {
         }
         if let temperature = forecast.weather?.apparentTemperature {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
-            currentFeelsLike.textColor = ColourWheel.colourFor(temperature, unit: units)
+            currentFeelsLike.textColor = ColorWheel.colorFor(temperature, unit: units)
         }
         if let temperature = forecast.oneDayForecast?.temperatureMin {
             nextLow.text      = "\(forecast.lowTodayDisplay)"
-            nextLow.textColor = ColourWheel.colourFor(temperature, unit: units)
+            nextLow.textColor = temperatureColor
         }
         if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm(showMidday: true) {
             nextLowLabel.text  = "Low \(lowTime)"
@@ -137,7 +137,7 @@ class WeatherViewController: UIViewController {
         }
         if let temperature = forecast.oneDayForecast?.temperatureMax {
             nextHigh.text      = "\(forecast.highTodayDisplay)"
-            nextHigh.textColor = ColourWheel.colourFor(temperature, unit: units)
+            nextHigh.textColor = temperatureColor
         }
         if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm(showMidday: true) {
             nextHighLabel.text  = "High \(highTime)"
@@ -145,6 +145,7 @@ class WeatherViewController: UIViewController {
             nextHighLabel.text = "High"
         }
         temperatureUnits!.text = "\(forecast.units.temperature)"
+        temperatureUnits!.textColor = temperatureColor
 
         currentSummary.text     = forecast.weather!.summary!
         let direction: Double = forecast.weather!.windBearing!
@@ -164,7 +165,6 @@ class WeatherViewController: UIViewController {
         windSpeedUnits.textColor = temperatureColor
         windSpeed.textColor      = temperatureColor
         windView.windDirection = direction
-
 
         let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         let likelyhood = forecast.rainLikelyhoodDisplay

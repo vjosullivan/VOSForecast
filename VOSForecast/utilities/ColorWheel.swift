@@ -1,5 +1,5 @@
 //
-//  ColourWheel.swift
+//  ColorWheel.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 23/03/2016.
@@ -8,12 +8,16 @@
 
 import UIKit
 
-struct ColourWheel {
+struct ColorWheel {
 
-    static func colourFor(temperature: Double, unit: String) -> UIColor {
+    private static let temperatureMin: CGFloat = -5.0
+    private static let temperatureMax: CGFloat = +25.0
+    private static let temperatureRange = temperatureMax - temperatureMin
+
+    static func colorFor(temperature: Double, unit: String) -> UIColor {
 
         let centigrade = unit != "us" ? temperature : (temperature - 32.0) * 5 / 9
-        let t = 1 - (CGFloat(centigrade) - -20.0) / 60.0
+        let t = 1 - (CGFloat(centigrade) - temperatureMin) / temperatureRange
         let h: CGFloat
         switch true {
         case t < 0:

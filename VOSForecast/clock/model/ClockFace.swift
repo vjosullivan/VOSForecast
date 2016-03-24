@@ -24,7 +24,7 @@ class ClockFace {
     var borderAlpha: CGFloat = 1.0
     var borderWidth: CGFloat = 1.0
 
-    var faceBackgroundColor = AppColour.faceColour
+    var faceBackgroundColor = AppColor.faceColor
     var faceBackgroundAlpha: CGFloat = 1.0
 
     var digitFont: UIFont    = UIFont.systemFontOfSize(16)
@@ -37,6 +37,7 @@ class ClockFace {
         self.context     = context
         self.rect        = rect
         self.highlightColor = highlightColor
+
         self.tickMarks   = TickMarks(rawValue: NSUserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue))!
         self.numeralType = NumeralType(rawValue: NSUserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue))!
     }
@@ -88,7 +89,7 @@ class ClockFace {
             for index in 0..<60 {
                 var tick: Tick?
                 if index == 0 && tickMarks.rawValue >= TickMarks.TwelveOClock.rawValue {
-                    tick = TickZero(colour: highlightColor)
+                    tick = TickZero(color: highlightColor)
                 } else if index % 15 == 0 && tickMarks.rawValue >= TickMarks.Quarters.rawValue {
                     tick = LargeTick()
                 } else if index % 5 == 0 && tickMarks.rawValue >= TickMarks.Hours.rawValue {
