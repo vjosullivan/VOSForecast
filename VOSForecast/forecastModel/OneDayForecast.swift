@@ -53,7 +53,7 @@ extension OneDayForecast: CustomStringConvertible {
         } else {
             precipPercent = "?"
         }
-        let sun  = "\(time?.asYYYYMMDD() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
+        let sun  = "\(time?.asYYYYMMDD() ?? "?") \(time?.asHHMM() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
         let tMin = "Low of:  \(String(temperatureMin!) ?? "?") at \(temperatureMinTime?.asHHMM() ?? "?")"
         let tMax = "High of: \(String(temperatureMax!) ?? "?") at \(temperatureMaxTime?.asHHMM() ?? "?")"
         let rain = "Precip:  \(precipType ?? "?") \(String(precipPercent) ?? "?")% in=\(String(precipIntensity!) ?? "?") inmx=\(String(precipIntensityMax!) ?? "?") at \(precipIntensityMaxTime?.asHHMM() ?? "?")"

@@ -40,8 +40,18 @@ extension NSDate {
     ///
     class func startOfToday() -> NSDate {
         let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        cal.timeZone = NSTimeZone(name: "UTC")!
+        cal.timeZone = NSTimeZone.localTimeZone()
         let components = cal.components([.Day , .Month, .Year ], fromDate: NSDate())
         return cal.dateFromComponents(components)!
     }
+}
+
+extension NSDate: Comparable { }
+
+public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs === rhs || lhs.compare(rhs) == .OrderedSame
+}
+
+public func <(lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) == .OrderedAscending
 }

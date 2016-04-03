@@ -111,6 +111,8 @@
 		F1472D371C8784E200D03DC3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* Weather.swift */; };
 		F1472D381C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1472D391C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
+		F1A4253C1CAB09B900C39E30 /* LightWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4253B1CAB09B900C39E30 /* LightWheel.swift */; };
+		F1ACF9201CB10A3100B834F3 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */; };
 		F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B134271C84CC9700CF48AE /* AppDelegate.swift */; };
 		F1B1342D1C84CC9800CF48AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342B1C84CC9800CF48AE /* Main.storyboard */; };
 		F1B1342F1C84CC9A00CF48AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1B1342E1C84CC9A00CF48AE /* Assets.xcassets */; };
@@ -194,6 +196,8 @@
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D341C8784E200D03DC3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		F1472D351C8784E200D03DC3 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		F1A4253B1CAB09B900C39E30 /* LightWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWheel.swift; sourceTree = "<group>"; };
+		F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
 		F1B134241C84CC9700CF48AE /* VOSForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOSForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B134271C84CC9700CF48AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1B1342C1C84CC9800CF48AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				F13C24D01CA0A31B006B3B23 /* AstrolabeView.swift */,
+				F1A4253B1CAB09B900C39E30 /* LightWheel.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				F1B134301C84CC9A00CF48AE /* LaunchScreen.storyboard */,
 				F1B134331C84CC9A00CF48AE /* Info.plist */,
 				F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */,
+				F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */,
 				F13C24D61CA0A39E006B3B23 /* instrument */,
 				F1C436881C9F478E009947A8 /* astrolabe */,
 				F13C24E01CA0A425006B3B23 /* clock */,
@@ -661,6 +667,7 @@
 				34A853111CA13A8F005D370E /* WeatherDelegate.swift in Sources */,
 				F1472D361C8784E200D03DC3 /* Weather.swift in Sources */,
 				F13C251C1CA0ABA9006B3B23 /* Hub.swift in Sources */,
+				F1ACF9201CB10A3100B834F3 /* MainViewControllerExtension.swift in Sources */,
 				F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */,
 				F13C25191CA0AB64006B3B23 /* TickZero.swift in Sources */,
@@ -690,6 +697,7 @@
 				F13C25131CA0AB64006B3B23 /* MediumTick.swift in Sources */,
 				340E0D501CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */,
 				34A852EE1CA138F2005D370E /* TemperatureFace.swift in Sources */,
+				F1A4253C1CAB09B900C39E30 /* LightWheel.swift in Sources */,
 				347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */,
 				34A8531B1CA13AA1005D370E /* WeatherFace.swift in Sources */,
 				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,

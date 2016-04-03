@@ -18,10 +18,61 @@ class MainViewController: UIViewController, WeatherDelegate {
     internal var minutes: Int = 0
     internal var seconds: Int = 0
 
+    let padding: CGFloat = 4.0
+    let halfPad: CGFloat = 2.0
+
     // MARK: Panels
 
     var weatherVC: WeatherViewController?
     var clockVC: ClockViewController?
+    var astrolabeVC: AstrolabeViewController?
+
+    // MARK: - Constraints
+
+    @IBOutlet weak var constraintClockTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintClockBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintClockLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintClockTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintWeatherTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintWeatherBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintWeatherLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintWeatherTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintAstrolabeTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintAstrolabeBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintAstrolabeLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintAstrolabeTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintRainTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintRainBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintRainLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintRainTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintATop: NSLayoutConstraint!
+    @IBOutlet weak var constraintABottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintALeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintATrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintBTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintBBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintBLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintBTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintCTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintCBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintCLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintCTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintDTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintDBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintDLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintDTrailing: NSLayoutConstraint!
+
+    @IBOutlet weak var constraintSummaryTop: NSLayoutConstraint!
+    @IBOutlet weak var constraintSummaryBottom: NSLayoutConstraint!
+    @IBOutlet weak var constraintSummaryLeading: NSLayoutConstraint!
+    @IBOutlet weak var constraintSummaryTrailing: NSLayoutConstraint!
 
     // MARK: Summary panel
 
@@ -46,6 +97,8 @@ class MainViewController: UIViewController, WeatherDelegate {
             weatherVC = segue.destinationViewController as? WeatherViewController
         } else if segue.identifier == "clockSegue" {
             clockVC = segue.destinationViewController as? ClockViewController
+        } else if segue.identifier == "astrolabeSegue" {
+            astrolabeVC = segue.destinationViewController as? AstrolabeViewController
         }
 
     }
@@ -84,6 +137,9 @@ class MainViewController: UIViewController, WeatherDelegate {
                     if let forecast = ForecastIOBuilder().buildForecast(data) {
                         self.updateView(forecast)
                         self.weatherVC!.updateView(forecast)
+                        if let today = forecast.oneDayForecast {
+                            self.astrolabeVC!.updateView(today)
+                        }
                     } else {
                         let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
                         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

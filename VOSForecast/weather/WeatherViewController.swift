@@ -28,6 +28,8 @@ class WeatherViewController: UIViewController {
 
     @IBOutlet weak var weatherView: WeatherView!
     @IBOutlet weak var currentSummary: UILabel!
+    @IBOutlet weak var rainSummary: UILabel!
+    @IBOutlet weak var cloudSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
 
     // Temperature view
@@ -126,7 +128,7 @@ class WeatherViewController: UIViewController {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
             currentFeelsLike.textColor = ColorWheel.colorFor(temperature, unit: units)
         }
-        if let temperature = forecast.oneDayForecast?.temperatureMin {
+        if let _ = forecast.oneDayForecast?.temperatureMin {
             nextLow.text      = "\(forecast.lowTodayDisplay)"
             nextLow.textColor = temperatureColor
         }
@@ -135,7 +137,7 @@ class WeatherViewController: UIViewController {
         } else {
             nextLowLabel.text = "Low"
         }
-        if let temperature = forecast.oneDayForecast?.temperatureMax {
+        if let _ = forecast.oneDayForecast?.temperatureMax {
             nextHigh.text      = "\(forecast.highTodayDisplay)"
             nextHigh.textColor = temperatureColor
         }
@@ -147,7 +149,10 @@ class WeatherViewController: UIViewController {
         temperatureUnits!.text = "\(forecast.units.temperature)"
         temperatureUnits!.textColor = temperatureColor
 
-        currentSummary.text     = forecast.weather!.summary!
+        currentSummary.text = forecast.weather!.summary!
+        cloudSummary.text   = "Clouds: \(forecast.cloudCoverDisplay)"
+        let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
+        rainSummary.text    = "Rain: \(forecast.rainLikelyhoodDisplay) (\(intensity))"
         let direction: Double = forecast.weather!.windBearing!
         if NSUserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
@@ -166,11 +171,12 @@ class WeatherViewController: UIViewController {
         windSpeed.textColor      = temperatureColor
         windView.windDirection = direction
 
-        let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
-        let likelyhood = forecast.rainLikelyhoodDisplay
-        rainDescription.text = "\(intensity)\n(\(likelyhood) chance)" // \(forecast.weather?.prec
-        cloudDescription.text = "Cloud cover: \(forecast.cloudCoverDisplay)"
-        print("Timezone: \(forecast.timezone ?? "Unknown").  Offset: \(String(forecast.offset) ?? "Unknown")")
+        if let p = forecast.oneDayForecast?.pressure {
+            rainDescription.text  = "Pressure: \(Int(round(p)))mb"
+        }
+        if let h = forecast.oneDayForecast?.humidity {
+            cloudDescription.text = "Humidity: \(Int(round(h * 100.0)))%"
+        }
         currentIcon.text = weatherIcon(forecast.weather?.icon)
         if currentIcon.text == "\u{F00D}" {
             currentIcon.textColor = UIColor.yellowColor()

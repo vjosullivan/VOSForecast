@@ -28,7 +28,7 @@ class WindDirectionHand: UIView {
         backgroundColor = UIColor.clearColor()
         alpha         = 1.0
         width         = 16.0
-        length        = 0.67
+        length        = 0.95
         offsetLength  = 0.1
         shadowEnabled = false
         tag           = 111

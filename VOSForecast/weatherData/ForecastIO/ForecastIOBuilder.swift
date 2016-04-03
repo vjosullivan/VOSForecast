@@ -27,8 +27,12 @@ class ForecastIOBuilder {
         let weather          = parseWeather(json)
         let sevenDayForecast = parseSevenDayForecast(json)
         var todaysForecast: OneDayForecast? = nil
+        var earliestDate = NSDate.distantFuture()
         for day in (sevenDayForecast?.oneDayForecasts)! {
-            if day.time == NSDate.startOfToday() {
+            print("\n\nwahoo! \(day.time) \(NSDate.startOfToday())\n\n")
+            if day.time < earliestDate {
+                print("\n\nwahey!\n\n")
+                earliestDate = day.time!
                 todaysForecast = day
             }
         }
@@ -118,6 +122,7 @@ class ForecastIOBuilder {
     private func parseSevenDayForecast(json: [String: AnyObject]) -> SevenDayForecast? {
         var sevenDayForecast: SevenDayForecast?
         if let dailyData = json["daily"] as? [String: AnyObject] {
+            //print("Daily: \(dailyData)")
             let oneDayForecasts = parseOneDayForecasts(dailyData)
             let icon     = dailyData["icon"] as? String
             let summary  = dailyData["summary"] as? String
@@ -155,6 +160,7 @@ class ForecastIOBuilder {
                 let precipType = day["precipType"] as? String
                 
                 let pressure = day["pressure"] as? Double
+                print("Pressure: \(pressure) \(day["pressure"])")
                 let summary = day["summary"] as? String
                 let sunriseTime = NSDate(timeIntervalSince1970: day["sunriseTime"] as! Double)
                 let sunsetTime = NSDate(timeIntervalSince1970: day["sunsetTime"] as! Double)
@@ -197,7 +203,7 @@ class ForecastIOBuilder {
                     windBearing:  windBearing,
                     windSpeed: windSpeed)
                 oneDayForecasts.append(oneDayForecast)
-                //print("ODF \(oneDayForecast)")
+                print("ODF \(oneDayForecast)")
             }
         }
         return oneDayForecasts.count > 0 ? oneDayForecasts : nil

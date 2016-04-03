@@ -12,7 +12,6 @@ class AstrolabeViewController: UIViewController {
 
     // MARK: - Outlets
 
-
     @IBOutlet weak var astrolabeFrontPanel: UIView!
     @IBOutlet weak var astrolabeRearPanel: UIView!
 
@@ -73,6 +72,10 @@ class AstrolabeViewController: UIViewController {
     }
 
     // MARK: - Local functions
+
+    func updateView(data: OneDayForecast) {
+        
+    }
 
     private func flip(frontView: UIView, rearView: UIView) {
         if rearView.hidden {

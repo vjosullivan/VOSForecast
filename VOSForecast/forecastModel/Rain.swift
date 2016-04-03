@@ -10,17 +10,17 @@ struct Rain {
 
     // US AMS definitions of limits of rain intensity in mm/hr
     static let dryUS           = (rate:    0.0, name: "Dry")
-    static let lightRainUS     = (rate:    2.5, name: "Light rain")
-    static let moderateRainUS  = (rate:    7.6, name: "Moderate rain")
-    static let heavyRainUS     = (rate:   50.0, name: "Heavy rain")
-    static let violentRainUS   = (rate: 1000.0, name: "Violent rain")
+    static let lightRainUS     = (rate:    2.5, name: "Light")
+    static let moderateRainUS  = (rate:    7.6, name: "Moderate")
+    static let heavyRainUS     = (rate:   50.0, name: "Heavy")
+    static let violentRainUS   = (rate: 1000.0, name: "Violent")
 
     // UK Met. Office definitions of limits of rain intensity in mm/hr.
     static let dryUK          = (rate:    0.0, name: "Dry")
-    static let slightRainUK   = (rate:    2.0, name: "Slight rain")
-    static let moderateRainUK = (rate:   10.0, name: "Moderate rain")
-    static let heavyRainUK    = (rate:   50.0, name: "Heavy rain")
-    static let violentRainUK  = (rate: 1000.0, name: "Violent rain")
+    static let slightRainUK   = (rate:    2.0, name: "Slight")
+    static let moderateRainUK = (rate:   10.0, name: "Moderate")
+    static let heavyRainUK    = (rate:   50.0, name: "Heavy")
+    static let violentRainUK  = (rate: 1000.0, name: "Violent")
 
     ///  Returns the appropriate term for the rate of rainfall.
     ///
