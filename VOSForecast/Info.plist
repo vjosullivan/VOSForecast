@@ -36,6 +36,8 @@
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>&apos;The Day Today&apos; would like to use your current location to provide you with a local weather forecast.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&apos;The Day Today&apos; would like to use your current location to provide you with a local weather forecast.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

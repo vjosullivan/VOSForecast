@@ -199,23 +199,33 @@ extension MainViewController: CLLocationManagerDelegate {
 
     private func configureLocationManager() {
         // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization()
 
         // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+        locationManager.requestWhenInUseAuthorization()
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.stopUpdatingLocation()
+            locationManager.requestLocation()
         }
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Wahey!")
         if let locValue = manager.location?.coordinate {
             print("locations = \(locValue.latitude) \(locValue.longitude)")
+            let alertController = UIAlertController(title: "Current Location", message: "Latitude: \(locValue.latitude)\nLongitude: \(locValue.longitude)", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            self.presentViewController(alertController, animated: true, completion: nil)
+
         } else {
             print("Unable to determine location.")
         }
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("CLONK!")
     }
 }
