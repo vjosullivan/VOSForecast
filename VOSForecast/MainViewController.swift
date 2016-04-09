@@ -19,8 +19,8 @@ class MainViewController: UIViewController, WeatherDelegate {
     internal var minutes: Int = 0
     internal var seconds: Int = 0
 
-    let padding: CGFloat = 8.0
-    let halfPad: CGFloat = 4.0
+    let padding: CGFloat = 10.0
+    let halfPad: CGFloat = 5.0
 
     // MARK: Location
 

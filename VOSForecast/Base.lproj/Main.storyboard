@@ -1037,7 +1037,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
+                                        <rect key="frame" x="10" y="10" width="265" height="187"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1054,10 +1054,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" id="K6g-zo-gws"/>
-                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" id="XIQ-qU-2Pj"/>
-                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" id="r3C-f2-0z3"/>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" id="wwX-v6-Mxl"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" constant="10" id="K6g-zo-gws"/>
+                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" constant="10" id="XIQ-qU-2Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" constant="10" id="r3C-f2-0z3"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" constant="10" id="wwX-v6-Mxl"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1218,16 +1218,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-Yc-JuS" userLabel="astrolabeFrontView" customClass="AstrolabeView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
+                                        <rect key="frame" x="10" y="10" width="265" height="188"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" id="Dgo-JV-23U"/>
-                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" id="Qsp-vv-fR9"/>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" id="Uak-CW-eIf"/>
-                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" id="i7m-S7-Sat"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" constant="10" id="Dgo-JV-23U"/>
+                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" constant="10" id="Qsp-vv-fR9"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" constant="10" id="Uak-CW-eIf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" constant="10" id="i7m-S7-Sat"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
