@@ -165,7 +165,14 @@ class MainViewController: UIViewController, WeatherDelegate {
 
     private func configureUI() {
 
-        // Most panels should be able to configure themselves.
+        let orientation = UIApplication.sharedApplication().statusBarOrientation
+
+        if orientation.isPortrait {
+            // Portrait
+        } else {
+            // Landscape
+        }
+        setConstraints(orientation)
     }
 
     @IBAction func flipPanel(sender: UIButton) {

@@ -50,6 +50,7 @@
 		34AEAB641C9FFD8300834E75 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEAB621C9FFD8300834E75 /* AppColor.swift */; };
 		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
+		34EF9D651CB3DB730026D382 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */; };
 		34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3CC71C9B7168007A433E /* NSDateExtension.swift */; };
 		F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24C51CA08612006B3B23 /* Numerals.swift */; };
 		F13C24C71CA08612006B3B23 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24C51CA08612006B3B23 /* Numerals.swift */; };
@@ -755,6 +756,7 @@
 				F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
 				F13C25121CA0AB64006B3B23 /* LargeTick.swift in Sources */,
 				34A852E01CA137F7005D370E /* WindView.swift in Sources */,
+				34EF9D651CB3DB730026D382 /* MainViewControllerExtension.swift in Sources */,
 				F1BF0A4E1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				F13C24D21CA0A31B006B3B23 /* AstrolabeView.swift in Sources */,
 				F1D62DE61C98092800F34EBF /* Units.swift in Sources */,
@@ -907,7 +909,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -918,7 +920,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = VOSForecast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.britishairwaysent.VOSForecast;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vjosullivan.VOSForecast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

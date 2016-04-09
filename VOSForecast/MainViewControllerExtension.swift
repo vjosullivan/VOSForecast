@@ -14,7 +14,7 @@ extension MainViewController {
         setConstraints(toInterfaceOrientation)
     }
 
-    private func setConstraints(toInterfaceOrientation: UIInterfaceOrientation) {
+    func setConstraints(toInterfaceOrientation: UIInterfaceOrientation) {
         print("Rotating...")
         if UIInterfaceOrientationIsLandscape(toInterfaceOrientation) {
             print("...to landscape.")
