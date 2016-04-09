@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MainViewController: UIViewController, WeatherDelegate {
 
@@ -18,8 +19,12 @@ class MainViewController: UIViewController, WeatherDelegate {
     internal var minutes: Int = 0
     internal var seconds: Int = 0
 
-    let padding: CGFloat = 4.0
-    let halfPad: CGFloat = 2.0
+    let padding: CGFloat = 8.0
+    let halfPad: CGFloat = 4.0
+
+    // MARK: Location
+
+    let locationManager = CLLocationManager()
 
     // MARK: Panels
 
@@ -28,6 +33,8 @@ class MainViewController: UIViewController, WeatherDelegate {
     var astrolabeVC: AstrolabeViewController?
 
     // MARK: - Constraints
+
+    var initialLayout = true
 
     @IBOutlet weak var constraintClockTop: NSLayoutConstraint!
     @IBOutlet weak var constraintClockBottom: NSLayoutConstraint!
@@ -90,6 +97,7 @@ class MainViewController: UIViewController, WeatherDelegate {
         super.viewDidLoad()
 
         configureUI()
+        configureLocationManager()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -169,8 +177,10 @@ class MainViewController: UIViewController, WeatherDelegate {
 
         if orientation.isPortrait {
             // Portrait
+            print("Starting in portrait.")
         } else {
             // Landscape
+            print("Starting in landscape.")
         }
         setConstraints(orientation)
     }
@@ -183,5 +193,29 @@ class MainViewController: UIViewController, WeatherDelegate {
             break
         }
     }
+}
 
+extension MainViewController: CLLocationManagerDelegate {
+
+    private func configureLocationManager() {
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.stopUpdatingLocation()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let locValue = manager.location?.coordinate {
+            print("locations = \(locValue.latitude) \(locValue.longitude)")
+        } else {
+            print("Unable to determine location.")
+        }
+    }
 }

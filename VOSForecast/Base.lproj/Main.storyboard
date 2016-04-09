@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -22,7 +22,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="mainView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -53,10 +53,10 @@
                                     <segue destination="mAM-hm-0rg" kind="embed" identifier="clockSegue" id="ML6-ri-ZC1"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-kn-hH4" userLabel="Day0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzN-kn-hH4" userLabel="viewA">
                                 <rect key="frame" x="10" y="509" width="81" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD8-Q5-uFB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD8-Q5-uFB" userLabel="labelA">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="zD8-Q5-uFB" secondAttribute="height" multiplier="1:1" id="UMq-L0-Olw"/>
@@ -78,10 +78,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-0h-xXA" userLabel="Day1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbA-0h-xXA" userLabel="viewB">
                                 <rect key="frame" x="93" y="509" width="81" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47c-Wi-TQe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47c-Wi-TQe" userLabel="labelB">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="47c-Wi-TQe" secondAttribute="height" multiplier="1:1" id="gGd-Pw-889"/>
@@ -103,10 +103,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-g1-ael" userLabel="Day2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-g1-ael" userLabel="viewC">
                                 <rect key="frame" x="176" y="509" width="81" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN3-2g-1dW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sN3-2g-1dW" userLabel="labelC">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sN3-2g-1dW" secondAttribute="height" multiplier="1:1" id="hS1-9l-X2h"/>
@@ -128,10 +128,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="Day3">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-qX-tJr" userLabel="viewD">
                                 <rect key="frame" x="259" y="509" width="82" height="81"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-ME-T0U">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Nf-ME-T0U" userLabel="labelD">
                                         <rect key="frame" x="1" y="0.0" width="81" height="81"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8Nf-ME-T0U" secondAttribute="height" multiplier="1:1" id="tmZ-bp-Xcy"/>
@@ -375,7 +375,7 @@
                         <viewControllerLayoutGuide type="top" id="3zy-ek-SJT"/>
                         <viewControllerLayoutGuide type="bottom" id="K1z-AX-fSF"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UF8-kz-Z63">
+                    <view key="view" contentMode="scaleToFill" id="UF8-kz-Z63" userLabel="weatherMainView">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="243"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -936,7 +936,7 @@
                         <viewControllerLayoutGuide type="top" id="Ipu-UG-dAI"/>
                         <viewControllerLayoutGuide type="bottom" id="MUj-es-ABf"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Dt2-eV-1sk">
+                    <view key="view" contentMode="scaleToFill" id="Dt2-eV-1sk" userLabel="clockMainView">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1037,7 +1037,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg4-2g-CQu" userLabel="clockFrontView" customClass="ClockView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="265" height="187"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="207"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1054,10 +1054,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" constant="10" id="K6g-zo-gws"/>
-                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" constant="10" id="XIQ-qU-2Pj"/>
-                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" constant="10" id="r3C-f2-0z3"/>
-                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" constant="10" id="wwX-v6-Mxl"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="top" secondItem="bPP-2z-6CT" secondAttribute="top" id="K6g-zo-gws"/>
+                                    <constraint firstAttribute="bottom" secondItem="wg4-2g-CQu" secondAttribute="bottom" id="XIQ-qU-2Pj"/>
+                                    <constraint firstAttribute="trailing" secondItem="wg4-2g-CQu" secondAttribute="trailing" id="r3C-f2-0z3"/>
+                                    <constraint firstItem="wg4-2g-CQu" firstAttribute="leading" secondItem="bPP-2z-6CT" secondAttribute="leading" id="wwX-v6-Mxl"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1116,7 +1116,7 @@
                         <viewControllerLayoutGuide type="top" id="9NN-tw-CBc"/>
                         <viewControllerLayoutGuide type="bottom" id="inU-xi-HWZ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4as-11-64P">
+                    <view key="view" contentMode="scaleToFill" id="4as-11-64P" userLabel="astrolabeMainView">
                         <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1218,16 +1218,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuN-Yc-JuS" userLabel="astrolabeFrontView" customClass="AstrolabeView" customModule="VOSForecast" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="10" width="265" height="188"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="285" height="208"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" constant="10" id="Dgo-JV-23U"/>
-                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" constant="10" id="Qsp-vv-fR9"/>
-                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" constant="10" id="Uak-CW-eIf"/>
-                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" constant="10" id="i7m-S7-Sat"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="leading" secondItem="IRu-95-lMH" secondAttribute="leading" id="Dgo-JV-23U"/>
+                                    <constraint firstAttribute="trailing" secondItem="LuN-Yc-JuS" secondAttribute="trailing" id="Qsp-vv-fR9"/>
+                                    <constraint firstItem="LuN-Yc-JuS" firstAttribute="top" secondItem="IRu-95-lMH" secondAttribute="top" id="Uak-CW-eIf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LuN-Yc-JuS" secondAttribute="bottom" id="i7m-S7-Sat"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

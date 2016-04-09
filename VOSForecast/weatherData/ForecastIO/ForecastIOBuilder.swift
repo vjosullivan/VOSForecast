@@ -29,9 +29,7 @@ class ForecastIOBuilder {
         var todaysForecast: OneDayForecast? = nil
         var earliestDate = NSDate.distantFuture()
         for day in (sevenDayForecast?.oneDayForecasts)! {
-            print("\n\nwahoo! \(day.time) \(NSDate.startOfToday())\n\n")
             if day.time < earliestDate {
-                print("\n\nwahey!\n\n")
                 earliestDate = day.time!
                 todaysForecast = day
             }
