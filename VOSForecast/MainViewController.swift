@@ -81,6 +81,9 @@ class MainViewController: UIViewController, WeatherDelegate {
     @IBOutlet weak var constraintSummaryLeading: NSLayoutConstraint!
     @IBOutlet weak var constraintSummaryTrailing: NSLayoutConstraint!
 
+    @IBOutlet weak var locationLine1: UILabel!
+    @IBOutlet weak var locationLine2: UILabel!
+
     // MARK: Summary panel
 
     @IBOutlet weak var oneHourView: UIView!
@@ -135,31 +138,7 @@ class MainViewController: UIViewController, WeatherDelegate {
     // MARK: - Local functions
 
     func updateForecast() {
-        let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
-        let latitude  = 51.3
-        let longitude = -1.0
-        print("Fetching forecast at \(latitude), \(longitude) in \(units).")
-        ForecastIOManager().fetchWeather(latitude: latitude, longitude: longitude, units: units) {(data, error) in
-            if let data = data {
-                dispatch_async(dispatch_get_main_queue()) {
-                    if let forecast = ForecastIOBuilder().buildForecast(data) {
-                        self.updateView(forecast)
-                        self.weatherVC!.updateView(forecast)
-                        if let today = forecast.oneDayForecast {
-                            self.astrolabeVC!.updateView(today)
-                        }
-                    } else {
-                        let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
-                        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                        alertController.addAction(okAction)
-                        self.presentViewController(alertController, animated: true, completion: nil)
-                    }
-                }
-            }
-            if let error = error {
-                print("ERROR: \(error.description)")
-            }
-        }
+        locationManager.requestLocation()
     }
 
     private func updateView(forecast: Forecast) {
@@ -172,17 +151,7 @@ class MainViewController: UIViewController, WeatherDelegate {
     }
 
     private func configureUI() {
-
-        let orientation = UIApplication.sharedApplication().statusBarOrientation
-
-        if orientation.isPortrait {
-            // Portrait
-            print("Starting in portrait.")
-        } else {
-            // Landscape
-            print("Starting in landscape.")
-        }
-        setConstraints(orientation)
+        setConstraints(orientation: UIApplication.sharedApplication().statusBarOrientation)
     }
 
     @IBAction func flipPanel(sender: UIButton) {
@@ -212,17 +181,47 @@ extension MainViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Wahey!")
-        if let locValue = manager.location?.coordinate {
-            print("locations = \(locValue.latitude) \(locValue.longitude)")
-            let alertController = UIAlertController(title: "Current Location", message: "Latitude: \(locValue.latitude)\nLongitude: \(locValue.longitude)", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(okAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
-
+        print("Wahey! \(manager.description)")
+        if let coords = manager.location?.coordinate,
+            let location = manager.location {
+            let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
+            print("Fetching forecast at \(coords.latitude), \(coords.longitude) in \(units).  Altitude \(location.altitude)")
+            ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
+                if let data = data {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if let forecast = ForecastIOBuilder().buildForecast(data) {
+                            self.updateView(forecast)
+                            self.weatherVC!.updateView(forecast)
+                            if let today = forecast.oneDayForecast {
+                                self.astrolabeVC!.updateView(today)
+                            }
+                        } else {
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
+                            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alertController.addAction(okAction)
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    }
+                }
+                if let error = error {
+                    print("ERROR: \(error.description)")
+                }
+            }
+            updateLocationLabel(location)
         } else {
             print("Unable to determine location.")
         }
+    }
+
+    private func updateLocationLabel(location: CLLocation) {
+        let latitude  = round(location.coordinate.latitude * 10.0) / 10.0
+        let longitude = round(location.coordinate.longitude * 10.0) / 10.0
+        let altitude  = round(location.altitude * 10.0) / 10.0
+        let latitudeSuffix  = latitude >= 0.0 ? "°N" : "°S"
+        let longitudeSuffix = longitude >= 0.0 ? "°E" : "°W"
+        print(location.description)
+        locationLine1.text = "\(latitude)\(latitudeSuffix)  \(longitude)\(longitudeSuffix)"
+        locationLine2.text = "altitude: \(altitude)m"
     }
 
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

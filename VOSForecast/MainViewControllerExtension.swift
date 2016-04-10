@@ -11,12 +11,12 @@ import UIKit
 extension MainViewController {
     
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        setConstraints(toInterfaceOrientation)
+        setConstraints(orientation: toInterfaceOrientation)
     }
 
-    func setConstraints(toInterfaceOrientation: UIInterfaceOrientation) {
+    func setConstraints(orientation orientation: UIInterfaceOrientation) {
         print("Rotating...")
-        if UIInterfaceOrientationIsLandscape(toInterfaceOrientation) {
+        if UIInterfaceOrientationIsLandscape(orientation) {
             print("...to landscape.")
             setLandscapeConstraints()
             print("Rotating...")

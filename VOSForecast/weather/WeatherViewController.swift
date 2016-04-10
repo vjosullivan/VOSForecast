@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 struct WeatherKeys {
     static let units    = "weather.units"
@@ -67,11 +68,16 @@ class WeatherViewController: UIViewController {
 
     var parentVC: WeatherDelegate?
 
+    // MARK: Location
+
+    let locationManager = CLLocationManager()
+
     // MARK: - UIViewController functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUnitButtons()
+        configureLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,7 +111,7 @@ class WeatherViewController: UIViewController {
         if sender == windDescription {
             NSUserDefaults.write(key: WeatherKeys.windType, value: ["words", "numbers"][sender.selectedSegmentIndex])
         }
-        parentVC!.updateForecast()
+        updateForecast()
     }
 
 
@@ -259,7 +265,7 @@ class WeatherViewController: UIViewController {
             break
         }
         configureUnitButtons()
-        parentVC!.updateForecast()
+        updateForecast()
     }
 
     private func configureUnitButtons() {
@@ -285,7 +291,61 @@ class WeatherViewController: UIViewController {
     }
 
     override func didMoveToParentViewController(parent: UIViewController?) {
-        parentVC = parent as? WeatherDelegate
-        parentVC?.updateForecast()
+        updateForecast()
+    }
+}
+
+extension WeatherViewController: WeatherDelegate {
+    func updateForecast() {
+        locationManager.requestLocation()
+    }
+}
+
+extension WeatherViewController: CLLocationManagerDelegate {
+
+    private func configureLocationManager() {
+        // Ask for Authorisation from the User.
+        locationManager.requestAlwaysAuthorization()
+
+        // For use in foreground
+        locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.requestLocation()
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Wahey!")
+        if let coords = manager.location?.coordinate,
+            let location = manager.location {
+            let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
+            print("Fetching forecast at \(coords.latitude), \(coords.longitude) in \(units).  Altitude \(location.altitude)")
+            ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
+                if let data = data {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        if let forecast = ForecastIOBuilder().buildForecast(data) {
+                            self.updateView(forecast)
+                        } else {
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
+                            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            alertController.addAction(okAction)
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    }
+                }
+                if let error = error {
+                    print("ERROR: \(error.description)")
+                }
+            }
+        } else {
+            print("Unable to determine location.")
+        }
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("WeatherView clonk!")
     }
 }
