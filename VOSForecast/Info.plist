@@ -22,6 +22,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>'The Day Today' would like to use your current location to provide you with a local weather forecast.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>'The Day Today' would like to use your current location to provide you with a local weather forecast.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>weathericons-regular.otf</string>
@@ -34,10 +38,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>&apos;The Day Today&apos; would like to use your current location to provide you with a local weather forecast.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>&apos;The Day Today&apos; would like to use your current location to provide you with a local weather forecast.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

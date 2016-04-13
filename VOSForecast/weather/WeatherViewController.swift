@@ -33,6 +33,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cloudSummary: UILabel!
     @IBOutlet weak var currentIcon: UILabel!
 
+    @IBOutlet weak var weatherIcon: UIImageView!
     // Temperature view
 
     @IBOutlet weak var temperatureView: TemperatureView!
@@ -183,14 +184,61 @@ class WeatherViewController: UIViewController {
         if let h = forecast.oneDayForecast?.humidity {
             cloudDescription.text = "Humidity: \(Int(round(h * 100.0)))%"
         }
-        currentIcon.text = weatherIcon(forecast.weather?.icon)
-        if currentIcon.text == "\u{F00D}" {
-            currentIcon.textColor = UIColor.yellowColor()
-        } else {
-            currentIcon.textColor = UIColor.whiteColor()
-        }
+//        currentIcon.text = weatherIcon(forecast.weather?.icon)
+//        if currentIcon.text == "\u{F00D}" {
+//            currentIcon.textColor = UIColor.yellowColor()
+//        } else {
+//            currentIcon.textColor = UIColor.whiteColor()
+//        }
+        weatherIcon.image = weatherImage(forecast.weather?.icon)
     }
 
+    private func weatherImage(iconName: String?) -> UIImage {
+        let image: UIImage
+        if let iconName = iconName {
+            switch iconName {
+            case "clear-day":
+                image = UIImage(named: "sun")!
+            case "clear-night":
+                image = UIImage(named: "moon")!
+            case "rain":
+                image = UIImage(named: "sun")!
+            case "snow":
+                image = UIImage(named: "snow")!
+            case "sleet":
+                image = UIImage(named: "sleet")!
+            case "wind":
+                image = UIImage(named: "wind")!
+            case "fog":
+                image = UIImage(named: "fog")!
+            case "cloudy":
+                image = UIImage(named: "cloudy")!
+            case "partly-cloudy-day":
+                image = UIImage(named: "partly cloudy day")!
+            case "partly-cloudy-night":
+                image = UIImage(named: "partly cloudy night")!
+            case "hail":
+                image = UIImage(named: "hail")!
+            case "thunderstorm":
+                image = UIImage(named: "thunderstorm")!
+            case "tornado":
+                image = UIImage(named: "tornado")!
+            default:
+                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .Alert)
+                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(okAction)
+                presentViewController(alertController, animated: true, completion: nil)
+                image = UIImage(named: "sun.png")!
+            }
+        } else {
+            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            presentViewController(alertController, animated: true, completion: nil)
+            image = UIImage(named: "sun.png")!
+        }
+        return image
+    }
     private func weatherIcon(iconName: String?) -> String {
         let icon: String
         if let iconName = iconName {

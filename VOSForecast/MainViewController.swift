@@ -220,7 +220,7 @@ extension MainViewController: CLLocationManagerDelegate {
         let latitudeSuffix  = latitude >= 0.0 ? "°N" : "°S"
         let longitudeSuffix = longitude >= 0.0 ? "°E" : "°W"
         print(location.description)
-        locationLine1.text = "\(latitude)\(latitudeSuffix)  \(longitude)\(longitudeSuffix)"
+        locationLine1.text = "\(abs(latitude))\(latitudeSuffix)  \(abs(longitude))\(longitudeSuffix)"
         locationLine2.text = "altitude: \(altitude)m"
     }
 
