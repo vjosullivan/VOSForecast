@@ -73,7 +73,7 @@ class AstrolabeViewController: UIViewController {
 
     // MARK: - Local functions
 
-    func updateView(_ data: OneDayForecast) {
+    func updateView(_ data: DataPoint) {
         
     }
 

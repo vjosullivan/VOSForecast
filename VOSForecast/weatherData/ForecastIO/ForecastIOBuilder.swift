@@ -39,7 +39,7 @@ class ForecastIOBuilder {
         let longitude        = json["longitude"] as? Double
         let weather          = parseWeather(json)
         let sevenDayForecast = parseSevenDayForecast(json)
-        var todaysForecast: OneDayForecast? = nil
+        var todaysForecast: DataPoint? = nil
         var earliestDate = Date.distantFuture
         for day in (sevenDayForecast?.oneDayForecasts)! {
             if day.time < earliestDate {
@@ -142,8 +142,8 @@ class ForecastIOBuilder {
         return sevenDayForecast ?? nil
     }
     
-    fileprivate func parseOneDayForecasts(_ data: [String: AnyObject]) -> [OneDayForecast]? {
-        var oneDayForecasts = [OneDayForecast]()
+    fileprivate func parseOneDayForecasts(_ data: [String: AnyObject]) -> [DataPoint]? {
+        var oneDayForecasts = [DataPoint]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
                 //print("Day JSON: \(day)")
@@ -186,7 +186,8 @@ class ForecastIOBuilder {
                 
                 let windBearing = day["windBearing"] as? Double
                 let windSpeed = day["windSpeed"] as? Double
-                let oneDayForecast = OneDayForecast(apparentTemperatureMax: apparentTemperatureMax,
+                let oneDayForecast = DataPoint(time: time,
+                    apparentTemperatureMax: apparentTemperatureMax,
                     apparentTemperatureMaxTime: apparentTemperatureMaxTime,
                     apparentTemperatureMin: apparentTemperatureMin,
                     apparentTemperatureMinTime: apparentTemperatureMinTime,
@@ -209,7 +210,6 @@ class ForecastIOBuilder {
                     temperatureMaxTime: temperatureMaxTime,
                     temperatureMin: temperatureMin,
                     temperatureMinTime:  temperatureMinTime,
-                    time: time,
                     visibility: visibility,
                     windBearing:  windBearing,
                     windSpeed: windSpeed)

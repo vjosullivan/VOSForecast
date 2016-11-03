@@ -7,7 +7,10 @@
 //
 import Foundation
 
-struct OneDayForecast {
+struct DataPoint {
+
+    /// The UNIX time at which this data point begins.  Required.
+    let time: Date?
 
     let apparentTemperatureMax: Double?
     let apparentTemperatureMaxTime: Date?
@@ -37,7 +40,6 @@ struct OneDayForecast {
     let temperatureMin: Double?
     let temperatureMinTime: Date?
     
-    let time: Date?
     let visibility: Double?
     
     let windBearing: Double?
@@ -57,7 +59,7 @@ extension Optional where Wrapped: Numeric {
     }
 }
 
-extension OneDayForecast: CustomStringConvertible {
+extension DataPoint: CustomStringConvertible {
 
     var description: String {
         let precipPercent: String

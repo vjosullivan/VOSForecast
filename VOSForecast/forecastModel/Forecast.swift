@@ -12,7 +12,7 @@ struct Forecast {
     let longitude: Double?
 
     let weather: Weather?
-    let oneDayForecast: OneDayForecast?
+    let oneDayForecast: DataPoint?
     let sevenDayForecast: SevenDayForecast?
     let oneHourForecasts: [OneHourForecast]?
     let sixtyMinuteForecast: SixtyMinuteForecast?
