@@ -27,6 +27,7 @@
 		345D270B1CA3CF2F00F9D539 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D270A1CA3CF2F00F9D539 /* UIColorExtension.swift */; };
 		3476752F1C89C79E000A4C6F /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3476752E1C89C79E000A4C6F /* CALayerExtension.swift */; };
 		347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
+		349D94B11DCBE2F500A2CC56 /* DarkSkyUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349D94B01DCBE2F500A2CC56 /* DarkSkyUnits.swift */; };
 		34A852DB1CA137D6005D370E /* WindCompassFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A852DA1CA137D6005D370E /* WindCompassFace.swift */; };
 		34A852DF1CA137F7005D370E /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A852DE1CA137F7005D370E /* WindView.swift */; };
 		34A852E01CA137F7005D370E /* WindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A852DE1CA137F7005D370E /* WindView.swift */; };
@@ -98,8 +99,8 @@
 		F13C25261CA0AE5D006B3B23 /* InstrumentFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */; };
 		F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
-		F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* OneDayForecast.swift */; };
-		F1472D2B1C87840E00D03DC3 /* OneDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* OneDayForecast.swift */; };
+		F1472D2A1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
+		F1472D2B1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
 		F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D241C87840E00D03DC3 /* OneHourForecast.swift */; };
 		F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D241C87840E00D03DC3 /* OneHourForecast.swift */; };
 		F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */; };
@@ -154,6 +155,7 @@
 		345D270A1CA3CF2F00F9D539 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		3476752E1C89C79E000A4C6F /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		347A12981C88308A006AA4C8 /* ForecastDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastDisplay.swift; sourceTree = "<group>"; };
+		349D94B01DCBE2F500A2CC56 /* DarkSkyUnits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkSkyUnits.swift; sourceTree = "<group>"; };
 		34A852DA1CA137D6005D370E /* WindCompassFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindCompassFace.swift; sourceTree = "<group>"; };
 		34A852DE1CA137F7005D370E /* WindView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindView.swift; sourceTree = "<group>"; };
 		34A852ED1CA138F2005D370E /* TemperatureFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureFace.swift; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 		F13C25211CA0AD88006B3B23 /* WindDirectionHand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirectionHand.swift; sourceTree = "<group>"; };
 		F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
-		F1472D231C87840E00D03DC3 /* OneDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayForecast.swift; sourceTree = "<group>"; };
+		F1472D231C87840E00D03DC3 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
 		F1472D241C87840E00D03DC3 /* OneHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHourForecast.swift; sourceTree = "<group>"; };
 		F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenDayForecast.swift; sourceTree = "<group>"; };
@@ -482,7 +484,7 @@
 				347A12981C88308A006AA4C8 /* ForecastDisplay.swift */,
 				F1472D341C8784E200D03DC3 /* Weather.swift */,
 				F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */,
-				F1472D231C87840E00D03DC3 /* OneDayForecast.swift */,
+				F1472D231C87840E00D03DC3 /* DataPoint.swift */,
 				F1472D241C87840E00D03DC3 /* OneHourForecast.swift */,
 				F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */,
 				F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */,
@@ -490,6 +492,7 @@
 				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 				F1D62DE41C98092800F34EBF /* Units.swift */,
 				F1C436851C9EA851009947A8 /* Rain.swift */,
+				349D94B01DCBE2F500A2CC56 /* DarkSkyUnits.swift */,
 			);
 			path = forecastModel;
 			sourceTree = "<group>";
@@ -695,6 +698,7 @@
 				F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F13C25151CA0AB64006B3B23 /* SmallTick.swift in Sources */,
 				F1C4368A1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */,
+				349D94B11DCBE2F500A2CC56 /* DarkSkyUnits.swift in Sources */,
 				F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */,
 				F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
 				F13C24CE1CA09FB2006B3B23 /* MainViewController.swift in Sources */,
@@ -704,7 +708,7 @@
 				F1A4253C1CAB09B900C39E30 /* LightWheel.swift in Sources */,
 				347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */,
 				34A8531B1CA13AA1005D370E /* WeatherFace.swift in Sources */,
-				F1472D2A1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
+				F1472D2A1C87840E00D03DC3 /* DataPoint.swift in Sources */,
 				F1B134281C84CC9700CF48AE /* AppDelegate.swift in Sources */,
 				F13C24F51CA0A6D7006B3B23 /* MinuteHand.swift in Sources */,
 				F13C24F71CA0A6D7006B3B23 /* SecondHand.swift in Sources */,
@@ -789,7 +793,7 @@
 				34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */,
 				34A852F41CA138FA005D370E /* TemperatureView.swift in Sources */,
 				F13C25161CA0AB64006B3B23 /* SmallTick.swift in Sources */,
-				F1472D2B1C87840E00D03DC3 /* OneDayForecast.swift in Sources */,
+				F1472D2B1C87840E00D03DC3 /* DataPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -861,7 +865,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -902,7 +906,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

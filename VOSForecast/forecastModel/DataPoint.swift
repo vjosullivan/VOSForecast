@@ -12,9 +12,11 @@ struct DataPoint {
     /// The UNIX time at which this data point begins.  Required.
     let time: Date?
 
-    let apparentTemperatureMax: Double?
+    /// The apparent or "feels like" temperature.  Not given on daily data point.  Optional.
+    let apparentTemperature: Measurement<UnitTemperature>?
+    let apparentTemperatureMax: Measurement<UnitTemperature>?
     let apparentTemperatureMaxTime: Date?
-    let apparentTemperatureMin: Double?
+    let apparentTemperatureMin: Measurement<UnitTemperature>?
     let apparentTemperatureMinTime: Date?
     
     let cloudCover: Double?

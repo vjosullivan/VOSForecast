@@ -37,8 +37,9 @@ class ForecastIOBuilder {
     fileprivate func parseJSONForecast(_ json: [String: AnyObject]) -> Forecast {
         let latitude         = json["latitude"] as? Double
         let longitude        = json["longitude"] as? Double
+        let units            = DarkSkyUnits(code: json["flags"]?["units"] as? String ?? "us")
         let weather          = parseWeather(json)
-        let sevenDayForecast = parseSevenDayForecast(json)
+        let sevenDayForecast = parseSevenDayForecast(json, units: units)
         var todaysForecast: DataPoint? = nil
         var earliestDate = Date.distantFuture
         for day in (sevenDayForecast?.oneDayForecasts)! {
@@ -130,31 +131,30 @@ class ForecastIOBuilder {
         return allFlags ?? nil
     }
     
-    fileprivate func parseSevenDayForecast(_ json: [String: AnyObject]) -> SevenDayForecast? {
-        var sevenDayForecast: SevenDayForecast?
-        if let dailyData = json["daily"] as? [String: AnyObject] {
-            //print("Daily: \(dailyData)")
-            let oneDayForecasts = parseOneDayForecasts(dailyData)
-            let icon     = dailyData["icon"] as? String
-            let summary  = dailyData["summary"] as? String
-            sevenDayForecast = SevenDayForecast(icon: icon, summary: summary, oneDayForecasts: oneDayForecasts)
+    fileprivate func parseSevenDayForecast(_ json: [String: AnyObject], units: DarkSkyUnits) -> SevenDayForecast? {
+        guard let dailyData = json["daily"] as? [String: AnyObject] else {
+            return nil
         }
-        return sevenDayForecast ?? nil
+        let oneDayForecasts = parseOneDayForecasts(dailyData, units: units)
+        let icon     = dailyData["icon"] as? String
+        let summary  = dailyData["summary"] as? String
+        return SevenDayForecast(icon: icon, summary: summary, oneDayForecasts: oneDayForecasts)
     }
     
-    fileprivate func parseOneDayForecasts(_ data: [String: AnyObject]) -> [DataPoint]? {
+    fileprivate func parseOneDayForecasts(_ data: [String: AnyObject], units: DarkSkyUnits) -> [DataPoint]? {
         var oneDayForecasts = [DataPoint]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
                 //print("Day JSON: \(day)")
-                let apparentTemperatureMax = day["apparentTemperatureMax"] as? Double
+                let apparentTemperature = Measurement(optionalValue: day["apparentTemperature"], unit: units.temperature)
+                let apparentTemperatureMax = Measurement(optionalValue: day["apparentTemperatureMax"], unit: units.temperature)
                 let apparentTemperatureMaxTime: Date?
                 if let time = day["apparentTemperatureMaxTime"] as? Double {
                     apparentTemperatureMaxTime = Date(timeIntervalSince1970: time)
                 } else {
                     apparentTemperatureMaxTime = nil
                 }
-                let apparentTemperatureMin = day["apparentTemperatureMin"] as? Double
+                let apparentTemperatureMin = Measurement(optionalValue: day["apparentTemperatureMin"], unit: units.temperature)
                 let apparentTemperatureMinTime = Date(timeIntervalSince1970: day["apparentTemperatureMinTime"] as! Double)
                 
                 let cloudCover = day["cloudCover"] as? Double
@@ -187,6 +187,7 @@ class ForecastIOBuilder {
                 let windBearing = day["windBearing"] as? Double
                 let windSpeed = day["windSpeed"] as? Double
                 let oneDayForecast = DataPoint(time: time,
+                    apparentTemperature: apparentTemperature,
                     apparentTemperatureMax: apparentTemperatureMax,
                     apparentTemperatureMaxTime: apparentTemperatureMaxTime,
                     apparentTemperatureMin: apparentTemperatureMin,
@@ -292,5 +293,17 @@ class ForecastIOBuilder {
                 }
         }
         return oneHourForecasts.count > 0 ? oneHourForecasts : nil
+    }
+}
+
+extension Measurement {
+    
+    
+    init?(optionalValue: AnyObject?, unit: UnitType) {
+        guard let double = optionalValue as? Double else {
+            return nil
+        }
+        self.value = double
+        self.unit  = unit
     }
 }
