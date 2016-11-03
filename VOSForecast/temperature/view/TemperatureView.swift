@@ -24,7 +24,7 @@ class TemperatureView: UIView {
         super.init(coder: aDecoder)
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
         TemperatureFace(context: context, rect: rect).draw()

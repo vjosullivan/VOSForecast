@@ -22,20 +22,20 @@ class LightWheel: UIView {
         self.times     = times
         self.lineWidth = lineWidth
         super.init(frame: frame)
-        backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.white
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         // Setup graphics context
         let ctx = UIGraphicsGetCurrentContext()
 
         // clear context
-        CGContextClearRect(ctx, rect)
+        ctx?.clear(rect)
 
         drawArc(ctx!, startTime: times.night,                endTime: times.morningAstroTwilight, strokeColor: colors.nightColor)
         drawArc(ctx!, startTime: times.morningAstroTwilight, endTime: times.morningNavalTwilight, strokeColor: colors.astroColor)
@@ -49,27 +49,26 @@ class LightWheel: UIView {
         drawArc(ctx!, startTime: times.eveningAstroTwilight, endTime: times.night,                strokeColor: colors.astroColor)
     }
 
-    func drawArc(context: CGContext, startTime: Double, endTime: Double, strokeColor: UIColor) {
+    func drawArc(_ context: CGContext, startTime: Double, endTime: Double, strokeColor: UIColor) {
         strokeColor.setStroke()
         strokeColor.setFill()
-        CGContextSetLineWidth(context, 1.0)
-        CGContextSetLineCap(context, CGLineCap.Butt)
-        CGContextSetFillColorWithColor(context, strokeColor.CGColor)
-        let arc = CGPathCreateMutable()
+        context.setLineWidth(1.0)
+        context.setLineCap(CGLineCap.butt)
+        context.setFillColor(strokeColor.cgColor)
+        let arc = CGMutablePath()
 
         let radius = min(r.midX - r.minX, r.midY - r.minY) - lineWidth / 2.0 - max(r.minX, r.minY)
-        CGPathAddArc(arc, nil, r.midX, r.midY, radius,
-                     CGFloat(M_PI_2 + 4 * startTime * M_PI_2),
-                     CGFloat(M_PI_2 + 4 * endTime * M_PI_2), false)
-        let strokedArc = CGPathCreateCopyByStrokingPath(arc, nil,
-                                                        lineWidth,
-                                                        CGLineCap.Butt,
-                                                        CGLineJoin.Miter,
-                                                        1)
-        CGContextAddPath(context, strokedArc)
-        CGContextFillPath(context);
+        let path = CGMutablePath()
+        path.addArc(center: CGPoint(x: r.midX, y: r.midY), radius: radius, startAngle: CGFloat(M_PI_2 + 4 * startTime * M_PI_2), endAngle: CGFloat(M_PI_2 + 4 * endTime * M_PI_2), clockwise: false)
+        let strokedArc = CGPath(__byStroking: arc, transform: nil,
+                                                        lineWidth: lineWidth,
+                                                        lineCap: CGLineCap.butt,
+                                                        lineJoin: CGLineJoin.miter,
+                                                        miterLimit: 1)
+        context.addPath(strokedArc!)
+        context.fillPath();
 
-        CGContextStrokePath(context)
+        context.strokePath()
     }
 }
 

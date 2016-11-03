@@ -31,8 +31,8 @@ class AstrolabeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: AstrolabeKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue)
-        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: AstrolabeKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue)
+        numeralsSetting.selectedSegmentIndex = UserDefaults.readInt(key: AstrolabeKeys.numeralType, defaultValue: NumeralType.arabic.rawValue)
+        ticksSetting.selectedSegmentIndex = UserDefaults.readInt(key: AstrolabeKeys.tickmarks, defaultValue: TickMarks.minutes.rawValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,14 +40,14 @@ class AstrolabeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         astrolabeFrontView.shouldUpdateSubviews = true
         astrolabeFrontView.setNeedsDisplay()
     }
 
     // MARK: - Actions
 
-    @IBAction func actionFlipPanel(sender: UIButton) {
+    @IBAction func actionFlipPanel(_ sender: UIButton) {
         switch sender {
         case astrolabeFlipButton:
             flip(astrolabeFrontPanel, rearView: astrolabeRearPanel)
@@ -56,14 +56,14 @@ class AstrolabeViewController: UIViewController {
         }
     }
 
-    @IBAction func actionChangeSettings(sender: UISegmentedControl) {
+    @IBAction func actionChangeSettings(_ sender: UISegmentedControl) {
         switch sender {
         case numeralsSetting:
-            NSUserDefaults.writeInt(key: AstrolabeKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
+            UserDefaults.writeInt(key: AstrolabeKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
             astrolabeFrontView.shouldUpdateSubviews = true
             astrolabeFrontView.setNeedsDisplay()
         case ticksSetting:
-            NSUserDefaults.writeInt(key: AstrolabeKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
+            UserDefaults.writeInt(key: AstrolabeKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
             astrolabeFrontView.shouldUpdateSubviews = true
             astrolabeFrontView.setNeedsDisplay()
         default:
@@ -73,19 +73,19 @@ class AstrolabeViewController: UIViewController {
 
     // MARK: - Local functions
 
-    func updateView(data: OneDayForecast) {
+    func updateView(_ data: OneDayForecast) {
         
     }
 
-    private func flip(frontView: UIView, rearView: UIView) {
-        if rearView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = false }, completion: nil)
+    fileprivate func flip(_ frontView: UIView, rearView: UIView) {
+        if rearView.isHidden {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = true  }, completion: nil)
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = false }, completion: nil)
         } else {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromLeft, .showHideTransitionViews]
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = true  }, completion: nil)
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = false }, completion: nil)
         }
     }
 }

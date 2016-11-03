@@ -10,11 +10,11 @@ import UIKit
 
 struct ColorWheel {
 
-    private static let temperatureMin: CGFloat = -5.0
-    private static let temperatureMax: CGFloat = +25.0
-    private static let temperatureRange = temperatureMax - temperatureMin
+    fileprivate static let temperatureMin: CGFloat = -5.0
+    fileprivate static let temperatureMax: CGFloat = +25.0
+    fileprivate static let temperatureRange = temperatureMax - temperatureMin
 
-    static func colorFor(temperature: Double, unit: String) -> UIColor {
+    static func colorFor(_ temperature: Double, unit: String) -> UIColor {
 
         let centigrade = unit != "us" ? temperature : (temperature - 32.0) * 5 / 9
         let t = 1 - (CGFloat(centigrade) - temperatureMin) / temperatureRange

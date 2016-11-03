@@ -14,7 +14,7 @@ class MediumTick: Tick {
     
     init() {
         super.init(
-            color: UIColor.whiteColor(),
+            color: UIColor.white,
             alpha: 1.0,
             innerRadius: 0.925,
             outerRadius: 0.99,

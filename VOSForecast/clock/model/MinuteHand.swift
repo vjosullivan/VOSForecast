@@ -15,7 +15,7 @@ class MinuteHand: Hand {
         
         color           = UIColor(white: 0.925, alpha: 1.0)
         borderColor     = UIColor(white: 0.925, alpha: 0.75)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         alpha         = 1.0
         width         = 3.0
         length        = 0.75

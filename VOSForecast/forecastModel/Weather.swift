@@ -34,8 +34,8 @@ struct Weather {
     let pressure: Double?
     let ozone: Double?
 
-    var date: NSDate {
-        let d = NSDate(timeIntervalSince1970: NSTimeInterval(time!))
+    var date: Date {
+        let d = Date(timeIntervalSince1970: TimeInterval(time!))
         return d
     }
 }

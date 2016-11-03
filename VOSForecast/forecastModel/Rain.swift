@@ -29,7 +29,7 @@ struct Rain {
     ///
     ///  - returns: The term for the given rain intensity.
     ///
-    static func intensity(rate: Double, units: String) -> String {
+    static func intensity(_ rate: Double, units: String) -> String {
         switch units {
         case "us", "ca":
             return intensityUS(rate)
@@ -40,7 +40,7 @@ struct Rain {
         }
     }
 
-    private static func intensityUS(rate: Double) -> String {
+    fileprivate static func intensityUS(_ rate: Double) -> String {
         switch true {
         case rate == 0:
             return dryUS.name
@@ -55,7 +55,7 @@ struct Rain {
         }
     }
 
-    private static func intensityUK(rate: Double) -> String {
+    fileprivate static func intensityUK(_ rate: Double) -> String {
         switch true {
         case rate == 0.0:
             return dryUK.name

@@ -8,24 +8,24 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
 
     func asYYYYMMDD() -> String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.stringFromDate(self)
+        return formatter.string(from: self)
     }
 
     func asHHMM() -> String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
-        return formatter.stringFromDate(self)
+        return formatter.string(from: self)
     }
 
-    func asHpm(showMidday showMidday: Bool = false) -> String {
-        let formatter = NSDateFormatter()
+    func asHpm(showMidday: Bool = false) -> String {
+        let formatter = DateFormatter()
         formatter.dateFormat = "ha"
-        let time = formatter.stringFromDate(self).lowercaseString
+        let time = formatter.string(from: self).lowercased()
         if showMidday {
             if time == "12pm" {
                 return "midday"
@@ -38,20 +38,10 @@ extension NSDate {
 
     ///  Returns the exact date for the start of today.
     ///
-    class func startOfToday() -> NSDate {
-        let cal = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-        cal.timeZone = NSTimeZone.localTimeZone()
-        let components = cal.components([.Day , .Month, .Year ], fromDate: NSDate())
-        return cal.dateFromComponents(components)!
+    static func startOfToday() -> Date {
+        var cal = Calendar(identifier: Calendar.Identifier.gregorian)
+        cal.timeZone = TimeZone.autoupdatingCurrent
+        let components = (cal as NSCalendar).components([.day , .month, .year ], from: Date())
+        return cal.date(from: components)!
     }
-}
-
-extension NSDate: Comparable { }
-
-public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs === rhs || lhs.compare(rhs) == .OrderedSame
-}
-
-public func <(lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.compare(rhs) == .OrderedAscending
 }

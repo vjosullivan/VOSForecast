@@ -10,7 +10,7 @@ import UIKit
 
 class RainFace: InstrumentFace {
 
-    override init(context: CGContextRef, rect: CGRect) {
+    override init(context: CGContext, rect: CGRect) {
         super.init(context: context, rect: rect)
     }
 
@@ -19,16 +19,16 @@ class RainFace: InstrumentFace {
         drawQuarterLines()
     }
 
-    private func drawQuarterLines() {
+    fileprivate func drawQuarterLines() {
         let gap = square.size.width * 0.1
         let minX = square.minX + gap
         let maxX = square.maxX - gap
-        CGContextMoveToPoint(context, minX, square.midY)
-        CGContextAddLineToPoint(context, maxX, square.midY)
+        context.move(to: CGPoint(x: minX, y: square.midY))
+        context.addLine(to: CGPoint(x: maxX, y: square.midY))
 
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
-        CGContextSetAlpha(context, borderAlpha)
-        CGContextSetLineWidth(context, borderWidth)
-        CGContextStrokePath(context)
+        context.setStrokeColor(borderColor.cgColor)
+        context.setAlpha(borderAlpha)
+        context.setLineWidth(borderWidth)
+        context.strokePath()
     }
 }

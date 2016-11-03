@@ -15,7 +15,7 @@ class Circlewriter {
     /// M_PI as a CGFloat
     let π = CGFloat(M_PI)
 
-    let context: CGContextRef
+    let context: CGContext
     let radius: CGFloat
     let color: UIColor
     let font:   UIFont
@@ -23,7 +23,7 @@ class Circlewriter {
 
     // MARK: - Functions
 
-    init(context: CGContextRef, radius: CGFloat, font: UIFont = UIFont.systemFontOfSize(16), color: UIColor = UIColor.whiteColor(), textOrientation: TextOrientation = .Auto) {
+    init(context: CGContext, radius: CGFloat, font: UIFont = UIFont.systemFont(ofSize: 16), color: UIColor = UIColor.white, textOrientation: TextOrientation = .auto) {
 
         self.context = context
         self.radius  = radius
@@ -39,7 +39,7 @@ class Circlewriter {
     ///
     ///  - returns: The angle (in radians)
     ///
-    private func chordToArc(chord: CGFloat) -> CGFloat {
+    fileprivate func chordToArc(_ chord: CGFloat) -> CGFloat {
 
         return 2 * asin(chord / (2 * radius))
     }
@@ -51,18 +51,18 @@ class Circlewriter {
     ///    - lastWord: Where to position the last word in the text array.<br/>
     ///                Options are: on or before either the six or twelve o'clock position.
     ///
-    func write(words: [String], lastWord: LastWord = .OnTop) {
+    func write(_ words: [String], lastWord: LastWord = .onTop) {
 
         let count: Double = Double(words.count)
         var offsetAngle: CGFloat
         switch lastWord {
-        case .OnTop:
+        case .onTop:
             offsetAngle = (-π / 2.0)
-        case .BeforeTop:
+        case .beforeTop:
             offsetAngle = (-π / 2.0) + (π / CGFloat(count))
-        case .OnBottom:
+        case .onBottom:
             offsetAngle = (-π * 3.0 / 2.0)
-        case .BeforeBottom:
+        case .beforeBottom:
             offsetAngle = (-π * 3.0 / 2.0) + (π / CGFloat(count))
         }
         var i: Double = count
@@ -80,7 +80,7 @@ class Circlewriter {
     ///    - text:  The text to be written.
     ///    - angle: The location of the text on the circle, in radians anti-clockwise from the 3 o'clock position.
     ///
-    func write(str: String, angle: CGFloat) {
+    func write(_ str: String, angle: CGFloat) {
 
         let l = str.characters.count
         let attributes = [NSFontAttributeName: font]
@@ -91,8 +91,8 @@ class Circlewriter {
 
         // Calculate the arc subtended by each letter and their total
         for i in 0 ..< l {
-            characters += [String(str[str.startIndex.advancedBy(i)])]
-            arcs += [chordToArc(characters[i].sizeWithAttributes(attributes).width)]
+            characters += [String(str[str.characters.index(str.startIndex, offsetBy: i)])]
+            arcs += [chordToArc(characters[i].size(attributes: attributes).width)]
             totalArc += arcs[i]
         }
 
@@ -100,11 +100,11 @@ class Circlewriter {
         // or anti-upright (right way up at 6 o'clock)?
         let direction: CGFloat
         switch textOrientation {
-        case .Auto:
+        case .auto:
             direction = (angle > 0.01 && angle <= π + 0.01) || angle <= -π ? -1 : 1
-        case .Upright:
+        case .upright:
             direction = -1
-        case .Inverted:
+        case .inverted:
             direction = 1
         }
         let slantCorrection = direction * CGFloat(M_PI_2)
@@ -135,26 +135,26 @@ class Circlewriter {
     ///                  `x = r * cos(theta)`, `y = r * sin(theta)`.
     ///    - slantAngle: The angular slant of the text.
     ///
-    func centreText(text: String, angle theta: CGFloat, slantAngle: CGFloat) {
+    func centreText(_ text: String, angle theta: CGFloat, slantAngle: CGFloat) {
 
         // Set the text attributes
         let attributes = [NSForegroundColorAttributeName: color, NSFontAttributeName: font]
         // Save the context
-        CGContextSaveGState(context)
+        context.saveGState()
         // Undo the inversion of the Y-axis (or the text goes backwards!)
-        CGContextScaleCTM(context, 1, -1)
+        context.scaleBy(x: 1, y: -1)
         // Move the origin to the centre of the text (negating the y-axis manually)
-        CGContextTranslateCTM(context, radius * cos(theta), -(radius * sin(theta)))
+        context.translateBy(x: radius * cos(theta), y: -(radius * sin(theta)))
         // Rotate the coordinate system
-        CGContextRotateCTM(context, -slantAngle)
+        context.rotate(by: -slantAngle)
         // Calculate the width of the text
-        let offset = text.sizeWithAttributes(attributes)
+        let offset = text.size(attributes: attributes)
         // Move the origin by half the size of the text
-        CGContextTranslateCTM (context, -offset.width / 2, -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
+        context.translateBy (x: -offset.width / 2, y: -offset.height / 2) // Move the origin to the centre of the text (negating the y-axis manually)
         // Draw the text
-        text.drawAtPoint(CGPointZero, withAttributes: attributes)
+        text.draw(at: CGPoint.zero, withAttributes: attributes)
         // Restore the context
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 }
 
@@ -170,13 +170,13 @@ class Circlewriter {
 ///
 enum LastWord {
     /// Centres the final word at 12 o'clock.
-    case OnTop
+    case onTop
     /// Centres the final word left of 12 o'clock.
-    case BeforeTop
+    case beforeTop
     /// Centres the final word at 6 o'clock.
-    case OnBottom
+    case onBottom
     /// Centres the final word right of 6 o'clock.
-    case BeforeBottom
+    case beforeBottom
 }
 
 // MARK: TextOrientation
@@ -189,11 +189,11 @@ enum LastWord {
 ///
 enum TextOrientation {
     /// Words are written "upright" with respect to viewer.<br/>i.e. Words centred on or above the equator of the circle are written "upright" and words below the equator are "inverted".
-    case Auto
+    case auto
     /// All words are written "upright" with respect to the surface of the circle.
-    case Upright
+    case upright
     /// All words are written "upside down" with respect to the surface of the circle.
-    case Inverted
+    case inverted
 }
 
 

@@ -24,7 +24,7 @@ class RainView: UIView {
         super.init(coder: aDecoder)
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
         RainFace(context: context, rect: rect).draw()

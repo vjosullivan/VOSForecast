@@ -10,11 +10,11 @@ import UIKit
 
 extension MainViewController {
     
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         setConstraints(orientation: toInterfaceOrientation)
     }
 
-    func setConstraints(orientation orientation: UIInterfaceOrientation) {
+    func setConstraints(orientation: UIInterfaceOrientation) {
         print("Rotating...")
         if UIInterfaceOrientationIsLandscape(orientation) {
             print("...to landscape.")
@@ -26,8 +26,8 @@ extension MainViewController {
         }
     }
 
-    private func setPortraitConstraints() {
-        print("\n\nPortrait", view.frame, view.bounds, UIApplication.sharedApplication().statusBarFrame.size.height)
+    fileprivate func setPortraitConstraints() {
+        print("\n\nPortrait", view.frame, view.bounds, UIApplication.shared.statusBarFrame.size.height)
 
         let quarterWidth: CGFloat
         let halfWidth: CGFloat
@@ -36,12 +36,12 @@ extension MainViewController {
         if initialLayout {
             quarterWidth  = view.bounds.size.width / 4.0
             halfWidth = view.bounds.size.width / 2.0
-            height = view.bounds.size.height - UIApplication.sharedApplication().statusBarFrame.size.height
+            height = view.bounds.size.height - UIApplication.shared.statusBarFrame.size.height
             squareWidth = (view.bounds.size.width - 3 * padding) / 2.0
         } else {
             quarterWidth  = view.bounds.size.height / 4.0
             halfWidth = view.bounds.size.height / 2.0
-            height = view.bounds.size.width - UIApplication.sharedApplication().statusBarFrame.size.height
+            height = view.bounds.size.width - UIApplication.shared.statusBarFrame.size.height
             squareWidth = (view.bounds.size.height - 3 * padding) / 2.0
         }
         let smallSquareWidth = (squareWidth - padding) / 2.0
@@ -95,28 +95,28 @@ extension MainViewController {
         constraintSummaryTrailing.constant = padding
     }
 
-    private func setLandscapeConstraints() {
+    fileprivate func setLandscapeConstraints() {
         print("\n\nLandscape", view.frame, view.bounds)
 
-        let w6: CGFloat
-        let w2: CGFloat
+        //let w6: CGFloat
+        //let w2: CGFloat
         let w3: CGFloat
         let w23: CGFloat
         let h: CGFloat
         let squareWidth: CGFloat
         if initialLayout {
-            w6 = view.bounds.size.width / 6.0
-            w2 = view.bounds.size.width / 2.0
+            //w6 = view.bounds.size.width / 6.0
+            //w2 = view.bounds.size.width / 2.0
             w3 = view.bounds.size.width / 3.0
             w23 = view.bounds.size.width * 2.0 / 3.0
-            h = view.bounds.size.height - UIApplication.sharedApplication().statusBarFrame.size.height
+            h = view.bounds.size.height - UIApplication.shared.statusBarFrame.size.height
             squareWidth = (view.bounds.size.width - 4.0 * padding) / 3.0
         } else {
-            w6 = view.bounds.size.height / 6.0
-            w2 = view.bounds.size.height / 2.0
+            //w6 = view.bounds.size.height / 6.0
+            //w2 = view.bounds.size.height / 2.0
             w3 = view.bounds.size.height / 3.0
             w23 = view.bounds.size.height * 2.0 / 3.0
-            h = view.bounds.size.width - UIApplication.sharedApplication().statusBarFrame.size.height
+            h = view.bounds.size.width - UIApplication.shared.statusBarFrame.size.height
             squareWidth = (view.bounds.size.height - 4.0 * padding) / 3.0
         }
         let smallSquareWidth = (squareWidth - padding) / 2.0

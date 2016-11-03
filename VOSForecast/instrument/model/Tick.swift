@@ -31,29 +31,29 @@ class Tick {
         self.width = width
     }
     
-    func draw(ctx: CGContextRef, angle: CGFloat, rect: CGRect) {
+    func draw(_ ctx: CGContext, angle: CGFloat, rect: CGRect) {
         let clockRadius = min(rect.midX, rect.midY)
         let xOffset = rect.width / 2.0 - clockRadius
         let yOffset = rect.height / 2.0 - clockRadius
         let cosAngle = cos(angle)
         let sinAngle = sin(angle)
         
-        let p1 = CGPointMake(
-            xOffset + clockRadius + (innerRadius * clockRadius) * cosAngle,
-            yOffset + clockRadius + (innerRadius * clockRadius) * sinAngle)
-        let p2 = CGPointMake(
-            xOffset + clockRadius + (outerRadius * clockRadius) * cosAngle,
-            yOffset + clockRadius + (outerRadius * clockRadius) * sinAngle)
+        let p1 = CGPoint(
+            x: xOffset + clockRadius + (innerRadius * clockRadius) * cosAngle,
+            y: yOffset + clockRadius + (innerRadius * clockRadius) * sinAngle)
+        let p2 = CGPoint(
+            x: xOffset + clockRadius + (outerRadius * clockRadius) * cosAngle,
+            y: yOffset + clockRadius + (outerRadius * clockRadius) * sinAngle)
         
         let shapeLayer = CAShapeLayer()
         let path      = UIBezierPath()
-        shapeLayer.path = path.CGPath
+        shapeLayer.path = path.cgPath
         path.lineWidth = width
-        path.moveToPoint(p1)
-        path.addLineToPoint(p2)
-        path.lineCapStyle = CGLineCap.Round
+        path.move(to: p1)
+        path.addLine(to: p2)
+        path.lineCapStyle = CGLineCap.round
         color.set()
         
-        path.strokeWithBlendMode(CGBlendMode.Normal, alpha: alpha)
+        path.stroke(with: CGBlendMode.normal, alpha: alpha)
     }
 }

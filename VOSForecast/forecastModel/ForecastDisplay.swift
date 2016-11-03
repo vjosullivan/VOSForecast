@@ -41,7 +41,7 @@ extension Forecast {
         if let t = weather!.temperature {
             return ColorWheel.colorFor(t, unit: flags!.units ?? "si")
         }
-        return UIColor.whiteColor()
+        return UIColor.white
     }
 
     var rainLikelyhoodDisplay: String {
@@ -52,7 +52,7 @@ extension Forecast {
         }
     }
 
-    private func roundToWholeNumber(temperature: Double?) -> String {
+    fileprivate func roundToWholeNumber(_ temperature: Double?) -> String {
         return String(lround(temperature ?? 0.0))
     }
 }

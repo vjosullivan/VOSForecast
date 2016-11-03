@@ -8,8 +8,8 @@
 
 struct BeaufortScale {
 
-    private let speed: Double
-    private let units: String
+    fileprivate let speed: Double
+    fileprivate let units: String
 
     var description: String {
         return ["Calm", "Light air", "Light breeze", "Gentle breeze",

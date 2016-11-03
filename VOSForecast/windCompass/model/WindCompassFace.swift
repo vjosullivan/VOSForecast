@@ -15,17 +15,17 @@ struct WindVaneKeys {
 
 class WindCompassFace: InstrumentFace {
 
-    private let windTicks: WindTicks
-    private let letters: WindLetters
+    fileprivate let windTicks: WindTicks
+    fileprivate let letters: WindLetters
 
-    private let digitFont  = UIFont(name: "HelveticaNeue", size: 66)!
-    private let digitColor = UIColor.whiteColor()
-    private let digitRadius: CGFloat = 0.75
+    fileprivate let digitFont  = UIFont(name: "HelveticaNeue", size: 66)!
+    fileprivate let digitColor = UIColor.white
+    fileprivate let digitRadius: CGFloat = 0.75
 
-    override init(context: CGContextRef, rect: CGRect) {
+    override init(context: CGContext, rect: CGRect) {
 
-        self.windTicks = WindTicks(rawValue: NSUserDefaults.readInt(key: WindVaneKeys.tickCount, defaultValue: WindTicks.SixtyFour.rawValue))!
-        self.letters   = WindLetters(rawValue: NSUserDefaults.readInt(key: WindVaneKeys.labelCount, defaultValue: WindLetters.Eight.rawValue))!
+        self.windTicks = WindTicks(rawValue: UserDefaults.readInt(key: WindVaneKeys.tickCount, defaultValue: WindTicks.sixtyFour.rawValue))!
+        self.letters   = WindLetters(rawValue: UserDefaults.readInt(key: WindVaneKeys.labelCount, defaultValue: WindLetters.eight.rawValue))!
 
         super.init(context: context, rect: rect)
     }
@@ -36,22 +36,22 @@ class WindCompassFace: InstrumentFace {
         drawTicks()
     }
 
-    private func drawTicks() {
+    fileprivate func drawTicks() {
         let degToRads = M_PI / 180.0
-        if windTicks != WindTicks.None {
+        if windTicks != WindTicks.none {
             for index in 0..<64 {
                 var tick: Tick?
-                if index == 0 && windTicks.rawValue >= WindTicks.One.rawValue {
+                if index == 0 && windTicks.rawValue >= WindTicks.one.rawValue {
                     tick = TickZero()
-                } else if index % 16 == 0 && windTicks.rawValue >= WindTicks.Four.rawValue {
+                } else if index % 16 == 0 && windTicks.rawValue >= WindTicks.four.rawValue {
                     tick = LargeTick()
-                } else if index % 8 == 0 && windTicks.rawValue >= WindTicks.Eight.rawValue {
+                } else if index % 8 == 0 && windTicks.rawValue >= WindTicks.eight.rawValue {
                     tick = MediumTick()
-                } else if index % 4 == 0 && windTicks.rawValue >= WindTicks.Sixteen.rawValue {
+                } else if index % 4 == 0 && windTicks.rawValue >= WindTicks.sixteen.rawValue {
                     tick = MediumTick()
-                } else if index % 2 == 0 && windTicks.rawValue >= WindTicks.ThirtyTwo.rawValue {
+                } else if index % 2 == 0 && windTicks.rawValue >= WindTicks.thirtyTwo.rawValue {
                     tick = SmallTick()
-                } else if windTicks.rawValue >= WindTicks.SixtyFour.rawValue {
+                } else if windTicks.rawValue >= WindTicks.sixtyFour.rawValue {
                     tick = SmallTick()
                 }
                 let tickAngleRadians  = CGFloat(5.625 * (Double(index) + 48) * degToRads)
@@ -62,48 +62,48 @@ class WindCompassFace: InstrumentFace {
         }
     }
 
-    private func drawWindLetters() {
+    fileprivate func drawWindLetters() {
         // Save the context
-        CGContextSaveGState(context)
-        CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
-        CGContextScaleCTM (context, 1, -1)
-        let font = UIFont.systemFontOfSize(10)
+        context.saveGState()
+        context.translateBy (x: rect.width / 2, y: rect.height / 2)
+        context.scaleBy (x: 1, y: -1)
+        let font = UIFont.systemFont(ofSize: 10)
         let radius = digitRadius * min(rect.width, rect.height) / 2.0
-        let writer = Circlewriter(context: context, radius: radius, font: font, textOrientation: .Upright)
+        let writer = Circlewriter(context: context, radius: radius, font: font, textOrientation: .upright)
         switch letters {
-        case .Sixteen, .ThirtyTwo:
-            writer.write(["NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"], lastWord: .OnTop)
-        case .Eight:
-            writer.write(["NE", "E", "SE", "S", "SW", "W", "NW", "N"], lastWord: .OnTop)
-        case .Four:
-            writer.write(["E", "S", "W", "N"], lastWord: .OnTop)
-        case .One:
-            writer.write(["N"], lastWord: .OnTop)
-        case .None:
+        case .sixteen, .thirtyTwo:
+            writer.write(["NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW", "N"], lastWord: .onTop)
+        case .eight:
+            writer.write(["NE", "E", "SE", "S", "SW", "W", "NW", "N"], lastWord: .onTop)
+        case .four:
+            writer.write(["E", "S", "W", "N"], lastWord: .onTop)
+        case .one:
+            writer.write(["N"], lastWord: .onTop)
+        case .none:
             break
         }
         // Restore the context
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 }
 
 // MARK: - Associated enums
 
 enum WindLetters: Int {
-    case None      = 0
-    case One       = 1
-    case Four      = 2
-    case Eight     = 3
-    case Sixteen   = 4
-    case ThirtyTwo = 5
+    case none      = 0
+    case one       = 1
+    case four      = 2
+    case eight     = 3
+    case sixteen   = 4
+    case thirtyTwo = 5
 }
 
 enum WindTicks: Int {
-    case None      = 0
-    case One       = 1
-    case Four      = 2
-    case Eight     = 3
-    case Sixteen   = 4
-    case ThirtyTwo = 5
-    case SixtyFour = 6
+    case none      = 0
+    case one       = 1
+    case four      = 2
+    case eight     = 3
+    case sixteen   = 4
+    case thirtyTwo = 5
+    case sixtyFour = 6
 }

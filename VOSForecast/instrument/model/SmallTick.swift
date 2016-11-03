@@ -14,7 +14,7 @@ class SmallTick: Tick {
     
     init() {
         super.init(
-            color: UIColor.whiteColor(),
+            color: UIColor.white,
             alpha: 1.0,
             innerRadius: 0.95,
             outerRadius: 0.97,

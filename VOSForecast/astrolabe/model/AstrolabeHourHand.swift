@@ -15,7 +15,7 @@ class AstrolabeHourHand: Hand {
 
         color           = UIColor(red: 1.0, green: 1.0, blue: 0.50, alpha: 1.0)
         borderColor     = UIColor(red: 1.0, green: 1.0, blue: 0.50, alpha: 0.125)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         alpha         = 1.0
         width         = 5.0
         length        = 0.9

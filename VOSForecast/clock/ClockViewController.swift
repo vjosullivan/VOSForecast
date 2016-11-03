@@ -26,7 +26,7 @@ class ClockViewController: UIViewController {
 
     // MARK: - Settings
 
-    var highlightColor = UIColor.whiteColor()
+    var highlightColor = UIColor.white
 
     // MARK: - UIViewController functions
 
@@ -34,8 +34,8 @@ class ClockViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        numeralsSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue)
-        ticksSetting.selectedSegmentIndex = NSUserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue)
+        numeralsSetting.selectedSegmentIndex = UserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.arabic.rawValue)
+        ticksSetting.selectedSegmentIndex = UserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.minutes.rawValue)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,14 +43,14 @@ class ClockViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         clockFrontView.shouldUpdateSubviews = true
         clockFrontView.setNeedsDisplay()
     }
 
     // MARK: - Actions
 
-    @IBAction func actionFlipPanel(sender: UIButton) {
+    @IBAction func actionFlipPanel(_ sender: UIButton) {
         switch sender {
         case clockFlipButton:
             flip(clockFrontPanel, rearView: clockRearView)
@@ -59,15 +59,15 @@ class ClockViewController: UIViewController {
         }
     }
 
-    @IBAction func actionChangeSettings(sender: UISegmentedControl) {
+    @IBAction func actionChangeSettings(_ sender: UISegmentedControl) {
         switch sender {
         case numeralsSetting:
-            NSUserDefaults.writeInt(key: ClockKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
+            UserDefaults.writeInt(key: ClockKeys.numeralType, value: numeralsSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
             clockFrontView.highlightColor = highlightColor
             clockFrontView.setNeedsDisplay()
         case ticksSetting:
-            NSUserDefaults.writeInt(key: ClockKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
+            UserDefaults.writeInt(key: ClockKeys.tickmarks, value: ticksSetting.selectedSegmentIndex)
             clockFrontView.shouldUpdateSubviews = true
             clockFrontView.highlightColor = highlightColor
             clockFrontView.setNeedsDisplay()
@@ -78,15 +78,15 @@ class ClockViewController: UIViewController {
 
     // MARK: - Local functions
 
-    func flip(frontView: UIView, rearView: UIView) {
-        if rearView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = false }, completion: nil)
+    func flip(_ frontView: UIView, rearView: UIView) {
+        if rearView.isHidden {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = true  }, completion: nil)
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = false }, completion: nil)
         } else {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromLeft, .showHideTransitionViews]
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = true  }, completion: nil)
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = false }, completion: nil)
         }
     }
 }

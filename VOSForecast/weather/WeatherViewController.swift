@@ -86,7 +86,7 @@ class WeatherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         weatherView.shouldUpdateSubviews = true
         weatherView.setNeedsDisplay()
         windView.shouldUpdateSubviews = true
@@ -99,7 +99,7 @@ class WeatherViewController: UIViewController {
 
     // MARK: - Actions
 
-    @IBAction func flipPanel(sender: UIButton) {
+    @IBAction func flipPanel(_ sender: UIButton) {
         switch sender {
         case frontFlipButton, rearFlipButton:
             flipViews(frontView, rearView: rearView)
@@ -108,9 +108,9 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    @IBAction func actionSaveSetting(sender: UISegmentedControl) {
+    @IBAction func actionSaveSetting(_ sender: UISegmentedControl) {
         if sender == windDescription {
-            NSUserDefaults.write(key: WeatherKeys.windType, value: ["words", "numbers"][sender.selectedSegmentIndex])
+            UserDefaults.write(key: WeatherKeys.windType, value: ["words", "numbers"][sender.selectedSegmentIndex])
         }
         updateForecast()
     }
@@ -118,7 +118,7 @@ class WeatherViewController: UIViewController {
 
     // MARK: - Functions
 
-    func updateView(forecast: Forecast) {
+    func updateView(_ forecast: Forecast) {
 
         guard let units = forecast.flags?.units else {
             return
@@ -129,7 +129,7 @@ class WeatherViewController: UIViewController {
             currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
             currentTemperature.textColor = temperatureColor
         } else {
-            temperatureColor = UIColor.whiteColor()
+            temperatureColor = UIColor.white
         }
         if let temperature = forecast.weather?.apparentTemperature {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
@@ -161,7 +161,7 @@ class WeatherViewController: UIViewController {
         let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         rainSummary.text    = "Rain: \(forecast.rainLikelyhoodDisplay) (\(intensity))"
         let direction: Double = forecast.weather!.windBearing!
-        if NSUserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
+        if UserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
             windSpeed.text = ""
             beaufort.text  = BeaufortScale(speed: forecast.weather!.windSpeed!, units: forecast.units.windSpeed).description
@@ -193,7 +193,7 @@ class WeatherViewController: UIViewController {
         weatherIcon.image = weatherImage(forecast.weather?.icon)
     }
 
-    private func weatherImage(iconName: String?) -> UIImage {
+    fileprivate func weatherImage(_ iconName: String?) -> UIImage {
         let image: UIImage
         if let iconName = iconName {
             switch iconName {
@@ -224,22 +224,22 @@ class WeatherViewController: UIViewController {
             case "tornado":
                 image = UIImage(named: "tornado")!
             default:
-                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alertController.addAction(okAction)
-                presentViewController(alertController, animated: true, completion: nil)
+                present(alertController, animated: true, completion: nil)
                 image = UIImage(named: "sun.png")!
             }
         } else {
-            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             image = UIImage(named: "sun.png")!
         }
         return image
     }
-    private func weatherIcon(iconName: String?) -> String {
+    fileprivate func weatherIcon(_ iconName: String?) -> String {
         let icon: String
         if let iconName = iconName {
             switch iconName {
@@ -270,45 +270,45 @@ class WeatherViewController: UIViewController {
             case "tornado":
                 icon = "\u{F056}"
             default:
-                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .Alert)
-                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                let alertController = UIAlertController(title: "Current Weather", message: "No icon found for weather condition: '\(iconName).\n\nHence the 'alien' face.", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alertController.addAction(okAction)
-                presentViewController(alertController, animated: true, completion: nil)
+                present(alertController, animated: true, completion: nil)
                 icon = "\u{F075}"
             }
         } else {
-            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alertController = UIAlertController(title: "Current Weather", message: "No weather condition icon selector supplied by the forecast.  Hence the circle.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(okAction)
-            presentViewController(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
             icon = "\u{F095}"
         }
         return icon
     }
 
 
-    private func flipViews(frontView: UIView, rearView: UIView) {
-        if rearView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromRight, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = true  }, completion: nil)
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = false }, completion: nil)
+    fileprivate func flipViews(_ frontView: UIView, rearView: UIView) {
+        if rearView.isHidden {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromRight, .showHideTransitionViews]
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = true  }, completion: nil)
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = false }, completion: nil)
         } else {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromLeft, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.hidden  = true  }, completion: nil)
-            UIView.transitionWithView(frontView, duration: 1.0, options: transitionOptions, animations: { frontView.hidden = false }, completion: nil)
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromLeft, .showHideTransitionViews]
+            UIView.transition(with: rearView,  duration: 1.0, options: transitionOptions, animations: { rearView.isHidden  = true  }, completion: nil)
+            UIView.transition(with: frontView, duration: 1.0, options: transitionOptions, animations: { frontView.isHidden = false }, completion: nil)
         }
     }
 
-    @IBAction func switchUnits(sender: UIButton) {
+    @IBAction func switchUnits(_ sender: UIButton) {
         switch sender {
         case autoUnits:
-            NSUserDefaults.write(key: WeatherKeys.units, value: "auto")
+            UserDefaults.write(key: WeatherKeys.units, value: "auto")
         case metricUnits:
-            NSUserDefaults.write(key: WeatherKeys.units, value: "ca")
+            UserDefaults.write(key: WeatherKeys.units, value: "ca")
         case ukUnits:
-            NSUserDefaults.write(key: WeatherKeys.units, value: "uk2")
+            UserDefaults.write(key: WeatherKeys.units, value: "uk2")
         case usUnits:
-            NSUserDefaults.write(key: WeatherKeys.units, value: "us")
+            UserDefaults.write(key: WeatherKeys.units, value: "us")
         default:
             break
         }
@@ -316,29 +316,29 @@ class WeatherViewController: UIViewController {
         updateForecast()
     }
 
-    private func configureUnitButtons() {
-        let black = UIColor.blackColor()
+    fileprivate func configureUnitButtons() {
+        let black = UIColor.black
         let green = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
-        autoUnits.setTitleColor(black, forState: .Normal)
-        metricUnits.setTitleColor(black, forState: .Normal)
-        ukUnits.setTitleColor(black, forState: .Normal)
-        usUnits.setTitleColor(black, forState: .Normal)
-        let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
+        autoUnits.setTitleColor(black, for: UIControlState())
+        metricUnits.setTitleColor(black, for: UIControlState())
+        ukUnits.setTitleColor(black, for: UIControlState())
+        usUnits.setTitleColor(black, for: UIControlState())
+        let units = UserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
         switch units {
         case "auto":
-            autoUnits.setTitleColor(green, forState: .Normal)
+            autoUnits.setTitleColor(green, for: UIControlState())
         case "ca":
-            metricUnits.setTitleColor(green, forState: .Normal)
+            metricUnits.setTitleColor(green, for: UIControlState())
         case "uk2":
-            ukUnits.setTitleColor(green, forState: .Normal)
+            ukUnits.setTitleColor(green, for: UIControlState())
         case "us":
-            usUnits.setTitleColor(green, forState: .Normal)
+            usUnits.setTitleColor(green, for: UIControlState())
         default:
             break
         }
     }
 
-    override func didMoveToParentViewController(parent: UIViewController?) {
+    override func didMove(toParentViewController parent: UIViewController?) {
         updateForecast()
     }
 }
@@ -351,7 +351,7 @@ extension WeatherViewController: WeatherDelegate {
 
 extension WeatherViewController: CLLocationManagerDelegate {
 
-    private func configureLocationManager() {
+    fileprivate func configureLocationManager() {
         // Ask for Authorisation from the User.
         locationManager.requestAlwaysAuthorization()
 
@@ -365,22 +365,22 @@ extension WeatherViewController: CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Wahey!")
         if let coords = manager.location?.coordinate,
             let location = manager.location {
-            let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
+            let units = UserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
             print("Fetching forecast at \(coords.latitude), \(coords.longitude) in \(units).  Altitude \(location.altitude)")
             ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
                 if let data = data {
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         if let forecast = ForecastIOBuilder().buildForecast(data) {
                             self.updateView(forecast)
                         } else {
-                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
-                            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alertController.addAction(okAction)
-                            self.presentViewController(alertController, animated: true, completion: nil)
+                            self.present(alertController, animated: true, completion: nil)
                         }
                     }
                 }
@@ -393,7 +393,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("WeatherView clonk!")
     }
 }

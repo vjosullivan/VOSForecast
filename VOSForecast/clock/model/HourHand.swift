@@ -15,7 +15,7 @@ class HourHand: Hand {
         
         color           = UIColor(white: 0.7, alpha: 1.0)
         borderColor     = UIColor(white: 0.8, alpha: 0.75)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         alpha         = 1.0
         width         = 5.0
         length        = 0.5

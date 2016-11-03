@@ -17,8 +17,8 @@ class AstrolabeViewControllerTests: XCTestCase {
         super.setUp()
 
         let name = getStoryboardName()
-        let storyboard: UIStoryboard = UIStoryboard(name: name, bundle: NSBundle(forClass: self.dynamicType))
-        viewController = storyboard.instantiateViewControllerWithIdentifier("AstrolabeViewController") as! AstrolabeViewController
+        let storyboard: UIStoryboard = UIStoryboard(name: name, bundle: Bundle(for: type(of: self)))
+        viewController = storyboard.instantiateViewController(withIdentifier: "AstrolabeViewController") as! AstrolabeViewController
         viewController.loadView()
     }
     
@@ -34,11 +34,11 @@ class AstrolabeViewControllerTests: XCTestCase {
         viewController.astrolabeRearPanel  = rearView
         let button = UIButton()
         viewController.actionFlipPanel(button)
-        XCTAssertTrue(viewController.astrolabeFrontPanel.hidden, "Panel should be hidden")
+        XCTAssertTrue(viewController.astrolabeFrontPanel.isHidden, "Panel should be hidden")
     }
 
     func getStoryboardName() -> String {
-        let info = NSBundle.mainBundle().infoDictionary!
+        let info = Bundle.main.infoDictionary!
         let name = info["TPMainStoryboardName"] as? String ?? "Main"
         print("Name:", name)
         return name

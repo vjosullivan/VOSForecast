@@ -20,12 +20,12 @@ class WindView: UIView {
             updateCompass()
         }
     }
-    var textColor: UIColor = UIColor.whiteColor()
+    var textColor: UIColor = UIColor.white
 
     var windHand: WindDirectionHand?
 
     var shouldUpdateSubviews: Bool = true
-    let calendar   = NSCalendar.currentCalendar()
+    let calendar   = Calendar.current
 
     // MARK: - Functions
 
@@ -37,7 +37,7 @@ class WindView: UIView {
         super.init(coder: aDecoder)
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
         WindCompassFace(context: context, rect: rect).draw()
@@ -56,12 +56,12 @@ class WindView: UIView {
             }
             windHand = WindDirectionHand(frame: clockFrame, direction: 67.0)
             addSubview(windHand!)
-            sendSubviewToBack(windHand!)
+            sendSubview(toBack: windHand!)
 
             //let hub = Hub(frame: clockFrame)
             //addSubview(hub)
 
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.updateCompass()
             }
             shouldUpdateSubviews = false

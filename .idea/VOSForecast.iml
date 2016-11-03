@@ -2,32 +2,20 @@
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/MainViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/windCompass/model/WindCompassFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/windCompass/view/WindDirectionHand.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/windCompass/view/WindView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/ColorWheel.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/BeaufortScale.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/AppColor.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/Numerals.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/Compass.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/CircleWriter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/rain/model/RainFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/rain/view/RainView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Weather.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Flags.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Units.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Rain.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/ForecastDisplay.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneHourForecast.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Forecast.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/WeatherIcons.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneMinuteForecast.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/SixtyMinuteForecast.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/SevenDayForecast.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneDayForecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeFace.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/Sun.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeHourHand.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeHand.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/AstrolabeViewController.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/view/LightWheel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/view/AstrolabeView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/model/InstrumentFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/model/TickZero.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/model/MediumTick.swift" isTestSource="false" />
@@ -36,36 +24,48 @@
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/model/Tick.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/view/Hub.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/instrument/view/Hand.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeFace.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/Sun.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeHourHand.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/model/AstrolabeHand.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/AstrolabeViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/view/LightWheel.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/astrolabe/view/AstrolabeView.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/AppDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneMinuteForecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Units.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/ForecastDisplay.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneHourForecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Forecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/WeatherIcons.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Rain.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Flags.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/Weather.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/SevenDayForecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/OneDayForecast.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/forecastModel/SixtyMinuteForecast.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/extensions/NSDateExtension.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/extensions/CALayerExtension.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/extensions/UserDefaultsExtension.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/extensions/UIColorExtension.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/AppDelegate.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/resources/weathericons-regular.glyphs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/resources/weathericons-regular.otf" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/Base.lproj/Main.storyboard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/ColorWheel.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/BeaufortScale.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/AppColor.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/Numerals.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/Compass.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/utilities/CircleWriter.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weatherData/ForecastIO/ForecastIOBuilder.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weatherData/ForecastIO/ForecastIOManager.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/MainViewControllerExtension.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/temperature/model/TemperatureFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/temperature/view/TemperatureView.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/MainViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/model/MinuteHand.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/model/HourHand.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/model/ClockFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/model/SecondHand.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/view/ClockView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/clock/ClockViewController.swift" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weather/view/WeatherView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weather/model/WeatherFace.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weather/WeatherDelegate.swift" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weather/view/WeatherView.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecast/weather/WeatherViewController.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecastTests/VOSForecastTests.swift" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/VOSForecastTests/Info.plist" isTestSource="false" />

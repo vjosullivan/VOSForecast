@@ -17,7 +17,7 @@ class ClockFace {
 
     let tickMarks: TickMarks
     let numeralType: NumeralType
-    let context: CGContextRef
+    let context: CGContext
     let rect: CGRect
 
     var borderColor: UIColor = UIColor(red: 153.0 / 255.0, green: 153.0 / 255.0, blue: 153.0 / 255.0, alpha: 1.0)
@@ -27,74 +27,74 @@ class ClockFace {
     var faceBackgroundColor = AppColor.faceColor
     var faceBackgroundAlpha: CGFloat = 1.0
 
-    var digitFont: UIFont    = UIFont.systemFontOfSize(16)
-    var digitColor: UIColor  = UIColor.whiteColor()
+    var digitFont: UIFont    = UIFont.systemFont(ofSize: 16)
+    var digitColor: UIColor  = UIColor.white
     var digitOuterRadius: CGFloat = 0.99
 
-    var highlightColor = UIColor.whiteColor()
+    var highlightColor = UIColor.white
 
-    init(context: CGContextRef, rect: CGRect, highlightColor: UIColor) {
+    init(context: CGContext, rect: CGRect, highlightColor: UIColor) {
         self.context     = context
         self.rect        = rect
         self.highlightColor = highlightColor
 
-        self.tickMarks   = TickMarks(rawValue: NSUserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.Minutes.rawValue))!
-        self.numeralType = NumeralType(rawValue: NSUserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.Arabic.rawValue))!
+        self.tickMarks   = TickMarks(rawValue: UserDefaults.readInt(key: ClockKeys.tickmarks, defaultValue: TickMarks.minutes.rawValue))!
+        self.numeralType = NumeralType(rawValue: UserDefaults.readInt(key: ClockKeys.numeralType, defaultValue: NumeralType.arabic.rawValue))!
     }
 
     func draw() {
         drawClockFace()
         drawClockBorder()
         switch numeralType {
-        case .None:
+        case .none:
             break
-        case .Roman:
+        case .roman:
             drawRomanNumerals()
-        case .Arabic:
+        case .arabic:
             drawArabicNumerals()
         }
         drawTicks()
     }
 
-    private func drawClockFace() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetFillColorWithColor(context, faceBackgroundColor.CGColor);
-        CGContextSetAlpha(context, faceBackgroundAlpha);
-        CGContextFillPath(context);
+    fileprivate func drawClockFace() {
+        context.addEllipse(in: squareRect(rect));
+        context.setFillColor(faceBackgroundColor.cgColor);
+        context.setAlpha(faceBackgroundAlpha);
+        context.fillPath();
     }
 
-    private func drawClockBorder() {
-        CGContextAddEllipseInRect(context, squareRect(rect));
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
-        CGContextSetAlpha(context, borderAlpha);
-        CGContextSetLineWidth(context, borderWidth);
-        CGContextStrokePath(context);
+    fileprivate func drawClockBorder() {
+        context.addEllipse(in: squareRect(rect));
+        context.setStrokeColor(borderColor.cgColor);
+        context.setAlpha(borderAlpha);
+        context.setLineWidth(borderWidth);
+        context.strokePath();
     }
 
     ///  Returns a square `CGRect`, centered on the given `CGRect`.
     ///
-    private func squareRect(rect: CGRect) -> CGRect {
+    fileprivate func squareRect(_ rect: CGRect) -> CGRect {
         let clockDiameter = min(rect.width, rect.height)
         let clockRadius   = clockDiameter / 2.0
-        return CGRectMake(
-            rect.origin.x + (rect.width  / 2.0) - clockRadius + borderWidth / 2.0,
-            rect.origin.y + (rect.height / 2.0) - clockRadius + borderWidth / 2.0,
-            clockDiameter - borderWidth,
-            clockDiameter - borderWidth)
+        return CGRect(
+            x: rect.origin.x + (rect.width  / 2.0) - clockRadius + borderWidth / 2.0,
+            y: rect.origin.y + (rect.height / 2.0) - clockRadius + borderWidth / 2.0,
+            width: clockDiameter - borderWidth,
+            height: clockDiameter - borderWidth)
     }
 
-    private func drawTicks() {
+    fileprivate func drawTicks() {
         let degToRads = M_PI / 180.0
-        if tickMarks != TickMarks.None {
+        if tickMarks != TickMarks.none {
             for index in 0..<60 {
                 var tick: Tick?
-                if index == 0 && tickMarks.rawValue >= TickMarks.TwelveOClock.rawValue {
+                if index == 0 && tickMarks.rawValue >= TickMarks.twelveOClock.rawValue {
                     tick = TickZero(color: highlightColor)
-                } else if index % 15 == 0 && tickMarks.rawValue >= TickMarks.Quarters.rawValue {
+                } else if index % 15 == 0 && tickMarks.rawValue >= TickMarks.quarters.rawValue {
                     tick = LargeTick()
-                } else if index % 5 == 0 && tickMarks.rawValue >= TickMarks.Hours.rawValue {
+                } else if index % 5 == 0 && tickMarks.rawValue >= TickMarks.hours.rawValue {
                     tick = MediumTick()
-                } else if tickMarks.rawValue >= TickMarks.Minutes.rawValue {
+                } else if tickMarks.rawValue >= TickMarks.minutes.rawValue {
                     tick = SmallTick()
                 }
                 if let tick = tick {
@@ -105,48 +105,48 @@ class ClockFace {
         }
     }
 
-    private func drawRomanNumerals() {
+    fileprivate func drawRomanNumerals() {
         // Save the context
-        CGContextSaveGState(context)
-        CGContextTranslateCTM (context, rect.width / 2, rect.height / 2)
-        CGContextScaleCTM (context, 1, -1)
+        context.saveGState()
+        context.translateBy (x: rect.width / 2, y: rect.height / 2)
+        context.scaleBy (x: 1, y: -1)
         let radius = 0.775 * min(rect.width, rect.height) / 2.0
         let writer = Circlewriter(context: context, radius: radius, font: digitFont)
         switch tickMarks {
-        case .Minutes, .Hours:
-            writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .OnTop)
-        case .Quarters:
-            writer.write(["III", "VI", "IX", "XII"], lastWord: .OnTop)
-        case .TwelveOClock:
-            writer.write(["XII"], lastWord: .OnTop)
-        case .None:
+        case .minutes, .hours:
+            writer.write(["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"], lastWord: .onTop)
+        case .quarters:
+            writer.write(["III", "VI", "IX", "XII"], lastWord: .onTop)
+        case .twelveOClock:
+            writer.write(["XII"], lastWord: .onTop)
+        case .none:
             break
         }
         // Restore the context
-        CGContextRestoreGState(context)
+        context.restoreGState()
     }
 
-    private func drawArabicNumerals() {
-        let center = CGPointMake(rect.width / 2.0, rect.height / 2.0)
+    fileprivate func drawArabicNumerals() {
+        let center = CGPoint(x: rect.width / 2.0, y: rect.height / 2.0)
         let clockRadius = min(rect.width, rect.height) / 2.0
         let markingDistanceFromCenter = clockRadius * digitOuterRadius - digitFont.lineHeight / 4.0 - 15.0
         let offset = 4.0
         let hourAngle = 30 * M_PI / 180.0
         for hourIndex in 0..<12 {
-            let hourNumber: NSString = "\((hourIndex + 1 < 10 ? " " : ""))\(hourIndex + 1)"
+            let hourNumber = "\((hourIndex + 1 < 10 ? " " : ""))\(hourIndex + 1)"
             let labelX = center.x + (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(cos(hourAngle * (Double(hourIndex) + offset) + M_PI))
             let labelY = center.y - (markingDistanceFromCenter - digitFont.lineHeight / 2.0) * CGFloat(sin(hourAngle * (Double(hourIndex) + offset)))
-            let box = CGRectMake(
-                labelX - digitFont.lineHeight / 2.0,
-                labelY - digitFont.lineHeight / 2.0,
-                digitFont.lineHeight,
-                digitFont.lineHeight)
-            if (hourIndex + 1) % 12 == 0 && tickMarks == TickMarks.TwelveOClock {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            } else if (hourIndex + 1) % 3 == 0 && tickMarks == TickMarks.Quarters {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
-            } else if tickMarks == TickMarks.Hours || tickMarks == TickMarks.Minutes {
-                hourNumber.drawInRect(box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            let box = CGRect(
+                x: labelX - digitFont.lineHeight / 2.0,
+                y: labelY - digitFont.lineHeight / 2.0,
+                width: digitFont.lineHeight,
+                height: digitFont.lineHeight)
+            if (hourIndex + 1) % 12 == 0 && tickMarks == TickMarks.twelveOClock {
+                hourNumber.draw(in: box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            } else if (hourIndex + 1) % 3 == 0 && tickMarks == TickMarks.quarters {
+                hourNumber.draw(in: box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
+            } else if tickMarks == TickMarks.hours || tickMarks == TickMarks.minutes {
+                hourNumber.draw(in: box, withAttributes: [NSForegroundColorAttributeName: self.digitColor, NSFontAttributeName: self.digitFont])
             }
         }
     }
@@ -155,16 +155,16 @@ class ClockFace {
 // MARK: - Associated enums
 
 enum NumeralType: Int {
-    case None   = 0
-    case Roman  = 1
-    case Arabic = 2
+    case none   = 0
+    case roman  = 1
+    case arabic = 2
 }
 
 enum TickMarks: Int {
-    case None         = 0
-    case TwelveOClock = 1
-    case Quarters     = 2
-    case Hours        = 3
-    case Minutes      = 4
+    case none         = 0
+    case twelveOClock = 1
+    case quarters     = 2
+    case hours        = 3
+    case minutes      = 4
 }
 

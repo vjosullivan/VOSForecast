@@ -16,10 +16,10 @@ class Hub: UIView {
 
     override init(frame: CGRect) {
         hubRadius = 0.02
-        hubColor  = UIColor.whiteColor()
+        hubColor  = UIColor.white
         hubAlpha  = 1.0
         super.init(frame: frame)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         tag = 104   
     }
 
@@ -27,18 +27,18 @@ class Hub: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         let clockRadius = min(rect.width, rect.height) / 2.0
         let centre = CGPoint(x: rect.midX, y: rect.midY)
         let circlePath = UIBezierPath(arcCenter: centre, radius: hubRadius * clockRadius, startAngle: 0.0, endAngle: 6.3, clockwise: true)
 
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = circlePath.CGPath
+        shapeLayer.path = circlePath.cgPath
 
         //change the fill color
-        shapeLayer.fillColor   = UIColor.lightGrayColor().CGColor
-        shapeLayer.strokeColor = UIColor.grayColor().CGColor
+        shapeLayer.fillColor   = UIColor.lightGray.cgColor
+        shapeLayer.strokeColor = UIColor.gray.cgColor
         shapeLayer.lineWidth = 0.0
         
         layer.addSublayer(shapeLayer)

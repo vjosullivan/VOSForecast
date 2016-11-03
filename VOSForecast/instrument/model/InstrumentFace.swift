@@ -10,7 +10,7 @@ import UIKit
 
 class InstrumentFace {
 
-    internal let context: CGContextRef
+    internal let context: CGContext
     internal let rect: CGRect
     internal let square: CGRect
 
@@ -21,17 +21,17 @@ class InstrumentFace {
     internal let faceBackgroundColor = AppColor.faceColor
     internal let faceBackgroundAlpha: CGFloat = 1.0
 
-    init(context: CGContextRef, rect: CGRect) {
+    init(context: CGContext, rect: CGRect) {
         self.context = context
         self.rect    = rect
 
         // Create a square that fits in the given rectangle.
         let side = min(rect.width, rect.height)
-        square = CGRectMake(
-            (rect.width  - side) / 2.0,
-            (rect.height - side) / 2.0,
-            side,
-            side)
+        square = CGRect(
+            x: (rect.width  - side) / 2.0,
+            y: (rect.height - side) / 2.0,
+            width: side,
+            height: side)
     }
 
     func draw() {
@@ -39,27 +39,35 @@ class InstrumentFace {
         drawBorder()
     }
 
-    private func drawFace() {
-        CGContextMoveToPoint(context, square.midX, square.minY)
-        CGContextAddCurveToPoint(context, square.maxX, square.minY, square.maxX, square.minY, square.maxX, square.midY)
-        CGContextAddCurveToPoint(context, square.maxX, square.maxY, square.maxX, square.maxY, square.midX, square.maxY)
-        CGContextAddCurveToPoint(context, square.minX, square.maxY, square.minX, square.maxY, square.minX, square.midY)
-        CGContextAddCurveToPoint(context, square.minX, square.minY, square.minX, square.minY, square.midX, square.minY)
-        CGContextSetFillColorWithColor(context, faceBackgroundColor.CGColor)
-        CGContextSetAlpha(context, faceBackgroundAlpha)
-        CGContextFillPath(context)
+    fileprivate func drawFace() {
+        context.move(to: CGPoint(x: square.midX, y: square.minY))
+        context.addCurve(to: CGPoint(x: square.maxX, y: square.midY), control1: CGPoint(x: square.maxX, y: square.minY), control2: CGPoint(x: square.maxX, y: square.minY))
+        context.addCurve(to: CGPoint(x: square.midX, y: square.maxY), control1: CGPoint(x: square.maxX, y: square.maxY), control2: CGPoint(x: square.maxX, y: square.maxY))
+        context.addCurve(to: CGPoint(x: square.minX, y: square.midY), control1: CGPoint(x: square.minX, y: square.maxY), control2: CGPoint(x: square.minX, y: square.maxY))
+        context.addCurve(to: CGPoint(x: square.midX, y: square.minY), control1: CGPoint(x: square.minX, y: square.minY), control2: CGPoint(x: square.minX, y: square.minY))
+//        CGContextAddCurveToPoint(context, square.maxX, square.minY, square.maxX, square.minY, square.maxX, square.midY)
+//        CGContextAddCurveToPoint(context, square.maxX, square.maxY, square.maxX, square.maxY, square.midX, square.maxY)
+//        CGContextAddCurveToPoint(context, square.minX, square.maxY, square.minX, square.maxY, square.minX, square.midY)
+//        CGContextAddCurveToPoint(context, square.minX, square.minY, square.minX, square.minY, square.midX, square.minY)
+        context.setFillColor(faceBackgroundColor.cgColor)
+        context.setAlpha(faceBackgroundAlpha)
+        context.fillPath()
     }
 
-    private func drawBorder() {
+    fileprivate func drawBorder() {
 
-        CGContextMoveToPoint(context, square.midX, square.minY)
-        CGContextAddCurveToPoint(context, square.maxX, square.minY, square.maxX, square.minY, square.maxX, square.midY)
-        CGContextAddCurveToPoint(context, square.maxX, square.maxY, square.maxX, square.maxY, square.midX, square.maxY)
-        CGContextAddCurveToPoint(context, square.minX, square.maxY, square.minX, square.maxY, square.minX, square.midY)
-        CGContextAddCurveToPoint(context, square.minX, square.minY, square.minX, square.minY, square.midX, square.minY)
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
-        CGContextSetAlpha(context, borderAlpha)
-        CGContextSetLineWidth(context, borderWidth)
-        CGContextStrokePath(context)
+        context.move(to: CGPoint(x: square.midX, y: square.minY))
+        context.addCurve(to: CGPoint(x: square.maxX, y: square.midY), control1: CGPoint(x: square.maxX, y: square.minY), control2: CGPoint(x: square.maxX, y: square.minY))
+        context.addCurve(to: CGPoint(x: square.midX, y: square.maxY), control1: CGPoint(x: square.maxX, y: square.maxY), control2: CGPoint(x: square.maxX, y: square.maxY))
+        context.addCurve(to: CGPoint(x: square.minX, y: square.midY), control1: CGPoint(x: square.minX, y: square.maxY), control2: CGPoint(x: square.minX, y: square.maxY))
+        context.addCurve(to: CGPoint(x: square.midX, y: square.minY), control1: CGPoint(x: square.minX, y: square.minY), control2: CGPoint(x: square.minX, y: square.minY))
+//        CGContextAddCurveToPoint(context, square.maxX, square.minY, square.maxX, square.minY, square.maxX, square.midY)
+//        CGContextAddCurveToPoint(context, square.maxX, square.maxY, square.maxX, square.maxY, square.midX, square.maxY)
+//        CGContextAddCurveToPoint(context, square.minX, square.maxY, square.minX, square.maxY, square.minX, square.midY)
+//        CGContextAddCurveToPoint(context, square.minX, square.minY, square.minX, square.minY, square.midX, square.minY)
+        context.setStrokeColor(borderColor.cgColor)
+        context.setAlpha(borderAlpha)
+        context.setLineWidth(borderWidth)
+        context.strokePath()
     }
 }

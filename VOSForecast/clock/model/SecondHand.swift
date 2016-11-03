@@ -15,7 +15,7 @@ class SecondHand: Hand {
         
         color           = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 1.0)
         borderColor     = UIColor(red: 144.0/255.0, green: 212.0/255.0, blue: 132.0/255.0, alpha: 0.25)
-        backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clear
         alpha         = 1.0
         width         = 1.5
         length        = 0.95

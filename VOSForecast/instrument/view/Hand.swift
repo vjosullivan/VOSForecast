@@ -9,13 +9,13 @@ import UIKit
 
 class Hand: UIView {
     
-    internal var color: UIColor = UIColor.whiteColor()
-    internal var borderColor: UIColor = UIColor.whiteColor()
+    internal var color: UIColor = UIColor.white
+    internal var borderColor: UIColor = UIColor.white
     internal var width: CGFloat = 0.0
     internal var length: CGFloat = 0.0
     internal var offsetLength: CGFloat = 0.0
     internal var shadowEnabled: Bool = false
-    private  var clockFrame: CGRect = CGRectNull
+    fileprivate  var clockFrame: CGRect = CGRect.null
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,16 +26,17 @@ class Hand: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func rotateHandTo(degrees degrees: Double) {
+    func rotateHandTo(degrees: Double) {
         let animations = {() in
             let radians = CGFloat(degrees * M_PI / 180.0)
-            self.transform = CGAffineTransformMakeRotation(radians)
+            self.transform = CGAffineTransform(rotationAngle: radians)
         }
 
-        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: animations, completion: nil)
+        //UIView.animate(withDuration: 1.0, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: animations, completion: nil)
+        UIView.animate(withDuration: 1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.5, options: [], animations: animations, completion: nil)
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         // the frame needs to be drawn as if it is in a cartesian plane,
         // with the center of rotation at what is thought of as (0, 0) and
         // the far end to the top of the center, this way when we rotate
@@ -45,24 +46,24 @@ class Hand: UIView {
         let xOffset = rect.midX - clockRadius
         let yOffset = rect.midY - clockRadius
         // point that is the top of the hand (closest to the edge of the clock)
-        let top = CGPointMake(xOffset + clockRadius, yOffset + clockRadius - length * clockRadius);
+        let top = CGPoint(x: xOffset + clockRadius, y: yOffset + clockRadius - length * clockRadius);
         // point at the bottom of the hand, a total distance offsetLength away from
         // the center of rotation.
-        let bottom = CGPointMake(xOffset + clockRadius, yOffset + clockRadius + offsetLength * clockRadius);
+        let bottom = CGPoint(x: xOffset + clockRadius, y: yOffset + clockRadius + offsetLength * clockRadius);
 
-        let left  = CGPointMake(xOffset + clockRadius + width, yOffset + clockRadius)
-        let right = CGPointMake(xOffset + clockRadius - width, yOffset + clockRadius)
+        let left  = CGPoint(x: xOffset + clockRadius + width, y: yOffset + clockRadius)
+        let right = CGPoint(x: xOffset + clockRadius - width, y: yOffset + clockRadius)
 
         // draw the line from the bottom to the top that has line width self.width.
         let path = UIBezierPath()
         path.lineWidth = 1.0
-        path.moveToPoint(bottom)
-        path.addLineToPoint(left)
-        path.addLineToPoint(top)
-        path.addLineToPoint(right)
+        path.move(to: bottom)
+        path.addLine(to: left)
+        path.addLine(to: top)
+        path.addLine(to: right)
         color.setFill()
         path.fill()
-        path.closePath()
+        path.close()
         borderColor.set() // sets teh color of the hand to be the color of the path
         path.stroke()
     }

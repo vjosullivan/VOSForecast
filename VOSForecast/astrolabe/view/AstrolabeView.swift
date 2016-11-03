@@ -24,7 +24,7 @@ class AstrolabeView: UIView {
     var seconds: Int = 0
 
     var shouldUpdateSubviews: Bool = true
-    let calendar   = NSCalendar.currentCalendar()
+    let calendar   = Calendar.current
 
     // MARK: - Functions
 
@@ -36,7 +36,7 @@ class AstrolabeView: UIView {
         super.init(coder: aDecoder)
     }
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
 
         let context = UIGraphicsGetCurrentContext()!
         AstrolabeFace(context: context, rect: rect).draw()
@@ -70,13 +70,13 @@ class AstrolabeView: UIView {
     ///  Starts the astrolabe ticking (but delays the first tick so that it approximates with
     ///  the next whole second on the system clock).
     ///
-    private func startAstrolabe() {
-        let calendar   = NSCalendar.currentCalendar()
-        let components = calendar.components([.Nanosecond], fromDate: NSDate())
+    fileprivate func startAstrolabe() {
+        let calendar   = Calendar.current
+        let components = (calendar as NSCalendar).components([.nanosecond], from: Date())
 
-        let dispatchTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1_000_000_000 - components.nanosecond))
-        dispatch_after(dispatchTime, dispatch_get_main_queue()) {
-            NSTimer.scheduledTimerWithTimeInterval(1.0,
+        let dispatchTime = DispatchTime.now() + Double(Int64(1_000_000_000 - components.nanosecond!)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+            Timer.scheduledTimer(timeInterval: 1.0,
                 target: self,
                 selector:#selector(AstrolabeView.updateAstrolabe),
                 userInfo: nil,
@@ -90,14 +90,14 @@ class AstrolabeView: UIView {
         hourHand!.rotateHandTo(degrees: degreesFrom(hours: hours, minutes: minutes, seconds: seconds))
     }
 
-    private func getCurrentTime() {
-        let components = calendar.components([.Hour, .Minute, .Second], fromDate: NSDate())
-        hours   = components.hour
-        minutes = components.minute
-        seconds = components.second
+    fileprivate func getCurrentTime() {
+        let components = (calendar as NSCalendar).components([.hour, .minute, .second], from: Date())
+        hours   = components.hour!
+        minutes = components.minute!
+        seconds = components.second!
     }
 
-    private func degreesFrom(hours hours: Int, minutes: Int, seconds: Int) -> Double {
+    fileprivate func degreesFrom(hours: Int, minutes: Int, seconds: Int) -> Double {
         let degrees = Double(hours) * 15.0 + Double(minutes) / 4.0 + Double(seconds) / 240.0 + 180.0
         return degrees
     }

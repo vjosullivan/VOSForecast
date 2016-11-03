@@ -10,7 +10,7 @@ import UIKit
 
 class TemperatureFace: InstrumentFace {
 
-    override init(context: CGContextRef, rect: CGRect) {
+    override init(context: CGContext, rect: CGRect) {
         super.init(context: context, rect: rect)
     }
 
@@ -19,7 +19,7 @@ class TemperatureFace: InstrumentFace {
         drawQuarterLines()
     }
 
-    private func drawQuarterLines() {
+    fileprivate func drawQuarterLines() {
         let gap = square.size.width * 0.1
         let minX = square.minX + gap
         let midX1 = square.midX - gap
@@ -29,19 +29,19 @@ class TemperatureFace: InstrumentFace {
         let midY1 = square.midY - gap
         let midY2 = square.midY + gap
         let maxY = square.maxY - gap
-        CGContextMoveToPoint(context, square.midX, midY1)
-        CGContextAddLineToPoint(context, square.midX, minY)
-        CGContextMoveToPoint(context, midX2, square.midY)
-        CGContextAddLineToPoint(context, maxX, square.midY)
-        CGContextMoveToPoint(context, square.midX, midY2)
-        CGContextAddLineToPoint(context, square.midX, maxY)
-        CGContextMoveToPoint(context, midX1, square.midY)
-        CGContextAddLineToPoint(context, minX, square.midY)
+        context.move(to: CGPoint(x: square.midX, y: midY1))
+        context.addLine(to: CGPoint(x: square.midX, y: minY))
+        context.move(to: CGPoint(x: midX2, y: square.midY))
+        context.addLine(to: CGPoint(x: maxX, y: square.midY))
+        context.move(to: CGPoint(x: square.midX, y: midY2))
+        context.addLine(to: CGPoint(x: square.midX, y: maxY))
+        context.move(to: CGPoint(x: midX1, y: square.midY))
+        context.addLine(to: CGPoint(x: minX, y: square.midY))
 
-        CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
-        CGContextSetAlpha(context, borderAlpha)
-        CGContextSetLineWidth(context, borderWidth)
-        CGContextStrokePath(context)
+        context.setStrokeColor(borderColor.cgColor)
+        context.setAlpha(borderAlpha)
+        context.setLineWidth(borderWidth)
+        context.strokePath()
     }
 
 }

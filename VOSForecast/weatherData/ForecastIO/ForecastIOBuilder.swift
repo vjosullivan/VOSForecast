@@ -7,12 +7,25 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class ForecastIOBuilder {
     
-    internal func buildForecast(data: NSData) -> Forecast? {
+    internal func buildForecast(_ data: Data) -> Forecast? {
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! [String: AnyObject]
+            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
             let newForecast = parseJSONForecast(json)
             return newForecast
         } catch {
@@ -21,16 +34,16 @@ class ForecastIOBuilder {
         return nil
     }
     
-    private func parseJSONForecast(json: [String: AnyObject]) -> Forecast {
+    fileprivate func parseJSONForecast(_ json: [String: AnyObject]) -> Forecast {
         let latitude         = json["latitude"] as? Double
         let longitude        = json["longitude"] as? Double
         let weather          = parseWeather(json)
         let sevenDayForecast = parseSevenDayForecast(json)
         var todaysForecast: OneDayForecast? = nil
-        var earliestDate = NSDate.distantFuture()
+        var earliestDate = Date.distantFuture
         for day in (sevenDayForecast?.oneDayForecasts)! {
             if day.time < earliestDate {
-                earliestDate = day.time!
+                earliestDate = day.time! as Date
                 todaysForecast = day
             }
         }
@@ -54,7 +67,7 @@ class ForecastIOBuilder {
         return forecast
     }
     
-    private func parseWeather(json: [String: AnyObject]) -> Weather? {
+    fileprivate func parseWeather(_ json: [String: AnyObject]) -> Weather? {
         var weather: Weather?
         if let currently = json["currently"] as? [String: AnyObject] {
             //print(currently)
@@ -98,7 +111,7 @@ class ForecastIOBuilder {
         return weather ?? nil
     }
     
-    private func parseFlags(json: [String: AnyObject]) -> Flags? {
+    fileprivate func parseFlags(_ json: [String: AnyObject]) -> Flags? {
         var allFlags: Flags?
         if let flags = json["flags"] as? [String: AnyObject] {
             let isdStations = flags["isd-stations"] as? [String]
@@ -117,7 +130,7 @@ class ForecastIOBuilder {
         return allFlags ?? nil
     }
     
-    private func parseSevenDayForecast(json: [String: AnyObject]) -> SevenDayForecast? {
+    fileprivate func parseSevenDayForecast(_ json: [String: AnyObject]) -> SevenDayForecast? {
         var sevenDayForecast: SevenDayForecast?
         if let dailyData = json["daily"] as? [String: AnyObject] {
             //print("Daily: \(dailyData)")
@@ -129,20 +142,20 @@ class ForecastIOBuilder {
         return sevenDayForecast ?? nil
     }
     
-    private func parseOneDayForecasts(data: [String: AnyObject]) -> [OneDayForecast]? {
+    fileprivate func parseOneDayForecasts(_ data: [String: AnyObject]) -> [OneDayForecast]? {
         var oneDayForecasts = [OneDayForecast]()
         if let allDays = data["data"] as? [[String: AnyObject]] {
             for day in allDays {
                 //print("Day JSON: \(day)")
                 let apparentTemperatureMax = day["apparentTemperatureMax"] as? Double
-                let apparentTemperatureMaxTime: NSDate?
+                let apparentTemperatureMaxTime: Date?
                 if let time = day["apparentTemperatureMaxTime"] as? Double {
-                    apparentTemperatureMaxTime = NSDate(timeIntervalSince1970: time)
+                    apparentTemperatureMaxTime = Date(timeIntervalSince1970: time)
                 } else {
                     apparentTemperatureMaxTime = nil
                 }
                 let apparentTemperatureMin = day["apparentTemperatureMin"] as? Double
-                let apparentTemperatureMinTime = NSDate(timeIntervalSince1970: day["apparentTemperatureMinTime"] as! Double)
+                let apparentTemperatureMinTime = Date(timeIntervalSince1970: day["apparentTemperatureMinTime"] as! Double)
                 
                 let cloudCover = day["cloudCover"] as? Double
                 let dewPoint = day["dewPoint"] as? Double
@@ -153,22 +166,22 @@ class ForecastIOBuilder {
                 
                 let precipIntensity = day["precipIntensity"] as? Double
                 let precipIntensityMax = day["precipIntensityMax"] as? Double
-                let precipIntensityMaxTime = NSDate(timeIntervalSince1970: day["precipIntensityMaxTime"] as? Double ?? 0.0)
+                let precipIntensityMaxTime = Date(timeIntervalSince1970: day["precipIntensityMaxTime"] as? Double ?? 0.0)
                 let precipProbability = day["precipProbability"] as? Double
                 let precipType = day["precipType"] as? String
                 
                 let pressure = day["pressure"] as? Double
                 print("Pressure: \(pressure) \(day["pressure"])")
                 let summary = day["summary"] as? String
-                let sunriseTime = NSDate(timeIntervalSince1970: day["sunriseTime"] as! Double)
-                let sunsetTime = NSDate(timeIntervalSince1970: day["sunsetTime"] as! Double)
+                let sunriseTime = Date(timeIntervalSince1970: day["sunriseTime"] as! Double)
+                let sunsetTime = Date(timeIntervalSince1970: day["sunsetTime"] as! Double)
                 
                 let temperatureMax = day["temperatureMax"] as? Double
-                let temperatureMaxTime = NSDate(timeIntervalSince1970: day["temperatureMaxTime"] as! Double)
+                let temperatureMaxTime = Date(timeIntervalSince1970: day["temperatureMaxTime"] as! Double)
                 let temperatureMin = day["temperatureMin"] as? Double
-                let temperatureMinTime = NSDate(timeIntervalSince1970: day["temperatureMinTime"] as! Double)
+                let temperatureMinTime = Date(timeIntervalSince1970: day["temperatureMinTime"] as! Double)
                 
-                let time = NSDate(timeIntervalSince1970: day["time"] as! Double)
+                let time = Date(timeIntervalSince1970: day["time"] as! Double)
                 let visibility = day["visibility"] as? Double
                 
                 let windBearing = day["windBearing"] as? Double
@@ -207,7 +220,7 @@ class ForecastIOBuilder {
         return oneDayForecasts.count > 0 ? oneDayForecasts : nil
     }
     
-    private func parseSixtyMinuteForecast(json: [String: AnyObject]) -> SixtyMinuteForecast? {
+    fileprivate func parseSixtyMinuteForecast(_ json: [String: AnyObject]) -> SixtyMinuteForecast? {
         var sixtyMinuteForecast: SixtyMinuteForecast?
         if let minutely = json["minutely"] as? [String: AnyObject] {
             let oneMinuteForecasts = parseOneMinuteForecasts(minutely)
@@ -218,7 +231,7 @@ class ForecastIOBuilder {
         return sixtyMinuteForecast ?? nil
     }
 
-    private func parseOneMinuteForecasts(json: [String: AnyObject]) -> [OneMinuteForecast]? {
+    fileprivate func parseOneMinuteForecasts(_ json: [String: AnyObject]) -> [OneMinuteForecast]? {
         var oneMinuteForecasts = [OneMinuteForecast]()
         if let minutes = json["data"] as? [[String: AnyObject]] {
             for minute in minutes {
@@ -237,7 +250,7 @@ class ForecastIOBuilder {
         return oneMinuteForecasts.count > 0 ? oneMinuteForecasts : nil
     }
 
-    private func parseOneHourForecasts(json: [String: AnyObject]) -> [OneHourForecast]? {
+    fileprivate func parseOneHourForecasts(_ json: [String: AnyObject]) -> [OneHourForecast]? {
         var oneHourForecasts = [OneHourForecast]()
         if let hourly = json["hourly"] as? [String: AnyObject],
             let hourlyData = hourly["data"] as? [[String: AnyObject]] {

@@ -10,9 +10,9 @@ import Foundation
 struct OneDayForecast {
 
     let apparentTemperatureMax: Double?
-    let apparentTemperatureMaxTime: NSDate?
+    let apparentTemperatureMaxTime: Date?
     let apparentTemperatureMin: Double?
-    let apparentTemperatureMinTime: NSDate?
+    let apparentTemperatureMinTime: Date?
     
     let cloudCover: Double?
     let dewPoint: Double?
@@ -23,25 +23,38 @@ struct OneDayForecast {
     
     let precipIntensity: Double?
     let precipIntensityMax: Double?
-    let precipIntensityMaxTime: NSDate?
+    let precipIntensityMaxTime: Date?
     let precipProbability: Double?
     let precipType: String?
     
     let pressure: Double?
     let summary: String?
-    let sunriseTime: NSDate?
-    let sunsetTime: NSDate?
+    let sunriseTime: Date?
+    let sunsetTime: Date?
     
     let temperatureMax: Double?
-    let temperatureMaxTime: NSDate?
+    let temperatureMaxTime: Date?
     let temperatureMin: Double?
-    let temperatureMinTime: NSDate?
+    let temperatureMinTime: Date?
     
-    let time: NSDate?
+    let time: Date?
     let visibility: Double?
     
     let windBearing: Double?
     let windSpeed: Double?
+}
+protocol Numeric {}
+extension Double: Numeric {}
+
+extension Optional where Wrapped: Numeric {
+    
+    func toString(defaultValue: String = "?") -> String {
+        if let d = self {
+            return String(describing: d)
+        } else {
+            return defaultValue
+        }
+    }
 }
 
 extension OneDayForecast: CustomStringConvertible {
@@ -54,9 +67,10 @@ extension OneDayForecast: CustomStringConvertible {
             precipPercent = "?"
         }
         let sun  = "\(time?.asYYYYMMDD() ?? "?") \(time?.asHHMM() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
-        let tMin = "Low of:  \(String(temperatureMin!) ?? "?") at \(temperatureMinTime?.asHHMM() ?? "?")"
-        let tMax = "High of: \(String(temperatureMax!) ?? "?") at \(temperatureMaxTime?.asHHMM() ?? "?")"
-        let rain = "Precip:  \(precipType ?? "?") \(String(precipPercent) ?? "?")% in=\(String(precipIntensity!) ?? "?") inmx=\(String(precipIntensityMax!) ?? "?") at \(precipIntensityMaxTime?.asHHMM() ?? "?")"
+        
+        let tMin = "Low of:  \(temperatureMin.toString()) at \(temperatureMinTime?.asHHMM() ?? "?")"
+        let tMax = "High of: \(temperatureMax.toString()) at \(temperatureMaxTime?.asHHMM() ?? "?")"
+        let rain = "Precip:  \(precipType ?? "?") \(precipPercent)% in=\(precipIntensity.toString()) inmx=\(precipIntensityMax.toString()) at \(precipIntensityMaxTime?.asHHMM() ?? "?")"
         return "Day: \(sun)\n\(tMin)\n\(tMax)\n\(rain)\n"
     }
 }

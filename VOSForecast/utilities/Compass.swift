@@ -62,6 +62,6 @@ struct Compass {
     }
 
     init(direction: Double) {
-        self.direction = abs(direction % 360.0)
+        self.direction = abs(direction.truncatingRemainder(dividingBy: 360.0))
     }
 }

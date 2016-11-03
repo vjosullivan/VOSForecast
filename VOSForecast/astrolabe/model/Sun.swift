@@ -10,10 +10,10 @@ import Foundation
 
 struct Sun {
 
-    let sunrise: NSDate
-    let sunset:  NSDate
+    let sunrise: Date
+    let sunset:  Date
 
-    init(sunrise: NSDate, sunset: NSDate) {
+    init(sunrise: Date, sunset: Date) {
         self.sunrise = sunrise
         self.sunset  = sunset
     }

@@ -103,30 +103,30 @@ class MainViewController: UIViewController, WeatherDelegate {
         configureLocationManager()
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "weatherSegue" {
-            weatherVC = segue.destinationViewController as? WeatherViewController
+            weatherVC = segue.destination as? WeatherViewController
         } else if segue.identifier == "clockSegue" {
-            clockVC = segue.destinationViewController as? ClockViewController
+            clockVC = segue.destination as? ClockViewController
         } else if segue.identifier == "astrolabeSegue" {
-            astrolabeVC = segue.destinationViewController as? AstrolabeViewController
+            astrolabeVC = segue.destination as? AstrolabeViewController
         }
 
     }
 
-    func flop(frontView: UIView, middleView: UIView, rearView: UIView) {
-        if !frontView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.hidden  = true  }, completion: nil)
-            UIView.transitionWithView(middleView, duration: 1.0, options: transitionOptions, animations: { middleView.hidden = false }, completion: nil)
-        } else if !middleView.hidden {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(middleView, duration: 1.0, options: transitionOptions, animations: { middleView.hidden = true  }, completion: nil)
-            UIView.transitionWithView(rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.hidden   = false }, completion: nil)
+    func flop(_ frontView: UIView, middleView: UIView, rearView: UIView) {
+        if !frontView.isHidden {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromBottom, .showHideTransitionViews]
+            UIView.transition(with: frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.isHidden  = true  }, completion: nil)
+            UIView.transition(with: middleView, duration: 1.0, options: transitionOptions, animations: { middleView.isHidden = false }, completion: nil)
+        } else if !middleView.isHidden {
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromBottom, .showHideTransitionViews]
+            UIView.transition(with: middleView, duration: 1.0, options: transitionOptions, animations: { middleView.isHidden = true  }, completion: nil)
+            UIView.transition(with: rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.isHidden   = false }, completion: nil)
         } else {
-            let transitionOptions: UIViewAnimationOptions = [.TransitionFlipFromBottom, .ShowHideTransitionViews]
-            UIView.transitionWithView(rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.hidden   = true  }, completion: nil)
-            UIView.transitionWithView(frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.hidden  = false }, completion: nil)
+            let transitionOptions: UIViewAnimationOptions = [.transitionFlipFromBottom, .showHideTransitionViews]
+            UIView.transition(with: rearView,   duration: 1.0, options: transitionOptions, animations: { rearView.isHidden   = true  }, completion: nil)
+            UIView.transition(with: frontView,  duration: 1.0, options: transitionOptions, animations: { frontView.isHidden  = false }, completion: nil)
         }
     }
 
@@ -141,7 +141,7 @@ class MainViewController: UIViewController, WeatherDelegate {
         locationManager.requestLocation()
     }
 
-    private func updateView(forecast: Forecast) {
+    fileprivate func updateView(_ forecast: Forecast) {
 
         oneHourSummary.text = "1 hour summary: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
         oneDaySummary.text  = "24 hour summary:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
@@ -150,11 +150,11 @@ class MainViewController: UIViewController, WeatherDelegate {
         clockVC!.highlightColor = forecast.highlightColor
     }
 
-    private func configureUI() {
-        setConstraints(orientation: UIApplication.sharedApplication().statusBarOrientation)
+    fileprivate func configureUI() {
+        setConstraints(orientation: UIApplication.shared.statusBarOrientation)
     }
 
-    @IBAction func flipPanel(sender: UIButton) {
+    @IBAction func flipPanel(_ sender: UIButton) {
         switch sender {
         case summaryFlipButton:
             flop(oneWeekView, middleView: oneDayView, rearView: oneHourView)
@@ -166,7 +166,7 @@ class MainViewController: UIViewController, WeatherDelegate {
 
 extension MainViewController: CLLocationManagerDelegate {
 
-    private func configureLocationManager() {
+    fileprivate func configureLocationManager() {
         // Ask for Authorisation from the User.
         locationManager.requestAlwaysAuthorization()
 
@@ -180,15 +180,15 @@ extension MainViewController: CLLocationManagerDelegate {
         }
     }
 
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Wahey! \(manager.description)")
         if let coords = manager.location?.coordinate,
             let location = manager.location {
-            let units = NSUserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
+            let units = UserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
             print("Fetching forecast at \(coords.latitude), \(coords.longitude) in \(units).  Altitude \(location.altitude)")
             ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
                 if let data = data {
-                    dispatch_async(dispatch_get_main_queue()) {
+                    DispatchQueue.main.async {
                         if let forecast = ForecastIOBuilder().buildForecast(data) {
                             self.updateView(forecast)
                             self.weatherVC!.updateView(forecast)
@@ -196,10 +196,10 @@ extension MainViewController: CLLocationManagerDelegate {
                                 self.astrolabeVC!.updateView(today)
                             }
                         } else {
-                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .Alert)
-                            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .alert)
+                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alertController.addAction(okAction)
-                            self.presentViewController(alertController, animated: true, completion: nil)
+                            self.present(alertController, animated: true, completion: nil)
                         }
                     }
                 }
@@ -213,7 +213,7 @@ extension MainViewController: CLLocationManagerDelegate {
         }
     }
 
-    private func updateLocationLabel(location: CLLocation) {
+    fileprivate func updateLocationLabel(_ location: CLLocation) {
         let latitude  = round(location.coordinate.latitude * 10.0) / 10.0
         let longitude = round(location.coordinate.longitude * 10.0) / 10.0
         let altitude  = round(location.altitude * 10.0) / 10.0
@@ -224,7 +224,7 @@ extension MainViewController: CLLocationManagerDelegate {
         locationLine2.text = "altitude: \(altitude)m"
     }
 
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("CLONK!")
     }
 }

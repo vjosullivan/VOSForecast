@@ -14,7 +14,7 @@ class LargeTick: Tick {
     
     init() {
         super.init(
-            color: UIColor.whiteColor(),
+            color: UIColor.white,
             alpha: 1.0,
             innerRadius: 0.9,
             outerRadius: 0.99,
