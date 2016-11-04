@@ -124,31 +124,31 @@ class WeatherViewController: UIViewController {
             return
         }
         let temperatureColor: UIColor
-        if let temperature = forecast.weather?.temperature?.value {
+        if let temperature = forecast.currentWeather?.temperature?.value {
             temperatureColor = ColorWheel.colorFor(temperature, unit: units)
             currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
             currentTemperature.textColor = temperatureColor
         } else {
             temperatureColor = UIColor.white
         }
-        if let temperature = forecast.weather?.apparentTemperature?.value {
+        if let temperature = forecast.currentWeather?.apparentTemperature?.value {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
             currentFeelsLike.textColor = ColorWheel.colorFor(temperature, unit: units)
         }
-        if let _ = forecast.oneDayForecast?.temperatureMin {
+        if let _ = forecast.today?.temperatureMin {
             nextLow.text      = "\(forecast.lowTodayDisplay)"
             nextLow.textColor = temperatureColor
         }
-        if let lowTime = forecast.oneDayForecast?.temperatureMinTime?.asHpm(showMidday: true) {
+        if let lowTime = forecast.today?.temperatureMinTime?.asHpm(showMidday: true) {
             nextLowLabel.text  = "Low \(lowTime)"
         } else {
             nextLowLabel.text = "Low"
         }
-        if let _ = forecast.oneDayForecast?.temperatureMax {
+        if let _ = forecast.today?.temperatureMax {
             nextHigh.text      = "\(forecast.highTodayDisplay)"
             nextHigh.textColor = temperatureColor
         }
-        if let highTime = forecast.oneDayForecast?.temperatureMaxTime?.asHpm(showMidday: true) {
+        if let highTime = forecast.today?.temperatureMaxTime?.asHpm(showMidday: true) {
             nextHighLabel.text  = "High \(highTime)"
         } else {
             nextHighLabel.text = "High"
@@ -156,32 +156,32 @@ class WeatherViewController: UIViewController {
         temperatureUnits!.text = "\(forecast.units.temperature)"
         temperatureUnits!.textColor = temperatureColor
 
-        currentSummary.text = forecast.weather!.summary!
+        currentSummary.text = forecast.currentWeather!.summary!
         cloudSummary.text   = "Clouds: \(forecast.cloudCoverDisplay)"
-        let intensity  = Rain.intensity(forecast.weather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
+        let intensity  = Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         rainSummary.text    = "Rain: \(forecast.rainLikelyhoodDisplay) (\(intensity))"
-        let direction: Double = forecast.weather!.windBearing!
+        let direction: Double = forecast.currentWeather!.windBearing!
         if UserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
             windSpeed.text = ""
-            beaufort.text  = BeaufortScale(speed: forecast.weather!.windSpeed!, units: forecast.units.windSpeed).description
+            beaufort.text  = BeaufortScale(speed: forecast.currentWeather!.windSpeed!, units: forecast.units.windSpeed.symbol).description
             windSpeedUnits.text = "from \(Compass(direction: direction).principleWind)"
         } else {
             windDescription.selectedSegmentIndex = 1
-            let speed: Int = Int(round(forecast.weather!.windSpeed!))
+            let speed: Int = Int(round(forecast.currentWeather!.windSpeed!))
             windSpeed.text = "\(speed)"
             beaufort.text  = ""
-            windSpeedUnits.text = forecast.units.windSpeed
+            windSpeedUnits.text = forecast.units.windSpeed.symbol
         }
         beaufort.textColor       = temperatureColor
         windSpeedUnits.textColor = temperatureColor
         windSpeed.textColor      = temperatureColor
         windView.windDirection = direction
 
-        if let p = forecast.oneDayForecast?.pressure {
+        if let p = forecast.today?.pressure {
             rainDescription.text  = "Pressure: \(Int(round(p)))mb"
         }
-        if let h = forecast.oneDayForecast?.humidity {
+        if let h = forecast.today?.humidity {
             cloudDescription.text = "Humidity: \(Int(round(h * 100.0)))%"
         }
 //        currentIcon.text = weatherIcon(forecast.weather?.icon)
@@ -190,7 +190,7 @@ class WeatherViewController: UIViewController {
 //        } else {
 //            currentIcon.textColor = UIColor.whiteColor()
 //        }
-        weatherIcon.image = weatherImage(forecast.weather?.icon)
+        weatherIcon.image = weatherImage(forecast.currentWeather?.icon)
     }
 
     fileprivate func weatherImage(_ iconName: String?) -> UIImage {

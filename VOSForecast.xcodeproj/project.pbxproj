@@ -102,12 +102,8 @@
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
 		F1472D2B1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
-		F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */; };
-		F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */; };
-		F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */; };
-		F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */; };
-		F1472D361C8784E200D03DC3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* Weather.swift */; };
-		F1472D371C8784E200D03DC3 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D341C8784E200D03DC3 /* Weather.swift */; };
+		F1472D301C87840E00D03DC3 /* DataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* DataGroup.swift */; };
+		F1472D311C87840E00D03DC3 /* DataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* DataGroup.swift */; };
 		F1472D381C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1472D391C8784E200D03DC3 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D351C8784E200D03DC3 /* Flags.swift */; };
 		F1A4253C1CAB09B900C39E30 /* LightWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A4253B1CAB09B900C39E30 /* LightWheel.swift */; };
@@ -191,9 +187,7 @@
 		F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
-		F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenDayForecast.swift; sourceTree = "<group>"; };
-		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
-		F1472D341C8784E200D03DC3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		F1472D261C87840E00D03DC3 /* DataGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataGroup.swift; sourceTree = "<group>"; };
 		F1472D351C8784E200D03DC3 /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		F1A4253B1CAB09B900C39E30 /* LightWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightWheel.swift; sourceTree = "<group>"; };
 		F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -479,10 +473,8 @@
 			children = (
 				F1472D221C87840E00D03DC3 /* Forecast.swift */,
 				347A12981C88308A006AA4C8 /* ForecastDisplay.swift */,
-				F1472D341C8784E200D03DC3 /* Weather.swift */,
-				F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */,
+				F1472D261C87840E00D03DC3 /* DataGroup.swift */,
 				F1472D231C87840E00D03DC3 /* DataPoint.swift */,
-				F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */,
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
 				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 				F1D62DE41C98092800F34EBF /* Units.swift */,
@@ -667,7 +659,6 @@
 				F13C24D41CA0A336006B3B23 /* Sun.swift in Sources */,
 				F13C24EE1CA0A677006B3B23 /* ClockView.swift in Sources */,
 				34A853111CA13A8F005D370E /* WeatherDelegate.swift in Sources */,
-				F1472D361C8784E200D03DC3 /* Weather.swift in Sources */,
 				F13C251C1CA0ABA9006B3B23 /* Hub.swift in Sources */,
 				F1ACF9201CB10A3100B834F3 /* MainViewControllerExtension.swift in Sources */,
 				F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */,
@@ -676,7 +667,7 @@
 				34A852DF1CA137F7005D370E /* WindView.swift in Sources */,
 				F1472D381C8784E200D03DC3 /* Flags.swift in Sources */,
 				34A853021CA1397C005D370E /* RainView.swift in Sources */,
-				F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
+				F1472D301C87840E00D03DC3 /* DataGroup.swift in Sources */,
 				34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */,
 				F13C24DE1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
 				34A852FD1CA13975005D370E /* RainFace.swift in Sources */,
@@ -693,7 +684,6 @@
 				F1C4368A1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */,
 				349D94B11DCBE2F500A2CC56 /* DarkSkyUnits.swift in Sources */,
 				F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */,
-				F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
 				F13C24CE1CA09FB2006B3B23 /* MainViewController.swift in Sources */,
 				F13C25131CA0AB64006B3B23 /* MediumTick.swift in Sources */,
 				340E0D501CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */,
@@ -736,7 +726,6 @@
 				34A8531C1CA13AA1005D370E /* WeatherFace.swift in Sources */,
 				F13C251D1CA0ABA9006B3B23 /* Hub.swift in Sources */,
 				F13C25141CA0AB64006B3B23 /* MediumTick.swift in Sources */,
-				F1472D371C8784E200D03DC3 /* Weather.swift in Sources */,
 				F13C24F41CA0A6D7006B3B23 /* HourHand.swift in Sources */,
 				F13C24F81CA0A6D7006B3B23 /* SecondHand.swift in Sources */,
 				F13C24E61CA0A51B006B3B23 /* Hand.swift in Sources */,
@@ -753,7 +742,7 @@
 				F1D62DEC1C98367A00F34EBF /* Compass.swift in Sources */,
 				34A852EF1CA138F2005D370E /* TemperatureFace.swift in Sources */,
 				34A853121CA13A8F005D370E /* WeatherDelegate.swift in Sources */,
-				F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */,
+				F1472D311C87840E00D03DC3 /* DataGroup.swift in Sources */,
 				F13C25121CA0AB64006B3B23 /* LargeTick.swift in Sources */,
 				34A852E01CA137F7005D370E /* WindView.swift in Sources */,
 				34EF9D651CB3DB730026D382 /* MainViewControllerExtension.swift in Sources */,
@@ -777,7 +766,6 @@
 				34320F331CA2C62000AAA8B7 /* NSDateExtension.swift in Sources */,
 				3435AA921C8993BB00ABD789 /* WeatherIcons.swift in Sources */,
 				F13C25231CA0AD88006B3B23 /* WindDirectionHand.swift in Sources */,
-				F1472D331C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */,
 				34AEAB641C9FFD8300834E75 /* AppColor.swift in Sources */,
 				F13C24F61CA0A6D7006B3B23 /* MinuteHand.swift in Sources */,
 				F13C24C71CA08612006B3B23 /* Numerals.swift in Sources */,

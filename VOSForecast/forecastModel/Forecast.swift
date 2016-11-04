@@ -11,15 +11,20 @@ struct Forecast {
     let latitude: Double?
     let longitude: Double?
 
-    let weather: Weather?
-    let oneDayForecast: DataPoint?
-    let sevenDayForecast: SevenDayForecast?
-    let oneHourForecasts: [DataPoint]?
-    let sixtyMinuteForecast: SixtyMinuteForecast?
+    let currentWeather: DataPoint?
+
+    let daily:    DataGroup?
+    let hourly:   DataGroup?
+    let minutely: DataGroup?
+    
+    
+    var today: DataPoint? {
+        return daily?.dataPoints?[0]
+    }
 
     let flags: Flags?
     let timezone: String?
     let offset: Double?
 
-    let units: Units
+    let units: DarkSkyUnits
 }

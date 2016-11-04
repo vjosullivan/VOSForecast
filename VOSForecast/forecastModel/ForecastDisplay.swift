@@ -10,42 +10,42 @@ import UIKit
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        guard let temperature = weather?.temperature?.value else {
+        guard let temperature = currentWeather?.temperature?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var currentFeelsLikeDisplay: String {
-        guard let temperature = weather?.apparentTemperature?.value else {
+        guard let temperature = currentWeather?.apparentTemperature?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var currentDewPointDisplay: String {
-        guard let temperature = weather?.dewPoint?.value else {
+        guard let temperature = currentWeather?.dewPoint?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var highTodayDisplay: String {
-        guard let temperature = oneDayForecast?.temperatureMax?.value else {
+        guard let temperature = today?.temperatureMax?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var lowTodayDisplay: String {
-        guard let temperature = oneDayForecast?.temperatureMin?.value else {
+        guard let temperature = today?.temperatureMin?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var cloudCoverDisplay: String {
-        if let cover = weather?.cloudCover {
+        if let cover = currentWeather?.cloudCover {
             return roundToWholeNumber(cover * 100.0) + "%"
         } else {
             return "unknown"
@@ -53,14 +53,14 @@ extension Forecast {
     }
 
     var highlightColor: UIColor {
-        if let t = weather?.temperature?.value {
+        if let t = currentWeather?.temperature?.value {
             return ColorWheel.colorFor(t, unit: flags!.units ?? "si")
         }
         return UIColor.white
     }
 
     var rainLikelyhoodDisplay: String {
-        if let likelyhood = weather?.precipProbability {
+        if let likelyhood = currentWeather?.precipProbability {
             return roundToWholeNumber(likelyhood * 100.0) + "%"
         } else {
             return "unknown"

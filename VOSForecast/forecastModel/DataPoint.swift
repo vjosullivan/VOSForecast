@@ -27,6 +27,7 @@ struct DataPoint {
     let ozone: Double?
     
     let precipIntensity: Double?
+    let precipIntensityError: Double?
     let precipIntensityMax: Double?
     let precipIntensityMaxTime: Date?
     let precipProbability: Double?

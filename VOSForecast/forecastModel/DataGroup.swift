@@ -6,8 +6,8 @@
 //  Copyright © 2016 Vincent O'Sullivan. All rights reserved.
 //
 
-struct SevenDayForecast {
+struct DataGroup {
     let icon: String?
     let summary: String?
-    let oneDayForecasts: [DataPoint]?
+    let dataPoints: [DataPoint]?
 }

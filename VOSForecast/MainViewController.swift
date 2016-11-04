@@ -143,9 +143,9 @@ class MainViewController: UIViewController, WeatherDelegate {
 
     fileprivate func updateView(_ forecast: Forecast) {
 
-        oneHourSummary.text = "1 hour summary: " + (forecast.sixtyMinuteForecast?.summary ?? "Not available")
-        oneDaySummary.text  = "24 hour summary:  " + (forecast.sevenDayForecast?.oneDayForecasts![0].summary ?? "Not available")
-        oneWeekSummary.text = "1 week summary: " + (forecast.sevenDayForecast?.summary ?? "Not available")
+        oneHourSummary.text = "1 hour summary: " + (forecast.minutely?.summary ?? "Not available")
+        oneDaySummary.text  = "24 hour summary:  " + (forecast.daily?.dataPoints![0].summary ?? "Not available")
+        oneWeekSummary.text = "1 week summary: " + (forecast.daily?.summary ?? "Not available")
 
         clockVC!.highlightColor = forecast.highlightColor
     }
@@ -192,7 +192,7 @@ extension MainViewController: CLLocationManagerDelegate {
                         if let forecast = ForecastIOBuilder().buildForecast(data) {
                             self.updateView(forecast)
                             self.weatherVC!.updateView(forecast)
-                            if let today = forecast.oneDayForecast {
+                            if let today = forecast.today {
                                 self.astrolabeVC!.updateView(today)
                             }
                         } else {
