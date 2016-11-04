@@ -24,7 +24,10 @@ extension Forecast {
     }
 
     var currentDewPointDisplay: String {
-        return roundToWholeNumber(weather?.dewPoint)
+        guard let temperature = weather?.dewPoint?.value else {
+            return "?"
+        }
+        return roundToWholeNumber(temperature)
     }
 
     var highTodayDisplay: String {

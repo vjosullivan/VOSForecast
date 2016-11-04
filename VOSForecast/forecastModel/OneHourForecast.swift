@@ -11,7 +11,7 @@ struct OneHourForecast {
     
     let apparentTemperature: Measurement<UnitTemperature>?
     let cloudCover: Double?
-    let dewPoint: Double?
+    let dewPoint: Measurement<UnitTemperature>?
     let humidity: Double?
     let icon: String?
     let ozone: Double?

@@ -78,7 +78,7 @@ class ForecastIOBuilder {
 
             let temperature = Measurement(optionalValue: currently["temperature"], unit: units.temperature)
             let apparentTemperature = Measurement(optionalValue: currently["apparentTemperature"], unit: units.temperature)
-            let dewPoint = currently["dewPoint"] as? Double
+            let dewPoint = Measurement(optionalValue: currently["dewPoint"], unit: units.temperature)
 
             let precipIntensity = currently["precipIntensity"] as? Double
             let precipProbability = currently["precipProbability"] as? Double
@@ -259,7 +259,7 @@ class ForecastIOBuilder {
                     // TODO: Absorb temporary variables.
                     let apparentTemperature = Measurement(optionalValue: hour["apparentTemperature"], unit: units.temperature)
                     let cloudCover = hour["cloudCover"] as? Double
-                    let dewPoint = hour["dewPoint"] as? Double
+                    let dewPoint = Measurement(optionalValue: hour["dewPoint"], unit: units.temperature)
                     let humidity = hour["humidity"] as? Double
                     let icon = hour["icon"] as? String
                     let ozone = hour["ozone"] as? Double

@@ -19,7 +19,7 @@ struct Weather {
 
     let temperature: Measurement<UnitTemperature>?
     let apparentTemperature: Measurement<UnitTemperature>?
-    let dewPoint: Double?
+    let dewPoint: Measurement<UnitTemperature>?
 
     /// **Precipitation intensity**:  A numerical value representing the average expected intensity (in inches of liquid water per hour) of precipitation occurring at the given time conditional on probability (that is, assuming any precipitation occurs at all).<br/><br/>A very rough guide is that a value of 0 in./hr. corresponds to no precipitation, 0.002 in./hr. corresponds to very light precipitation, 0.017 in./hr. corresponds to light precipitation, 0.1 in./hr. corresponds to moderate precipitation, and 0.4 in./hr. corresponds to heavy precipitation.
     let precipIntensity: Double?
