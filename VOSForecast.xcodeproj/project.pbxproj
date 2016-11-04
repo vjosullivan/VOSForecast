@@ -51,6 +51,7 @@
 		34AEAB641C9FFD8300834E75 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEAB621C9FFD8300834E75 /* AppColor.swift */; };
 		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
 		34B35A961C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
+		34D4A01E1DCC7E1800216B71 /* MeasurementExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D4A01D1DCC7E1800216B71 /* MeasurementExtension.swift */; };
 		34EF9D651CB3DB730026D382 /* MainViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ACF91F1CB10A3100B834F3 /* MainViewControllerExtension.swift */; };
 		34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3CC71C9B7168007A433E /* NSDateExtension.swift */; };
 		F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C24C51CA08612006B3B23 /* Numerals.swift */; };
@@ -168,6 +169,7 @@
 		34A8531A1CA13AA1005D370E /* WeatherFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFace.swift; sourceTree = "<group>"; };
 		34AEAB621C9FFD8300834E75 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		34B35A941C9166F9006F6CBA /* CircleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleWriter.swift; sourceTree = "<group>"; };
+		34D4A01D1DCC7E1800216B71 /* MeasurementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementExtension.swift; sourceTree = "<group>"; };
 		34FF3CC71C9B7168007A433E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		F13C24C51CA08612006B3B23 /* Numerals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numerals.swift; sourceTree = "<group>"; };
 		F13C24CD1CA09FB2006B3B23 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				3476752E1C89C79E000A4C6F /* CALayerExtension.swift */,
 				34FF3CC71C9B7168007A433E /* NSDateExtension.swift */,
 				345D270A1CA3CF2F00F9D539 /* UIColorExtension.swift */,
+				34D4A01D1DCC7E1800216B71 /* MeasurementExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				34AEAB631C9FFD8300834E75 /* AppColor.swift in Sources */,
 				F1BF0A4D1C8AF97D0030710A /* UserDefaultsExtension.swift in Sources */,
 				34A853161CA13A97005D370E /* WeatherView.swift in Sources */,
+				34D4A01E1DCC7E1800216B71 /* MeasurementExtension.swift in Sources */,
 				F1D62DE51C98092800F34EBF /* Units.swift in Sources */,
 				F13C24D11CA0A31B006B3B23 /* AstrolabeView.swift in Sources */,
 				F13C24E81CA0A605006B3B23 /* ClockViewController.swift in Sources */,

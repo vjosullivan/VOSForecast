@@ -20,7 +20,7 @@ struct DataPoint {
     let apparentTemperatureMinTime: Date?
     
     let cloudCover: Double?
-    let dewPoint: Double?
+    let dewPoint: Measurement<UnitTemperature>?
     let humidity: Double?
     let icon: Double?
     let moonPhase: Double?
@@ -37,9 +37,9 @@ struct DataPoint {
     let sunriseTime: Date?
     let sunsetTime: Date?
     
-    let temperatureMax: Double?
+    let temperatureMax: Measurement<UnitTemperature>?
     let temperatureMaxTime: Date?
-    let temperatureMin: Double?
+    let temperatureMin: Measurement<UnitTemperature>?
     let temperatureMinTime: Date?
     
     let visibility: Double?
@@ -72,8 +72,8 @@ extension DataPoint: CustomStringConvertible {
         }
         let sun  = "\(time?.asYYYYMMDD() ?? "?") \(time?.asHHMM() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
         
-        let tMin = "Low of:  \(temperatureMin.toString()) at \(temperatureMinTime?.asHHMM() ?? "?")"
-        let tMax = "High of: \(temperatureMax.toString()) at \(temperatureMaxTime?.asHHMM() ?? "?")"
+        let tMin = "Low of:  \(temperatureMin) at \(temperatureMinTime?.asHHMM() ?? "?")"
+        let tMax = "High of: \(temperatureMax) at \(temperatureMaxTime?.asHHMM() ?? "?")"
         let rain = "Precip:  \(precipType ?? "?") \(precipPercent)% in=\(precipIntensity.toString()) inmx=\(precipIntensityMax.toString()) at \(precipIntensityMaxTime?.asHHMM() ?? "?")"
         return "Day: \(sun)\n\(tMin)\n\(tMax)\n\(rain)\n"
     }

@@ -124,14 +124,14 @@ class WeatherViewController: UIViewController {
             return
         }
         let temperatureColor: UIColor
-        if let temperature = forecast.weather?.temperature {
+        if let temperature = forecast.weather?.temperature?.value {
             temperatureColor = ColorWheel.colorFor(temperature, unit: units)
             currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
             currentTemperature.textColor = temperatureColor
         } else {
             temperatureColor = UIColor.white
         }
-        if let temperature = forecast.weather?.apparentTemperature {
+        if let temperature = forecast.weather?.apparentTemperature?.value {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
             currentFeelsLike.textColor = ColorWheel.colorFor(temperature, unit: units)
         }

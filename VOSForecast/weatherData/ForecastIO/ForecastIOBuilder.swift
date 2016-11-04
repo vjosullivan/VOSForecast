@@ -38,7 +38,7 @@ class ForecastIOBuilder {
         let latitude         = json["latitude"] as? Double
         let longitude        = json["longitude"] as? Double
         let units            = DarkSkyUnits(code: json["flags"]?["units"] as? String ?? "us")
-        let weather          = parseWeather(json)
+        let weather          = parseWeather(json, units: units)
         let sevenDayForecast = parseSevenDayForecast(json, units: units)
         var todaysForecast: DataPoint? = nil
         var earliestDate = Date.distantFuture
@@ -48,7 +48,7 @@ class ForecastIOBuilder {
                 todaysForecast = day
             }
         }
-        let oneHourForecasts = parseOneHourForecasts(json)
+        let oneHourForecasts = parseOneHourForecasts(json, units: units)
         let sixtyMinuteForecast = parseSixtyMinuteForecast(json)
         let flags    = parseFlags(json)
         let timezone = json["timezone"] as? String
@@ -68,7 +68,7 @@ class ForecastIOBuilder {
         return forecast
     }
     
-    fileprivate func parseWeather(_ json: [String: AnyObject]) -> Weather? {
+    fileprivate func parseWeather(_ json: [String: AnyObject], units: DarkSkyUnits) -> Weather? {
         var weather: Weather?
         if let currently = json["currently"] as? [String: AnyObject] {
             //print(currently)
@@ -76,8 +76,8 @@ class ForecastIOBuilder {
             let icon = currently["icon"] as? String
             let summary = currently["summary"] as? String
 
-            let temperature = currently["temperature"] as? Double
-            let apparentTemperature = currently["apparentTemperature"] as? Double
+            let temperature = Measurement(optionalValue: currently["temperature"], unit: units.temperature)
+            let apparentTemperature = Measurement(optionalValue: currently["apparentTemperature"], unit: units.temperature)
             let dewPoint = currently["dewPoint"] as? Double
 
             let precipIntensity = currently["precipIntensity"] as? Double
@@ -158,7 +158,7 @@ class ForecastIOBuilder {
                 let apparentTemperatureMinTime = Date(timeIntervalSince1970: day["apparentTemperatureMinTime"] as! Double)
                 
                 let cloudCover = day["cloudCover"] as? Double
-                let dewPoint = day["dewPoint"] as? Double
+                let dewPoint = Measurement(optionalValue: day["dewPoint"], unit: units.temperature)
                 let humidity = day["humidity"] as? Double
                 let icon = day["icon"] as? Double
                 let moonPhase = day["moonPhase"] as? Double
@@ -176,9 +176,9 @@ class ForecastIOBuilder {
                 let sunriseTime = Date(timeIntervalSince1970: day["sunriseTime"] as! Double)
                 let sunsetTime = Date(timeIntervalSince1970: day["sunsetTime"] as! Double)
                 
-                let temperatureMax = day["temperatureMax"] as? Double
+                let temperatureMax = Measurement(optionalValue: day["temperatureMax"], unit: units.temperature)
                 let temperatureMaxTime = Date(timeIntervalSince1970: day["temperatureMaxTime"] as! Double)
-                let temperatureMin = day["temperatureMin"] as? Double
+                let temperatureMin = Measurement(optionalValue: day["temperatureMin"], unit: units.temperature)
                 let temperatureMinTime = Date(timeIntervalSince1970: day["temperatureMinTime"] as! Double)
                 
                 let time = Date(timeIntervalSince1970: day["time"] as! Double)
@@ -251,13 +251,13 @@ class ForecastIOBuilder {
         return oneMinuteForecasts.count > 0 ? oneMinuteForecasts : nil
     }
 
-    fileprivate func parseOneHourForecasts(_ json: [String: AnyObject]) -> [OneHourForecast]? {
+    fileprivate func parseOneHourForecasts(_ json: [String: AnyObject], units: DarkSkyUnits) -> [OneHourForecast]? {
         var oneHourForecasts = [OneHourForecast]()
         if let hourly = json["hourly"] as? [String: AnyObject],
             let hourlyData = hourly["data"] as? [[String: AnyObject]] {
                 for hour in hourlyData {
                     // TODO: Absorb temporary variables.
-                    let apparentTemperature = hour["apparentTemperature"] as? Double
+                    let apparentTemperature = Measurement(optionalValue: hour["apparentTemperature"], unit: units.temperature)
                     let cloudCover = hour["cloudCover"] as? Double
                     let dewPoint = hour["dewPoint"] as? Double
                     let humidity = hour["humidity"] as? Double
@@ -268,7 +268,7 @@ class ForecastIOBuilder {
                     let precipType = hour["precipType"] as? String
                     let pressure = hour["pressure"] as? Double
                     let summary = hour["summary"] as? String
-                    let temperature = hour["temperature"] as? Double
+                    let temperature = Measurement(optionalValue: hour["temperature"], unit: units.temperature)
                     let time = hour["time"] as? Int
                     let visibility = hour["visibility"] as? Int
                     let windBearing = hour["windBearing"] as? Int
@@ -296,14 +296,3 @@ class ForecastIOBuilder {
     }
 }
 
-extension Measurement {
-    
-    
-    init?(optionalValue: AnyObject?, unit: UnitType) {
-        guard let double = optionalValue as? Double else {
-            return nil
-        }
-        self.value = double
-        self.unit  = unit
-    }
-}
