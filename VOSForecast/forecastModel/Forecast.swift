@@ -14,7 +14,7 @@ struct Forecast {
     let weather: Weather?
     let oneDayForecast: DataPoint?
     let sevenDayForecast: SevenDayForecast?
-    let oneHourForecasts: [OneHourForecast]?
+    let oneHourForecasts: [DataPoint]?
     let sixtyMinuteForecast: SixtyMinuteForecast?
 
     let flags: Flags?

@@ -160,7 +160,7 @@ class ForecastIOBuilder {
                 let cloudCover = day["cloudCover"] as? Double
                 let dewPoint = Measurement(optionalValue: day["dewPoint"], unit: units.temperature)
                 let humidity = day["humidity"] as? Double
-                let icon = day["icon"] as? Double
+                let icon = day["icon"] as? String
                 let moonPhase = day["moonPhase"] as? Double
                 let ozone = day["ozone"] as? Double
                 
@@ -207,6 +207,7 @@ class ForecastIOBuilder {
                     summary:  summary,
                     sunriseTime: sunriseTime,
                     sunsetTime: sunsetTime,
+                    temperature: nil,
                     temperatureMax: temperatureMax,
                     temperatureMaxTime: temperatureMaxTime,
                     temperatureMin: temperatureMin,
@@ -251,8 +252,8 @@ class ForecastIOBuilder {
         return oneMinuteForecasts.count > 0 ? oneMinuteForecasts : nil
     }
 
-    fileprivate func parseOneHourForecasts(_ json: [String: AnyObject], units: DarkSkyUnits) -> [OneHourForecast]? {
-        var oneHourForecasts = [OneHourForecast]()
+    fileprivate func parseOneHourForecasts(_ json: [String: AnyObject], units: DarkSkyUnits) -> [DataPoint]? {
+        var oneHourForecasts = [DataPoint]()
         if let hourly = json["hourly"] as? [String: AnyObject],
             let hourlyData = hourly["data"] as? [[String: AnyObject]] {
                 for hour in hourlyData {
@@ -269,24 +270,37 @@ class ForecastIOBuilder {
                     let pressure = hour["pressure"] as? Double
                     let summary = hour["summary"] as? String
                     let temperature = Measurement(optionalValue: hour["temperature"], unit: units.temperature)
-                    let time = hour["time"] as? Int
-                    let visibility = hour["visibility"] as? Int
-                    let windBearing = hour["windBearing"] as? Int
+                    let time = Date(timeIntervalSince1970: hour["time"] as! Double)
+                    let visibility = hour["visibility"] as? Double
+                    let windBearing = hour["windBearing"] as? Double
                     let windSpeed = hour["windSpeed"] as? Double
-                    oneHourForecasts.append(OneHourForecast(
+                    oneHourForecasts.append(DataPoint(
+                        time: time,
                         apparentTemperature: apparentTemperature,
+                        apparentTemperatureMax: nil,
+                        apparentTemperatureMaxTime: nil,
+                        apparentTemperatureMin: nil,
+                        apparentTemperatureMinTime: nil,
                         cloudCover: cloudCover,
                         dewPoint: dewPoint,
                         humidity: humidity,
                         icon: icon,
+                        moonPhase: nil,
                         ozone: ozone,
                         precipIntensity: precipIntensity,
+                        precipIntensityMax: nil,
+                        precipIntensityMaxTime: nil,
                         precipProbability: precipProbability,
                         precipType: precipType,
                         pressure: pressure,
                         summary: summary,
+                        sunriseTime: nil,
+                        sunsetTime: nil,
                         temperature: temperature,
-                        time: time,
+                        temperatureMax: nil,
+                        temperatureMaxTime: nil,
+                        temperatureMin: nil,
+                        temperatureMinTime: nil,
                         visibility: visibility,
                         windBearing: windBearing,
                         windSpeed: windSpeed))

@@ -102,8 +102,6 @@
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
 		F1472D2B1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
-		F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D241C87840E00D03DC3 /* OneHourForecast.swift */; };
-		F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D241C87840E00D03DC3 /* OneHourForecast.swift */; };
 		F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */; };
 		F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */; };
 		F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */; };
@@ -195,7 +193,6 @@
 		F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
-		F1472D241C87840E00D03DC3 /* OneHourForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneHourForecast.swift; sourceTree = "<group>"; };
 		F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenDayForecast.swift; sourceTree = "<group>"; };
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
@@ -488,7 +485,6 @@
 				F1472D341C8784E200D03DC3 /* Weather.swift */,
 				F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */,
 				F1472D231C87840E00D03DC3 /* DataPoint.swift */,
-				F1472D241C87840E00D03DC3 /* OneHourForecast.swift */,
 				F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */,
 				F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */,
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
@@ -698,7 +694,6 @@
 				34A852DB1CA137D6005D370E /* WindCompassFace.swift in Sources */,
 				345D270B1CA3CF2F00F9D539 /* UIColorExtension.swift in Sources */,
 				F13C25111CA0AB64006B3B23 /* LargeTick.swift in Sources */,
-				F1472D2C1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F13C25151CA0AB64006B3B23 /* SmallTick.swift in Sources */,
 				F1C4368A1C9F47BE009947A8 /* AstrolabeViewController.swift in Sources */,
 				349D94B11DCBE2F500A2CC56 /* DarkSkyUnits.swift in Sources */,
@@ -778,7 +773,6 @@
 				34A853171CA13A97005D370E /* WeatherView.swift in Sources */,
 				F13C24EF1CA0A677006B3B23 /* ClockView.swift in Sources */,
 				F13C24EC1CA0A66F006B3B23 /* ClockFace.swift in Sources */,
-				F1472D2D1C87840E00D03DC3 /* OneHourForecast.swift in Sources */,
 				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
 				F13C24DF1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
 				34320F341CA2C64800AAA8B7 /* WindCompassFace.swift in Sources */,

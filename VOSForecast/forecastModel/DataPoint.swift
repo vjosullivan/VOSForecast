@@ -22,7 +22,7 @@ struct DataPoint {
     let cloudCover: Double?
     let dewPoint: Measurement<UnitTemperature>?
     let humidity: Double?
-    let icon: Double?
+    let icon: String?
     let moonPhase: Double?
     let ozone: Double?
     
@@ -37,6 +37,7 @@ struct DataPoint {
     let sunriseTime: Date?
     let sunsetTime: Date?
     
+    let temperature: Measurement<UnitTemperature>?
     let temperatureMax: Measurement<UnitTemperature>?
     let temperatureMaxTime: Date?
     let temperatureMin: Measurement<UnitTemperature>?
