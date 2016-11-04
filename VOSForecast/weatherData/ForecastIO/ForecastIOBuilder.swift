@@ -233,20 +233,45 @@ class ForecastIOBuilder {
         return sixtyMinuteForecast ?? nil
     }
 
-    fileprivate func parseOneMinuteForecasts(_ json: [String: AnyObject]) -> [OneMinuteForecast]? {
-        var oneMinuteForecasts = [OneMinuteForecast]()
+    fileprivate func parseOneMinuteForecasts(_ json: [String: AnyObject]) -> [DataPoint]? {
+        var oneMinuteForecasts = [DataPoint]()
         if let minutes = json["data"] as? [[String: AnyObject]] {
             for minute in minutes {
-                let time                 = minute["time"] as? Int
+                let time                 = Date(timeIntervalSince1970: minute["time"] as! Double)
                 let precipType           = minute["precipType"] as? String
                 let precipIntensity      = minute["precipIntensity"] as? Double
                 let precipProbability    = minute["precipProbability"] as? Double
-                let precipIntensityError = minute["precipIntensityError"] as? Double
-                oneMinuteForecasts.append(OneMinuteForecast(time: time,
-                    precipType: precipType,
+                //let precipIntensityError = minute["precipIntensityError"] as? Double
+                oneMinuteForecasts.append(DataPoint(
+                    time: time,
+                    apparentTemperature: nil,
+                    apparentTemperatureMax: nil,
+                    apparentTemperatureMaxTime: nil,
+                    apparentTemperatureMin: nil,
+                    apparentTemperatureMinTime: nil,
+                    cloudCover: nil,
+                    dewPoint: nil,
+                    humidity: nil,
+                    icon: nil,
+                    moonPhase: nil,
+                    ozone: nil,
                     precipIntensity: precipIntensity,
+                    precipIntensityMax: nil,
+                    precipIntensityMaxTime: nil,
                     precipProbability: precipProbability,
-                    precipIntensityError: precipIntensityError))
+                    precipType: precipType,
+                    pressure: nil,
+                    summary: nil,
+                    sunriseTime: nil,
+                    sunsetTime: nil,
+                    temperature: nil,
+                    temperatureMax: nil,
+                    temperatureMaxTime: nil,
+                    temperatureMin: nil,
+                    temperatureMinTime: nil,
+                    visibility: nil,
+                    windBearing: nil,
+                    windSpeed: nil))
             }
         }
         return oneMinuteForecasts.count > 0 ? oneMinuteForecasts : nil

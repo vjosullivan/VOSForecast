@@ -102,8 +102,6 @@
 		F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D221C87840E00D03DC3 /* Forecast.swift */; };
 		F1472D2A1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
 		F1472D2B1C87840E00D03DC3 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D231C87840E00D03DC3 /* DataPoint.swift */; };
-		F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */; };
-		F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */; };
 		F1472D301C87840E00D03DC3 /* SevenDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */; };
 		F1472D311C87840E00D03DC3 /* SevenDayForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */; };
 		F1472D321C87840E00D03DC3 /* SixtyMinuteForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */; };
@@ -193,7 +191,6 @@
 		F13C25241CA0AE5D006B3B23 /* InstrumentFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstrumentFace.swift; sourceTree = "<group>"; };
 		F1472D221C87840E00D03DC3 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		F1472D231C87840E00D03DC3 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
-		F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SevenDayForecast.swift; sourceTree = "<group>"; };
 		F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SixtyMinuteForecast.swift; sourceTree = "<group>"; };
 		F1472D341C8784E200D03DC3 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -486,7 +483,6 @@
 				F1472D261C87840E00D03DC3 /* SevenDayForecast.swift */,
 				F1472D231C87840E00D03DC3 /* DataPoint.swift */,
 				F1472D271C87840E00D03DC3 /* SixtyMinuteForecast.swift */,
-				F1472D251C87840E00D03DC3 /* OneMinuteForecast.swift */,
 				F1472D351C8784E200D03DC3 /* Flags.swift */,
 				3435AA901C8993BB00ABD789 /* WeatherIcons.swift */,
 				F1D62DE41C98092800F34EBF /* Units.swift */,
@@ -674,7 +670,6 @@
 				F1472D361C8784E200D03DC3 /* Weather.swift in Sources */,
 				F13C251C1CA0ABA9006B3B23 /* Hub.swift in Sources */,
 				F1ACF9201CB10A3100B834F3 /* MainViewControllerExtension.swift in Sources */,
-				F1472D2E1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				F13C24C61CA08612006B3B23 /* Numerals.swift in Sources */,
 				F13C25191CA0AB64006B3B23 /* TickZero.swift in Sources */,
 				F13C25171CA0AB64006B3B23 /* Tick.swift in Sources */,
@@ -753,7 +748,6 @@
 				340E0D531CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */,
 				F13C24E91CA0A605006B3B23 /* ClockViewController.swift in Sources */,
 				3404D75B1CA283FF0020BBCB /* ForecastDisplay.swift in Sources */,
-				F1472D2F1C87840E00D03DC3 /* OneMinuteForecast.swift in Sources */,
 				3404D7581CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift in Sources */,
 				F1472D391C8784E200D03DC3 /* Flags.swift in Sources */,
 				F1D62DEC1C98367A00F34EBF /* Compass.swift in Sources */,

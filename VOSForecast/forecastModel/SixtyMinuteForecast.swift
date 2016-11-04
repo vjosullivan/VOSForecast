@@ -9,5 +9,5 @@
 struct SixtyMinuteForecast {
     let icon: String?
     let summary: String?
-    let sixtyMinuteForecasts: [OneMinuteForecast]?
+    let sixtyMinuteForecasts: [DataPoint]?
 }
