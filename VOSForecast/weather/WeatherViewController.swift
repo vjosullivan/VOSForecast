@@ -124,14 +124,14 @@ class WeatherViewController: UIViewController {
             return
         }
         let temperatureColor: UIColor
-        if let temperature = forecast.currentWeather?.temperature?.value {
+        if let temperature = forecast.currently?.temperature?.value {
             temperatureColor = ColorWheel.colorFor(temperature, unit: units)
             currentTemperature!.text = "\(forecast.currentTemperatureDisplay)"
             currentTemperature.textColor = temperatureColor
         } else {
             temperatureColor = UIColor.white
         }
-        if let temperature = forecast.currentWeather?.apparentTemperature?.value {
+        if let temperature = forecast.currently?.apparentTemperature?.value {
             currentFeelsLike.text = "\(forecast.currentFeelsLikeDisplay)"
             currentFeelsLike.textColor = ColorWheel.colorFor(temperature, unit: units)
         }
@@ -156,19 +156,19 @@ class WeatherViewController: UIViewController {
         temperatureUnits!.text = "\(forecast.units.temperature)"
         temperatureUnits!.textColor = temperatureColor
 
-        currentSummary.text = forecast.currentWeather!.summary!
+        currentSummary.text = forecast.currently!.summary!
         cloudSummary.text   = "Clouds: \(forecast.cloudCoverDisplay)"
-        let intensity  = Rain.intensity(forecast.currentWeather?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
+        let intensity  = Rain.intensity(forecast.currently?.precipIntensity ?? 0.0, units: forecast.flags?.units ?? "")
         rainSummary.text    = "Rain: \(forecast.rainLikelyhoodDisplay) (\(intensity))"
-        let direction: Double = forecast.currentWeather!.windBearing!
+        let direction: Double = forecast.currently!.windBearing!
         if UserDefaults.read(key: WeatherKeys.windType, defaultValue: "numbers") == "words" {
             windDescription.selectedSegmentIndex = 0
             windSpeed.text = ""
-            beaufort.text  = BeaufortScale(speed: forecast.currentWeather!.windSpeed!, units: forecast.units.windSpeed.symbol).description
+            beaufort.text  = BeaufortScale(speed: forecast.currently!.windSpeed!, units: forecast.units.windSpeed.symbol).description
             windSpeedUnits.text = "from \(Compass(direction: direction).principleWind)"
         } else {
             windDescription.selectedSegmentIndex = 1
-            let speed: Int = Int(round(forecast.currentWeather!.windSpeed!))
+            let speed: Int = Int(round(forecast.currently!.windSpeed!))
             windSpeed.text = "\(speed)"
             beaufort.text  = ""
             windSpeedUnits.text = forecast.units.windSpeed.symbol
@@ -190,7 +190,7 @@ class WeatherViewController: UIViewController {
 //        } else {
 //            currentIcon.textColor = UIColor.whiteColor()
 //        }
-        weatherIcon.image = weatherImage(forecast.currentWeather?.icon)
+        weatherIcon.image = weatherImage(forecast.currently?.icon)
     }
 
     fileprivate func weatherImage(_ iconName: String?) -> UIImage {
@@ -374,7 +374,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
             ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
                 if let data = data {
                     DispatchQueue.main.async {
-                        if let forecast = ForecastIOBuilder().buildForecast(data) {
+                        if let forecast = Forecast(data: data) {
                             self.updateView(forecast)
                         } else {
                             let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .alert)

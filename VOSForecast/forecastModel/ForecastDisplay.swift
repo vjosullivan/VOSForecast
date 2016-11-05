@@ -10,21 +10,21 @@ import UIKit
 extension Forecast {
 
     var currentTemperatureDisplay: String {
-        guard let temperature = currentWeather?.temperature?.value else {
+        guard let temperature = currently?.temperature?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var currentFeelsLikeDisplay: String {
-        guard let temperature = currentWeather?.apparentTemperature?.value else {
+        guard let temperature = currently?.apparentTemperature?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
     }
 
     var currentDewPointDisplay: String {
-        guard let temperature = currentWeather?.dewPoint?.value else {
+        guard let temperature = currently?.dewPoint?.value else {
             return "?"
         }
         return roundToWholeNumber(temperature)
@@ -45,7 +45,7 @@ extension Forecast {
     }
 
     var cloudCoverDisplay: String {
-        if let cover = currentWeather?.cloudCover {
+        if let cover = currently?.cloudCover {
             return roundToWholeNumber(cover * 100.0) + "%"
         } else {
             return "unknown"
@@ -53,14 +53,14 @@ extension Forecast {
     }
 
     var highlightColor: UIColor {
-        if let t = currentWeather?.temperature?.value {
+        if let t = currently?.temperature?.value {
             return ColorWheel.colorFor(t, unit: flags!.units ?? "si")
         }
         return UIColor.white
     }
 
     var rainLikelyhoodDisplay: String {
-        if let likelyhood = currentWeather?.precipProbability {
+        if let likelyhood = currently?.precipProbability {
             return roundToWholeNumber(likelyhood * 100.0) + "%"
         } else {
             return "unknown"

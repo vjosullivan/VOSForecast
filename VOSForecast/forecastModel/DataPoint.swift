@@ -1,5 +1,5 @@
 //
-//  DailyData.swift
+//  DataPoint.swift
 //  VOSForecast
 //
 //  Created by Vincent O'Sullivan on 01/03/2016.
@@ -48,35 +48,70 @@ struct DataPoint {
     
     let windBearing: Double?
     let windSpeed: Double?
-}
-protocol Numeric {}
-extension Double: Numeric {}
 
-extension Optional where Wrapped: Numeric {
-    
-    func toString(defaultValue: String = "?") -> String {
-        if let d = self {
-            return String(describing: d)
-        } else {
-            return defaultValue
+    init?(dictionary: [String: AnyObject]?, units: DarkSkyUnits) {
+        guard let point = dictionary else {
+            return nil
         }
+        time = Date(timeIntervalSince1970: point["time"] as! Double)
+
+        temperature = Measurement(optionalValue: point["temperature"], unit: units.temperature)
+        apparentTemperature = Measurement(optionalValue: point["apparentTemperature"], unit: units.temperature)
+        apparentTemperatureMax = Measurement(optionalValue: point["apparentTemperatureMax"], unit: units.temperature)
+        apparentTemperatureMaxTime = Date(unixDate: point["apparentTemperatureMaxTime"])
+        apparentTemperatureMin = Measurement(optionalValue: point["apparentTemperatureMin"], unit: units.temperature)
+        apparentTemperatureMinTime = Date(unixDate: point["apparentTemperatureMinTime"])
+        
+        cloudCover = point["cloudCover"] as? Double
+        dewPoint = Measurement(optionalValue: point["dewPoint"], unit: units.temperature)
+        humidity = point["humidity"] as? Double
+        icon = point["icon"] as? String
+        moonPhase = point["moonPhase"] as? Double
+        ozone = point["ozone"] as? Double
+        
+        precipIntensity = point["precipIntensity"] as? Double
+        precipIntensityError = point["precipIntensityError"] as? Double
+        precipIntensityMax = point["precipIntensityMax"] as? Double
+        precipIntensityMaxTime = Date(timeIntervalSince1970: point["precipIntensityMaxTime"] as? Double ?? 0.0)
+        precipProbability = point["precipProbability"] as? Double
+        precipType = point["precipType"] as? String
+        
+        pressure = point["pressure"] as? Double
+        print("Pressure: \(pressure) \(point["pressure"])")
+        summary = point["summary"] as? String
+        sunriseTime = Date(unixDate: point["sunriseTime"])
+        sunsetTime = Date(unixDate: point["sunsetTime"])
+        
+        temperatureMax = Measurement(optionalValue: point["temperatureMax"], unit: units.temperature)
+        temperatureMaxTime = Date(unixDate: point["temperatureMaxTime"])
+        temperatureMin = Measurement(optionalValue: point["temperatureMin"], unit: units.temperature)
+        temperatureMinTime = Date(unixDate: point["temperatureMinTime"])
+        
+        visibility = point["visibility"] as? Double
+        
+        windBearing = point["windBearing"] as? Double
+        windSpeed   = point["windSpeed"] as? Double
     }
 }
 
 extension DataPoint: CustomStringConvertible {
 
     var description: String {
-        let precipPercent: String
-        if let prob = precipProbability {
-            precipPercent = String(Int(prob * 100.0))
-        } else {
-            precipPercent = "?"
+        return "\(summary ?? "No summary") at \(time)."
+    }
+}
+
+fileprivate extension Date {
+    
+    /// Returns a `Date` provided it can be generated from the supplied data.
+    ///
+    /// - parameter value: A Unix date value.
+    /// - returns: A `Date` provided it can be generated from the supplied data, otherwise nil.
+    ///
+    init?(unixDate: AnyObject?) {
+        guard let value = unixDate as? TimeInterval else {
+            return nil
         }
-        let sun  = "\(time?.asYYYYMMDD() ?? "?") \(time?.asHHMM() ?? "?") rise=\(sunriseTime?.asHHMM() ?? "?") set=\(sunsetTime?.asHHMM() ?? "?")"
-        
-        let tMin = "Low of:  \(temperatureMin) at \(temperatureMinTime?.asHHMM() ?? "?")"
-        let tMax = "High of: \(temperatureMax) at \(temperatureMaxTime?.asHHMM() ?? "?")"
-        let rain = "Precip:  \(precipType ?? "?") \(precipPercent)% in=\(precipIntensity.toString()) inmx=\(precipIntensityMax.toString()) at \(precipIntensityMaxTime?.asHHMM() ?? "?")"
-        return "Day: \(sun)\n\(tMin)\n\(tMax)\n\(rain)\n"
+        self.init(timeIntervalSince1970: value)
     }
 }

@@ -86,12 +86,12 @@ class MainViewController: UIViewController, WeatherDelegate {
 
     // MARK: Summary panel
 
-    @IBOutlet weak var oneHourView: UIView!
-    @IBOutlet weak var oneDayView: UIView!
-    @IBOutlet weak var oneWeekView: UIView!
-    @IBOutlet weak var oneHourSummary: UILabel!
-    @IBOutlet weak var oneDaySummary: UILabel!
-    @IBOutlet weak var oneWeekSummary: UILabel!
+    @IBOutlet weak var minutelyView: UIView!
+    @IBOutlet weak var hourlyView: UIView!
+    @IBOutlet weak var dailyView: UIView!
+    @IBOutlet weak var minutelySummary: UILabel!
+    @IBOutlet weak var hourlySummary: UILabel!
+    @IBOutlet weak var dailySummary: UILabel!
     @IBOutlet weak var summaryFlipButton: UIButton!
 
     // MARK: - UIViewController functions.
@@ -143,9 +143,9 @@ class MainViewController: UIViewController, WeatherDelegate {
 
     fileprivate func updateView(_ forecast: Forecast) {
 
-        oneHourSummary.text = "1 hour summary: " + (forecast.minutely?.summary ?? "Not available")
-        oneDaySummary.text  = "24 hour summary:  " + (forecast.daily?.dataPoints![0].summary ?? "Not available")
-        oneWeekSummary.text = "1 week summary: " + (forecast.daily?.summary ?? "Not available")
+        minutelySummary.text =  "1 hour summary:  " + (forecast.minutely?.summary ?? "Not available")
+        hourlySummary.text   = "24 hour summary:  " + (forecast.hourly?.summary ?? "Not available")
+        dailySummary.text    =  "1 week summary:  " + (forecast.daily?.summary ?? "Not available")
 
         clockVC!.highlightColor = forecast.highlightColor
     }
@@ -157,7 +157,7 @@ class MainViewController: UIViewController, WeatherDelegate {
     @IBAction func flipPanel(_ sender: UIButton) {
         switch sender {
         case summaryFlipButton:
-            flop(oneWeekView, middleView: oneDayView, rearView: oneHourView)
+            flop(dailyView, middleView: hourlyView, rearView: minutelyView)
         default:
             break
         }
@@ -189,7 +189,7 @@ extension MainViewController: CLLocationManagerDelegate {
             ForecastIOManager().fetchWeather(latitude: coords.latitude, longitude: coords.longitude, units: units) {(data, error) in
                 if let data = data {
                     DispatchQueue.main.async {
-                        if let forecast = ForecastIOBuilder().buildForecast(data) {
+                        if let forecast = Forecast(data: data) {
                             self.updateView(forecast)
                             self.weatherVC!.updateView(forecast)
                             if let today = forecast.today {

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		3404D7581CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3404D7571CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift */; };
 		3404D75B1CA283FF0020BBCB /* ForecastDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347A12981C88308A006AA4C8 /* ForecastDisplay.swift */; };
-		340E0D501CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */; };
-		340E0D511CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */; };
 		340E0D521CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */; };
 		340E0D531CA140DB00ED6CE9 /* ForecastIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */; };
 		34320F321CA2C61D00AAA8B7 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3476752E1C89C79E000A4C6F /* CALayerExtension.swift */; };
@@ -139,7 +137,6 @@
 
 /* Begin PBXFileReference section */
 		3404D7571CA27EBB0020BBCB /* AstrolabeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstrolabeViewControllerTests.swift; sourceTree = "<group>"; };
-		340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastIOBuilder.swift; sourceTree = "<group>"; };
 		340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastIOManager.swift; sourceTree = "<group>"; };
 		34320F351CA2F60C00AAA8B7 /* ColorWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorWheel.swift; sourceTree = "<group>"; };
 		3435AA7E1C89794800ABD789 /* weathericons-regular.glyphs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "weathericons-regular.glyphs"; sourceTree = "<group>"; };
@@ -245,7 +242,6 @@
 		340E0D4D1CA140AE00ED6CE9 /* ForecastIO */ = {
 			isa = PBXGroup;
 			children = (
-				340E0D4E1CA140DB00ED6CE9 /* ForecastIOBuilder.swift */,
 				340E0D4F1CA140DB00ED6CE9 /* ForecastIOManager.swift */,
 			);
 			path = ForecastIO;
@@ -686,7 +682,6 @@
 				F1472D281C87840E00D03DC3 /* Forecast.swift in Sources */,
 				F13C24CE1CA09FB2006B3B23 /* MainViewController.swift in Sources */,
 				F13C25131CA0AB64006B3B23 /* MediumTick.swift in Sources */,
-				340E0D501CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */,
 				34A852EE1CA138F2005D370E /* TemperatureFace.swift in Sources */,
 				F1A4253C1CAB09B900C39E30 /* LightWheel.swift in Sources */,
 				347A12991C88308A006AA4C8 /* ForecastDisplay.swift in Sources */,
@@ -759,7 +754,6 @@
 				F1C436871C9EA851009947A8 /* Rain.swift in Sources */,
 				F13C24DF1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
 				34320F341CA2C64800AAA8B7 /* WindCompassFace.swift in Sources */,
-				340E0D511CA140DB00ED6CE9 /* ForecastIOBuilder.swift in Sources */,
 				F1D62DE91C982BBA00F34EBF /* BeaufortScale.swift in Sources */,
 				F1472D291C87840E00D03DC3 /* Forecast.swift in Sources */,
 				F13C251A1CA0AB64006B3B23 /* TickZero.swift in Sources */,

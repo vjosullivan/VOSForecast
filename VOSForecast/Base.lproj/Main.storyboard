@@ -182,10 +182,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yum-pz-pfz" userLabel="SevenDaySummary">
                                 <rect key="frame" x="10" y="463" width="748" height="460"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nJ-0E-3rR" userLabel="oneWeekView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6nJ-0E-3rR" userLabel="dailyView">
                                         <rect key="frame" x="0.0" y="0.0" width="748" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29b-lY-RJz" userLabel="oneWeekSummary">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29b-lY-RJz" userLabel="dailySummary">
                                                 <rect key="frame" x="10" y="219.5" width="728" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="vAg-Ag-008"/>
@@ -213,10 +213,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-2x-SkZ" userLabel="oneDayView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQK-2x-SkZ" userLabel="hourlyView">
                                         <rect key="frame" x="0.0" y="0.0" width="748" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-cM-RZz" userLabel="oneDaySummary">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bi9-cM-RZz" userLabel="hourlySummary">
                                                 <rect key="frame" x="10" y="219.5" width="728" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="dTy-9m-ka6"/>
@@ -244,10 +244,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-wU-PRb" userLabel="oneHourView">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-wU-PRb" userLabel="minutelyView">
                                         <rect key="frame" x="0.0" y="0.0" width="748" height="460"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rs-hd-gKu" userLabel="oneHourSummary">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" minimumScaleFactor="0.75" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rs-hd-gKu" userLabel="minutelySummary">
                                                 <rect key="frame" x="0.0" y="0.0" width="748" height="460"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -386,12 +386,12 @@
                         <outlet property="constraintWeatherTrailing" destination="J7M-vv-6hM" id="NB9-7X-Bep"/>
                         <outlet property="locationLine1" destination="GFr-r5-sly" id="AZY-h6-EMO"/>
                         <outlet property="locationLine2" destination="Agq-b1-hcG" id="u7E-2m-Y8T"/>
-                        <outlet property="oneDaySummary" destination="bi9-cM-RZz" id="UoQ-77-GeX"/>
-                        <outlet property="oneDayView" destination="dQK-2x-SkZ" id="rf2-i0-8Zg"/>
-                        <outlet property="oneHourSummary" destination="5rs-hd-gKu" id="hQA-er-v36"/>
-                        <outlet property="oneHourView" destination="RMs-wU-PRb" id="C1A-0j-OIb"/>
-                        <outlet property="oneWeekSummary" destination="29b-lY-RJz" id="hm4-d4-wLB"/>
-                        <outlet property="oneWeekView" destination="6nJ-0E-3rR" id="CEb-CQ-5ft"/>
+                        <outlet property="hourlySummary" destination="bi9-cM-RZz" id="UoQ-77-GeX"/>
+                        <outlet property="hourlyView" destination="dQK-2x-SkZ" id="rf2-i0-8Zg"/>
+                        <outlet property="minutelySummary" destination="5rs-hd-gKu" id="hQA-er-v36"/>
+                        <outlet property="minutelyView" destination="RMs-wU-PRb" id="C1A-0j-OIb"/>
+                        <outlet property="dailySummary" destination="29b-lY-RJz" id="hm4-d4-wLB"/>
+                        <outlet property="dailyView" destination="6nJ-0E-3rR" id="CEb-CQ-5ft"/>
                         <outlet property="summaryFlipButton" destination="BK1-FA-90h" id="aZx-QC-zMo"/>
                     </connections>
                 </viewController>
