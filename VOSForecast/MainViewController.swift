@@ -181,7 +181,6 @@ extension MainViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Wahey! \(manager.description)")
         if let coords = manager.location?.coordinate,
             let location = manager.location {
             let units = UserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
@@ -190,13 +189,14 @@ extension MainViewController: CLLocationManagerDelegate {
                 if let data = data {
                     DispatchQueue.main.async {
                         if let forecast = Forecast(data: data) {
+                            print("Forecast: \(forecast)")
                             self.updateView(forecast)
                             self.weatherVC!.updateView(forecast)
                             if let today = forecast.today {
                                 self.astrolabeVC!.updateView(today)
                             }
                         } else {
-                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .alert)
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available pent.", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alertController.addAction(okAction)
                             self.present(alertController, animated: true, completion: nil)
@@ -219,7 +219,6 @@ extension MainViewController: CLLocationManagerDelegate {
         let altitude  = round(location.altitude * 10.0) / 10.0
         let latitudeSuffix  = latitude >= 0.0 ? "°N" : "°S"
         let longitudeSuffix = longitude >= 0.0 ? "°E" : "°W"
-        print(location.description)
         locationLine1.text = "\(abs(latitude))\(latitudeSuffix)  \(abs(longitude))\(longitudeSuffix)"
         locationLine2.text = "altitude: \(altitude)m"
     }

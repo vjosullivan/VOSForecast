@@ -10,7 +10,7 @@ import Foundation
 struct DataPoint {
 
     /// The UNIX time at which this data point begins.  Required.
-    let time: Date?
+    let timestamp: Date?
 
     /// The apparent or "feels like" temperature.  Not given on daily data point.  Optional.
     let apparentTemperature: Measurement<UnitTemperature>?
@@ -53,7 +53,7 @@ struct DataPoint {
         guard let point = dictionary else {
             return nil
         }
-        time = Date(timeIntervalSince1970: point["time"] as! Double)
+        timestamp = Date(timeIntervalSince1970: point["time"] as! Double)
 
         temperature = Measurement(optionalValue: point["temperature"], unit: units.temperature)
         apparentTemperature = Measurement(optionalValue: point["apparentTemperature"], unit: units.temperature)
@@ -77,7 +77,6 @@ struct DataPoint {
         precipType = point["precipType"] as? String
         
         pressure = point["pressure"] as? Double
-        print("Pressure: \(pressure) \(point["pressure"])")
         summary = point["summary"] as? String
         sunriseTime = Date(unixDate: point["sunriseTime"])
         sunsetTime = Date(unixDate: point["sunsetTime"])

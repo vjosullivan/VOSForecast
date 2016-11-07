@@ -37,7 +37,6 @@ struct DataGroup {
                 if let dataPoint = DataPoint(dictionary: point, units: units) {
                     dataGroup.append(dataPoint)
                 }
-                print("ODF \(dataGroup)")
             }
         }
         return dataGroup.count > 0 ? dataGroup : nil

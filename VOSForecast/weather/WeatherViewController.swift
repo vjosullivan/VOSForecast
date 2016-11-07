@@ -202,7 +202,7 @@ class WeatherViewController: UIViewController {
             case "clear-night":
                 image = UIImage(named: "moon")!
             case "rain":
-                image = UIImage(named: "sun")!
+                image = UIImage(named: "rain")!
             case "snow":
                 image = UIImage(named: "snow")!
             case "sleet":
@@ -366,7 +366,6 @@ extension WeatherViewController: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Wahey!")
         if let coords = manager.location?.coordinate,
             let location = manager.location {
             let units = UserDefaults.read(key: WeatherKeys.units, defaultValue: "auto")
@@ -377,7 +376,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                         if let forecast = Forecast(data: data) {
                             self.updateView(forecast)
                         } else {
-                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available at the moment.", preferredStyle: .alert)
+                            let alertController = UIAlertController(title: "Current Weather", message: "No weather forecast available right now.", preferredStyle: .alert)
                             let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                             alertController.addAction(okAction)
                             self.present(alertController, animated: true, completion: nil)

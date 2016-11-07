@@ -7,7 +7,7 @@
 //
 import Foundation
 
-struct Forecast {
+struct Forecast: CustomStringConvertible {
 
     let latitude: Double?
     let longitude: Double?
@@ -31,30 +31,23 @@ struct Forecast {
     }
 
     init?(data: Data) {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject]
-            self.init(dictionary: json)
-        } catch {
-            print(error)
+        if let dictionary = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: AnyObject] {
+            flags     = Forecast.flags(dictionary)
+            units     = DarkSkyUnits(code: flags?.units ?? "us")
+            
+            latitude  = dictionary["latitude"] as? Double
+            longitude = dictionary["longitude"] as? Double
+            currently = DataPoint(dictionary: dictionary["currently"] as? [String: AnyObject], units: units)
+            daily     = DataGroup(identifier: .daily, dictionary: dictionary, units: units)
+            hourly    = DataGroup(identifier: .hourly, dictionary: dictionary, units: units)
+            minutely  = DataGroup(identifier: .minutely, dictionary: dictionary, units: units)
+            timezone  = dictionary["timezone"] as? String
+            offset    = dictionary["offset"] as? Double
+        } else {
+            return nil
         }
-        return nil
     }
 
-    init?(dictionary: [String: AnyObject]) {
-        
-        flags     = Forecast.flags(dictionary)
-        units     = DarkSkyUnits(code: flags?.units ?? "us")
-        
-        latitude  = dictionary["latitude"] as? Double
-        longitude = dictionary["longitude"] as? Double
-        currently = DataPoint(dictionary: dictionary["currently"] as? [String: AnyObject], units: units)
-        daily     = DataGroup(identifier: .daily, dictionary: dictionary, units: units)
-        hourly    = DataGroup(identifier: .hourly, dictionary: dictionary, units: units)
-        minutely  = DataGroup(identifier: .minutely, dictionary: dictionary, units: units)
-        timezone  = dictionary["timezone"] as? String
-        offset    = dictionary["offset"] as? Double
-    }
-    
     fileprivate static func flags(_ json: [String: AnyObject]) -> Flags? {
         var allFlags: Flags?
         if let flags = json["flags"] as? [String: AnyObject] {
@@ -72,5 +65,17 @@ struct Forecast {
                              datapointStations: datapointStations)
         }
         return allFlags ?? nil
+    }
+    
+    private var shortTimestamp: String {
+        let form = DateFormatter()
+        form.dateStyle = .short
+        form.timeStyle = .short
+        
+        return form.string(from: self.currently!.timestamp!)
+    }
+    
+    var description: String {
+        return "\(shortTimestamp) at (\(self.latitude!.round(to: 2)), \(self.longitude!.round(to: 2))).  Counts: (d, h, m) = (\(daily!.dataPoints!.count), \(hourly!.dataPoints!.count), \(minutely!.dataPoints!.count))."
     }
 }

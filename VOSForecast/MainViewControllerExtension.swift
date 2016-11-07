@@ -15,20 +15,15 @@ extension MainViewController {
     }
 
     func setConstraints(orientation: UIInterfaceOrientation) {
-        print("Rotating...")
         if UIInterfaceOrientationIsLandscape(orientation) {
-            print("...to landscape.")
             setLandscapeConstraints()
-            print("Rotating...")
         } else {
-            print("...to portrait.")
             setPortraitConstraints()
         }
     }
 
     fileprivate func setPortraitConstraints() {
-        print("\n\nPortrait", view.frame, view.bounds, UIApplication.shared.statusBarFrame.size.height)
-
+   
         let quarterWidth: CGFloat
         let halfWidth: CGFloat
         let height: CGFloat
@@ -46,14 +41,12 @@ extension MainViewController {
         }
         let smallSquareWidth = (squareWidth - padding) / 2.0
         initialLayout = false
-        print("halfWidth", halfWidth, "squareWidth", squareWidth)
-
+  
         constraintClockTop.constant      = 0.0
         constraintClockBottom.constant   = height - squareWidth
         constraintClockLeading.constant  = padding
         constraintClockTrailing.constant = halfWidth + halfPad
-        print("Clock: t0.0, b\(height - halfWidth + halfPad) l\(padding) r\(halfWidth + halfPad)")
-
+  
         constraintWeatherTop.constant      = 0.0
         constraintWeatherBottom.constant   = height - squareWidth
         constraintWeatherLeading.constant  = halfWidth + halfPad
@@ -96,8 +89,7 @@ extension MainViewController {
     }
 
     fileprivate func setLandscapeConstraints() {
-        print("\n\nLandscape", view.frame, view.bounds)
-
+ 
         //let w6: CGFloat
         //let w2: CGFloat
         let w3: CGFloat

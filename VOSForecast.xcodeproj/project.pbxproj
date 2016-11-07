@@ -45,6 +45,7 @@
 		34A853171CA13A97005D370E /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A853151CA13A97005D370E /* WeatherView.swift */; };
 		34A8531B1CA13AA1005D370E /* WeatherFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8531A1CA13AA1005D370E /* WeatherFace.swift */; };
 		34A8531C1CA13AA1005D370E /* WeatherFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8531A1CA13AA1005D370E /* WeatherFace.swift */; };
+		34AE757F1DCF20AF0083FB20 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE757E1DCF20AF0083FB20 /* DoubleExtension.swift */; };
 		34AEAB631C9FFD8300834E75 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEAB621C9FFD8300834E75 /* AppColor.swift */; };
 		34AEAB641C9FFD8300834E75 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AEAB621C9FFD8300834E75 /* AppColor.swift */; };
 		34B35A951C9166F9006F6CBA /* CircleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B35A941C9166F9006F6CBA /* CircleWriter.swift */; };
@@ -156,6 +157,7 @@
 		34A853101CA13A8F005D370E /* WeatherDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDelegate.swift; sourceTree = "<group>"; };
 		34A853151CA13A97005D370E /* WeatherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		34A8531A1CA13AA1005D370E /* WeatherFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherFace.swift; sourceTree = "<group>"; };
+		34AE757E1DCF20AF0083FB20 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		34AEAB621C9FFD8300834E75 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		34B35A941C9166F9006F6CBA /* CircleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleWriter.swift; sourceTree = "<group>"; };
 		34D4A01D1DCC7E1800216B71 /* MeasurementExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementExtension.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				34FF3CC71C9B7168007A433E /* NSDateExtension.swift */,
 				345D270A1CA3CF2F00F9D539 /* UIColorExtension.swift */,
 				34D4A01D1DCC7E1800216B71 /* MeasurementExtension.swift */,
+				34AE757E1DCF20AF0083FB20 /* DoubleExtension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				34FF3CC81C9B7168007A433E /* NSDateExtension.swift in Sources */,
 				F13C24DE1CA0A408006B3B23 /* AstrolabeFace.swift in Sources */,
 				34A852FD1CA13975005D370E /* RainFace.swift in Sources */,
+				34AE757F1DCF20AF0083FB20 /* DoubleExtension.swift in Sources */,
 				F13C24DB1CA0A3EB006B3B23 /* AstrolabeHourHand.swift in Sources */,
 				F1C436861C9EA851009947A8 /* Rain.swift in Sources */,
 				F13C24EB1CA0A66F006B3B23 /* ClockFace.swift in Sources */,

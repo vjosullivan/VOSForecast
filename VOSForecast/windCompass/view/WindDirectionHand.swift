@@ -58,12 +58,12 @@ class WindDirectionHand: UIView {
         let xOffset = rect.midX - compassRadius
         let yOffset = rect.midY - compassRadius
         // point that is the top of the hand (closest to the edge of the compass)
-        let top = CGPoint(x: xOffset + compassRadius, y: yOffset + compassRadius - length * compassRadius);
-        let right1 = CGPoint(x: xOffset + compassRadius + width / 2.0, y: yOffset + compassRadius - length * compassRadius + width / 2.0)
-        let right2 = CGPoint(x: xOffset + compassRadius + width / 2.0, y: yOffset + compassRadius + length * compassRadius)
-        let left1  = CGPoint(x: xOffset + compassRadius - width / 2.0, y: yOffset + compassRadius - length * compassRadius + width / 2.0)
-        let left2  = CGPoint(x: xOffset + compassRadius - width / 2.0, y: yOffset + compassRadius + length * compassRadius)
-        let bottom = CGPoint(x: xOffset + compassRadius,               y: yOffset + compassRadius + length * compassRadius - width / 2.0);
+        let top    = CGPoint(x: xOffset + compassRadius,               y: yOffset + compassRadius - length * compassRadius + width * 1.25);
+        let right1 = CGPoint(x: xOffset + compassRadius + width / 2.0, y: yOffset + compassRadius - length)// * compassRadius + width * 4.0)
+        let right2 = CGPoint(x: xOffset + compassRadius + width / 2.0, y: yOffset + compassRadius + length * compassRadius - width)
+        let left1  = CGPoint(x: xOffset + compassRadius - width / 2.0, y: yOffset + compassRadius - length)// * compassRadius + width * 4.0)
+        let left2  = CGPoint(x: xOffset + compassRadius - width / 2.0, y: yOffset + compassRadius + length * compassRadius - width)
+        let bottom = CGPoint(x: xOffset + compassRadius,               y: yOffset + compassRadius + length * compassRadius - width * 3.0)
 
 
         // draw the line from the bottom to the top that has line width self.width.
